@@ -1,0 +1,22 @@
+# PosterLoom v1.0.0 发布检查
+
+- [x] 项目名称统一为 PosterLoom
+- [x] 副标题统一为 Adaptive Photo-to-Poster Skill
+- [x] 默认 README 改为中文
+- [x] 英文 README 保留为 `README.en.md`
+- [x] 29 个直接视觉风格
+- [x] 1 个 Controlled Hybrid 元风格
+- [x] 30 个 Style Contract
+- [x] 74 个合法 Hybrid Pair
+- [x] 一张原图 / 一张独立海报规则
+- [x] 小字号排版规范
+- [x] Identity QA
+- [x] Anti-Slop QA
+- [x] Router / Composer / Batch / Validator
+- [x] 30 个 Routing Regression Case
+- [x] GitHub Actions
+- [x] MIT License
+- [x] 本地一键安装
+- [x] GitHub 一键发布
+- [ ] 后续补公开 Before / After
+- [ ] v1.1 做更完整的真实图片、多后端 Visual Benchmark

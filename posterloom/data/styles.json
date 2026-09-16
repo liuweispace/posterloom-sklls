@@ -1,0 +1,2363 @@
+{
+  "version": "1.0.0",
+  "direct_style_count": 29,
+  "meta_style_count": 1,
+  "styles": [
+    {
+      "id": "cinematic-editorial",
+      "name": "Cinematic Editorial",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "travel",
+        "architecture",
+        "cultural spaces",
+        "street",
+        "lifestyle",
+        "night environments"
+      ],
+      "reject_if": [
+        "source is already graphic art",
+        "full abstraction is the explicit goal",
+        "identity cannot be established"
+      ],
+      "mechanism": "Preserve photographic credibility. Lock face/posture, architecture silhouette, object proportions, real signage placement, and source-specific anchors. Art direction changes hierarchy, not factual identity.",
+      "composition": "Use cinematic crop, controlled negative space, one clear focal path, believable depth, and selective background simplification. Prefer crop/scale/spacing before content invention.",
+      "lighting": "Preserve light direction and motivation. Refine practical lights, dusk, side light, window glow, and shadow separation; unsupported key lights are forbidden.",
+      "color_logic": "Source-derived filmic grading: gentle highlight rolloff, deep readable blacks, restrained saturation, subtle warm/cool separation.",
+      "material_language": "Keep stone, wood, skin, ceramic, glass, foliage, water, plaster, metal, and fabric physically believable; grain may unify but not erase surface identity.",
+      "typography": "Small contemporary serif, grotesk, or condensed sans. Usually 2–6% of poster height, placed only in a genuine text-safe zone.",
+      "realism": "high",
+      "transformation": "medium",
+      "routing": {
+        "subject": [
+          "architecture",
+          "travel",
+          "street",
+          "cultural-space",
+          "lifestyle"
+        ],
+        "lighting": [
+          "natural",
+          "window-light",
+          "twilight",
+          "practical-light",
+          "night"
+        ],
+        "mood": [
+          "cinematic",
+          "quiet",
+          "intimate",
+          "refined"
+        ],
+        "geometry": [
+          "layered-depth",
+          "leading-lines",
+          "architectural"
+        ],
+        "materials": [
+          "wood",
+          "stone",
+          "glass",
+          "water",
+          "plaster"
+        ],
+        "palette": [
+          "source-derived",
+          "warm-cool",
+          "muted"
+        ],
+        "realism": [
+          "high"
+        ],
+        "transform": [
+          "medium"
+        ]
+      },
+      "negative_prompt": "No fantasy reconstruction, cyberpunk conversion, giant headline, fake film border, arbitrary haze, random particles, excessive bloom, duplicated objects, impossible perspective, plastic skin, or generic orange-teal grading.",
+      "variation_knobs": [
+        "subject scale 0.40–0.72",
+        "negative space medium/high",
+        "grain fine/medium",
+        "contrast soft/medium",
+        "type serif/grotesk/condensed"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Cinematic Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve photographic credibility. Lock face/posture, architecture silhouette, object proportions, real signage placement, and source-specific anchors. Art direction changes hierarchy, not factual identity.\n\nComposition: Use cinematic crop, controlled negative space, one clear focal path, believable depth, and selective background simplification. Prefer crop/scale/spacing before content invention.\n\nLighting: Preserve light direction and motivation. Refine practical lights, dusk, side light, window glow, and shadow separation; unsupported key lights are forbidden.\n\nColor: Source-derived filmic grading: gentle highlight rolloff, deep readable blacks, restrained saturation, subtle warm/cool separation.\n\nMaterial and texture: Keep stone, wood, skin, ceramic, glass, foliage, water, plaster, metal, and fabric physically believable; grain may unify but not erase surface identity.\n\nTypography: Small contemporary serif, grotesk, or condensed sans. Usually 2–6% of poster height, placed only in a genuine text-safe zone.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Cinematic Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "moody-night-editorial",
+      "name": "Moody Night Editorial",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "night scenes",
+        "lanterns",
+        "street at night",
+        "tea houses",
+        "interiors at night",
+        "wet streets"
+      ],
+      "reject_if": [
+        "daylight dominates",
+        "there is no meaningful real light anchor",
+        "the user requests a high-key look"
+      ],
+      "mechanism": "Treat darkness as designed space. Preserve real lamps, windows, lanterns, signs, reflections, building geometry, and human silhouettes exactly enough to keep the place recognizable.",
+      "composition": "Organize around the brightest existing practical light. Allow large dark fields to breathe and reduce secondary highlights that compete.",
+      "lighting": "Use layered near-black values instead of crushed black. Add restrained optical halation only around genuine emitters; reflected light follows surface logic.",
+      "color_logic": "Source-derived amber, tungsten, lantern red, charcoal, midnight blue, muted green, or cool ambient shadow; keep the palette disciplined.",
+      "material_language": "Wet pavement, glass, wood, tile, paper lanterns, plaster, metal, and foliage must react differently to light.",
+      "typography": "Tiny elegant serif or neutral sans, usually 2–5% of poster height and away from the brightest source.",
+      "realism": "high",
+      "transformation": "medium",
+      "routing": {
+        "subject": [
+          "night",
+          "teahouse",
+          "architecture",
+          "street",
+          "lanterns"
+        ],
+        "lighting": [
+          "night",
+          "practical-light",
+          "warm-light",
+          "lantern-light",
+          "window-light"
+        ],
+        "mood": [
+          "moody",
+          "quiet",
+          "intimate",
+          "mysterious",
+          "cinematic"
+        ],
+        "geometry": [
+          "dark-negative-space",
+          "window-grid",
+          "roof-lines"
+        ],
+        "materials": [
+          "wood",
+          "glass",
+          "wet-pavement",
+          "tile",
+          "paper"
+        ],
+        "palette": [
+          "amber-charcoal",
+          "warm-cool",
+          "source-derived"
+        ],
+        "realism": [
+          "high"
+        ],
+        "transform": [
+          "medium"
+        ]
+      },
+      "negative_prompt": "No cyberpunk conversion, electric-purple wash, fake fog, extra lanterns, invented neon, stars, massive glow, crushed blacks, HDR halos, or large text.",
+      "variation_knobs": [
+        "shadow depth deep/readable",
+        "halation subtle/very subtle",
+        "warm-cool balance 60/40–70/30",
+        "title lower-left/upper-right",
+        "reflection emphasis low/medium"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Moody Night Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Treat darkness as designed space. Preserve real lamps, windows, lanterns, signs, reflections, building geometry, and human silhouettes exactly enough to keep the place recognizable.\n\nComposition: Organize around the brightest existing practical light. Allow large dark fields to breathe and reduce secondary highlights that compete.\n\nLighting: Use layered near-black values instead of crushed black. Add restrained optical halation only around genuine emitters; reflected light follows surface logic.\n\nColor: Source-derived amber, tungsten, lantern red, charcoal, midnight blue, muted green, or cool ambient shadow; keep the palette disciplined.\n\nMaterial and texture: Wet pavement, glass, wood, tile, paper lanterns, plaster, metal, and foliage must react differently to light.\n\nTypography: Tiny elegant serif or neutral sans, usually 2–5% of poster height and away from the brightest source.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Moody Night Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "travel-cover-poster",
+      "name": "Travel Cover Poster",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "travel",
+        "landscape",
+        "architecture",
+        "old towns",
+        "waterside scenes",
+        "mountains",
+        "streets"
+      ],
+      "reject_if": [
+        "the task depends on unverified location facts",
+        "the source is a product close-up",
+        "the user wants full abstraction"
+      ],
+      "mechanism": "Treat the place itself as the icon. Preserve destination-defining roofs, waterways, paths, skyline, mountain profile, street rhythm, and real cultural details. Never fabricate a place name.",
+      "composition": "Use real spatial cues—paths, bridges, water edges, roof lines, vegetation, sky, streets, mountain contours—to lead toward one destination anchor.",
+      "lighting": "Maintain plausible time of day, weather, sun direction, haze, and atmospheric perspective.",
+      "color_logic": "Refine the source into roughly 3–5 dominant travel-editorial tones without replacing local color.",
+      "material_language": "Retain weathered walls, tile, timber, water, stone, vegetation, and air quality.",
+      "typography": "Small editorial title. Use a verified place name only if supplied by the source/user; otherwise use a mood-based title.",
+      "realism": "high",
+      "transformation": "medium",
+      "routing": {
+        "subject": [
+          "travel",
+          "landscape",
+          "architecture",
+          "old-town",
+          "waterside",
+          "mountain"
+        ],
+        "lighting": [
+          "daylight",
+          "overcast",
+          "sunset",
+          "twilight"
+        ],
+        "mood": [
+          "calm",
+          "open",
+          "cultural",
+          "refined",
+          "wanderlust"
+        ],
+        "geometry": [
+          "path",
+          "water-edge",
+          "skyline",
+          "layered-depth",
+          "leading-lines"
+        ],
+        "materials": [
+          "stone",
+          "tile",
+          "water",
+          "wood",
+          "vegetation"
+        ],
+        "palette": [
+          "natural",
+          "source-derived",
+          "muted"
+        ],
+        "realism": [
+          "high"
+        ],
+        "transform": [
+          "medium"
+        ]
+      },
+      "negative_prompt": "No fake landmark, postcard border, travel-agency logo, invented place name, heavy vintage filter, oversaturated tourism sky, giant destination lettering, collage layout, or motivational slogan.",
+      "variation_knobs": [
+        "destination anchor 0.35–0.65",
+        "sky/water breathing room medium/high",
+        "palette 3–5 tones",
+        "clarity natural/polished",
+        "title mood-based/verified-place"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Travel Cover Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Treat the place itself as the icon. Preserve destination-defining roofs, waterways, paths, skyline, mountain profile, street rhythm, and real cultural details. Never fabricate a place name.\n\nComposition: Use real spatial cues—paths, bridges, water edges, roof lines, vegetation, sky, streets, mountain contours—to lead toward one destination anchor.\n\nLighting: Maintain plausible time of day, weather, sun direction, haze, and atmospheric perspective.\n\nColor: Refine the source into roughly 3–5 dominant travel-editorial tones without replacing local color.\n\nMaterial and texture: Retain weathered walls, tile, timber, water, stone, vegetation, and air quality.\n\nTypography: Small editorial title. Use a verified place name only if supplied by the source/user; otherwise use a mood-based title.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Travel Cover Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "luxury-still-life-editorial",
+      "name": "Luxury Still-Life Editorial",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "still life",
+        "tea",
+        "ceramic",
+        "craft",
+        "food",
+        "objects",
+        "interior details"
+      ],
+      "reject_if": [
+        "wide landscape dominates",
+        "the scene is a crowded event",
+        "motion is the primary story"
+      ],
+      "mechanism": "Preserve exact object count, proportions, arrangement, labels, vessel silhouettes, and handcrafted imperfections. Luxury comes from tactile fidelity, not decoration.",
+      "composition": "Establish one hero object, a supporting plane, and deliberate negative space while preserving believable gravity and tabletop relationships.",
+      "lighting": "Use soft directional illumination, controlled specular highlights, deep elegant shadows, and gentle falloff.",
+      "color_logic": "Use source colors and restrained earth/neutral families when present. Never add metallic gold just to signal luxury.",
+      "material_language": "Ceramic glaze, tea leaves, paper, wood, metal, glass, textile, food, and patina must remain materially distinct.",
+      "typography": "Very small serif or clean sans with generous spacing, like a luxury magazine feature.",
+      "realism": "very-high",
+      "transformation": "low-medium",
+      "routing": {
+        "subject": [
+          "still-life",
+          "tea",
+          "ceramic",
+          "craft",
+          "food",
+          "objects"
+        ],
+        "lighting": [
+          "soft-directional",
+          "window-light",
+          "warm-light"
+        ],
+        "mood": [
+          "refined",
+          "quiet",
+          "tactile",
+          "intimate"
+        ],
+        "geometry": [
+          "tabletop",
+          "arrangement",
+          "closeup"
+        ],
+        "materials": [
+          "ceramic",
+          "tea",
+          "paper",
+          "wood",
+          "metal",
+          "glass",
+          "textile"
+        ],
+        "palette": [
+          "earth",
+          "neutral",
+          "source-derived"
+        ],
+        "realism": [
+          "very-high"
+        ],
+        "transform": [
+          "low",
+          "medium"
+        ]
+      },
+      "negative_prompt": "No floating objects, redesigned containers, duplicated cups, fake labels, glossy 3D surfaces, gold dust, sparkle particles, extreme bokeh, oversized product copy, or luxury-brand imitation.",
+      "variation_knobs": [
+        "one hero object",
+        "specular control soft/medium",
+        "background falloff medium/deep",
+        "type serif/sans",
+        "grain very fine/fine"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Luxury Still-Life Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve exact object count, proportions, arrangement, labels, vessel silhouettes, and handcrafted imperfections. Luxury comes from tactile fidelity, not decoration.\n\nComposition: Establish one hero object, a supporting plane, and deliberate negative space while preserving believable gravity and tabletop relationships.\n\nLighting: Use soft directional illumination, controlled specular highlights, deep elegant shadows, and gentle falloff.\n\nColor: Use source colors and restrained earth/neutral families when present. Never add metallic gold just to signal luxury.\n\nMaterial and texture: Ceramic glaze, tea leaves, paper, wood, metal, glass, textile, food, and patina must remain materially distinct.\n\nTypography: Very small serif or clean sans with generous spacing, like a luxury magazine feature.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Luxury Still-Life Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "documentary-poster",
+      "name": "Documentary Poster",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "documentary",
+        "street",
+        "culture",
+        "people",
+        "workshops",
+        "markets",
+        "heritage",
+        "daily life"
+      ],
+      "reject_if": [
+        "fantasy is requested",
+        "heavy style transfer is requested",
+        "the image is a pure product setup"
+      ],
+      "mechanism": "Protect the truthfulness of the moment: people, clothing, posture, working context, architecture, signs, weathering, cultural objects, and authentic imperfection remain evidence.",
+      "composition": "Crop for narrative clarity while keeping spatial relationships and context needed to understand the moment.",
+      "lighting": "Use natural or practical light with subtle documentary dodge-and-burn. Do not glamorize or stage.",
+      "color_logic": "Keep believable source color with restrained saturation. Nuanced black-and-white is allowed only when the source supports it.",
+      "material_language": "Weathering, skin, cloth, dust, paint, worn surfaces, signage, and tools remain truthful.",
+      "typography": "Small archival/editorial title or caption, never dominating documentary evidence.",
+      "realism": "very-high",
+      "transformation": "low",
+      "routing": {
+        "subject": [
+          "documentary",
+          "street",
+          "people",
+          "culture",
+          "workshop",
+          "market",
+          "heritage"
+        ],
+        "lighting": [
+          "natural",
+          "available-light",
+          "overcast"
+        ],
+        "mood": [
+          "observational",
+          "human",
+          "quiet",
+          "honest"
+        ],
+        "geometry": [
+          "contextual",
+          "street-depth",
+          "environmental"
+        ],
+        "materials": [
+          "skin",
+          "cloth",
+          "weathered-wall",
+          "wood",
+          "metal"
+        ],
+        "palette": [
+          "natural",
+          "muted",
+          "monochrome"
+        ],
+        "realism": [
+          "very-high"
+        ],
+        "transform": [
+          "low"
+        ]
+      },
+      "negative_prompt": "No fantasy reconstruction, beauty retouching, orange-teal preset, fake historical detail, invented crowds, glamour lighting, propaganda framing, or giant captions.",
+      "variation_knobs": [
+        "color natural/monochrome",
+        "grain fine/medium",
+        "context retention medium/high",
+        "crop conservative/moderate",
+        "caption none/tiny"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Documentary Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Protect the truthfulness of the moment: people, clothing, posture, working context, architecture, signs, weathering, cultural objects, and authentic imperfection remain evidence.\n\nComposition: Crop for narrative clarity while keeping spatial relationships and context needed to understand the moment.\n\nLighting: Use natural or practical light with subtle documentary dodge-and-burn. Do not glamorize or stage.\n\nColor: Keep believable source color with restrained saturation. Nuanced black-and-white is allowed only when the source supports it.\n\nMaterial and texture: Weathering, skin, cloth, dust, paint, worn surfaces, signage, and tools remain truthful.\n\nTypography: Small archival/editorial title or caption, never dominating documentary evidence.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Documentary Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "transparent-watercolor",
+      "name": "Transparent Watercolor",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "landscape",
+        "waterside",
+        "garden",
+        "soft architecture",
+        "travel",
+        "flowers",
+        "quiet portrait"
+      ],
+      "reject_if": [
+        "hard industrial structure is the main appeal",
+        "labels/material photorealism are critical",
+        "the user wants opaque paint"
+      ],
+      "mechanism": "Keep key silhouette, geometry, posture, face anchors, roof line, bridge, boat, tree, or object shape precise only where recognition needs it. Secondary detail can dissolve.",
+      "composition": "Simplify the environment into atmospheric wash masses and preserve intentional unpainted paper. Use selective lost edges.",
+      "lighting": "Express illumination through paper luminosity and transparent value, never generic glow.",
+      "color_logic": "Use two or three dominant source-derived pigments plus restrained dark accents.",
+      "material_language": "Cold-press paper, granulation, edge bloom, backruns, pigment sediment, transparent layering, and real paper breathing room.",
+      "typography": "Tiny clean editorial type in a dry paper region; never fake hand lettering unless supplied.",
+      "realism": "medium",
+      "transformation": "medium-high",
+      "routing": {
+        "subject": [
+          "landscape",
+          "waterside",
+          "garden",
+          "travel",
+          "soft-architecture",
+          "flowers"
+        ],
+        "lighting": [
+          "soft-light",
+          "mist",
+          "overcast",
+          "sunset"
+        ],
+        "mood": [
+          "poetic",
+          "quiet",
+          "airy",
+          "gentle"
+        ],
+        "geometry": [
+          "organic",
+          "open-space",
+          "water-edge"
+        ],
+        "materials": [
+          "paper",
+          "water",
+          "foliage"
+        ],
+        "palette": [
+          "soft",
+          "source-derived",
+          "limited"
+        ],
+        "realism": [
+          "medium"
+        ],
+        "transform": [
+          "medium-high"
+        ]
+      },
+      "negative_prompt": "No opaque digital paint, thick outline, random splashes, rainbow pigment, fully painted background, fake calligraphy, watercolor-filter texture, or muddy overworking.",
+      "variation_knobs": [
+        "paper exposure high/very-high",
+        "pigment count 2–4",
+        "edge loss medium/high",
+        "detail focal-only/selective",
+        "wash wet/soft"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Transparent Watercolor** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep key silhouette, geometry, posture, face anchors, roof line, bridge, boat, tree, or object shape precise only where recognition needs it. Secondary detail can dissolve.\n\nComposition: Simplify the environment into atmospheric wash masses and preserve intentional unpainted paper. Use selective lost edges.\n\nLighting: Express illumination through paper luminosity and transparent value, never generic glow.\n\nColor: Use two or three dominant source-derived pigments plus restrained dark accents.\n\nMaterial and texture: Cold-press paper, granulation, edge bloom, backruns, pigment sediment, transparent layering, and real paper breathing room.\n\nTypography: Tiny clean editorial type in a dry paper region; never fake hand lettering unless supplied.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Transparent Watercolor mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "soft-gouache",
+      "name": "Soft Gouache",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "travel",
+        "architecture",
+        "garden",
+        "landscape",
+        "interior",
+        "people at distance"
+      ],
+      "reject_if": [
+        "micro-detail is critical",
+        "the desired effect is transparent/airy",
+        "the source is a hyperreal product close-up"
+      ],
+      "mechanism": "Preserve silhouette, perspective, and key face/body/architectural anchors while simplifying microtexture into designed matte forms.",
+      "composition": "Break the scene into broad opaque value/color planes, then restore selected small details around the focal subject.",
+      "lighting": "Translate illumination into painted value blocks rather than lens glow.",
+      "color_logic": "Simplify the source into roughly 5–8 harmonious colors with muted midtones, controlled highlights, and deep accents.",
+      "material_language": "Matte gouache, dry-brush transitions, slight paper tooth, softened hand-painted edges, and restrained visible strokes.",
+      "typography": "Small modern editorial type integrated into a quiet painted field.",
+      "realism": "medium-low",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "travel",
+          "architecture",
+          "garden",
+          "landscape",
+          "interior"
+        ],
+        "lighting": [
+          "soft-light",
+          "daylight",
+          "overcast"
+        ],
+        "mood": [
+          "warm",
+          "crafted",
+          "gentle",
+          "editorial"
+        ],
+        "geometry": [
+          "broad-planes",
+          "architectural",
+          "organic"
+        ],
+        "materials": [
+          "paper",
+          "paint",
+          "foliage",
+          "plaster"
+        ],
+        "palette": [
+          "muted",
+          "source-derived",
+          "limited"
+        ],
+        "realism": [
+          "medium-low"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No cartoon faces, thick comic outlines, sticker shapes, glossy vector perfection, random color substitutions, airbrush gradients, or generic digital-paint smearing.",
+      "variation_knobs": [
+        "palette 5–8 colors",
+        "brush texture subtle/medium",
+        "detail focal/medium",
+        "edge softness mixed",
+        "negative space medium/high"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Soft Gouache** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, perspective, and key face/body/architectural anchors while simplifying microtexture into designed matte forms.\n\nComposition: Break the scene into broad opaque value/color planes, then restore selected small details around the focal subject.\n\nLighting: Translate illumination into painted value blocks rather than lens glow.\n\nColor: Simplify the source into roughly 5–8 harmonious colors with muted midtones, controlled highlights, and deep accents.\n\nMaterial and texture: Matte gouache, dry-brush transitions, slight paper tooth, softened hand-painted edges, and restrained visible strokes.\n\nTypography: Small modern editorial type integrated into a quiet painted field.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Soft Gouache mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "expressive-painting",
+      "name": "Expressive Painting",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "performance",
+        "portrait",
+        "sports",
+        "storms",
+        "crowds",
+        "dramatic night",
+        "movement"
+      ],
+      "reject_if": [
+        "precise product geometry is the priority",
+        "the source is quiet/minimal",
+        "structural accuracy must remain near-photographic"
+      ],
+      "mechanism": "Protect faces, hands, body count, pose, instrument/object geometry, vehicle geometry, or principal architecture. Let looseness occur away from identity anchors.",
+      "composition": "Identify one movement/emotional vector and organize brush direction around it. Keep focal anchors controlled while secondary space becomes kinetic.",
+      "lighting": "Preserve source light direction even when temperature and saturation shift emotionally.",
+      "color_logic": "Start from the source palette and allow measured expressive shifts rather than random neon.",
+      "material_language": "Layered strokes, dragged pigment, dry brush, broken color, selective impasto-like highlights, and varied edge control.",
+      "typography": "Tiny calm typography in a low-energy zone so it does not compete with brushwork.",
+      "realism": "medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "performance",
+          "portrait",
+          "sports",
+          "crowd",
+          "movement",
+          "dramatic-night"
+        ],
+        "lighting": [
+          "dramatic",
+          "rim-light",
+          "stage-light",
+          "night"
+        ],
+        "mood": [
+          "intense",
+          "energetic",
+          "emotional",
+          "dramatic"
+        ],
+        "geometry": [
+          "gesture",
+          "diagonal",
+          "movement"
+        ],
+        "materials": [
+          "paint",
+          "fabric",
+          "skin"
+        ],
+        "palette": [
+          "source-derived",
+          "expressive"
+        ],
+        "realism": [
+          "medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No extra limbs, distorted faces, uncontrolled abstraction, neon rainbow, muddy all-over impasto, smoothed oil-filter look, or loss of source identity.",
+      "variation_knobs": [
+        "stroke direction dominant",
+        "looseness medium/high",
+        "temperature shift subtle/moderate",
+        "impasto accents low",
+        "crop dynamic/moderate"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Expressive Painting** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Protect faces, hands, body count, pose, instrument/object geometry, vehicle geometry, or principal architecture. Let looseness occur away from identity anchors.\n\nComposition: Identify one movement/emotional vector and organize brush direction around it. Keep focal anchors controlled while secondary space becomes kinetic.\n\nLighting: Preserve source light direction even when temperature and saturation shift emotionally.\n\nColor: Start from the source palette and allow measured expressive shifts rather than random neon.\n\nMaterial and texture: Layered strokes, dragged pigment, dry brush, broken color, selective impasto-like highlights, and varied edge control.\n\nTypography: Tiny calm typography in a low-energy zone so it does not compete with brushwork.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Expressive Painting mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "ink-wash-minimal",
+      "name": "Ink Wash Minimal",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "trees",
+        "mist",
+        "mountains",
+        "waterside",
+        "architecture",
+        "quiet objects",
+        "minimal landscape"
+      ],
+      "reject_if": [
+        "high-saturation festival color is essential",
+        "product labels must remain literal",
+        "the scene depends on dense pop detail"
+      ],
+      "mechanism": "Preserve silhouette, posture, roof profile, vessel shape, branching pattern, bridge line, or another essential cue with economical marks.",
+      "composition": "Use concentrated dark ink for the anchor, medium wash for structure, pale wash for atmosphere, and untouched paper for silence.",
+      "lighting": "Translate source light into ink density and value rather than literal light effects.",
+      "color_logic": "Mostly black, gray, warm paper, with at most one or two muted source accents.",
+      "material_language": "Ink diffusion, dry brush, feathered edges, pooling, absorbent paper, and restrained calligraphic energy.",
+      "typography": "Tiny modern type. Never fabricate calligraphy or red seals.",
+      "realism": "medium-low",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "tree",
+          "mist",
+          "mountain",
+          "waterside",
+          "architecture",
+          "quiet-object"
+        ],
+        "lighting": [
+          "mist",
+          "soft-light",
+          "overcast"
+        ],
+        "mood": [
+          "quiet",
+          "meditative",
+          "poetic",
+          "minimal"
+        ],
+        "geometry": [
+          "asymmetry",
+          "silhouette",
+          "open-space"
+        ],
+        "materials": [
+          "ink",
+          "paper",
+          "water"
+        ],
+        "palette": [
+          "monochrome",
+          "muted-accent"
+        ],
+        "realism": [
+          "medium-low"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No cliché mountains added from nowhere, fake Chinese characters, random red seal, decorative ink splatter, anime ink style, dense black fill, or tourist ornament.",
+      "variation_knobs": [
+        "paper void high/very-high",
+        "ink density three levels",
+        "accent color 0–2",
+        "dry brush low/medium",
+        "edge loss high"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Ink Wash Minimal** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, posture, roof profile, vessel shape, branching pattern, bridge line, or another essential cue with economical marks.\n\nComposition: Use concentrated dark ink for the anchor, medium wash for structure, pale wash for atmosphere, and untouched paper for silence.\n\nLighting: Translate source light into ink density and value rather than literal light effects.\n\nColor: Mostly black, gray, warm paper, with at most one or two muted source accents.\n\nMaterial and texture: Ink diffusion, dry brush, feathered edges, pooling, absorbent paper, and restrained calligraphic energy.\n\nTypography: Tiny modern type. Never fabricate calligraphy or red seals.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Ink Wash Minimal mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "pastel-atmosphere",
+      "name": "Pastel Atmosphere",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "sky",
+        "landscape",
+        "flowers",
+        "quiet portrait",
+        "dawn",
+        "dusk",
+        "soft interior"
+      ],
+      "reject_if": [
+        "hard industrial geometry is the main appeal",
+        "the source is highly graphic",
+        "the scene is text-heavy"
+      ],
+      "mechanism": "Preserve silhouette, face structure, architecture outline, or object shape while reducing microdetail into broad tonal transitions.",
+      "composition": "Use broad tonal fields and soft transitions around a stable focal anchor; retain enough structure to avoid mushiness.",
+      "lighting": "Create luminous transitions through value and temperature, not digital bloom.",
+      "color_logic": "Source-derived powdery/chalky hues with disciplined values; never a candy rainbow.",
+      "material_language": "Layered dry pastel, smudged transitions, visible paper tooth, and occasional sharper stick marks near the focal area.",
+      "typography": "Minimal modern small type in a calm tonal field.",
+      "realism": "medium-low",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "sky",
+          "landscape",
+          "flowers",
+          "portrait",
+          "dawn",
+          "dusk"
+        ],
+        "lighting": [
+          "soft-light",
+          "dawn",
+          "dusk",
+          "overcast"
+        ],
+        "mood": [
+          "poetic",
+          "calm",
+          "gentle",
+          "dreamlike-but-real"
+        ],
+        "geometry": [
+          "broad-fields",
+          "open-space"
+        ],
+        "materials": [
+          "pastel",
+          "paper"
+        ],
+        "palette": [
+          "soft",
+          "powdery",
+          "source-derived"
+        ],
+        "realism": [
+          "medium-low"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No candy rainbow, children's-book styling, wax-crayon outline, dream filter, glitter, excessive blur, soft-focus face distortion, or unrelated pastel colors.",
+      "variation_knobs": [
+        "powder texture subtle/medium",
+        "edge softness medium/high",
+        "value contrast low/medium",
+        "paper tooth fine",
+        "title minimal"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Pastel Atmosphere** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, face structure, architecture outline, or object shape while reducing microdetail into broad tonal transitions.\n\nComposition: Use broad tonal fields and soft transitions around a stable focal anchor; retain enough structure to avoid mushiness.\n\nLighting: Create luminous transitions through value and temperature, not digital bloom.\n\nColor: Source-derived powdery/chalky hues with disciplined values; never a candy rainbow.\n\nMaterial and texture: Layered dry pastel, smudged transitions, visible paper tooth, and occasional sharper stick marks near the focal area.\n\nTypography: Minimal modern small type in a calm tonal field.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Pastel Atmosphere mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "pop-screenprint",
+      "name": "Pop Screenprint",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "cars",
+        "street",
+        "architecture",
+        "fashion",
+        "objects",
+        "performance",
+        "strong silhouettes"
+      ],
+      "reject_if": [
+        "the source is misty/low-contrast",
+        "subtle material realism is the goal",
+        "a soft watercolor treatment is requested"
+      ],
+      "mechanism": "Preserve the unmistakable silhouette, proportions, mechanical/architectural lines, and pose. Reduce detail deliberately rather than tracing every edge.",
+      "composition": "Reduce the image to one dominant graphic shape, 4–7 tonal/color regions, and deliberate negative space.",
+      "lighting": "Translate source light into limited tonal separations instead of photographic gradients.",
+      "color_logic": "Use 4–7 source-derived inks; one accent may be intensified but not invented.",
+      "material_language": "Controlled halftone, screenprint grain, subtle registration shift, uneven ink edges, and selective black keyline.",
+      "typography": "Small confident condensed grotesk, industrial sans, or geometric sans aligned to a real graphic edge.",
+      "realism": "low-medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "car",
+          "street",
+          "architecture",
+          "fashion",
+          "object",
+          "performance"
+        ],
+        "lighting": [
+          "hard-light",
+          "high-contrast"
+        ],
+        "mood": [
+          "bold",
+          "urban",
+          "energetic",
+          "graphic"
+        ],
+        "geometry": [
+          "strong-silhouette",
+          "hard-edge",
+          "blocks"
+        ],
+        "materials": [
+          "ink",
+          "paper"
+        ],
+        "palette": [
+          "limited",
+          "high-contrast",
+          "source-derived"
+        ],
+        "realism": [
+          "low-medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No superhero/comic language, speech bubbles, Warhol imitation, random primary colors, giant text, halftone everywhere, glossy gradients, or loss of subject proportions.",
+      "variation_knobs": [
+        "ink count 4–7",
+        "registration shift subtle",
+        "halftone focal/background",
+        "black keyline low/medium",
+        "crop bold"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Pop Screenprint** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the unmistakable silhouette, proportions, mechanical/architectural lines, and pose. Reduce detail deliberately rather than tracing every edge.\n\nComposition: Reduce the image to one dominant graphic shape, 4–7 tonal/color regions, and deliberate negative space.\n\nLighting: Translate source light into limited tonal separations instead of photographic gradients.\n\nColor: Use 4–7 source-derived inks; one accent may be intensified but not invented.\n\nMaterial and texture: Controlled halftone, screenprint grain, subtle registration shift, uneven ink edges, and selective black keyline.\n\nTypography: Small confident condensed grotesk, industrial sans, or geometric sans aligned to a real graphic edge.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Pop Screenprint mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "riso-poster",
+      "name": "Riso Poster",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "architecture",
+        "still life",
+        "people",
+        "plants",
+        "street",
+        "culture",
+        "graphic scenes"
+      ],
+      "reject_if": [
+        "high-gloss realism is required",
+        "many essential colors cannot be reduced",
+        "photoreal material rendering is the priority"
+      ],
+      "mechanism": "Preserve subject contour and essential internal detail, then reinterpret the image as intentional print separations.",
+      "composition": "Use large graphic masses with selective fine-line detail around the focal subject.",
+      "lighting": "Translate illumination into spot-color density and overprint relationships.",
+      "color_logic": "Use 2–4 source-derived riso-like spot inks with meaningful overprint.",
+      "material_language": "Coarse attractive grain, visible paper fibers, slight registration drift, uneven ink density, and softly printed edges.",
+      "typography": "Small independent-publishing sans or serif with generous spacing.",
+      "realism": "low-medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "architecture",
+          "still-life",
+          "people",
+          "plants",
+          "street",
+          "culture"
+        ],
+        "lighting": [
+          "graphic-light",
+          "flat-light",
+          "high-contrast"
+        ],
+        "mood": [
+          "artisanal",
+          "playful",
+          "editorial",
+          "crafted"
+        ],
+        "geometry": [
+          "blocks",
+          "linework",
+          "modular"
+        ],
+        "materials": [
+          "ink",
+          "paper"
+        ],
+        "palette": [
+          "spot-color",
+          "limited",
+          "source-derived"
+        ],
+        "realism": [
+          "low-medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No glossy gradients, full-color photorealism, random noise, fake old-paper stains, chaotic zine collage, too many ink colors, sticker graphics, or cartoon conversion.",
+      "variation_knobs": [
+        "ink count 2–4",
+        "overprint low/medium",
+        "registration drift tiny/small",
+        "paper grain medium",
+        "line detail focal-only"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Riso Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve subject contour and essential internal detail, then reinterpret the image as intentional print separations.\n\nComposition: Use large graphic masses with selective fine-line detail around the focal subject.\n\nLighting: Translate illumination into spot-color density and overprint relationships.\n\nColor: Use 2–4 source-derived riso-like spot inks with meaningful overprint.\n\nMaterial and texture: Coarse attractive grain, visible paper fibers, slight registration drift, uneven ink density, and softly printed edges.\n\nTypography: Small independent-publishing sans or serif with generous spacing.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Riso Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "relief-print",
+      "name": "Relief Print",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "architecture",
+        "sculpture",
+        "industrial",
+        "vehicles",
+        "trees",
+        "strong portraits",
+        "dramatic shadows"
+      ],
+      "reject_if": [
+        "soft mist is the core visual quality",
+        "beauty skin rendering is important",
+        "the scene depends on many colors"
+      ],
+      "mechanism": "Lock silhouette, anatomy, pose, object count, structural geometry, and crucial contours. Think in carved positive/negative mass.",
+      "composition": "Map positive ink masses and negative cut-away paper before adding texture. Use carving density to describe form.",
+      "lighting": "Convert light into a carved value hierarchy rather than smooth shading.",
+      "color_logic": "Mostly black, charcoal, warm paper, with at most one restrained source-derived accent.",
+      "material_language": "Directional gouge marks, uneven carved edges, ink-load variation, paper tooth, and purposeful cut rhythm.",
+      "typography": "Small geometric contemporary type, never pseudo-historical woodcut lettering.",
+      "realism": "low-medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "architecture",
+          "sculpture",
+          "industrial",
+          "vehicle",
+          "tree",
+          "portrait"
+        ],
+        "lighting": [
+          "hard-shadow",
+          "high-contrast"
+        ],
+        "mood": [
+          "powerful",
+          "graphic",
+          "raw",
+          "monumental"
+        ],
+        "geometry": [
+          "strong-contour",
+          "structural",
+          "silhouette"
+        ],
+        "materials": [
+          "ink",
+          "paper",
+          "stone",
+          "wood"
+        ],
+        "palette": [
+          "monochrome",
+          "single-accent"
+        ],
+        "realism": [
+          "low-medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No uniform Photoshop edge filter, comic outline, horror-grunge scratches, random distress, smooth gradient shading, many bright colors, or loss of body/architecture geometry.",
+      "variation_knobs": [
+        "carving density by zone",
+        "accent color 0–1",
+        "gouge direction structural",
+        "ink mass medium/high",
+        "paper show-through medium"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Relief Print** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Lock silhouette, anatomy, pose, object count, structural geometry, and crucial contours. Think in carved positive/negative mass.\n\nComposition: Map positive ink masses and negative cut-away paper before adding texture. Use carving density to describe form.\n\nLighting: Convert light into a carved value hierarchy rather than smooth shading.\n\nColor: Mostly black, charcoal, warm paper, with at most one restrained source-derived accent.\n\nMaterial and texture: Directional gouge marks, uneven carved edges, ink-load variation, paper tooth, and purposeful cut rhythm.\n\nTypography: Small geometric contemporary type, never pseudo-historical woodcut lettering.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Relief Print mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "retro-lithograph",
+      "name": "Retro Lithograph",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "travel",
+        "architecture",
+        "landscape",
+        "culture",
+        "trains",
+        "streets",
+        "landmarks"
+      ],
+      "reject_if": [
+        "the user wants futurism",
+        "the source is a high-gloss product",
+        "neon-night color is essential"
+      ],
+      "mechanism": "Preserve geometry, perspective, silhouette, and place-defining details. Historical-print character must not rewrite the place.",
+      "composition": "Use one dominant subject with simplified secondary scenery and classic-but-current poster balance.",
+      "lighting": "Translate source light into layered drawn tone, stipple, and printed shading.",
+      "color_logic": "Use a limited source-derived palette, slightly desaturated when useful. Cream paper is allowed without yellowing everything.",
+      "material_language": "Lithographic shading, stipple, pencil-like tone, printed color fields, and gentle registration imperfection.",
+      "typography": "Small refined type with classic proportions and contemporary spacing. Never fabricate a date or destination.",
+      "realism": "medium-low",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "travel",
+          "architecture",
+          "landscape",
+          "culture",
+          "street",
+          "landmark"
+        ],
+        "lighting": [
+          "daylight",
+          "sunset",
+          "soft-light"
+        ],
+        "mood": [
+          "nostalgic",
+          "collectible",
+          "cultured",
+          "elegant"
+        ],
+        "geometry": [
+          "architectural",
+          "landmark",
+          "layered-depth"
+        ],
+        "materials": [
+          "paper",
+          "ink",
+          "stone"
+        ],
+        "palette": [
+          "limited",
+          "desaturated",
+          "source-derived"
+        ],
+        "realism": [
+          "medium-low"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No fake torn paper, burnt edge, heavy sepia, propaganda styling, pin-up aesthetic, distressed font, ornate border, invented year, or generic vintage filter.",
+      "variation_knobs": [
+        "paper cream/neutral",
+        "stipple low/medium",
+        "palette 4–7 tones",
+        "registration tiny",
+        "type classic-modern"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Retro Lithograph** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve geometry, perspective, silhouette, and place-defining details. Historical-print character must not rewrite the place.\n\nComposition: Use one dominant subject with simplified secondary scenery and classic-but-current poster balance.\n\nLighting: Translate source light into layered drawn tone, stipple, and printed shading.\n\nColor: Use a limited source-derived palette, slightly desaturated when useful. Cream paper is allowed without yellowing everything.\n\nMaterial and texture: Lithographic shading, stipple, pencil-like tone, printed color fields, and gentle registration imperfection.\n\nTypography: Small refined type with classic proportions and contemporary spacing. Never fabricate a date or destination.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Retro Lithograph mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "paper-cut-graphic",
+      "name": "Paper-Cut Graphic",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "architecture",
+        "landscape",
+        "trees",
+        "streets",
+        "temples",
+        "objects",
+        "strong spatial layering"
+      ],
+      "reject_if": [
+        "fine face close-up is the priority",
+        "transparent material realism is critical",
+        "documentary density must remain intact"
+      ],
+      "mechanism": "Preserve the subject silhouette, proportions, and only the internal cutouts required for recognition.",
+      "composition": "Break the scene into a controlled stack of foreground, hero, midground, background, sky/water, and shadow paper planes derived from the source.",
+      "lighting": "Use shallow physical cast shadows between layers instead of glossy 3D lighting.",
+      "color_logic": "Use roughly 5–9 source-derived matte paper colors.",
+      "material_language": "Fibrous matte paper, crisp hand-cut edges, subtle thickness, and shallow cast shadows.",
+      "typography": "Small clean typography printed on a flat paper field; avoid novelty craft fonts.",
+      "realism": "low",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "architecture",
+          "landscape",
+          "tree",
+          "street",
+          "temple",
+          "objects"
+        ],
+        "lighting": [
+          "clear-light",
+          "flat-light"
+        ],
+        "mood": [
+          "crafted",
+          "graphic",
+          "calm",
+          "playful"
+        ],
+        "geometry": [
+          "layered",
+          "silhouette",
+          "hard-edge"
+        ],
+        "materials": [
+          "paper"
+        ],
+        "palette": [
+          "matte",
+          "limited",
+          "source-derived"
+        ],
+        "realism": [
+          "low"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No scrapbook stickers, greeting-card craft, deep 3D extrusion, glossy plastic layers, random floral cutouts, excessive drop shadows, or loss of original silhouette.",
+      "variation_knobs": [
+        "layers 5–9",
+        "shadow depth shallow",
+        "edge crisp/slightly handmade",
+        "palette matte",
+        "internal cutouts selective"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Paper-Cut Graphic** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the subject silhouette, proportions, and only the internal cutouts required for recognition.\n\nComposition: Break the scene into a controlled stack of foreground, hero, midground, background, sky/water, and shadow paper planes derived from the source.\n\nLighting: Use shallow physical cast shadows between layers instead of glossy 3D lighting.\n\nColor: Use roughly 5–9 source-derived matte paper colors.\n\nMaterial and texture: Fibrous matte paper, crisp hand-cut edges, subtle thickness, and shallow cast shadows.\n\nTypography: Small clean typography printed on a flat paper field; avoid novelty craft fonts.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Paper-Cut Graphic mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "neo-ink-poster",
+      "name": "Neo Ink Poster",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "architecture",
+        "old towns",
+        "tea",
+        "water",
+        "gardens",
+        "heritage",
+        "portrait"
+      ],
+      "reject_if": [
+        "the task is pop/cyberpunk",
+        "the source has no organic/cultural fit",
+        "historical imitation is explicitly requested"
+      ],
+      "mechanism": "Preserve authentic architecture, object shape, costume, face, roof line, water edge, and vegetation pattern. Cultural cues must come from the source.",
+      "composition": "Use contemporary asymmetry and breathing room with selective ink compression at structural anchors.",
+      "lighting": "Translate source light into controlled value and soft ink atmosphere while keeping direction plausible.",
+      "color_logic": "Use ink neutrals plus 1–3 muted source colors. Mineral-red appears only when genuinely supported.",
+      "material_language": "Ink feathering, dry edges, paper absorption, and optional restrained photographic fragments.",
+      "typography": "Modern small type. Any Chinese text must be verified from the source or supplied by the user.",
+      "realism": "medium",
+      "transformation": "medium-high",
+      "routing": {
+        "subject": [
+          "architecture",
+          "old-town",
+          "tea",
+          "water",
+          "garden",
+          "heritage",
+          "portrait"
+        ],
+        "lighting": [
+          "soft-light",
+          "mist",
+          "warm-light"
+        ],
+        "mood": [
+          "cultural",
+          "quiet",
+          "poetic",
+          "contemporary"
+        ],
+        "geometry": [
+          "asymmetry",
+          "roof-lines",
+          "water-edge"
+        ],
+        "materials": [
+          "ink",
+          "paper",
+          "wood",
+          "tile"
+        ],
+        "palette": [
+          "ink-neutral",
+          "muted-accent"
+        ],
+        "realism": [
+          "medium"
+        ],
+        "transform": [
+          "medium-high"
+        ]
+      },
+      "negative_prompt": "No fake calligraphy, random red seal, tourist 'oriental' ornament, cliché mountains, bamboo added from nowhere, excessive red/black, or historical costume invention.",
+      "variation_knobs": [
+        "ink compression low/medium",
+        "color accents 1–3",
+        "photo retention 0–30%",
+        "paper void high",
+        "edge feathering selective"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Neo Ink Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve authentic architecture, object shape, costume, face, roof line, water edge, and vegetation pattern. Cultural cues must come from the source.\n\nComposition: Use contemporary asymmetry and breathing room with selective ink compression at structural anchors.\n\nLighting: Translate source light into controlled value and soft ink atmosphere while keeping direction plausible.\n\nColor: Use ink neutrals plus 1–3 muted source colors. Mineral-red appears only when genuinely supported.\n\nMaterial and texture: Ink feathering, dry edges, paper absorption, and optional restrained photographic fragments.\n\nTypography: Modern small type. Any Chinese text must be verified from the source or supplied by the user.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Neo Ink Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "tea-house-minimal",
+      "name": "Tea-House Minimal",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "tea",
+        "tea houses",
+        "wooden interiors",
+        "ceramic",
+        "lanterns",
+        "windows",
+        "quiet hospitality"
+      ],
+      "reject_if": [
+        "sports or industrial energy dominates",
+        "there is no tea/cultural context",
+        "the user wants loud pop graphics"
+      ],
+      "mechanism": "Lock tea vessels, table arrangement, wood joinery, window grids, roof tiles, lantern positions, and genuine signage. Preserve ritual and material specificity.",
+      "composition": "Use quiet asymmetry, one focal ritual/object/architectural anchor, and generous shadow, wall, or tabletop breathing room.",
+      "lighting": "Keep warm practical/window light plausible with deep readable shadows. Do not invent candlelight or steam.",
+      "color_logic": "Use tea browns, timber, charcoal, porcelain, muted green, and amber only when present.",
+      "material_language": "Wood grain, ceramic, tea leaves, paper, cloth, glass, and steam only if actually visible.",
+      "typography": "Tiny serif or restrained sans. Bilingual text only when supplied or verified.",
+      "realism": "high",
+      "transformation": "low-medium",
+      "routing": {
+        "subject": [
+          "tea",
+          "teahouse",
+          "ceramic",
+          "wooden-interior",
+          "lantern",
+          "window"
+        ],
+        "lighting": [
+          "warm-light",
+          "window-light",
+          "practical-light",
+          "night"
+        ],
+        "mood": [
+          "quiet",
+          "intimate",
+          "cultural",
+          "ritual",
+          "refined"
+        ],
+        "geometry": [
+          "window-grid",
+          "roof-lines",
+          "tabletop",
+          "asymmetry"
+        ],
+        "materials": [
+          "wood",
+          "ceramic",
+          "tea",
+          "paper",
+          "tile"
+        ],
+        "palette": [
+          "tea-brown",
+          "amber-charcoal",
+          "muted-green"
+        ],
+        "realism": [
+          "high"
+        ],
+        "transform": [
+          "low",
+          "medium"
+        ]
+      },
+      "negative_prompt": "No invented calligraphy, extra lanterns, fake steam, gold ornament, tourist décor, bamboo cliché, oversized Chinese characters, or luxury-brand staging.",
+      "variation_knobs": [
+        "warmth low/medium",
+        "negative space high",
+        "title none/small",
+        "hero tea/object/architecture",
+        "grain very fine"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Tea-House Minimal** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Lock tea vessels, table arrangement, wood joinery, window grids, roof tiles, lantern positions, and genuine signage. Preserve ritual and material specificity.\n\nComposition: Use quiet asymmetry, one focal ritual/object/architectural anchor, and generous shadow, wall, or tabletop breathing room.\n\nLighting: Keep warm practical/window light plausible with deep readable shadows. Do not invent candlelight or steam.\n\nColor: Use tea browns, timber, charcoal, porcelain, muted green, and amber only when present.\n\nMaterial and texture: Wood grain, ceramic, tea leaves, paper, cloth, glass, and steam only if actually visible.\n\nTypography: Tiny serif or restrained sans. Bilingual text only when supplied or verified.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Tea-House Minimal mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "classical-parchment",
+      "name": "Classical Parchment",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "heritage objects",
+        "architectural details",
+        "artifacts",
+        "real calligraphy",
+        "map-like scenes",
+        "craft"
+      ],
+      "reject_if": [
+        "night neon dominates",
+        "sports/action is central",
+        "a modern glossy advertisement is requested"
+      ],
+      "mechanism": "Preserve artifact shape, architectural detail, inscriptions if legible, craft marks, and verified source text. Never fabricate provenance.",
+      "composition": "Use museum-plate logic with ample margin and a centered or carefully asymmetrical subject.",
+      "lighting": "Keep light soft and scholarly; avoid invented theatrical illumination.",
+      "color_logic": "Warm neutral paper plus restrained source color and dark ink. Avoid fake aging.",
+      "material_language": "Fine paper fiber, subtle plate tone, pencil/ink line, and gentle print texture.",
+      "typography": "Small scholarly serif or neutral sans. No pseudo-antique display font.",
+      "realism": "medium-high",
+      "transformation": "medium",
+      "routing": {
+        "subject": [
+          "heritage-object",
+          "architecture-detail",
+          "artifact",
+          "craft",
+          "calligraphy-source"
+        ],
+        "lighting": [
+          "soft-even",
+          "daylight"
+        ],
+        "mood": [
+          "scholarly",
+          "quiet",
+          "archival",
+          "collectible"
+        ],
+        "geometry": [
+          "plate-layout",
+          "object-centered",
+          "margin-rich"
+        ],
+        "materials": [
+          "paper",
+          "ink",
+          "wood",
+          "stone"
+        ],
+        "palette": [
+          "warm-neutral",
+          "ink",
+          "muted"
+        ],
+        "realism": [
+          "medium-high"
+        ],
+        "transform": [
+          "medium"
+        ]
+      },
+      "negative_prompt": "No pirate-map parchment, burnt edges, fake stains, heavy yellowing, ornate border, pseudo-antique font, invented dates, fake seal, or fantasy manuscript styling.",
+      "variation_knobs": [
+        "paper warmth neutral/warm",
+        "line detail medium/high",
+        "accent color 0–2",
+        "margin wide/very-wide",
+        "caption tiny"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Classical Parchment** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve artifact shape, architectural detail, inscriptions if legible, craft marks, and verified source text. Never fabricate provenance.\n\nComposition: Use museum-plate logic with ample margin and a centered or carefully asymmetrical subject.\n\nLighting: Keep light soft and scholarly; avoid invented theatrical illumination.\n\nColor: Warm neutral paper plus restrained source color and dark ink. Avoid fake aging.\n\nMaterial and texture: Fine paper fiber, subtle plate tone, pencil/ink line, and gentle print texture.\n\nTypography: Small scholarly serif or neutral sans. No pseudo-antique display font.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Classical Parchment mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "seal-calligraphy-poster",
+      "name": "Seal & Calligraphy Poster",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "real calligraphy",
+        "temples",
+        "tea houses",
+        "heritage",
+        "ink scenes",
+        "vertical architecture",
+        "lanterns"
+      ],
+      "reject_if": [
+        "there is no cultural/textual context",
+        "fake calligraphy is requested",
+        "a strict western grid is the main requirement"
+      ],
+      "mechanism": "Preserve genuine characters, signs, architecture, objects, and source identity. Unreadable text must never be rewritten as invented language.",
+      "composition": "Use vertical rhythm, asymmetric balance, generous voids, and restrained directional brush-energy accents.",
+      "lighting": "Respect source lighting and simplify only into ink/value blocks when useful.",
+      "color_logic": "Use ink black, warm paper, and muted source accents. Mineral red may be abstract or tied to a verified seal only.",
+      "material_language": "Ink, paper, brush edge, and optional restrained photographic fragments.",
+      "typography": "Small Latin or verified Chinese text only. An abstract seal-like block may not contain fabricated characters.",
+      "realism": "medium",
+      "transformation": "medium-high",
+      "routing": {
+        "subject": [
+          "calligraphy-source",
+          "temple",
+          "teahouse",
+          "heritage",
+          "vertical-architecture",
+          "lantern"
+        ],
+        "lighting": [
+          "soft-light",
+          "warm-light"
+        ],
+        "mood": [
+          "cultural",
+          "disciplined",
+          "quiet",
+          "formal"
+        ],
+        "geometry": [
+          "vertical",
+          "asymmetry",
+          "negative-space"
+        ],
+        "materials": [
+          "ink",
+          "paper",
+          "wood"
+        ],
+        "palette": [
+          "ink-black",
+          "warm-paper",
+          "mineral-accent"
+        ],
+        "realism": [
+          "medium"
+        ],
+        "transform": [
+          "medium-high"
+        ]
+      },
+      "negative_prompt": "No fake Chinese characters, random seal text, tourist oriental border, excessive red, imitation antique scroll, decorative dragons, or invented inscriptions.",
+      "variation_knobs": [
+        "vertical rhythm strong/medium",
+        "red abstract accent 0/1",
+        "photo retention low/medium",
+        "paper void high",
+        "brush energy restrained"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Seal & Calligraphy Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve genuine characters, signs, architecture, objects, and source identity. Unreadable text must never be rewritten as invented language.\n\nComposition: Use vertical rhythm, asymmetric balance, generous voids, and restrained directional brush-energy accents.\n\nLighting: Respect source lighting and simplify only into ink/value blocks when useful.\n\nColor: Use ink black, warm paper, and muted source accents. Mineral red may be abstract or tied to a verified seal only.\n\nMaterial and texture: Ink, paper, brush edge, and optional restrained photographic fragments.\n\nTypography: Small Latin or verified Chinese text only. An abstract seal-like block may not contain fabricated characters.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Seal & Calligraphy Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "folk-narrative-color",
+      "name": "Folk Narrative Color",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "festivals",
+        "folk performance",
+        "masks",
+        "craft",
+        "costume",
+        "temple color",
+        "markets"
+      ],
+      "reject_if": [
+        "the source is minimal/monochrome",
+        "cultural symbols cannot be identified",
+        "beauty portrait realism is the goal"
+      ],
+      "mechanism": "Preserve the exact costume, mask, craft, architecture, props, and culturally specific anchors. Decorative richness must come from the visible source.",
+      "composition": "Use one strong narrative focal point and flatten secondary space into rhythm or pattern only when it is source-derived.",
+      "lighting": "Simplify lighting plausibly; let color carry energy without erasing form.",
+      "color_logic": "Amplify reds, blues, greens, golds, blacks, or whites only when they genuinely exist in the source.",
+      "material_language": "Hand-painted edges, folk-print texture, fabric pattern, painted wood, and source-specific craft surfaces.",
+      "typography": "Small contemporary type so the layout does not parody folk lettering.",
+      "realism": "low-medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "festival",
+          "folk-performance",
+          "mask",
+          "craft",
+          "costume",
+          "temple-color",
+          "market"
+        ],
+        "lighting": [
+          "festival-light",
+          "daylight"
+        ],
+        "mood": [
+          "celebratory",
+          "vivid",
+          "cultural",
+          "narrative"
+        ],
+        "geometry": [
+          "pattern",
+          "rhythm",
+          "flattened-planes"
+        ],
+        "materials": [
+          "fabric",
+          "paint",
+          "wood",
+          "paper"
+        ],
+        "palette": [
+          "vivid-source-derived",
+          "red-blue-green-gold"
+        ],
+        "realism": [
+          "low-medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No invented ethnic motifs, random embroidery, costume changes, caricature, unrelated symbols, exoticized border, excessive gold, or generic festival decoration.",
+      "variation_knobs": [
+        "color amplification subtle/medium",
+        "pattern density source-led",
+        "flatness medium/high",
+        "hand-painted edge moderate",
+        "type very small"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Folk Narrative Color** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the exact costume, mask, craft, architecture, props, and culturally specific anchors. Decorative richness must come from the visible source.\n\nComposition: Use one strong narrative focal point and flatten secondary space into rhythm or pattern only when it is source-derived.\n\nLighting: Simplify lighting plausibly; let color carry energy without erasing form.\n\nColor: Amplify reds, blues, greens, golds, blacks, or whites only when they genuinely exist in the source.\n\nMaterial and texture: Hand-painted edges, folk-print texture, fabric pattern, painted wood, and source-specific craft surfaces.\n\nTypography: Small contemporary type so the layout does not parody folk lettering.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Folk Narrative Color mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "editorial-surrealism",
+      "name": "Editorial Surrealism",
+      "family": "conceptual-hybrid",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "reflection",
+        "shadow",
+        "doorway",
+        "scale contrast",
+        "repetition",
+        "isolation",
+        "conceptual architecture",
+        "water"
+      ],
+      "reject_if": [
+        "documentary truth must not be altered",
+        "the source is already chaotic",
+        "there is no clear source-grounded concept"
+      ],
+      "mechanism": "Preserve the main subject and all identity anchors. Exactly one source-grounded relationship may be transformed; everything else stays disciplined.",
+      "composition": "Build the composition around one relationship already present—reflection, scale, shadow, repetition, doorway, water, isolation, or spatial tension—and remove secondary competition.",
+      "lighting": "After the transformation, keep lighting internally consistent and physically understandable.",
+      "color_logic": "Use a disciplined source-derived palette so the conceptual change stays readable.",
+      "material_language": "Keep transformed boundaries materially believable; the source surface remains the basis for texture and reflection.",
+      "typography": "Minimal, intellectually quiet typography that hints at the idea without explaining it.",
+      "realism": "medium",
+      "transformation": "high-but-singular",
+      "routing": {
+        "subject": [
+          "reflection",
+          "shadow",
+          "doorway",
+          "architecture",
+          "water",
+          "conceptual"
+        ],
+        "lighting": [
+          "dramatic",
+          "natural",
+          "night"
+        ],
+        "mood": [
+          "conceptual",
+          "mysterious",
+          "intellectual",
+          "poetic"
+        ],
+        "geometry": [
+          "reflection",
+          "repetition",
+          "scale",
+          "spatial-tension"
+        ],
+        "materials": [
+          "glass",
+          "water",
+          "stone"
+        ],
+        "palette": [
+          "disciplined",
+          "source-derived"
+        ],
+        "realism": [
+          "medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No floating-object pile, portal cliché, galaxy, melting face, dream cloud, multiple surreal ideas, impossible light, fantasy creature, or random symbolism.",
+      "variation_knobs": [
+        "one concept only",
+        "surreal intensity subtle/medium",
+        "photo realism medium/high",
+        "negative space medium/high",
+        "title cryptic/minimal"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Editorial Surrealism** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the main subject and all identity anchors. Exactly one source-grounded relationship may be transformed; everything else stays disciplined.\n\nComposition: Build the composition around one relationship already present—reflection, scale, shadow, repetition, doorway, water, isolation, or spatial tension—and remove secondary competition.\n\nLighting: After the transformation, keep lighting internally consistent and physically understandable.\n\nColor: Use a disciplined source-derived palette so the conceptual change stays readable.\n\nMaterial and texture: Keep transformed boundaries materially believable; the source surface remains the basis for texture and reflection.\n\nTypography: Minimal, intellectually quiet typography that hints at the idea without explaining it.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Editorial Surrealism mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "abstract-editorial",
+      "name": "Abstract Editorial",
+      "family": "conceptual-hybrid",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "architecture",
+        "shadow",
+        "reflection",
+        "pattern",
+        "urban",
+        "still life",
+        "strong color fields"
+      ],
+      "reject_if": [
+        "literal identity is mandatory",
+        "documentary context must remain complete",
+        "the source has no strong structural relationship"
+      ],
+      "mechanism": "Keep one or two recognizable identity anchors while allowing secondary information to dissolve into source-derived abstraction.",
+      "composition": "Reconstruct from real geometric/organic masses, directional lines, repetitions, voids, shadows, and color fields from the source.",
+      "lighting": "Translate illumination into value fields and transparent overlays rather than photographic effects.",
+      "color_logic": "Use a simplified source palette; transparent overlays are allowed only when they derive from real source relationships.",
+      "material_language": "Flat color, translucent layers, subtle paper/print texture, and optional restrained photographic fragments.",
+      "typography": "Clean minimal typography used as a compositional element, not a headline.",
+      "realism": "low-medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "architecture",
+          "shadow",
+          "reflection",
+          "pattern",
+          "urban",
+          "still-life"
+        ],
+        "lighting": [
+          "graphic-shadow",
+          "hard-light"
+        ],
+        "mood": [
+          "conceptual",
+          "modern",
+          "intellectual",
+          "graphic"
+        ],
+        "geometry": [
+          "geometric",
+          "repetition",
+          "color-fields",
+          "shadow"
+        ],
+        "materials": [
+          "paper",
+          "print"
+        ],
+        "palette": [
+          "simplified",
+          "source-derived"
+        ],
+        "realism": [
+          "low-medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No random circles/triangles, rainbow palette, meaningless Bauhaus imitation, chaotic collage, decorative gradient, total loss of source, or large slogan.",
+      "variation_knobs": [
+        "identity anchors 1–2",
+        "photo fragment 0–20%",
+        "overlay opacity 15–45%",
+        "palette 3–6",
+        "negative space high"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Abstract Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one or two recognizable identity anchors while allowing secondary information to dissolve into source-derived abstraction.\n\nComposition: Reconstruct from real geometric/organic masses, directional lines, repetitions, voids, shadows, and color fields from the source.\n\nLighting: Translate illumination into value fields and transparent overlays rather than photographic effects.\n\nColor: Use a simplified source palette; transparent overlays are allowed only when they derive from real source relationships.\n\nMaterial and texture: Flat color, translucent layers, subtle paper/print texture, and optional restrained photographic fragments.\n\nTypography: Clean minimal typography used as a compositional element, not a headline.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Abstract Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "minimal-symbolic-poster",
+      "name": "Minimal Symbolic Poster",
+      "family": "conceptual-hybrid",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "single trees",
+        "doorways",
+        "silhouettes",
+        "objects",
+        "towers",
+        "gestures",
+        "minimal architecture"
+      ],
+      "reject_if": [
+        "many equal subjects must remain",
+        "documentary context is essential",
+        "the source has no dominant symbol"
+      ],
+      "mechanism": "Identify and preserve the single most defining source-grounded symbol or silhouette; remove or simplify everything that competes.",
+      "composition": "Use one dominant form, a very large void, deliberate placement, and a simple value hierarchy.",
+      "lighting": "Translate source lighting into a clear value structure; literal photographic complexity is optional.",
+      "color_logic": "Use only 2–5 major colors derived from the source.",
+      "material_language": "Use subtle consistent texture only; material language must not compete with the symbol.",
+      "typography": "Tiny one- or two-word title, positioned far from the focal form.",
+      "realism": "low-medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "single-tree",
+          "doorway",
+          "silhouette",
+          "object",
+          "tower",
+          "gesture",
+          "minimal-architecture"
+        ],
+        "lighting": [
+          "simple",
+          "backlight",
+          "soft-light"
+        ],
+        "mood": [
+          "minimal",
+          "quiet",
+          "isolated",
+          "poetic"
+        ],
+        "geometry": [
+          "single-form",
+          "open-space",
+          "silhouette"
+        ],
+        "materials": [
+          "paper",
+          "flat-color"
+        ],
+        "palette": [
+          "limited",
+          "source-derived"
+        ],
+        "realism": [
+          "low-medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No generic icon set, empty minimalism disconnected from the source, random geometry, motivational quote, giant word, decorative border, or multiple competing symbols.",
+      "variation_knobs": [
+        "symbol scale 0.25–0.55",
+        "palette 2–5",
+        "void very-high",
+        "texture subtle",
+        "title 0–2 words"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Minimal Symbolic Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Identify and preserve the single most defining source-grounded symbol or silhouette; remove or simplify everything that competes.\n\nComposition: Use one dominant form, a very large void, deliberate placement, and a simple value hierarchy.\n\nLighting: Translate source lighting into a clear value structure; literal photographic complexity is optional.\n\nColor: Use only 2–5 major colors derived from the source.\n\nMaterial and texture: Use subtle consistent texture only; material language must not compete with the symbol.\n\nTypography: Tiny one- or two-word title, positioned far from the focal form.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Minimal Symbolic Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "collage-lite-narrative",
+      "name": "Collage-Lite Narrative",
+      "family": "conceptual-hybrid",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "culture",
+        "architecture",
+        "travel",
+        "portrait",
+        "objects",
+        "story-rich scenes"
+      ],
+      "reject_if": [
+        "the user forbids any collage behavior",
+        "minimal single-symbol treatment is better",
+        "the source is already visually overloaded"
+      ],
+      "mechanism": "Keep one principal representation of the subject. Supporting pieces may only be derived from the same source image; never turn one source into a fake multi-photo story.",
+      "composition": "Use one hero image plus only 1–3 source-derived fragments or textures. Never build a contact sheet, moodboard, or multi-photo grid.",
+      "lighting": "Keep the hero's lighting intact and harmonize fragments tonally.",
+      "color_logic": "Use one source-derived color system across all fragments and paper fields.",
+      "material_language": "Use torn paper, translucent overlays, archival paper, print grain, or framing sparingly and only to support the source narrative.",
+      "typography": "Independent-culture-magazine style: small title and optional tiny metadata-like line.",
+      "realism": "medium",
+      "transformation": "medium-high",
+      "routing": {
+        "subject": [
+          "culture",
+          "architecture",
+          "travel",
+          "portrait",
+          "object",
+          "story-rich-scene"
+        ],
+        "lighting": [
+          "any"
+        ],
+        "mood": [
+          "editorial",
+          "narrative",
+          "curated",
+          "art-book"
+        ],
+        "geometry": [
+          "fragment",
+          "layered",
+          "asymmetry"
+        ],
+        "materials": [
+          "paper",
+          "print"
+        ],
+        "palette": [
+          "cohesive",
+          "source-derived"
+        ],
+        "realism": [
+          "medium"
+        ],
+        "transform": [
+          "medium-high"
+        ]
+      },
+      "negative_prompt": "No nine-grid, contact sheet, many photos, stickers, washi tape, postage stamps, random handwriting, scrapbook clutter, or unrelated found imagery.",
+      "variation_knobs": [
+        "support fragments 1–3",
+        "paper texture subtle",
+        "hero area 65–85%",
+        "overlap low/medium",
+        "metadata line optional"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Collage-Lite Narrative** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one principal representation of the subject. Supporting pieces may only be derived from the same source image; never turn one source into a fake multi-photo story.\n\nComposition: Use one hero image plus only 1–3 source-derived fragments or textures. Never build a contact sheet, moodboard, or multi-photo grid.\n\nLighting: Keep the hero's lighting intact and harmonize fragments tonally.\n\nColor: Use one source-derived color system across all fragments and paper fields.\n\nMaterial and texture: Use torn paper, translucent overlays, archival paper, print grain, or framing sparingly and only to support the source narrative.\n\nTypography: Independent-culture-magazine style: small title and optional tiny metadata-like line.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Collage-Lite Narrative mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "swiss-grid-poster",
+      "name": "Swiss Grid Poster",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "architecture",
+        "museums",
+        "urban scenes",
+        "products",
+        "photography",
+        "signage",
+        "geometric scenes"
+      ],
+      "reject_if": [
+        "organic chaos has no usable structure",
+        "a romantic painterly treatment is requested",
+        "there is no meaningful geometry to organize"
+      ],
+      "mechanism": "Preserve the subject and authentic spatial information while allowing bold modular crops. The grid must reveal source structure rather than impose a cliché.",
+      "composition": "Derive columns, baselines, margins, and alignments from actual vertical, horizontal, diagonal, or modular relationships in the source.",
+      "lighting": "Mostly preserve source lighting; design logic comes from geometry rather than dramatic relighting.",
+      "color_logic": "Use restrained source-derived neutrals and at most one or two accents.",
+      "material_language": "Clean print finish with subtle paper grain only.",
+      "typography": "Exceptionally precise small sans-serif, baseline-aligned, with generous tracking and no decorative treatment.",
+      "realism": "high-medium",
+      "transformation": "medium",
+      "routing": {
+        "subject": [
+          "architecture",
+          "museum",
+          "urban",
+          "product",
+          "photography",
+          "signage"
+        ],
+        "lighting": [
+          "any"
+        ],
+        "mood": [
+          "precise",
+          "modern",
+          "rational",
+          "gallery"
+        ],
+        "geometry": [
+          "grid",
+          "vertical-horizontal",
+          "modular",
+          "architectural"
+        ],
+        "materials": [
+          "paper",
+          "print"
+        ],
+        "palette": [
+          "neutral",
+          "limited-accent"
+        ],
+        "realism": [
+          "high-medium"
+        ],
+        "transform": [
+          "medium"
+        ]
+      },
+      "negative_prompt": "No arbitrary red rectangles, historical Swiss-poster copying, giant typography, decorative grid lines, automatic black-red-white palette, or loss of image identity.",
+      "variation_knobs": [
+        "grid 4/6/8 columns",
+        "baseline tight/relaxed",
+        "accent colors 0–2",
+        "image module 45–75%",
+        "margin medium/wide"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Swiss Grid Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the subject and authentic spatial information while allowing bold modular crops. The grid must reveal source structure rather than impose a cliché.\n\nComposition: Derive columns, baselines, margins, and alignments from actual vertical, horizontal, diagonal, or modular relationships in the source.\n\nLighting: Mostly preserve source lighting; design logic comes from geometry rather than dramatic relighting.\n\nColor: Use restrained source-derived neutrals and at most one or two accents.\n\nMaterial and texture: Clean print finish with subtle paper grain only.\n\nTypography: Exceptionally precise small sans-serif, baseline-aligned, with generous tracking and no decorative treatment.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Swiss Grid Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "brutalist-poster",
+      "name": "Brutalist Poster",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "concrete",
+        "industrial scenes",
+        "infrastructure",
+        "architecture",
+        "signage",
+        "strong shadows",
+        "urban scenes"
+      ],
+      "reject_if": [
+        "delicate tea/still-life restraint is better",
+        "soft romantic atmosphere is the goal",
+        "watercolor is requested"
+      ],
+      "mechanism": "Preserve structural identity, hard contours, and meaningful signage. Rawness is a layout quality, not permission to break the subject.",
+      "composition": "Use bold crop, hard edges, raw but deliberate spacing, stark framing, and purposeful visual tension.",
+      "lighting": "Hard contrast or partial desaturation is allowed only when consistent with the source.",
+      "color_logic": "Use a selective source palette; one accent may be intensified while the rest remains subdued.",
+      "material_language": "Photocopy grain, coarse paper, stark rectangular framing, and raw print texture used sparingly.",
+      "typography": "Small utilitarian grotesk, monospace, or condensed type. PosterLoom intentionally avoids giant brutalist typography.",
+      "realism": "medium-high",
+      "transformation": "medium-high",
+      "routing": {
+        "subject": [
+          "concrete",
+          "industrial",
+          "infrastructure",
+          "architecture",
+          "signage",
+          "urban"
+        ],
+        "lighting": [
+          "hard-light",
+          "strong-shadow"
+        ],
+        "mood": [
+          "raw",
+          "stark",
+          "bold",
+          "urban"
+        ],
+        "geometry": [
+          "hard-edge",
+          "rectangular",
+          "asymmetry"
+        ],
+        "materials": [
+          "concrete",
+          "paper",
+          "metal"
+        ],
+        "palette": [
+          "neutral",
+          "single-accent"
+        ],
+        "realism": [
+          "medium-high"
+        ],
+        "transform": [
+          "medium-high"
+        ]
+      },
+      "negative_prompt": "No random glitch, giant typography, meme layout, arbitrary black bars, excessive photocopy dirt, punk collage, neon gradient, or accidental-looking misalignment.",
+      "variation_knobs": [
+        "crop aggressive/moderate",
+        "desaturation low/medium",
+        "accent 0–1",
+        "grain low/medium",
+        "spacing raw/controlled"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Brutalist Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve structural identity, hard contours, and meaningful signage. Rawness is a layout quality, not permission to break the subject.\n\nComposition: Use bold crop, hard edges, raw but deliberate spacing, stark framing, and purposeful visual tension.\n\nLighting: Hard contrast or partial desaturation is allowed only when consistent with the source.\n\nColor: Use a selective source palette; one accent may be intensified while the rest remains subdued.\n\nMaterial and texture: Photocopy grain, coarse paper, stark rectangular framing, and raw print texture used sparingly.\n\nTypography: Small utilitarian grotesk, monospace, or condensed type. PosterLoom intentionally avoids giant brutalist typography.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Brutalist Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "neo-futurist-layout",
+      "name": "Neo-Futurist Layout",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "modern architecture",
+        "transport",
+        "cities",
+        "technology objects",
+        "infrastructure",
+        "night cities"
+      ],
+      "reject_if": [
+        "heritage documentary truth is the main requirement",
+        "tea ritual is central",
+        "antique objects dominate",
+        "soft nature is the goal"
+      ],
+      "mechanism": "Preserve real architecture, vehicle, infrastructure, or object geometry. Future-facing design comes from precision and motion, not invented technology.",
+      "composition": "Use dynamic diagonal/orthogonal tension, precise modular spacing, selective framing, and controlled negative space.",
+      "lighting": "Preserve source illumination. Clarify cool/warm separation but do not invent cyberpunk light.",
+      "color_logic": "Use a source-derived neutral field with one or two clean accents; blue-purple is never a default.",
+      "material_language": "Clean digital-print finish with subtle grain; no holographic gimmicks.",
+      "typography": "Small technical sans with precise tracking and sparse metadata-like secondary type. Never invent technical data.",
+      "realism": "high-medium",
+      "transformation": "medium",
+      "routing": {
+        "subject": [
+          "modern-architecture",
+          "transport",
+          "city",
+          "technology-object",
+          "infrastructure",
+          "night-city"
+        ],
+        "lighting": [
+          "clean-night",
+          "daylight",
+          "architectural-light"
+        ],
+        "mood": [
+          "future-facing",
+          "precise",
+          "dynamic",
+          "urban"
+        ],
+        "geometry": [
+          "diagonal",
+          "modular",
+          "orthogonal",
+          "clean-lines"
+        ],
+        "materials": [
+          "glass",
+          "metal",
+          "concrete"
+        ],
+        "palette": [
+          "neutral-accent",
+          "cool-warm",
+          "source-derived"
+        ],
+        "realism": [
+          "high-medium"
+        ],
+        "transform": [
+          "medium"
+        ]
+      },
+      "negative_prompt": "No cyberpunk city conversion, holograms, HUD overload, fake data, blue-purple gradient cliché, flying vehicles, neon grid, lens flare, or sci-fi armor.",
+      "variation_knobs": [
+        "diagonal energy low/medium",
+        "accent colors 1–2",
+        "technical labels none/sparse",
+        "frame lines low",
+        "photo dominance 70–90%"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Neo-Futurist Layout** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve real architecture, vehicle, infrastructure, or object geometry. Future-facing design comes from precision and motion, not invented technology.\n\nComposition: Use dynamic diagonal/orthogonal tension, precise modular spacing, selective framing, and controlled negative space.\n\nLighting: Preserve source illumination. Clarify cool/warm separation but do not invent cyberpunk light.\n\nColor: Use a source-derived neutral field with one or two clean accents; blue-purple is never a default.\n\nMaterial and texture: Clean digital-print finish with subtle grain; no holographic gimmicks.\n\nTypography: Small technical sans with precise tracking and sparse metadata-like secondary type. Never invent technical data.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Neo-Futurist Layout mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "geometric-color-block",
+      "name": "Geometric Color-Block",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "architecture",
+        "stairs",
+        "facades",
+        "shadows",
+        "abstract urban scenes",
+        "objects",
+        "strong color"
+      ],
+      "reject_if": [
+        "soft organic landscape is the main appeal",
+        "documentary context is essential",
+        "a close face portrait must remain natural"
+      ],
+      "mechanism": "Keep one main recognizable silhouette or structural anchor. Every graphic plane must map back to a real wall, step, roof, shadow, window band, water band, or object facet.",
+      "composition": "Rebuild the composition from 3–7 source-derived planes with clear figure/ground logic.",
+      "lighting": "Convert source light and shadow into hard or gently softened value blocks following real geometry.",
+      "color_logic": "Use 3–7 source-derived colors, optionally amplified but harmonized.",
+      "material_language": "Mostly flat print color with subtle texture.",
+      "typography": "Small geometric sans aligned to a real block edge.",
+      "realism": "low-medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "architecture",
+          "stairs",
+          "facade",
+          "shadow",
+          "urban",
+          "objects"
+        ],
+        "lighting": [
+          "hard-shadow",
+          "graphic-light"
+        ],
+        "mood": [
+          "bold",
+          "modern",
+          "graphic",
+          "clean"
+        ],
+        "geometry": [
+          "planes",
+          "stairs",
+          "rectangles",
+          "shadow-blocks"
+        ],
+        "materials": [
+          "flat-color",
+          "paper"
+        ],
+        "palette": [
+          "limited",
+          "source-derived",
+          "high-contrast"
+        ],
+        "realism": [
+          "low-medium"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No random Memphis shapes, rainbow blocks, unrelated circles, decorative gradient, arbitrary split-screen, giant title, or total loss of source structure.",
+      "variation_knobs": [
+        "blocks 3–7",
+        "color amplification subtle/medium",
+        "edge crispness source-led",
+        "anchor realism 20–50%",
+        "type aligned"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Geometric Color-Block** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one main recognizable silhouette or structural anchor. Every graphic plane must map back to a real wall, step, roof, shadow, window band, water band, or object facet.\n\nComposition: Rebuild the composition from 3–7 source-derived planes with clear figure/ground logic.\n\nLighting: Convert source light and shadow into hard or gently softened value blocks following real geometry.\n\nColor: Use 3–7 source-derived colors, optionally amplified but harmonized.\n\nMaterial and texture: Mostly flat print color with subtle texture.\n\nTypography: Small geometric sans aligned to a real block edge.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Geometric Color-Block mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "elegant-serif-poster",
+      "name": "Elegant Serif Poster",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "architecture",
+        "travel",
+        "portrait",
+        "still life",
+        "quiet night",
+        "culture",
+        "minimal scenes"
+      ],
+      "reject_if": [
+        "heavy painting is explicitly requested",
+        "the source needs major reconstruction",
+        "there is no safe way to create text space"
+      ],
+      "mechanism": "Preserve nearly all meaningful photographic identity and material truth. The primary transformation is spacing and typographic art direction.",
+      "composition": "Use subtle crop, margin logic, a single reading order, and high-quality negative space. Do less when the photograph is already strong.",
+      "lighting": "Apply minimal correction only and preserve the source's natural character.",
+      "color_logic": "Keep the source palette with gentle tonal polish.",
+      "material_language": "Photographic material with subtle fine grain or a clean paper finish.",
+      "typography": "Refined serif at small scale with careful optical spacing; optional tiny sans metadata. Text never becomes the image.",
+      "realism": "very-high",
+      "transformation": "low",
+      "routing": {
+        "subject": [
+          "architecture",
+          "travel",
+          "portrait",
+          "still-life",
+          "quiet-night",
+          "culture",
+          "minimal-scene"
+        ],
+        "lighting": [
+          "natural",
+          "soft-light",
+          "night"
+        ],
+        "mood": [
+          "elegant",
+          "quiet",
+          "refined",
+          "editorial"
+        ],
+        "geometry": [
+          "negative-space",
+          "balanced",
+          "clean"
+        ],
+        "materials": [
+          "photographic",
+          "paper"
+        ],
+        "palette": [
+          "source-derived",
+          "neutral"
+        ],
+        "realism": [
+          "very-high"
+        ],
+        "transform": [
+          "low"
+        ]
+      },
+      "negative_prompt": "No giant fashion headline, fake magazine masthead, decorative script font, gold foil, excessive letter spacing, heavy retouch, artificial blur, or logo imitation.",
+      "variation_knobs": [
+        "serif classic/contemporary",
+        "title 1–4 words",
+        "metadata none/tiny",
+        "margin medium/wide",
+        "photo correction minimal"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Elegant Serif Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve nearly all meaningful photographic identity and material truth. The primary transformation is spacing and typographic art direction.\n\nComposition: Use subtle crop, margin logic, a single reading order, and high-quality negative space. Do less when the photograph is already strong.\n\nLighting: Apply minimal correction only and preserve the source's natural character.\n\nColor: Keep the source palette with gentle tonal polish.\n\nMaterial and texture: Photographic material with subtle fine grain or a clean paper finish.\n\nTypography: Refined serif at small scale with careful optical spacing; optional tiny sans metadata. Text never becomes the image.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Elegant Serif Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+    },
+    {
+      "id": "controlled-hybrid",
+      "name": "Controlled Hybrid",
+      "family": "meta-style",
+      "role": "meta",
+      "status": "gold",
+      "best_for": [
+        "two clear compatible directions",
+        "router near-tie",
+        "subtle requested hybrid"
+      ],
+      "reject_if": [
+        "incompatible pair",
+        "three or more styles",
+        "uncertain primary",
+        "documentary truth risk"
+      ],
+      "mechanism": "Use exactly two compatible visual languages. The primary owns subject identity, composition, lighting, palette, realism, and spatial logic. The secondary controls one declared subsystem only.",
+      "composition": "Primary style controls the whole composition; the secondary may refine one subsystem but may not create a competing composition.",
+      "lighting": "Primary style owns lighting unless the one declared secondary subsystem is atmosphere, and even then only subtly.",
+      "color_logic": "Primary palette remains the common color system.",
+      "material_language": "Primary material behavior remains dominant; secondary texture stays localized.",
+      "typography": "Primary typography remains active unless typography is the declared secondary subsystem.",
+      "realism": "inherited",
+      "transformation": "inherited",
+      "negative_prompt": "No 50/50 mix, no three-style blend, no effect stacking, no random collage, no conflicting light systems, no palette clash, and no subject redesign.",
+      "variation_knobs": [
+        "primary share 75–85%",
+        "secondary share 15–25%",
+        "secondary controls exactly one subsystem",
+        "pair must exist in compatibility.json"
+      ],
+      "prompt_block": "Create a controlled hybrid poster using exactly two compatible PosterLoom styles. The PRIMARY style controls approximately 80% of the image and owns subject treatment, composition, lighting, palette, realism, and spatial logic. The SECONDARY style contributes approximately 20% and is restricted to one declared subsystem such as typography, negative-space behavior, print texture, ink edge treatment, grid alignment, color separation, or atmosphere. Do not blend the two styles uniformly across the whole image. Preserve all identity anchors and keep the source photograph as the factual basis. The result must read immediately as the primary style with one purposeful secondary influence. Never introduce a third style."
+    }
+  ]
+}

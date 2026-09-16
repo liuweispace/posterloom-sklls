@@ -1,0 +1,4 @@
+interface:
+  display_name: "PosterLoom"
+  short_description: "Adapt real photos into source-aware posters"
+  default_prompt: "Use $posterloom to analyze this photo, choose the best fitting poster style, preserve its identity, and create a refined poster with restrained typography."

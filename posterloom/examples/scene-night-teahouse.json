@@ -1,0 +1,52 @@
+{
+  "subject": {
+    "type": "teahouse",
+    "summary": "Traditional wooden tea-house facade at night",
+    "identity_anchors": [
+      "roof tile silhouette",
+      "window grid",
+      "warm interior light",
+      "original perspective"
+    ]
+  },
+  "environment": "dark street edge with limited background clutter",
+  "lighting": [
+    "night",
+    "warm-light",
+    "window-light",
+    "practical-light"
+  ],
+  "mood": [
+    "quiet",
+    "intimate",
+    "cultural",
+    "cinematic"
+  ],
+  "geometry": [
+    "roof-lines",
+    "window-grid",
+    "dark-negative-space"
+  ],
+  "palette": [
+    "amber-charcoal",
+    "muted-green",
+    "source-derived"
+  ],
+  "materials": [
+    "wood",
+    "tile",
+    "glass"
+  ],
+  "text_safe_zones": [
+    "upper-right dark region"
+  ],
+  "realism_value": "high",
+  "transformation_tolerance": "medium",
+  "user_preferences": {
+    "output_ratio": "3:4",
+    "typography": "small",
+    "title": "QUIET LIGHT",
+    "subtitle": "",
+    "hybrid_allowed": true
+  }
+}

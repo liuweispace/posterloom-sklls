@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="PosterLoom mark">
+  <rect width="512" height="512" rx="96" fill="#111111"/>
+  <path d="M128 112h150c72 0 116 39 116 103 0 66-47 108-121 108h-58v77h-87V112zm87 68v77h52c28 0 43-13 43-39 0-25-15-38-43-38h-52z" fill="#F4F0E6"/>
+  <path d="M307 327c34 0 63 14 84 38l-46 48c-10-12-23-19-38-19-22 0-40 18-40 40h-67c0-59 48-107 107-107z" fill="#F4F0E6" opacity=".86"/>
+</svg>

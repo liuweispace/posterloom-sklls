@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "weights": {
+    "subject": 30,
+    "lighting": 14,
+    "mood": 14,
+    "geometry": 12,
+    "materials": 10,
+    "palette": 8,
+    "realism": 7,
+    "transform": 5
+  },
+  "low_confidence_threshold": 36,
+  "hybrid": {
+    "allowed": true,
+    "min_primary_score": 48,
+    "max_score_gap": 4.5,
+    "primary_share": 0.8,
+    "secondary_share": 0.2
+  },
+  "principles": [
+    "Source truth beats style novelty.",
+    "Do not force diversity across a batch.",
+    "Controlled Hybrid never participates in direct ranking.",
+    "Low-confidence cases should prefer a conservative, identity-safe treatment."
+  ]
+}

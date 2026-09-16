@@ -1,0 +1,101 @@
+PosterLoom/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   └── style_request.md
+│   ├── workflows/
+│   │   └── validate.yml
+│   └── pull_request_template.md
+├── posterloom/
+│   ├── agents/
+│   │   └── openai.yaml
+│   ├── assets/
+│   │   └── posterloom-mark.svg
+│   ├── data/
+│   │   ├── compatibility.json
+│   │   ├── routing-rules.json
+│   │   ├── style-index.json
+│   │   └── styles.json
+│   ├── evals/
+│   │   ├── routing-cases.json
+│   │   ├── rubric.md
+│   │   ├── run_evals.py
+│   │   └── visual-benchmark-template.csv
+│   ├── examples/
+│   │   ├── batch-profiles.json
+│   │   ├── scene-night-teahouse.json
+│   │   └── scene-solitary-tree.json
+│   ├── references/
+│   │   ├── anti-slop.md
+│   │   ├── batch-consistency.md
+│   │   ├── composition.md
+│   │   ├── host-integration.md
+│   │   ├── identity-preservation.md
+│   │   ├── originality.md
+│   │   ├── prompt-composer.md
+│   │   ├── scene-analysis.md
+│   │   ├── style-router.md
+│   │   ├── typography.md
+│   │   └── visual-benchmark.md
+│   ├── schemas/
+│   │   ├── route-result.schema.json
+│   │   └── scene-profile.schema.json
+│   ├── scripts/
+│   │   ├── batch_plan.py
+│   │   ├── compose_prompt.py
+│   │   ├── package_outputs.py
+│   │   ├── rank_styles.py
+│   │   ├── validate_prompt.py
+│   │   └── validate_repo.py
+│   ├── styles/
+│   │   ├── 01-cinematic-editorial.md
+│   │   ├── 02-moody-night-editorial.md
+│   │   ├── 03-travel-cover-poster.md
+│   │   ├── 04-luxury-still-life-editorial.md
+│   │   ├── 05-documentary-poster.md
+│   │   ├── 06-transparent-watercolor.md
+│   │   ├── 07-soft-gouache.md
+│   │   ├── 08-expressive-painting.md
+│   │   ├── 09-ink-wash-minimal.md
+│   │   ├── 10-pastel-atmosphere.md
+│   │   ├── 11-pop-screenprint.md
+│   │   ├── 12-riso-poster.md
+│   │   ├── 13-relief-print.md
+│   │   ├── 14-retro-lithograph.md
+│   │   ├── 15-paper-cut-graphic.md
+│   │   ├── 16-neo-ink-poster.md
+│   │   ├── 17-tea-house-minimal.md
+│   │   ├── 18-classical-parchment.md
+│   │   ├── 19-seal-calligraphy-poster.md
+│   │   ├── 20-folk-narrative-color.md
+│   │   ├── 21-editorial-surrealism.md
+│   │   ├── 22-abstract-editorial.md
+│   │   ├── 23-minimal-symbolic-poster.md
+│   │   ├── 24-collage-lite-narrative.md
+│   │   ├── 25-swiss-grid-poster.md
+│   │   ├── 26-brutalist-poster.md
+│   │   ├── 27-neo-futurist-layout.md
+│   │   ├── 28-geometric-color-block.md
+│   │   ├── 29-elegant-serif-poster.md
+│   │   └── 30-controlled-hybrid.md
+│   └── SKILL.md
+├── .editorconfig
+├── .gitignore
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── INSTALL.md
+├── install.ps1
+├── install.py
+├── install.sh
+├── LICENSE
+├── publish-github.ps1
+├── publish-github.sh
+├── PUBLISH_TO_GITHUB.md
+├── README.md
+├── README.zh-CN.md
+├── RELEASE_CHECKLIST.md
+├── RELEASE_REPORT.md
+├── SECURITY.md
+├── TREE.txt
+└── VERSION

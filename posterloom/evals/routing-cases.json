@@ -1,0 +1,1465 @@
+[
+  {
+    "id": "route-cinematic-editorial",
+    "expected_primary": "cinematic-editorial",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Cinematic Editorial",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "natural",
+        "window-light",
+        "twilight"
+      ],
+      "mood": [
+        "cinematic",
+        "quiet",
+        "intimate"
+      ],
+      "geometry": [
+        "layered-depth",
+        "leading-lines",
+        "architectural"
+      ],
+      "palette": [
+        "source-derived",
+        "warm-cool",
+        "muted"
+      ],
+      "materials": [
+        "wood",
+        "stone",
+        "glass"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "high",
+      "transformation_tolerance": "medium",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-moody-night-editorial",
+    "expected_primary": "moody-night-editorial",
+    "profile": {
+      "subject": {
+        "type": "night",
+        "summary": "Synthetic regression case for Moody Night Editorial",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "night",
+        "practical-light",
+        "warm-light"
+      ],
+      "mood": [
+        "moody",
+        "quiet",
+        "intimate"
+      ],
+      "geometry": [
+        "dark-negative-space",
+        "window-grid",
+        "roof-lines"
+      ],
+      "palette": [
+        "amber-charcoal",
+        "warm-cool",
+        "source-derived"
+      ],
+      "materials": [
+        "wood",
+        "glass",
+        "wet-pavement"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "high",
+      "transformation_tolerance": "medium",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-travel-cover-poster",
+    "expected_primary": "travel-cover-poster",
+    "profile": {
+      "subject": {
+        "type": "travel",
+        "summary": "Synthetic regression case for Travel Cover Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "daylight",
+        "overcast",
+        "sunset"
+      ],
+      "mood": [
+        "calm",
+        "open",
+        "cultural"
+      ],
+      "geometry": [
+        "path",
+        "water-edge",
+        "skyline"
+      ],
+      "palette": [
+        "natural",
+        "source-derived",
+        "muted"
+      ],
+      "materials": [
+        "stone",
+        "tile",
+        "water"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "high",
+      "transformation_tolerance": "medium",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-luxury-still-life-editorial",
+    "expected_primary": "luxury-still-life-editorial",
+    "profile": {
+      "subject": {
+        "type": "still-life",
+        "summary": "Synthetic regression case for Luxury Still-Life Editorial",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "soft-directional",
+        "window-light",
+        "warm-light"
+      ],
+      "mood": [
+        "refined",
+        "quiet",
+        "tactile"
+      ],
+      "geometry": [
+        "tabletop",
+        "arrangement",
+        "closeup"
+      ],
+      "palette": [
+        "earth",
+        "neutral",
+        "source-derived"
+      ],
+      "materials": [
+        "ceramic",
+        "tea",
+        "paper"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "very-high",
+      "transformation_tolerance": "low",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-documentary-poster",
+    "expected_primary": "documentary-poster",
+    "profile": {
+      "subject": {
+        "type": "documentary",
+        "summary": "Synthetic regression case for Documentary Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "natural",
+        "available-light",
+        "overcast"
+      ],
+      "mood": [
+        "observational",
+        "human",
+        "quiet"
+      ],
+      "geometry": [
+        "contextual",
+        "street-depth",
+        "environmental"
+      ],
+      "palette": [
+        "natural",
+        "muted",
+        "monochrome"
+      ],
+      "materials": [
+        "skin",
+        "cloth",
+        "weathered-wall"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "very-high",
+      "transformation_tolerance": "low",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-transparent-watercolor",
+    "expected_primary": "transparent-watercolor",
+    "profile": {
+      "subject": {
+        "type": "landscape",
+        "summary": "Synthetic regression case for Transparent Watercolor",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "soft-light",
+        "mist",
+        "overcast"
+      ],
+      "mood": [
+        "poetic",
+        "quiet",
+        "airy"
+      ],
+      "geometry": [
+        "organic",
+        "open-space",
+        "water-edge"
+      ],
+      "palette": [
+        "soft",
+        "source-derived",
+        "limited"
+      ],
+      "materials": [
+        "paper",
+        "water",
+        "foliage"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium",
+      "transformation_tolerance": "medium-high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-soft-gouache",
+    "expected_primary": "soft-gouache",
+    "profile": {
+      "subject": {
+        "type": "travel",
+        "summary": "Synthetic regression case for Soft Gouache",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "soft-light",
+        "daylight",
+        "overcast"
+      ],
+      "mood": [
+        "warm",
+        "crafted",
+        "gentle"
+      ],
+      "geometry": [
+        "broad-planes",
+        "architectural",
+        "organic"
+      ],
+      "palette": [
+        "muted",
+        "source-derived",
+        "limited"
+      ],
+      "materials": [
+        "paper",
+        "paint",
+        "foliage"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium-low",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-expressive-painting",
+    "expected_primary": "expressive-painting",
+    "profile": {
+      "subject": {
+        "type": "performance",
+        "summary": "Synthetic regression case for Expressive Painting",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "dramatic",
+        "rim-light",
+        "stage-light"
+      ],
+      "mood": [
+        "intense",
+        "energetic",
+        "emotional"
+      ],
+      "geometry": [
+        "gesture",
+        "diagonal",
+        "movement"
+      ],
+      "palette": [
+        "source-derived",
+        "expressive"
+      ],
+      "materials": [
+        "paint",
+        "fabric",
+        "skin"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-ink-wash-minimal",
+    "expected_primary": "ink-wash-minimal",
+    "profile": {
+      "subject": {
+        "type": "tree",
+        "summary": "Synthetic regression case for Ink Wash Minimal",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "mist",
+        "soft-light",
+        "overcast"
+      ],
+      "mood": [
+        "quiet",
+        "meditative",
+        "poetic"
+      ],
+      "geometry": [
+        "asymmetry",
+        "silhouette",
+        "open-space"
+      ],
+      "palette": [
+        "monochrome",
+        "muted-accent"
+      ],
+      "materials": [
+        "ink",
+        "paper",
+        "water"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium-low",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-pastel-atmosphere",
+    "expected_primary": "pastel-atmosphere",
+    "profile": {
+      "subject": {
+        "type": "sky",
+        "summary": "Synthetic regression case for Pastel Atmosphere",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "soft-light",
+        "dawn",
+        "dusk"
+      ],
+      "mood": [
+        "poetic",
+        "calm",
+        "gentle"
+      ],
+      "geometry": [
+        "broad-fields",
+        "open-space"
+      ],
+      "palette": [
+        "soft",
+        "powdery",
+        "source-derived"
+      ],
+      "materials": [
+        "pastel",
+        "paper"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium-low",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-pop-screenprint",
+    "expected_primary": "pop-screenprint",
+    "profile": {
+      "subject": {
+        "type": "car",
+        "summary": "Synthetic regression case for Pop Screenprint",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "hard-light",
+        "high-contrast"
+      ],
+      "mood": [
+        "bold",
+        "urban",
+        "energetic"
+      ],
+      "geometry": [
+        "strong-silhouette",
+        "hard-edge",
+        "blocks"
+      ],
+      "palette": [
+        "limited",
+        "high-contrast",
+        "source-derived"
+      ],
+      "materials": [
+        "ink",
+        "paper"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "low-medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-riso-poster",
+    "expected_primary": "riso-poster",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Riso Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "graphic-light",
+        "flat-light",
+        "high-contrast"
+      ],
+      "mood": [
+        "artisanal",
+        "playful",
+        "editorial"
+      ],
+      "geometry": [
+        "blocks",
+        "linework",
+        "modular"
+      ],
+      "palette": [
+        "spot-color",
+        "limited",
+        "source-derived"
+      ],
+      "materials": [
+        "ink",
+        "paper"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "low-medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-relief-print",
+    "expected_primary": "relief-print",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Relief Print",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "hard-shadow",
+        "high-contrast"
+      ],
+      "mood": [
+        "powerful",
+        "graphic",
+        "raw"
+      ],
+      "geometry": [
+        "strong-contour",
+        "structural",
+        "silhouette"
+      ],
+      "palette": [
+        "monochrome",
+        "single-accent"
+      ],
+      "materials": [
+        "ink",
+        "paper",
+        "stone"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "low-medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-retro-lithograph",
+    "expected_primary": "retro-lithograph",
+    "profile": {
+      "subject": {
+        "type": "travel",
+        "summary": "Synthetic regression case for Retro Lithograph",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "daylight",
+        "sunset",
+        "soft-light"
+      ],
+      "mood": [
+        "nostalgic",
+        "collectible",
+        "cultured"
+      ],
+      "geometry": [
+        "architectural",
+        "landmark",
+        "layered-depth"
+      ],
+      "palette": [
+        "limited",
+        "desaturated",
+        "source-derived"
+      ],
+      "materials": [
+        "paper",
+        "ink",
+        "stone"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium-low",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-paper-cut-graphic",
+    "expected_primary": "paper-cut-graphic",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Paper-Cut Graphic",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "clear-light",
+        "flat-light"
+      ],
+      "mood": [
+        "crafted",
+        "graphic",
+        "calm"
+      ],
+      "geometry": [
+        "layered",
+        "silhouette",
+        "hard-edge"
+      ],
+      "palette": [
+        "matte",
+        "limited",
+        "source-derived"
+      ],
+      "materials": [
+        "paper"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "low",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-neo-ink-poster",
+    "expected_primary": "neo-ink-poster",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Neo Ink Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "soft-light",
+        "mist",
+        "warm-light"
+      ],
+      "mood": [
+        "cultural",
+        "quiet",
+        "poetic"
+      ],
+      "geometry": [
+        "asymmetry",
+        "roof-lines",
+        "water-edge"
+      ],
+      "palette": [
+        "ink-neutral",
+        "muted-accent"
+      ],
+      "materials": [
+        "ink",
+        "paper",
+        "wood"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium",
+      "transformation_tolerance": "medium-high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-tea-house-minimal",
+    "expected_primary": "tea-house-minimal",
+    "profile": {
+      "subject": {
+        "type": "tea",
+        "summary": "Synthetic regression case for Tea-House Minimal",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "warm-light",
+        "window-light",
+        "practical-light"
+      ],
+      "mood": [
+        "quiet",
+        "intimate",
+        "cultural"
+      ],
+      "geometry": [
+        "window-grid",
+        "roof-lines",
+        "tabletop"
+      ],
+      "palette": [
+        "tea-brown",
+        "amber-charcoal",
+        "muted-green"
+      ],
+      "materials": [
+        "wood",
+        "ceramic",
+        "tea"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "high",
+      "transformation_tolerance": "low",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-classical-parchment",
+    "expected_primary": "classical-parchment",
+    "profile": {
+      "subject": {
+        "type": "heritage-object",
+        "summary": "Synthetic regression case for Classical Parchment",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "soft-even",
+        "daylight"
+      ],
+      "mood": [
+        "scholarly",
+        "quiet",
+        "archival"
+      ],
+      "geometry": [
+        "plate-layout",
+        "object-centered",
+        "margin-rich"
+      ],
+      "palette": [
+        "warm-neutral",
+        "ink",
+        "muted"
+      ],
+      "materials": [
+        "paper",
+        "ink",
+        "wood"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium-high",
+      "transformation_tolerance": "medium",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-seal-calligraphy-poster",
+    "expected_primary": "seal-calligraphy-poster",
+    "profile": {
+      "subject": {
+        "type": "calligraphy-source",
+        "summary": "Synthetic regression case for Seal & Calligraphy Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "soft-light",
+        "warm-light"
+      ],
+      "mood": [
+        "cultural",
+        "disciplined",
+        "quiet"
+      ],
+      "geometry": [
+        "vertical",
+        "asymmetry",
+        "negative-space"
+      ],
+      "palette": [
+        "ink-black",
+        "warm-paper",
+        "mineral-accent"
+      ],
+      "materials": [
+        "ink",
+        "paper",
+        "wood"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium",
+      "transformation_tolerance": "medium-high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-folk-narrative-color",
+    "expected_primary": "folk-narrative-color",
+    "profile": {
+      "subject": {
+        "type": "festival",
+        "summary": "Synthetic regression case for Folk Narrative Color",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "festival-light",
+        "daylight"
+      ],
+      "mood": [
+        "celebratory",
+        "vivid",
+        "cultural"
+      ],
+      "geometry": [
+        "pattern",
+        "rhythm",
+        "flattened-planes"
+      ],
+      "palette": [
+        "vivid-source-derived",
+        "red-blue-green-gold"
+      ],
+      "materials": [
+        "fabric",
+        "paint",
+        "wood"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "low-medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-editorial-surrealism",
+    "expected_primary": "editorial-surrealism",
+    "profile": {
+      "subject": {
+        "type": "reflection",
+        "summary": "Synthetic regression case for Editorial Surrealism",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "dramatic",
+        "natural",
+        "night"
+      ],
+      "mood": [
+        "conceptual",
+        "mysterious",
+        "intellectual"
+      ],
+      "geometry": [
+        "reflection",
+        "repetition",
+        "scale"
+      ],
+      "palette": [
+        "disciplined",
+        "source-derived"
+      ],
+      "materials": [
+        "glass",
+        "water",
+        "stone"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-abstract-editorial",
+    "expected_primary": "abstract-editorial",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Abstract Editorial",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "graphic-shadow",
+        "hard-light"
+      ],
+      "mood": [
+        "conceptual",
+        "modern",
+        "intellectual"
+      ],
+      "geometry": [
+        "geometric",
+        "repetition",
+        "color-fields"
+      ],
+      "palette": [
+        "simplified",
+        "source-derived"
+      ],
+      "materials": [
+        "paper",
+        "print"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "low-medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-minimal-symbolic-poster",
+    "expected_primary": "minimal-symbolic-poster",
+    "profile": {
+      "subject": {
+        "type": "single-tree",
+        "summary": "Synthetic regression case for Minimal Symbolic Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "simple",
+        "backlight",
+        "soft-light"
+      ],
+      "mood": [
+        "minimal",
+        "quiet",
+        "isolated"
+      ],
+      "geometry": [
+        "single-form",
+        "open-space",
+        "silhouette"
+      ],
+      "palette": [
+        "limited",
+        "source-derived"
+      ],
+      "materials": [
+        "paper",
+        "flat-color"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "low-medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-collage-lite-narrative",
+    "expected_primary": "collage-lite-narrative",
+    "profile": {
+      "subject": {
+        "type": "culture",
+        "summary": "Synthetic regression case for Collage-Lite Narrative",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "any"
+      ],
+      "mood": [
+        "editorial",
+        "narrative",
+        "curated"
+      ],
+      "geometry": [
+        "fragment",
+        "layered",
+        "asymmetry"
+      ],
+      "palette": [
+        "cohesive",
+        "source-derived"
+      ],
+      "materials": [
+        "paper",
+        "print"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium",
+      "transformation_tolerance": "medium-high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-swiss-grid-poster",
+    "expected_primary": "swiss-grid-poster",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Swiss Grid Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "any"
+      ],
+      "mood": [
+        "precise",
+        "modern",
+        "rational"
+      ],
+      "geometry": [
+        "grid",
+        "vertical-horizontal",
+        "modular"
+      ],
+      "palette": [
+        "neutral",
+        "limited-accent"
+      ],
+      "materials": [
+        "paper",
+        "print"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "high-medium",
+      "transformation_tolerance": "medium",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-brutalist-poster",
+    "expected_primary": "brutalist-poster",
+    "profile": {
+      "subject": {
+        "type": "concrete",
+        "summary": "Synthetic regression case for Brutalist Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "hard-light",
+        "strong-shadow"
+      ],
+      "mood": [
+        "raw",
+        "stark",
+        "bold"
+      ],
+      "geometry": [
+        "hard-edge",
+        "rectangular",
+        "asymmetry"
+      ],
+      "palette": [
+        "neutral",
+        "single-accent"
+      ],
+      "materials": [
+        "concrete",
+        "paper",
+        "metal"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "medium-high",
+      "transformation_tolerance": "medium-high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-neo-futurist-layout",
+    "expected_primary": "neo-futurist-layout",
+    "profile": {
+      "subject": {
+        "type": "modern-architecture",
+        "summary": "Synthetic regression case for Neo-Futurist Layout",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "clean-night",
+        "daylight",
+        "architectural-light"
+      ],
+      "mood": [
+        "future-facing",
+        "precise",
+        "dynamic"
+      ],
+      "geometry": [
+        "diagonal",
+        "modular",
+        "orthogonal"
+      ],
+      "palette": [
+        "neutral-accent",
+        "cool-warm",
+        "source-derived"
+      ],
+      "materials": [
+        "glass",
+        "metal",
+        "concrete"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "high-medium",
+      "transformation_tolerance": "medium",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-geometric-color-block",
+    "expected_primary": "geometric-color-block",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Geometric Color-Block",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "hard-shadow",
+        "graphic-light"
+      ],
+      "mood": [
+        "bold",
+        "modern",
+        "graphic"
+      ],
+      "geometry": [
+        "planes",
+        "stairs",
+        "rectangles"
+      ],
+      "palette": [
+        "limited",
+        "source-derived",
+        "high-contrast"
+      ],
+      "materials": [
+        "flat-color",
+        "paper"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "low-medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-elegant-serif-poster",
+    "expected_primary": "elegant-serif-poster",
+    "profile": {
+      "subject": {
+        "type": "architecture",
+        "summary": "Synthetic regression case for Elegant Serif Poster",
+        "identity_anchors": [
+          "primary silhouette",
+          "source perspective"
+        ]
+      },
+      "environment": "synthetic routing regression profile",
+      "lighting": [
+        "natural",
+        "soft-light",
+        "night"
+      ],
+      "mood": [
+        "elegant",
+        "quiet",
+        "refined"
+      ],
+      "geometry": [
+        "negative-space",
+        "balanced",
+        "clean"
+      ],
+      "palette": [
+        "source-derived",
+        "neutral"
+      ],
+      "materials": [
+        "photographic",
+        "paper"
+      ],
+      "text_safe_zones": [
+        "quiet margin"
+      ],
+      "realism_value": "very-high",
+      "transformation_tolerance": "low",
+      "user_preferences": {
+        "output_ratio": "3:4",
+        "typography": "small",
+        "hybrid_allowed": false
+      }
+    }
+  },
+  {
+    "id": "route-night-repeat-allowed",
+    "expected_primary": "moody-night-editorial",
+    "profile": {
+      "subject": {
+        "type": "night",
+        "summary": "warm-lit wooden facade at night",
+        "identity_anchors": [
+          "window grid",
+          "real lantern",
+          "roof line"
+        ]
+      },
+      "environment": "dark old-town street",
+      "lighting": [
+        "night",
+        "practical-light",
+        "warm-light",
+        "lantern-light"
+      ],
+      "mood": [
+        "moody",
+        "quiet",
+        "cinematic"
+      ],
+      "geometry": [
+        "dark-negative-space",
+        "window-grid",
+        "roof-lines"
+      ],
+      "palette": [
+        "amber-charcoal",
+        "source-derived"
+      ],
+      "materials": [
+        "wood",
+        "tile",
+        "glass"
+      ],
+      "text_safe_zones": [
+        "upper dark region"
+      ],
+      "realism_value": "high",
+      "transformation_tolerance": "medium",
+      "user_preferences": {
+        "hybrid_allowed": false,
+        "typography": "small"
+      }
+    }
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "subject": {
+      "type": "teahouse",
+      "summary": "Traditional wooden tea-house facade at night",
+      "identity_anchors": [
+        "roof tile silhouette",
+        "window grid",
+        "warm interior light",
+        "original perspective"
+      ]
+    },
+    "environment": "dark street edge with limited background clutter",
+    "lighting": [
+      "night",
+      "warm-light",
+      "window-light",
+      "practical-light"
+    ],
+    "mood": [
+      "quiet",
+      "intimate",
+      "cultural",
+      "cinematic"
+    ],
+    "geometry": [
+      "roof-lines",
+      "window-grid",
+      "dark-negative-space"
+    ],
+    "palette": [
+      "amber-charcoal",
+      "muted-green",
+      "source-derived"
+    ],
+    "materials": [
+      "wood",
+      "tile",
+      "glass"
+    ],
+    "text_safe_zones": [
+      "upper-right dark region"
+    ],
+    "realism_value": "high",
+    "transformation_tolerance": "medium",
+    "user_preferences": {
+      "output_ratio": "3:4",
+      "typography": "small",
+      "title": "QUIET LIGHT",
+      "subtitle": "",
+      "hybrid_allowed": true
+    }
+  },
+  {
+    "subject": {
+      "type": "single-tree",
+      "summary": "A solitary tree against a large quiet sky",
+      "identity_anchors": [
+        "tree silhouette",
+        "trunk position",
+        "branch spread",
+        "horizon relationship"
+      ]
+    },
+    "environment": "open natural scene with large sky",
+    "lighting": [
+      "soft-light",
+      "overcast"
+    ],
+    "mood": [
+      "quiet",
+      "minimal",
+      "poetic",
+      "isolated"
+    ],
+    "geometry": [
+      "single-form",
+      "open-space",
+      "silhouette"
+    ],
+    "palette": [
+      "limited",
+      "source-derived"
+    ],
+    "materials": [
+      "foliage",
+      "bark"
+    ],
+    "text_safe_zones": [
+      "upper-left sky"
+    ],
+    "realism_value": "medium",
+    "transformation_tolerance": "high",
+    "user_preferences": {
+      "output_ratio": "3:4",
+      "typography": "small",
+      "hybrid_allowed": true
+    }
+  }
+]

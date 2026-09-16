@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PosterLoom Route Result",
+  "type": "object",
+  "required": [
+    "primary",
+    "ranking",
+    "confidence"
+  ],
+  "properties": {
+    "primary": {
+      "type": "string"
+    },
+    "fallback": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ranking": {
+      "type": "array"
+    },
+    "confidence": {
+      "type": "string"
+    },
+    "hybrid": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}

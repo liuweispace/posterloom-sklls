@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PosterLoom Scene Profile",
+  "type": "object",
+  "required": [
+    "subject",
+    "environment",
+    "lighting",
+    "mood",
+    "geometry",
+    "palette",
+    "materials",
+    "text_safe_zones",
+    "realism_value",
+    "transformation_tolerance"
+  ],
+  "properties": {
+    "subject": {
+      "type": "object",
+      "required": [
+        "type",
+        "summary",
+        "identity_anchors"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "identity_anchors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "environment": {
+      "type": "string"
+    },
+    "lighting": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mood": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "geometry": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "palette": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "text_safe_zones": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "realism_value": {
+      "type": "string"
+    },
+    "transformation_tolerance": {
+      "type": "string"
+    },
+    "user_preferences": {
+      "type": "object"
+    }
+  }
+}

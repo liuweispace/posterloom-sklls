@@ -1,0 +1,461 @@
+{
+  "project": "PosterLoom",
+  "subtitle": "Adaptive Photo-to-Poster Skill",
+  "version": "1.0.0",
+  "default_readme_language": "zh-CN",
+  "english_readme": "README.en.md",
+  "repository_file_count": 89,
+  "direct_styles": 29,
+  "meta_styles": 1,
+  "style_contracts": 30,
+  "hybrid_pairs": 74,
+  "routing_regression_cases": 30,
+  "engineering_validation": "PASS",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "size": 216,
+      "sha256": "269196725505d22cdd2e3194dc1f969138a3b19419cb33936d2bfb0588fd24f1"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "size": 270,
+      "sha256": "32e46dd0dee77b1bf9483cf7f702ade5ba69d92f9fc82a4db4278c0e759ad797"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/style_request.md",
+      "size": 279,
+      "sha256": "cde71b49ae8bccb8b03a14e8bdeb1995798eefa76fec91de7bcb05e9486089c7"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "size": 281,
+      "sha256": "9b4f738d928f1ebeed0fe4512bc621042671c77b99555f91adc87d44c40ec41b"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "size": 684,
+      "sha256": "6e8df0461838a35a33410c171ef69ccbd9189716d4395c90eacf1c911c1d0027"
+    },
+    {
+      "path": ".gitignore",
+      "size": 76,
+      "sha256": "f3822f91faabe4f7524d8b82827b6dba614bbbecdd50f43cf089f76d88d779a0"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size": 522,
+      "sha256": "2141f69de9a3f9d29a57f5417c73105153cd80d81a571ec0475fbb61ed4579e5"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "size": 216,
+      "sha256": "6a252768720b2e2b59420ad38f1472a8c1bd1e08d13a446f2ad1053a842fcdb0"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "size": 558,
+      "sha256": "354b48a4e55abdaa7546c6b42252c93ce411180a167d568e5dd2a9857a442e8c"
+    },
+    {
+      "path": "INSTALL.md",
+      "size": 715,
+      "sha256": "2177b6dd85285b8e70ea63b28226e6eed0ce596006c75a9e8d56ce59e9c563ff"
+    },
+    {
+      "path": "LICENSE",
+      "size": 1080,
+      "sha256": "eacd9378a73186689fde004fb050fe1474a87389438ddc409c0ae7c11afacd2c"
+    },
+    {
+      "path": "PUBLISH_TO_GITHUB.md",
+      "size": 852,
+      "sha256": "152f9bdc3d6b85bc65b2e752c1c9cf719d023068d1eb75b86396abf4a21813ee"
+    },
+    {
+      "path": "README.en.md",
+      "size": 5637,
+      "sha256": "81870edc98f63bac9359c9535e526157bc2c67f42cfb127a0f8f6fa690ba470a"
+    },
+    {
+      "path": "README.md",
+      "size": 9088,
+      "sha256": "4c76756aeb3906fe931fb76e67ce844e3349704c101be3344cf46f6ebe1718d1"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "size": 9088,
+      "sha256": "4c76756aeb3906fe931fb76e67ce844e3349704c101be3344cf46f6ebe1718d1"
+    },
+    {
+      "path": "RELEASE_CHECKLIST.md",
+      "size": 724,
+      "sha256": "b5dd3fa7e5977280bb6a7a1b4148921e5b27e7f270d3c66061764ed2473a6e87"
+    },
+    {
+      "path": "RELEASE_REPORT.md",
+      "size": 1882,
+      "sha256": "dc36f3cad28761102799e7c954817b924e59797185cc5ec19eea3889b4650bfe"
+    },
+    {
+      "path": "SECURITY.md",
+      "size": 300,
+      "sha256": "629869eb1d4e3c9c5779830df3610fb334b9dd079c21e38a8118112130fc8ba3"
+    },
+    {
+      "path": "TREE.txt",
+      "size": 3699,
+      "sha256": "47aa0dd5846a85733193cd4e8fe1eb54673a1ad9509f115f4fde17baf0781481"
+    },
+    {
+      "path": "VERSION",
+      "size": 6,
+      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03"
+    },
+    {
+      "path": "install.ps1",
+      "size": 270,
+      "sha256": "384911e358d3fd4f97fcac0bdcb4eba40305a9f3d7e319284c107a8fd8539207"
+    },
+    {
+      "path": "install.py",
+      "size": 1712,
+      "sha256": "70e096a1ef5d088db8acc5ee28270f0aa00339b7cbe4d82480a9dca5f22ae790"
+    },
+    {
+      "path": "install.sh",
+      "size": 110,
+      "sha256": "cca1e4dea36d2572502ca836839aebd8cdb654c192bd7a55d724f4c8f1db7eec"
+    },
+    {
+      "path": "posterloom/SKILL.md",
+      "size": 7456,
+      "sha256": "ade203614c1aea410dc67200b66aa30c65a7fd9a06b11abc25953fc09a446e51"
+    },
+    {
+      "path": "posterloom/agents/openai.yaml",
+      "size": 283,
+      "sha256": "f086705ffd5aba6aeecb0bb513d7295e435a6e6ce95b805a85f9fd340dbdb2a7"
+    },
+    {
+      "path": "posterloom/assets/posterloom-mark.svg",
+      "size": 454,
+      "sha256": "d4e3faac420e16e230738237b1895a0462c5845551e3dad41c41028c31a714d6"
+    },
+    {
+      "path": "posterloom/data/compatibility.json",
+      "size": 10532,
+      "sha256": "7734686d6f2a302816a80eb63717e17eae70ed964b4273448b4482a292a25ff4"
+    },
+    {
+      "path": "posterloom/data/routing-rules.json",
+      "size": 633,
+      "sha256": "36911e4a314a1fa9fcfddb334be2b0c5988c5228b163e7ee64b343fdab0730b0"
+    },
+    {
+      "path": "posterloom/data/style-index.json",
+      "size": 6532,
+      "sha256": "6dc2c155ca6d6b6813f722ad6ee5377b9ebeaeeaf01b7bb0c45d5d88ca4f3e35"
+    },
+    {
+      "path": "posterloom/data/styles.json",
+      "size": 117237,
+      "sha256": "1a888294f3daec32209df0b51d470093ad851d252e7bd9e55f9225587f30a95a"
+    },
+    {
+      "path": "posterloom/evals/routing-cases.json",
+      "size": 32770,
+      "sha256": "b27c2d390c9f4c326a3ee593437f351e59da0759833130d79b2fe79772efe012"
+    },
+    {
+      "path": "posterloom/evals/rubric.md",
+      "size": 665,
+      "sha256": "9c7347ecaa0ff1dd63ec80805304d697560e983a7c710694bad2af4e4af476e6"
+    },
+    {
+      "path": "posterloom/evals/run_evals.py",
+      "size": 816,
+      "sha256": "6cdcf874c89cdd7213e8ddb3ef315c2b09d576d42d459bd2e2f81a3b12495907"
+    },
+    {
+      "path": "posterloom/evals/visual-benchmark-template.csv",
+      "size": 154,
+      "sha256": "d6324e0d874dd78649da8e8ce8430a3d23a34c6e74a0e6041c9b61b687987672"
+    },
+    {
+      "path": "posterloom/examples/batch-profiles.json",
+      "size": 2030,
+      "sha256": "6fd0191d0a0e6e656c593bebbd2c995b796b309774ac6fb87b89ec7339cc84c8"
+    },
+    {
+      "path": "posterloom/examples/scene-night-teahouse.json",
+      "size": 999,
+      "sha256": "78e946d42a7006075f829f041a0c8835e285c3db05a02f76e93aab09f4aeb1a0"
+    },
+    {
+      "path": "posterloom/examples/scene-solitary-tree.json",
+      "size": 830,
+      "sha256": "3938cdfd8af222c358f6e58ad6565463df0ec9b7c4e7ac0a625c975e2562e815"
+    },
+    {
+      "path": "posterloom/references/anti-slop.md",
+      "size": 1115,
+      "sha256": "40e93d488ab90b9c997c59b989482464b805164cb75a5a09bdec52ff2de1563d"
+    },
+    {
+      "path": "posterloom/references/batch-consistency.md",
+      "size": 683,
+      "sha256": "2e43a3c4a144cd41a8e424d8998ffcb727969e323a2538ad4e5b8108ae6b79f8"
+    },
+    {
+      "path": "posterloom/references/composition.md",
+      "size": 1096,
+      "sha256": "856dde136a967367c178ae111395c5710728aa7dec32664a798c1b0099053a81"
+    },
+    {
+      "path": "posterloom/references/host-integration.md",
+      "size": 851,
+      "sha256": "09ca01278b573b04a37aced0f27f4addcc5fc4508efd03054a1082b5e59272a4"
+    },
+    {
+      "path": "posterloom/references/identity-preservation.md",
+      "size": 1073,
+      "sha256": "0f04f081dbc25fa857e57bd265a61f3b4fb42e8c874488b2c5f66376eaf2a04e"
+    },
+    {
+      "path": "posterloom/references/originality.md",
+      "size": 908,
+      "sha256": "c18321edc09a72a54195dd98c4db374ab1dff988d4f2d1ed8eed6ac3cb2832b3"
+    },
+    {
+      "path": "posterloom/references/prompt-composer.md",
+      "size": 772,
+      "sha256": "ec626635e9348ef9e732207ca56bf40187c605c7a57c7da9236cb6e2e9564111"
+    },
+    {
+      "path": "posterloom/references/scene-analysis.md",
+      "size": 2717,
+      "sha256": "8136f6eac33d0d1cd46391d04e812673697b112dd7fffd7fad937c7546c425f8"
+    },
+    {
+      "path": "posterloom/references/style-router.md",
+      "size": 1421,
+      "sha256": "2bf43fdcffd60d6ae213d044577915a29bb12a9f7841a21fb67a71506e378cd8"
+    },
+    {
+      "path": "posterloom/references/typography.md",
+      "size": 926,
+      "sha256": "9610ed852cf31aab9cfd5488c5b0461655843f0b0686cb527665b94dc5fd746d"
+    },
+    {
+      "path": "posterloom/references/visual-benchmark.md",
+      "size": 665,
+      "sha256": "9c7347ecaa0ff1dd63ec80805304d697560e983a7c710694bad2af4e4af476e6"
+    },
+    {
+      "path": "posterloom/schemas/route-result.schema.json",
+      "size": 517,
+      "sha256": "ad5a16beec7ae05c429d01f461ed6c5eec8a1b600c70b5f81d99866d63bcc5c2"
+    },
+    {
+      "path": "posterloom/schemas/scene-profile.schema.json",
+      "size": 1604,
+      "sha256": "39aaa53a51c4c3782514637dbf0615e045c1871048b7eb5a90d718f4d959e200"
+    },
+    {
+      "path": "posterloom/scripts/__pycache__/rank_styles.cpython-313.pyc",
+      "size": 9211,
+      "sha256": "f37eac96b1121490551e1ab67193132d5801ef3ee29bccac2282ac0921b79876"
+    },
+    {
+      "path": "posterloom/scripts/batch_plan.py",
+      "size": 1310,
+      "sha256": "0888d710e7da5632230f24028158132026e76fa384a592aa067168ce71edc575"
+    },
+    {
+      "path": "posterloom/scripts/compose_prompt.py",
+      "size": 4764,
+      "sha256": "666349415d9e9480a8d31ebc2fc0248a80330ccd8eb341ee4cf17d9bacbd2ba9"
+    },
+    {
+      "path": "posterloom/scripts/package_outputs.py",
+      "size": 662,
+      "sha256": "51005f408125077339c9ce194f1a50ccb2ac8e647a7fedb3dffb0e62a8b3eaef"
+    },
+    {
+      "path": "posterloom/scripts/rank_styles.py",
+      "size": 5680,
+      "sha256": "db37df188e7c1d537fffa355d0b454935504c50d2fab2bc5a9f55b8d04c24275"
+    },
+    {
+      "path": "posterloom/scripts/validate_prompt.py",
+      "size": 768,
+      "sha256": "1f6e02b959ad595da003bfcf22e5b035b4d71a08f767fe8783badec53f246c7b"
+    },
+    {
+      "path": "posterloom/scripts/validate_repo.py",
+      "size": 3898,
+      "sha256": "45ab6eaf1e31c1175b53db785201f57430cd7bd564fbe04484256e31c1425768"
+    },
+    {
+      "path": "posterloom/styles/01-cinematic-editorial.md",
+      "size": 6026,
+      "sha256": "586ad8733c04e5be22f4144005189eead382b4a07d201c19195d8917dc0de94e"
+    },
+    {
+      "path": "posterloom/styles/02-moody-night-editorial.md",
+      "size": 5707,
+      "sha256": "27c77881cacb211f18ea026b8e251a7602aa2f3673e58feb9e59d265908ba699"
+    },
+    {
+      "path": "posterloom/styles/03-travel-cover-poster.md",
+      "size": 5568,
+      "sha256": "c4a6419cdc6cade4815c753b64bb9d56b731328b2400b234a72a3455533312ce"
+    },
+    {
+      "path": "posterloom/styles/04-luxury-still-life-editorial.md",
+      "size": 5520,
+      "sha256": "529ae49277cb82b7655a2d86039763c3ee95c26112fef97e519c2b857a761a4b"
+    },
+    {
+      "path": "posterloom/styles/05-documentary-poster.md",
+      "size": 5373,
+      "sha256": "e5e51ef6cc308cff1977af419433c30c2b3a712575307253882c6ce318d2580e"
+    },
+    {
+      "path": "posterloom/styles/06-transparent-watercolor.md",
+      "size": 5416,
+      "sha256": "1216349d56fdd4bb3e0bde2e0de134f6b942d32198981b0eb662d6c33b4dfbff"
+    },
+    {
+      "path": "posterloom/styles/07-soft-gouache.md",
+      "size": 5182,
+      "sha256": "36cc8f70fc36661ab09163a05cc679c9a6a56927353b58e4d1cbd19f5c7456a9"
+    },
+    {
+      "path": "posterloom/styles/08-expressive-painting.md",
+      "size": 5386,
+      "sha256": "13d93d9d4858b7794519918bf1c9b3535ad4e71f5e2d8e7d974c539649359eeb"
+    },
+    {
+      "path": "posterloom/styles/09-ink-wash-minimal.md",
+      "size": 5162,
+      "sha256": "5631980590b8252e20169c13cc159e7652b8b91e2f1830dbc886c8e6108ef285"
+    },
+    {
+      "path": "posterloom/styles/10-pastel-atmosphere.md",
+      "size": 5095,
+      "sha256": "1449d57890c6546807befb3d1c3dae83d372606ef50db8b9f096f06068a8d01f"
+    },
+    {
+      "path": "posterloom/styles/11-pop-screenprint.md",
+      "size": 5250,
+      "sha256": "29d6f244474d17f7cc1f6019bead696c0cfb54da3aaf94f0266eceb080c2d70c"
+    },
+    {
+      "path": "posterloom/styles/12-riso-poster.md",
+      "size": 4981,
+      "sha256": "2acec16bb883be842f4c76b9433532bae2eea0486b11dcd2c2953036e4116656"
+    },
+    {
+      "path": "posterloom/styles/13-relief-print.md",
+      "size": 5121,
+      "sha256": "27e700a904f1edae56619a3c017fa74768f4af8317d03146f34fba2b64152a49"
+    },
+    {
+      "path": "posterloom/styles/14-retro-lithograph.md",
+      "size": 5193,
+      "sha256": "c66142d6eec682fab42d70775a1c7c39b140ce630997b40fa6fae38c0e6d0ec7"
+    },
+    {
+      "path": "posterloom/styles/15-paper-cut-graphic.md",
+      "size": 5022,
+      "sha256": "303803f7360f182e12d2ce9e889a63f795655db7701fabde543790fc4fad30be"
+    },
+    {
+      "path": "posterloom/styles/16-neo-ink-poster.md",
+      "size": 5241,
+      "sha256": "7e9199a60ed4b29529fe46ae4dd39283c7c47299852a2c1e22ef263b7c20cbc1"
+    },
+    {
+      "path": "posterloom/styles/17-tea-house-minimal.md",
+      "size": 5254,
+      "sha256": "d4bcbef16f72698e67d0c478c9e71e195c433b1290070bb17c6bfec6aa22f571"
+    },
+    {
+      "path": "posterloom/styles/18-classical-parchment.md",
+      "size": 5034,
+      "sha256": "d24bdb67d8e975caf6a2fd6664c5c94aa450e2187399d49648cc389fd0cf9ac0"
+    },
+    {
+      "path": "posterloom/styles/19-seal-calligraphy-poster.md",
+      "size": 5287,
+      "sha256": "15b329cb81c39cc79d2e46c048bbdf0154a1886abb05ef96ca37d01c37ae6ba8"
+    },
+    {
+      "path": "posterloom/styles/20-folk-narrative-color.md",
+      "size": 5244,
+      "sha256": "97cd2f440218aee02e92006043e91a6a5fbb78f664f2e38c2c1aaabe8aa83759"
+    },
+    {
+      "path": "posterloom/styles/21-editorial-surrealism.md",
+      "size": 5458,
+      "sha256": "5faf04d17072a7c2a0bae3359fb097abbda3dc516ba53260b5c2826a90835306"
+    },
+    {
+      "path": "posterloom/styles/22-abstract-editorial.md",
+      "size": 5285,
+      "sha256": "98f15cabb72a9fd04002951e3dc734cc3d1bd8c751cb7d0374ae8f7d2cb1fbff"
+    },
+    {
+      "path": "posterloom/styles/23-minimal-symbolic-poster.md",
+      "size": 5036,
+      "sha256": "b0580d52f54c76574013a2cc7ea3294b6eec4685b956ce7f9d628476295b7bd2"
+    },
+    {
+      "path": "posterloom/styles/24-collage-lite-narrative.md",
+      "size": 5332,
+      "sha256": "6eeca984b43fc3da215e55cca3701d74bcb75367b2d2777c510680adf7872dbc"
+    },
+    {
+      "path": "posterloom/styles/25-swiss-grid-poster.md",
+      "size": 5251,
+      "sha256": "cb5f5d07768656ebbe1bf2610234ea231466b4e4c5f563835323c3ee5d37800a"
+    },
+    {
+      "path": "posterloom/styles/26-brutalist-poster.md",
+      "size": 5229,
+      "sha256": "8afcf79c2edaaa57a6178c85402ab16ec74446c084254a5a1aa3742a0d2dc173"
+    },
+    {
+      "path": "posterloom/styles/27-neo-futurist-layout.md",
+      "size": 5303,
+      "sha256": "b9915d208a146d3372ac870fa7b447151c70f953f078336b81c0a882dd483f9c"
+    },
+    {
+      "path": "posterloom/styles/28-geometric-color-block.md",
+      "size": 5080,
+      "sha256": "1faca44930a4f6229a4130f2d34d709cdc5b184b12cefbec823b45b503ae4913"
+    },
+    {
+      "path": "posterloom/styles/29-elegant-serif-poster.md",
+      "size": 5175,
+      "sha256": "c70b281580c048e8e8d44a44c3a78ec1e30080717ed1cb847b77ff9e465bc29e"
+    },
+    {
+      "path": "posterloom/styles/30-controlled-hybrid.md",
+      "size": 4664,
+      "sha256": "fed8c055070049d47887d2768009ceec14cd7674c851ccd5f484097797cb0e0a"
+    },
+    {
+      "path": "publish-github.ps1",
+      "size": 781,
+      "sha256": "66bf6e946d439aa1ff1488741bbc5c2dd703ef546395e73e079b3ddd08b37101"
+    },
+    {
+      "path": "publish-github.sh",
+      "size": 834,
+      "sha256": "2bd959e6d4beb938f195b4549c8d5b7dc2cf463bede2fedf47a187ad4fe474b1"
+    }
+  ]
+}

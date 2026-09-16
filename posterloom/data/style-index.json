@@ -1,0 +1,245 @@
+{
+  "version": "1.0.0",
+  "styles": [
+    {
+      "id": "cinematic-editorial",
+      "name": "Cinematic Editorial",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/01-cinematic-editorial.md"
+    },
+    {
+      "id": "moody-night-editorial",
+      "name": "Moody Night Editorial",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/02-moody-night-editorial.md"
+    },
+    {
+      "id": "travel-cover-poster",
+      "name": "Travel Cover Poster",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/03-travel-cover-poster.md"
+    },
+    {
+      "id": "luxury-still-life-editorial",
+      "name": "Luxury Still-Life Editorial",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/04-luxury-still-life-editorial.md"
+    },
+    {
+      "id": "documentary-poster",
+      "name": "Documentary Poster",
+      "family": "photographic-editorial",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/05-documentary-poster.md"
+    },
+    {
+      "id": "transparent-watercolor",
+      "name": "Transparent Watercolor",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/06-transparent-watercolor.md"
+    },
+    {
+      "id": "soft-gouache",
+      "name": "Soft Gouache",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/07-soft-gouache.md"
+    },
+    {
+      "id": "expressive-painting",
+      "name": "Expressive Painting",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/08-expressive-painting.md"
+    },
+    {
+      "id": "ink-wash-minimal",
+      "name": "Ink Wash Minimal",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/09-ink-wash-minimal.md"
+    },
+    {
+      "id": "pastel-atmosphere",
+      "name": "Pastel Atmosphere",
+      "family": "painterly-atmosphere",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/10-pastel-atmosphere.md"
+    },
+    {
+      "id": "pop-screenprint",
+      "name": "Pop Screenprint",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/11-pop-screenprint.md"
+    },
+    {
+      "id": "riso-poster",
+      "name": "Riso Poster",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/12-riso-poster.md"
+    },
+    {
+      "id": "relief-print",
+      "name": "Relief Print",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/13-relief-print.md"
+    },
+    {
+      "id": "retro-lithograph",
+      "name": "Retro Lithograph",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/14-retro-lithograph.md"
+    },
+    {
+      "id": "paper-cut-graphic",
+      "name": "Paper-Cut Graphic",
+      "family": "graphic-print",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/15-paper-cut-graphic.md"
+    },
+    {
+      "id": "neo-ink-poster",
+      "name": "Neo Ink Poster",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/16-neo-ink-poster.md"
+    },
+    {
+      "id": "tea-house-minimal",
+      "name": "Tea-House Minimal",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/17-tea-house-minimal.md"
+    },
+    {
+      "id": "classical-parchment",
+      "name": "Classical Parchment",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/18-classical-parchment.md"
+    },
+    {
+      "id": "seal-calligraphy-poster",
+      "name": "Seal & Calligraphy Poster",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/19-seal-calligraphy-poster.md"
+    },
+    {
+      "id": "folk-narrative-color",
+      "name": "Folk Narrative Color",
+      "family": "eastern-heritage",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/20-folk-narrative-color.md"
+    },
+    {
+      "id": "editorial-surrealism",
+      "name": "Editorial Surrealism",
+      "family": "conceptual-hybrid",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/21-editorial-surrealism.md"
+    },
+    {
+      "id": "abstract-editorial",
+      "name": "Abstract Editorial",
+      "family": "conceptual-hybrid",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/22-abstract-editorial.md"
+    },
+    {
+      "id": "minimal-symbolic-poster",
+      "name": "Minimal Symbolic Poster",
+      "family": "conceptual-hybrid",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/23-minimal-symbolic-poster.md"
+    },
+    {
+      "id": "collage-lite-narrative",
+      "name": "Collage-Lite Narrative",
+      "family": "conceptual-hybrid",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/24-collage-lite-narrative.md"
+    },
+    {
+      "id": "swiss-grid-poster",
+      "name": "Swiss Grid Poster",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/25-swiss-grid-poster.md"
+    },
+    {
+      "id": "brutalist-poster",
+      "name": "Brutalist Poster",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/26-brutalist-poster.md"
+    },
+    {
+      "id": "neo-futurist-layout",
+      "name": "Neo-Futurist Layout",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/27-neo-futurist-layout.md"
+    },
+    {
+      "id": "geometric-color-block",
+      "name": "Geometric Color-Block",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/28-geometric-color-block.md"
+    },
+    {
+      "id": "elegant-serif-poster",
+      "name": "Elegant Serif Poster",
+      "family": "modern-design",
+      "role": "direct",
+      "status": "gold",
+      "file": "styles/29-elegant-serif-poster.md"
+    },
+    {
+      "id": "controlled-hybrid",
+      "name": "Controlled Hybrid",
+      "family": "meta-style",
+      "role": "meta",
+      "status": "gold",
+      "file": "styles/30-controlled-hybrid.md"
+    }
+  ]
+}
