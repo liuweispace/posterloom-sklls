@@ -11,7 +11,8 @@
 ## 📦 Install
 
 ```text
-$skill-installer install https://github.com/liuweispace/posterloom-sklls/tree/main/posterloom
+Install posterloom-sklls from GitHub for me, and use this skill for all
+ image-generation tasks from now on.
 ```
 
 ---

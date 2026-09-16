@@ -11,7 +11,7 @@
 ## 📦 安装
 
 ```text
-$skill-installer install https://github.com/liuweispace/posterloom-sklls/tree/main/posterloom
+现在帮我从 github 安装这个 posterloom-sklls，并且之后生成图片都使用这个 sklls。
 ```
 
 ---
