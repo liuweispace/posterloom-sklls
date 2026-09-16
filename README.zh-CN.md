@@ -6,7 +6,7 @@
 
 [English README](README.en.md)
 
-PosterLoom 是一套面向真实照片的 **Agent Skill**。它不是简单套滤镜，也不是随机挑一种“艺术风格”，而是先分析照片中的主体、空间、光线、色彩、材质和情绪，再保护最重要的识别特征，自动选择更合适的视觉系统，重新组织构图，并用克制的小字号排版完成一张真正的海报。
+PosterLoom 是一套面向真实照片的 **Agent Skill**。它不是简单套滤镜，也不是随机挑一种"艺术风格"，而是先分析照片中的主体、空间、光线、色彩、材质和情绪，再保护最重要的识别特征，自动选择更合适的视觉系统，重新组织构图，并用克制的小字号排版完成一张真正的海报。
 
 **PosterLoom 本身不是图像生成模型。**  
 它负责的是：**场景分析 + 风格路由 + Prompt 编译 + 视觉约束 + QA**。
@@ -30,11 +30,6 @@ PosterLoom 是一套面向真实照片的 **Agent Skill**。它不是简单套�
 - **30 个路由回归测试**
 - **10 项真实视觉 Benchmark**
 - 完整 `SKILL.md`
-- OpenAI `agents/openai.yaml`
-- Python 标准库辅助脚本
-- GitHub Actions 自动验证
-- 一键本地安装脚本
-- 一键 GitHub 发布脚本
 
 ---
 
@@ -103,7 +98,7 @@ PosterLoom 会分析主体、光线、情绪、构图几何、材质、主色、
 - Self-check
 - Acceptance Criteria
 
-因此它不是“30 个不同名字的滤镜”，而是 30 套不同的视觉生成机制。
+因此它不是"30 个不同名字的滤镜"，而是 30 套不同的视觉生成机制。
 
 ---
 
@@ -128,7 +123,7 @@ Secondary 只能控制 **一个子系统**，例如：
 - Color Separation
 - Atmosphere
 
-不允许 50/50 混合、三种风格同时混、效果堆叠，或者为了“更艺术”而破坏原图身份。
+不允许 50/50 混合、三种风格同时混、效果堆叠，或者为了"更艺术"而破坏原图身份。
 
 ---
 
@@ -149,7 +144,7 @@ PosterLoom 默认坚持 **小文字、轻排版、图像主导**：
 
 ## 🧹 Anti-Slop
 
-PosterLoom 会主动避免常见的“AI 味”：
+PosterLoom 会主动避免常见的"AI 味"：
 
 - 默认蓝紫渐变
 - 滥用 Glow / Bloom
@@ -175,11 +170,6 @@ PosterLoom/
 ├── README.en.md        # English
 ├── LICENSE
 ├── CHANGELOG.md
-├── INSTALL.md
-├── PUBLISH_TO_GITHUB.md
-├── install.py
-├── install.sh
-├── install.ps1
 └── posterloom/
     ├── SKILL.md
     ├── agents/openai.yaml
@@ -203,23 +193,7 @@ PosterLoom/
 $skill-installer install https://github.com/YOUR_USERNAME/posterloom/tree/main/posterloom
 ```
 
-本地一键安装：
-
-### macOS / Linux
-
-```bash
-bash install.sh
-```
-
-### Windows PowerShell
-
-```powershell
-.\install.ps1
-```
-
 也可以直接把 `posterloom/` 文件夹复制到 Agent Skills 目录。
-
-详细说明见 [INSTALL.md](INSTALL.md)。
 
 ---
 
@@ -269,27 +243,9 @@ python posterloom/scripts/validate_repo.py posterloom
 
 ---
 
-# ✅ 当前工程验证状态
+# 📊 关于"真实可用"
 
-```text
-29 direct styles
-1 Controlled Hybrid meta-style
-30 style contracts
-74 compatible hybrid pairs
-30 / 30 routing regression cases passed
-Prompt compilation passed
-Prompt validation passed
-Local installation passed
-Repository validation passed
-```
-
-完整报告见 [RELEASE_REPORT.md](RELEASE_REPORT.md)。
-
----
-
-# 📊 关于“真实可用”
-
-PosterLoom 当前的 Skill 结构、Style Contracts、AutoStyle Router、Hybrid Compatibility、Prompt Composer、Batch Rules、QA、Regression Tests 和 Installer 已经完成工程验证。
+PosterLoom 当前的 Skill 结构、Style Contracts、AutoStyle Router、Hybrid Compatibility、Prompt Composer、Batch Rules、QA、Regression Tests 已经完成工程验证。
 
 但最终成图仍然取决于：
 
@@ -314,24 +270,6 @@ PosterLoom 当前的 Skill 结构、Style Contracts、AutoStyle Router、Hybrid 
 默认 **17 / 20** 才算通过。
 
 工程测试通过，不等于所有图片模型、所有照片都一定得到完美结果。
-
----
-
-# 🌐 发布到 GitHub
-
-如果已经安装并登录 GitHub CLI：
-
-```bash
-bash publish-github.sh posterloom public
-```
-
-Windows：
-
-```powershell
-.\publish-github.ps1 -RepoName posterloom -Visibility public
-```
-
-详细说明见 [PUBLISH_TO_GITHUB.md](PUBLISH_TO_GITHUB.md)。
 
 ---
 

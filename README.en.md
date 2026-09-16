@@ -24,7 +24,6 @@ PosterLoom is a source-aware Agent Skill for turning real photographs into art-d
 - 10-axis visual benchmark rubric
 - Agent Skills `SKILL.md`
 - OpenAI `agents/openai.yaml`
-- Python standard-library-only helper scripts
 
 ## Style families
 
@@ -61,12 +60,13 @@ The router first builds a scene map, then scores direct styles. Controlled Hybri
 PosterLoom/
 ├── README.md
 ├── README.zh-CN.md
+├── README.en.md
 ├── LICENSE
 ├── CHANGELOG.md
-├── INSTALL.md
-├── install.py
-├── install.sh
-├── install.ps1
+├── VERSION
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── SECURITY.md
 └── posterloom/
     ├── SKILL.md
     ├── agents/openai.yaml
@@ -80,31 +80,15 @@ PosterLoom/
     └── assets/
 ```
 
-## Quick start
+## Install
 
-### A. Install from GitHub in Codex
-
-After publishing this repository, replace `YOUR_USERNAME`:
+### From GitHub in Codex
 
 ```text
 $skill-installer install https://github.com/YOUR_USERNAME/posterloom/tree/main/posterloom
 ```
 
-### B. Local one-command installer
-
-macOS / Linux:
-
-```bash
-bash install.sh
-```
-
-Windows PowerShell:
-
-```powershell
-.\install.ps1
-```
-
-### C. Manual
+### Manual
 
 Copy the repository's `posterloom/` folder into your agent's skills directory.
 
@@ -148,23 +132,6 @@ identity, composition, lighting, palette, material, edges, typography, source sp
 ## Compatibility
 
 `posterloom/SKILL.md` follows the open Agent Skills folder model: `SKILL.md` with required routing metadata plus progressively loaded resources.
-
-
-## Publish this repository
-
-If you already use GitHub CLI and are authenticated, this repository includes a one-command publisher:
-
-```bash
-bash publish-github.sh posterloom public
-```
-
-On Windows:
-
-```powershell
-.\publish-github.ps1 -RepoName posterloom -Visibility public
-```
-
-See [`PUBLISH_TO_GITHUB.md`](PUBLISH_TO_GITHUB.md) for the web-upload route.
 
 ## License
 
