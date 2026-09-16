@@ -186,13 +186,13 @@ PosterLoom/
 
 # 🚀 安装
 
-发布到 GitHub 后，可以在 Codex 中使用：
+把你的 Agent 指向这个 Skill：
 
 ```text
-$skill-installer install https://github.com/YOUR_USERNAME/posterloom/tree/main/posterloom
+$skill-installer install https://github.com/liuweispace/posterloom/tree/main/posterloom
 ```
 
-也可以直接把 `posterloom/` 文件夹复制到 Agent Skills 目录。
+或者直接把 `posterloom/` 文件夹复制到 Agent Skills 目录。
 
 ---
 

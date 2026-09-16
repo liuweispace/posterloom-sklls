@@ -80,15 +80,13 @@ PosterLoom/
 
 ## Install
 
-### From GitHub in Codex
+Point your agent at this skill:
 
 ```text
-$skill-installer install https://github.com/YOUR_USERNAME/posterloom/tree/main/posterloom
+$skill-installer install https://github.com/liuweispace/posterloom/tree/main/posterloom
 ```
 
-### Manual
-
-Copy the repository's `posterloom/` folder into your agent's skills directory.
+Or copy the `posterloom/` folder into your agent's skills directory.
 
 ## Example usage
 
