@@ -11,7 +11,7 @@
 ## 📦 Install
 
 ```text
-$skill-installer install https://github.com/liuweispace/posterloom/tree/main/posterloom
+$skill-installer install https://github.com/liuweispace/posterloom-sklls/tree/main/posterloom
 ```
 
 ---
