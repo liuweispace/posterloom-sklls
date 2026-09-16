@@ -1,64 +1,47 @@
 # PosterLoom
 
-**Adaptive Photo-to-Poster Skill**
+**Adaptive Photo-to-Poster Skill** · 自适应照片转海报 Skill
 
 > Analyze the scene. Adapt the style. Weave the poster.
 
-PosterLoom is a source-aware Agent Skill for turning real photographs into art-directed posters. It analyzes each source, protects identity anchors, selects a fitting visual system, recompiles the composition, keeps typography restrained, and quality-checks the result.
+---
 
-**It is not an image model.** PosterLoom is the art-direction, routing, prompt-composition, and QA layer. To render final images, the host needs an image-generation or image-editing backend. Without one, PosterLoom still returns a structured route decision and a complete generation prompt.
+## Install
 
-## What ships in v1.0.0
+Point your agent at this skill:
 
-- 29 direct visual styles
-- 1 `Controlled Hybrid` meta-style
-- 74 explicit compatible hybrid pairs
-- source-scene analysis workflow
-- deterministic AutoStyle ranking helper
-- prompt compiler
-- batch planner
-- prompt validator
-- identity-preservation rules
-- anti-AI-slop rules
-- 10-axis visual benchmark rubric
-- Agent Skills `SKILL.md`
+```text
+$skill-installer install https://github.com/liuweispace/posterloom/tree/main/posterloom
+```
 
-## Style families
+Or copy the `posterloom/` folder into your agent's skills directory.
 
-| Family | Styles |
-|---|---|
-| Photographic Editorial | Cinematic Editorial, Moody Night Editorial, Travel Cover, Luxury Still-Life, Documentary |
-| Painterly Atmosphere | Transparent Watercolor, Soft Gouache, Expressive Painting, Ink Wash Minimal, Pastel Atmosphere |
-| Graphic Print | Pop Screenprint, Riso, Relief Print, Retro Lithograph, Paper-Cut Graphic |
-| Eastern Heritage | Neo Ink, Tea-House Minimal, Classical Parchment, Seal & Calligraphy, Folk Narrative Color |
-| Conceptual | Editorial Surrealism, Abstract Editorial, Minimal Symbolic, Collage-Lite Narrative |
-| Modern Design | Swiss Grid, Brutalist, Neo-Futurist, Geometric Color-Block, Elegant Serif |
-| Meta | Controlled Hybrid |
+---
 
-## Why it is different
+## What it is
 
-PosterLoom does not randomly choose a style and does not treat style names as presets. Each style has its own contract defining:
-- best-fit and rejection conditions;
-- source/identity behavior;
-- composition strategy;
-- lighting language;
-- color logic;
-- material/texture behavior;
-- typography;
-- transformation strength;
-- a style-specific prompt mechanism;
-- a style-specific negative prompt;
-- failure modes and acceptance checks.
+**PosterLoom** is an Agent Skill that turns a real photograph into an art-directed poster.
 
-The router first builds a scene map, then scores direct styles. Controlled Hybrid can activate only after two compatible direct styles rank closely, and the secondary style may control one subsystem only.
+It is **not** an image model. It is the layer that:
 
-## Repository layout
+- analyzes the scene (subject, space, light, color, material, mood);
+- protects the source's identity anchors (faces, geometry, materials, real text);
+- routes the image to one of 29 direct visual styles — or to a constrained `Controlled Hybrid` of two compatible styles;
+- recompiles the composition;
+- applies restrained typography;
+- quality-checks the result against an anti-slop checklist.
+
+To produce a final poster, the host agent needs an image-generation or image-editing backend. Without one, PosterLoom still returns the route decision and the full generation prompt.
+
+---
+
+## Project layout
 
 ```text
 PosterLoom/
 ├── README.md
-├── README.zh-CN.md
 ├── README.en.md
+├── README.zh-CN.md
 ├── LICENSE
 ├── CHANGELOG.md
 ├── VERSION
@@ -77,39 +60,7 @@ PosterLoom/
     └── assets/
 ```
 
-## Install
-
-Point your agent at this skill:
-
-```text
-$skill-installer install https://github.com/liuweispace/posterloom/tree/main/posterloom
-```
-
-Or copy the `posterloom/` folder into your agent's skills directory.
-
-## Example usage
-
-Upload one photo and ask:
-
-```text
-Use PosterLoom.
-Turn this image into a 3:4 poster.
-Choose the style automatically, preserve the source identity,
-and keep the title small and restrained.
-```
-
-For a batch:
-
-```text
-Use PosterLoom on these 8 photos.
-Treat every photo as an independent job.
-Do not create a collage.
-Auto-route each image and return 8 independent posters.
-```
-
-## Compatibility
-
-`posterloom/SKILL.md` follows the open Agent Skills folder model: `SKILL.md` with required routing metadata plus progressively loaded resources.
+---
 
 ## License
 
