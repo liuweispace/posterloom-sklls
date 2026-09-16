@@ -10,13 +10,9 @@
 
 ## 📦 安装
 
-把你的 Agent 指向这个 Skill：
-
 ```text
 $skill-installer install https://github.com/liuweispace/posterloom/tree/main/posterloom
 ```
-
-或者直接把 `posterloom/` 文件夹复制到 Agent Skills 目录。
 
 ---
 

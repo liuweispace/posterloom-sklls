@@ -10,13 +10,9 @@
 
 ## 📦 Install
 
-Point your agent at this skill:
-
 ```text
 $skill-installer install https://github.com/liuweispace/posterloom/tree/main/posterloom
 ```
-
-Or copy the `posterloom/` folder into your agent's skills directory.
 
 ---
 
