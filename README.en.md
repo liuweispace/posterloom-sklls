@@ -4,9 +4,11 @@
 
 > Analyze the scene. Adapt the style. Weave the poster.
 
+![PosterLoom](posterloom/assets/posterloom-mark.svg)
+
 ---
 
-## Install
+## 📦 Install
 
 Point your agent at this skill:
 
@@ -18,7 +20,7 @@ Or copy the `posterloom/` folder into your agent's skills directory.
 
 ---
 
-## What it is
+## 🧵 What it is
 
 **PosterLoom** is an Agent Skill that turns a real photograph into an art-directed poster.
 
@@ -33,11 +35,11 @@ It is **not** an image model. It is the layer that:
 
 To produce a final poster, the host agent needs an image-generation or image-editing backend. Without one, PosterLoom still returns the route decision and the full generation prompt.
 
-## Style library
+## 🎨 Style library
 
 PosterLoom ships **30 style contracts** in **7 families**. Every style is a complete visual system — best-fit conditions, identity behavior, composition strategy, lighting language, color logic, material behavior, typography rules, a style-specific prompt block, a style-specific negative prompt, failure modes, and acceptance checks.
 
-### Photographic Editorial — 5
+### 📷 Photographic Editorial — 5
 
 For shots that should still feel like photographs but read as posters.
 
@@ -49,7 +51,7 @@ For shots that should still feel like photographs but read as posters.
 | Luxury Still-Life Editorial | Product / object study, premium materials, calm lighting |
 | Documentary Poster | Field photo with editorial weight, restraint over decoration |
 
-### Painterly Atmosphere — 5
+### 🎨 Painterly Atmosphere — 5
 
 For photos that should shift toward painted or atmospheric media.
 
@@ -61,7 +63,7 @@ For photos that should shift toward painted or atmospheric media.
 | Ink Wash Minimal | Solitary subjects, large empty space, poetic mood |
 | Pastel Atmosphere | Soft daylight, dream-like, fashion / still-life mood |
 
-### Graphic Print — 5
+### 🖨️ Graphic Print — 5
 
 For posterized, process-driven, mid-century or riso aesthetics.
 
@@ -73,7 +75,7 @@ For posterized, process-driven, mid-century or riso aesthetics.
 | Retro Lithograph | Vintage editorial / travel-poster feel, layered stone-print look |
 | Paper-Cut Graphic | Bold shapes, illustrative subject, narrative scene |
 
-### Eastern Heritage — 5
+### 🏯 Eastern Heritage — 5
 
 For subjects tied to Chinese, Japanese, or broader East-Asian visual culture.
 
@@ -85,7 +87,7 @@ For subjects tied to Chinese, Japanese, or broader East-Asian visual culture.
 | Seal & Calligraphy Poster | Subject paired with real or stylized seal / text element |
 | Folk Narrative Color | Folk-craft palette, narrative scene, generous color |
 
-### Conceptual Hybrid — 4
+### 🌀 Conceptual Hybrid — 4
 
 For photos that should become a conceptual or editorial statement.
 
@@ -96,7 +98,7 @@ For photos that should become a conceptual or editorial statement.
 | Minimal Symbolic Poster | One subject as a near-monogram symbol |
 | Collage-Lite Narrative | Two layered ideas kept visually clean (not a moodboard) |
 
-### Modern Design — 5
+### 🧱 Modern Design — 5
 
 For posters rooted in 20th / 21st-century design languages.
 
@@ -108,13 +110,13 @@ For posters rooted in 20th / 21st-century design languages.
 | Geometric Color-Block | Bold field / fashion / architectural subject, flat color |
 | Elegant Serif Poster | Magazine-cover, fashion, beauty, premium feel |
 
-### Meta-Style — 1
+### 🧬 Meta-Style — 1
 
 | Style | Use when |
 |---|---|
 | Controlled Hybrid | Two compatible direct styles both rank closely; the secondary controls one subsystem only (typography, negative space, print texture, ink edge, grid, color separation, or atmosphere). Default weight ≈ 80% primary / 20% secondary. No 50/50 split. |
 
-## How routing works
+## 🧭 How routing works
 
 1. Read the source image and build a **scene profile** — subject type, lighting, palette, mood, geometry, materials, text-safe zones, realism.
 2. Lock **identity anchors** that must survive any style change.
@@ -126,7 +128,7 @@ For posters rooted in 20th / 21st-century design languages.
 
 ---
 
-## Project layout
+## 🗂️ Project layout
 
 ```text
 PosterLoom/
@@ -153,6 +155,6 @@ PosterLoom/
 
 ---
 
-## License
+## ⚖️ License
 
 MIT for repository code and authored skill content. Source photographs and generated images remain subject to their own rights and the terms of the image-generation provider used by the host.

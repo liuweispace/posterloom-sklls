@@ -4,9 +4,11 @@
 
 > 读懂照片，自适应风格，把真实场景编织成海报。
 
+![PosterLoom](posterloom/assets/posterloom-mark.svg)
+
 ---
 
-## 安装
+## 📦 安装
 
 把你的 Agent 指向这个 Skill：
 
@@ -18,7 +20,7 @@ $skill-installer install https://github.com/liuweispace/posterloom/tree/main/pos
 
 ---
 
-## 这是什么
+## 🧵 这是什么
 
 **PosterLoom** 是一个把真实照片转成艺术海报的 Agent Skill。
 
@@ -33,11 +35,11 @@ $skill-installer install https://github.com/liuweispace/posterloom/tree/main/pos
 
 要生成最终海报，宿主 Agent 需要具备图像生成或图像编辑能力。如果没有，PosterLoom 也会返回完整的路由决策和生成 Prompt。
 
-## 风格库
+## 🎨 风格库
 
 PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风格都是一套完整的视觉系统：适用条件、主体保留策略、构图方法、光线语言、色彩逻辑、材质表达、排版规则、专属 Prompt 块、专属 Negative Prompt、常见失败模式、验收标准。
 
-### 摄影编辑 — 5 种
+### 📷 摄影编辑 — 5 种
 
 适合"还是照片，但已经像海报"的场景。
 
@@ -49,7 +51,7 @@ PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风
 | Luxury Still-Life Editorial（奢华静物） | 产品或器物、高级材质、克制光线 |
 | Documentary Poster（纪实海报） | 现场摄影的编辑感，克制胜于装饰 |
 
-### 绘画氛围 — 5 种
+### 🖌️ 绘画氛围 — 5 种
 
 把照片推向绘画或氛围媒介。
 
@@ -61,7 +63,7 @@ PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风
 | Ink Wash Minimal（水墨极简） | 单个主体、大面积留白、诗意 |
 | Pastel Atmosphere（粉彩氛围） | 柔光日景、梦境感、时尚 / 静物情绪 |
 
-### 印刷图形 — 5 种
+### 🖨️ 印刷图形 — 5 种
 
 海报化、制版感、中世纪或 Riso 美学。
 
@@ -73,7 +75,7 @@ PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风
 | Retro Lithograph（复古石印） | 复古编辑 / 旅行海报、叠层石印感 |
 | Paper-Cut Graphic（剪纸图形） | 大块形状、插画化主体、叙事场景 |
 
-### 东方 / 文化 — 5 种
+### 🏯 东方 / 文化 — 5 种
 
 主体本身与中式、日式或更广泛的东亚视觉文化相关。
 
@@ -85,7 +87,7 @@ PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风
 | Seal & Calligraphy Poster（印章与书法） | 主体配真实或风格化的印章 / 文字 |
 | Folk Narrative Color（民间叙事色彩） | 民间工艺色板、叙事场景、慷慨配色 |
 
-### 概念编辑 — 4 种
+### 🌀 概念编辑 — 4 种
 
 把照片变成一个概念性或编辑性表达。
 
@@ -96,7 +98,7 @@ PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风
 | Minimal Symbolic Poster（极简符号） | 一个主体，近似当作单一符号 |
 | Collage-Lite Narrative（轻拼贴叙事） | 两个叠加的概念，但视觉保持干净（不是 moodboard） |
 
-### 现代设计 — 5 种
+### 🧱 现代设计 — 5 种
 
 根植于 20 / 21 世纪设计语言。
 
@@ -108,13 +110,13 @@ PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风
 | Geometric Color-Block（几何色块） | 强色彩 / 时尚 / 建筑主体、平面色 |
 | Elegant Serif Poster（优雅衬线） | 杂志封面、时尚、美学、高端 |
 
-### 元风格 — 1 种
+### 🧬 元风格 — 1 种
 
 | 风格 | 适用 |
 |---|---|
 | Controlled Hybrid（受控混合） | 两个直接风格排名接近且明确兼容；二级风格只允许控制一个子系统（排版 / 负空间 / 印刷质感 / 墨边 / 网格 / 分色 / 氛围）。默认 ≈ 80% 主风格 + 20% 次风格。不允许 50/50 平均。 |
 
-## 路由流程
+## 🧭 路由流程
 
 1. 读取原图，建立 **Scene Map**——主体、光线、色板、情绪、几何、材质、安全排版区、写实程度。
 2. 锁定 **Identity Anchors**——这些特征必须在任何风格下保留。
@@ -126,7 +128,7 @@ PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风
 
 ---
 
-## 项目架构
+## 🗂️ 项目架构
 
 ```text
 PosterLoom/
@@ -153,7 +155,7 @@ PosterLoom/
 
 ---
 
-## License
+## ⚖️ License
 
 MIT License。
 
