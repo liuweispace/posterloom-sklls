@@ -20,7 +20,6 @@ PosterLoom is a source-aware Agent Skill for turning real photographs into art-d
 - prompt validator
 - identity-preservation rules
 - anti-AI-slop rules
-- 30 routing regression cases
 - 10-axis visual benchmark rubric
 - Agent Skills `SKILL.md`
 
@@ -107,23 +106,6 @@ Treat every photo as an independent job.
 Do not create a collage.
 Auto-route each image and return 8 independent posters.
 ```
-
-## CLI helpers
-
-```bash
-python posterloom/scripts/rank_styles.py posterloom/examples/scene-night-teahouse.json
-python posterloom/scripts/compose_prompt.py posterloom/examples/scene-night-teahouse.json --output prompt.txt --route-output route.json
-python posterloom/scripts/validate_prompt.py prompt.txt
-python posterloom/evals/run_evals.py
-python posterloom/scripts/validate_repo.py posterloom
-```
-
-## Visual quality claims
-
-The repository includes deterministic engineering tests for structure, routing, prompt composition, and compatibility. Those tests do **not** prove every image-generation backend will produce beautiful results.
-
-Actual generated images should be scored with the included 10-axis benchmark:
-identity, composition, lighting, palette, material, edges, typography, source specificity, style specificity, and anti-slop. Default pass threshold: **17/20**.
 
 ## Compatibility
 

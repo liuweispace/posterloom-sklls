@@ -27,7 +27,6 @@ PosterLoom 是一套面向真实照片的 **Agent Skill**。它不是简单套�
 - Prompt Validator｜Prompt 校验
 - Identity Preservation｜主体识别保护
 - Anti-Slop QA｜反 AI 套路化质量控制
-- **30 个路由回归测试**
 - **10 项真实视觉 Benchmark**
 - 完整 `SKILL.md`
 
@@ -218,57 +217,6 @@ Use PosterLoom on these 8 photos.
 不要拼贴，不要九宫格，不要做成相册。
 最终输出 8 张独立海报。
 ```
-
----
-
-# 🛠️ CLI 工具
-
-```bash
-python posterloom/scripts/rank_styles.py posterloom/examples/scene-night-teahouse.json
-```
-
-```bash
-python posterloom/scripts/compose_prompt.py \
-  posterloom/examples/scene-night-teahouse.json \
-  --output prompt.txt \
-  --route-output route.json
-```
-
-```bash
-python posterloom/scripts/validate_prompt.py prompt.txt
-python posterloom/evals/run_evals.py
-python posterloom/scripts/validate_repo.py posterloom
-```
-
----
-
-# 📊 关于"真实可用"
-
-PosterLoom 当前的 Skill 结构、Style Contracts、AutoStyle Router、Hybrid Compatibility、Prompt Composer、Batch Rules、QA、Regression Tests 已经完成工程验证。
-
-但最终成图仍然取决于：
-
-- 原始照片
-- 宿主模型的图像理解能力
-- 实际使用的图像生成 / 编辑模型
-- 不同模型对 Prompt 的执行方式
-
-因此仓库提供 10 项 Visual Benchmark：
-
-1. Identity Preservation
-2. Composition
-3. Lighting
-4. Palette
-5. Material Behavior
-6. Edge Treatment
-7. Typography
-8. Source Specificity
-9. Style Specificity
-10. Anti-Slop
-
-默认 **17 / 20** 才算通过。
-
-工程测试通过，不等于所有图片模型、所有照片都一定得到完美结果。
 
 ---
 
