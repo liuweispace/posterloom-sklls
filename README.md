@@ -172,7 +172,6 @@ PosterLoom/
 ├── CHANGELOG.md
 └── posterloom/
     ├── SKILL.md
-    ├── agents/openai.yaml
     ├── styles/          # 30 个 Style Contract
     ├── references/      # 规范与 QA
     ├── data/            # Router / Hybrid / Style 数据

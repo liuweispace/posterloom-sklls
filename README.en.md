@@ -23,7 +23,6 @@ PosterLoom is a source-aware Agent Skill for turning real photographs into art-d
 - 30 routing regression cases
 - 10-axis visual benchmark rubric
 - Agent Skills `SKILL.md`
-- OpenAI `agents/openai.yaml`
 
 ## Style families
 
@@ -69,7 +68,6 @@ PosterLoom/
 ├── SECURITY.md
 └── posterloom/
     ├── SKILL.md
-    ├── agents/openai.yaml
     ├── styles/          # 30 style contracts
     ├── references/      # progressive-disclosure guidance
     ├── data/            # routing + compatibility data

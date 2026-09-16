@@ -66,11 +66,7 @@ def main():
     if len(comp.get("pairs",[]))!=74:
         errors.append(f"expected 74 hybrid pairs, got {len(comp.get('pairs',[]))}")
 
-    oa=root/"agents/openai.yaml"
-    if not oa.exists():
-        errors.append("agents/openai.yaml missing")
-    elif "$posterloom" not in oa.read_text(encoding="utf-8"):
-        errors.append("openai.yaml default_prompt must mention $posterloom")
+    # agents/ interface removed in v1.0.0 cleanup; SKILL.md is the single source of truth
 
     for p in root.rglob("*"):
         if p.resolve() == Path(__file__).resolve():
