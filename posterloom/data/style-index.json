@@ -1,245 +1,236 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "styles": [
     {
+      "family": "photographic-editorial",
       "id": "cinematic-editorial",
-      "name": "Cinematic Editorial",
-      "family": "photographic-editorial",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/01-cinematic-editorial.md"
+      "role": "direct",
+      "name": "Cinematic Editorial"
     },
     {
+      "family": "photographic-editorial",
       "id": "moody-night-editorial",
-      "name": "Moody Night Editorial",
-      "family": "photographic-editorial",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/02-moody-night-editorial.md"
+      "role": "direct",
+      "name": "Moody Night Editorial"
     },
     {
+      "family": "photographic-editorial",
       "id": "travel-cover-poster",
-      "name": "Travel Cover Poster",
-      "family": "photographic-editorial",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/03-travel-cover-poster.md"
+      "role": "direct",
+      "name": "Travel Cover Poster"
     },
     {
+      "family": "photographic-editorial",
       "id": "luxury-still-life-editorial",
-      "name": "Luxury Still-Life Editorial",
-      "family": "photographic-editorial",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/04-luxury-still-life-editorial.md"
+      "role": "direct",
+      "name": "Luxury Still-Life Editorial"
     },
     {
+      "family": "photographic-editorial",
       "id": "documentary-poster",
-      "name": "Documentary Poster",
-      "family": "photographic-editorial",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/05-documentary-poster.md"
+      "role": "direct",
+      "name": "Documentary Poster"
     },
     {
+      "family": "painterly-atmosphere",
       "id": "transparent-watercolor",
-      "name": "Transparent Watercolor",
-      "family": "painterly-atmosphere",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/06-transparent-watercolor.md"
+      "role": "direct",
+      "name": "Transparent Watercolor"
     },
     {
+      "family": "painterly-atmosphere",
       "id": "soft-gouache",
-      "name": "Soft Gouache",
-      "family": "painterly-atmosphere",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/07-soft-gouache.md"
+      "role": "direct",
+      "name": "Soft Gouache"
     },
     {
+      "family": "painterly-atmosphere",
       "id": "expressive-painting",
-      "name": "Expressive Painting",
-      "family": "painterly-atmosphere",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/08-expressive-painting.md"
+      "role": "direct",
+      "name": "Expressive Painting"
     },
     {
+      "family": "painterly-atmosphere",
       "id": "ink-wash-minimal",
-      "name": "Ink Wash Minimal",
-      "family": "painterly-atmosphere",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/09-ink-wash-minimal.md"
+      "role": "direct",
+      "name": "Ink Wash Minimal"
     },
     {
+      "family": "painterly-atmosphere",
       "id": "pastel-atmosphere",
-      "name": "Pastel Atmosphere",
-      "family": "painterly-atmosphere",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/10-pastel-atmosphere.md"
+      "role": "direct",
+      "name": "Pastel Atmosphere"
     },
     {
+      "family": "graphic-print",
       "id": "pop-screenprint",
-      "name": "Pop Screenprint",
-      "family": "graphic-print",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/11-pop-screenprint.md"
+      "role": "direct",
+      "name": "Pop Screenprint"
     },
     {
+      "family": "graphic-print",
       "id": "riso-poster",
-      "name": "Riso Poster",
-      "family": "graphic-print",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/12-riso-poster.md"
+      "role": "direct",
+      "name": "Riso Poster"
     },
     {
+      "family": "graphic-print",
       "id": "relief-print",
-      "name": "Relief Print",
-      "family": "graphic-print",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/13-relief-print.md"
+      "role": "direct",
+      "name": "Relief Print"
     },
     {
+      "family": "graphic-print",
       "id": "retro-lithograph",
-      "name": "Retro Lithograph",
-      "family": "graphic-print",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/14-retro-lithograph.md"
+      "role": "direct",
+      "name": "Retro Lithograph"
     },
     {
+      "family": "graphic-print",
       "id": "paper-cut-graphic",
-      "name": "Paper-Cut Graphic",
-      "family": "graphic-print",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/15-paper-cut-graphic.md"
+      "role": "direct",
+      "name": "Paper-Cut Graphic"
     },
     {
+      "family": "eastern-heritage",
       "id": "neo-ink-poster",
-      "name": "Neo Ink Poster",
-      "family": "eastern-heritage",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/16-neo-ink-poster.md"
+      "role": "direct",
+      "name": "Neo Ink Poster"
     },
     {
+      "family": "eastern-heritage",
       "id": "tea-house-minimal",
-      "name": "Tea-House Minimal",
-      "family": "eastern-heritage",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/17-tea-house-minimal.md"
+      "role": "direct",
+      "name": "Tea-House Minimal"
     },
     {
+      "family": "eastern-heritage",
       "id": "classical-parchment",
-      "name": "Classical Parchment",
-      "family": "eastern-heritage",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/18-classical-parchment.md"
+      "role": "direct",
+      "name": "Classical Parchment"
     },
     {
+      "family": "eastern-heritage",
       "id": "seal-calligraphy-poster",
-      "name": "Seal & Calligraphy Poster",
-      "family": "eastern-heritage",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/19-seal-calligraphy-poster.md"
+      "role": "direct",
+      "name": "Seal & Calligraphy Poster"
     },
     {
+      "family": "eastern-heritage",
       "id": "folk-narrative-color",
-      "name": "Folk Narrative Color",
-      "family": "eastern-heritage",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/20-folk-narrative-color.md"
+      "role": "direct",
+      "name": "Folk Narrative Color"
     },
     {
+      "family": "conceptual-hybrid",
       "id": "editorial-surrealism",
-      "name": "Editorial Surrealism",
-      "family": "conceptual-hybrid",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/21-editorial-surrealism.md"
+      "role": "direct",
+      "name": "Editorial Surrealism"
     },
     {
+      "family": "conceptual-hybrid",
       "id": "abstract-editorial",
-      "name": "Abstract Editorial",
-      "family": "conceptual-hybrid",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/22-abstract-editorial.md"
+      "role": "direct",
+      "name": "Abstract Editorial"
     },
     {
+      "family": "conceptual-hybrid",
       "id": "minimal-symbolic-poster",
-      "name": "Minimal Symbolic Poster",
-      "family": "conceptual-hybrid",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/23-minimal-symbolic-poster.md"
+      "role": "direct",
+      "name": "Minimal Symbolic Poster"
     },
     {
+      "family": "conceptual-hybrid",
       "id": "collage-lite-narrative",
-      "name": "Collage-Lite Narrative",
-      "family": "conceptual-hybrid",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/24-collage-lite-narrative.md"
+      "role": "direct",
+      "name": "Collage-Lite Narrative"
     },
     {
+      "family": "modern-design",
       "id": "swiss-grid-poster",
-      "name": "Swiss Grid Poster",
-      "family": "modern-design",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/25-swiss-grid-poster.md"
+      "role": "direct",
+      "name": "Swiss Grid Poster"
     },
     {
+      "family": "modern-design",
       "id": "brutalist-poster",
-      "name": "Brutalist Poster",
-      "family": "modern-design",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/26-brutalist-poster.md"
+      "role": "direct",
+      "name": "Brutalist Poster"
     },
     {
+      "family": "modern-design",
       "id": "neo-futurist-layout",
-      "name": "Neo-Futurist Layout",
-      "family": "modern-design",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/27-neo-futurist-layout.md"
+      "role": "direct",
+      "name": "Neo-Futurist Layout"
     },
     {
+      "family": "modern-design",
       "id": "geometric-color-block",
-      "name": "Geometric Color-Block",
-      "family": "modern-design",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/28-geometric-color-block.md"
+      "role": "direct",
+      "name": "Geometric Color-Block"
     },
     {
+      "family": "modern-design",
       "id": "elegant-serif-poster",
-      "name": "Elegant Serif Poster",
-      "family": "modern-design",
-      "role": "direct",
       "status": "gold",
-      "file": "styles/29-elegant-serif-poster.md"
+      "role": "direct",
+      "name": "Elegant Serif Poster"
     },
     {
-      "id": "controlled-hybrid",
-      "name": "Controlled Hybrid",
-      "family": "meta-style",
-      "role": "meta",
+      "family": "photographic-portrait",
+      "id": "editorial-portrait",
       "status": "gold",
-      "file": "styles/30-controlled-hybrid.md"
+      "role": "direct",
+      "name": "Editorial Portrait"
+    },
+    {
+      "family": "painterly-portrait",
+      "id": "fine-art-portrait",
+      "status": "gold",
+      "role": "direct",
+      "name": "Fine Art Portrait"
+    },
+    {
+      "family": "documentary-portrait",
+      "id": "photojournalistic",
+      "status": "gold",
+      "role": "direct",
+      "name": "Photojournalistic"
+    },
+    {
+      "family": "meta-style",
+      "id": "controlled-hybrid",
+      "status": "gold",
+      "role": "meta",
+      "name": "Controlled Hybrid"
     }
   ]
 }

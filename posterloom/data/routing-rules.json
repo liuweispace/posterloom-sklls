@@ -1,27 +1,57 @@
 {
-  "version": "1.0.0",
-  "weights": {
-    "subject": 30,
-    "lighting": 14,
-    "mood": 14,
-    "geometry": 12,
-    "materials": 10,
-    "palette": 8,
-    "realism": 7,
-    "transform": 5
-  },
-  "low_confidence_threshold": 36,
-  "hybrid": {
-    "allowed": true,
-    "min_primary_score": 48,
-    "max_score_gap": 4.5,
-    "primary_share": 0.8,
-    "secondary_share": 0.2
-  },
-  "principles": [
-    "Source truth beats style novelty.",
-    "Do not force diversity across a batch.",
-    "Controlled Hybrid never participates in direct ranking.",
-    "Low-confidence cases should prefer a conservative, identity-safe treatment."
-  ]
+ "version": "1.1.0",
+ "weights": {
+  "subject": 30,
+  "lighting": 14,
+  "mood": 14,
+  "geometry": 12,
+  "materials": 10,
+  "palette": 8,
+  "realism": 7,
+  "transform": 5
+ },
+ "low_confidence_threshold": 36,
+ "hybrid": {
+  "allowed": true,
+  "min_primary_score": 48,
+  "max_score_gap": 4.5,
+  "primary_share": 0.8,
+  "secondary_share": 0.2
+ },
+ "principles": [
+  "Source truth beats style novelty.",
+  "Do not force diversity across a batch.",
+  "Controlled Hybrid never participates in direct ranking.",
+  "Confidence is relative to the best score achievable for this profile.",
+  "A person whose likeness must survive is never routed into a face-repainting medium unless heavy transformation was explicitly requested."
+ ],
+ "face_destructive_styles": [
+  "transparent-watercolor",
+  "soft-gouache",
+  "expressive-painting",
+  "ink-wash-minimal",
+  "pastel-atmosphere",
+  "pop-screenprint",
+  "riso-poster",
+  "relief-print",
+  "retro-lithograph",
+  "paper-cut-graphic",
+  "neo-ink-poster"
+ ],
+ "identity_safe_styles": [
+  "editorial-portrait",
+  "photojournalistic",
+  "fine-art-portrait",
+  "cinematic-editorial",
+  "documentary-poster"
+ ],
+ "conservative_styles": [
+  "elegant-serif-poster",
+  "cinematic-editorial",
+  "documentary-poster"
+ ],
+ "medium_score_floor": 28,
+ "portrait_family": "portrait",
+ "portrait_preference_boost": 18,
+ "repetition_soft_cap": 3
 }

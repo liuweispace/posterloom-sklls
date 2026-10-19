@@ -48,14 +48,21 @@ def main():
     data=json.loads((root/"data/styles.json").read_text(encoding="utf-8"))
     direct=[s for s in data["styles"] if s["role"]=="direct"]
     meta=[s for s in data["styles"] if s["role"]=="meta"]
-    if len(direct)!=29:
-        errors.append(f"expected 29 direct styles, got {len(direct)}")
+    if not direct:
+        errors.append("no direct styles registered")
     if len(meta)!=1 or meta[0]["id"]!="controlled-hybrid":
         errors.append("controlled-hybrid meta style missing")
 
     files=sorted((root/"styles").glob("*.md"))
-    if len(files)!=30:
-        errors.append(f"expected 30 style contracts, got {len(files)}")
+    # Contract count must track the library: one contract per registered style.
+    # Hardcoded counts silently rot the moment a style is added or removed.
+    expected_contracts=len(direct)+len(meta)
+    if len(files)!=expected_contracts:
+        errors.append(f"expected {expected_contracts} style contracts, got {len(files)}")
+    ids={s["id"] for s in data["styles"]}
+    for p in files:
+        if p.stem not in ids:
+            errors.append(f"{p.name}: contract has no matching style id in styles.json")
     for p in files:
         t=p.read_text(encoding="utf-8")
         for heading in REQUIRED_STYLE_HEADINGS:
@@ -63,8 +70,13 @@ def main():
                 errors.append(f"{p.name}: missing {heading}")
 
     comp=json.loads((root/"data/compatibility.json").read_text(encoding="utf-8"))
-    if len(comp.get("pairs",[]))!=74:
-        errors.append(f"expected 74 hybrid pairs, got {len(comp.get('pairs',[]))}")
+    all_ids={s["id"] for s in data["styles"]}
+    for pair in comp.get("pairs",[]):
+        for key in ("style_a","style_b"):
+            if pair.get(key) not in all_ids:
+                errors.append(f"compatibility.json references unknown style: {pair.get(key)}")
+        if pair.get("style_a")==pair.get("style_b"):
+            errors.append(f"compatibility.json pairs a style with itself: {pair.get('style_a')}")
 
     # agents/ interface removed in v1.0.0 cleanup; SKILL.md is the single source of truth
 

@@ -1,85 +1,145 @@
 ---
 name: posterloom
-description: Analyze source photos, preserve identity anchors, adaptively route each image to one of 29 direct poster styles or a constrained hybrid, reframe composition, apply restrained typography, compile generation prompts, and quality-check outputs. Use when a user wants a real photo transformed into a polished editorial, travel, cultural, painterly, print, conceptual, or modern-design poster, including batches of independent posters.
+description: Turn a real photograph into an art-directed poster - analyze the scene, preserve identity anchors, route to 1 of 32 poster styles, and compile a locked generation prompt. Use when the user wants a photo converted into an editorial, travel, cultural, painterly, print, portrait, or modern-design poster, or wants a batch of independent posters from many photos. Enforces facial likeness locking on any source containing a person.
 license: MIT
-compatibility: Requires an agent that can inspect images. Final image creation also requires an image-generation or image-editing tool; otherwise return the compiled prompt and route decision. Helper scripts use Python 3.9+ standard library only.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   tagline: "Adaptive Photo-to-Poster Skill"
 ---
 
 # PosterLoom
 
-**Adaptive Photo-to-Poster Skill**
+Turn a real source photograph into an art-directed poster: scene analysis, adaptive style
+routing, source-aware prompt composition, restrained typography, and explicit visual QA.
 
-PosterLoom turns real source photographs into art-directed posters through scene analysis, adaptive style routing, source-aware prompt composition, restrained typography, and explicit visual QA.
+## Use when
 
-## Use When
 - A user wants a photo turned into a finished poster rather than a simple filter.
-- A source image should be automatically matched to an appropriate visual direction.
+- A source image should be matched automatically to an appropriate visual direction.
 - A batch of photos should become independent poster artworks.
-- The task benefits from preserving real subject identity while changing composition, medium, texture, or design language.
+- The task must preserve a real person's likeness.
 - The user wants small, refined typography instead of oversized headline treatment.
 
-## Don't Use When
-- The user only wants basic exposure, crop, denoise, or color correction with no poster transformation.
-- The request is explicitly for a collage or moodboard; follow that request instead of PosterLoom's one-source/one-poster default.
-- No source image exists and the request is pure text-to-image; use a general image-generation workflow.
-- The host cannot inspect images and the user expects automatic scene-aware routing; ask for a textual scene description or return a manual prompt workflow.
+## Don't use when
+
+- The user only wants exposure, crop, denoise, or color correction with no poster transformation.
+- The request is explicitly a collage or moodboard - follow that request instead.
+- No source image exists and the request is pure text-to-image.
+- The host cannot inspect images and the user expects automatic scene-aware routing.
+
+## Quick start
+
+Everything runs through one dependency-free CLI (Python 3.9+ standard library only):
+
+```bash
+python3 scripts/posterloom.py route   examples/scene-portrait.json      # rank styles
+python3 scripts/posterloom.py prompt  examples/scene-portrait.json      # compile prompt
+python3 scripts/posterloom.py batch   examples/batch-profiles.json      # plan a batch
+python3 scripts/posterloom.py styles --portrait                        # list styles
+python3 scripts/posterloom.py show    editorial-portrait                # style contract
+python3 scripts/posterloom.py validate examples/scene-portrait.json     # schema check
+python3 scripts/posterloom.py selftest                                 # integrity checks
+```
+
+Add `--json` to `route`, `prompt`, `batch`, and `styles` for machine-readable output.
+Every subcommand exits non-zero and prints `ERROR: ...` on failure.
 
 ## Workflow
-1. **Bind one source image to one job.** In a batch, isolate every source. Never let multiple reference images bleed into one generation.
-2. **Analyze the scene.** Build a scene profile using [references/scene-analysis.md](references/scene-analysis.md).
-3. **Lock identity anchors.** Read [references/identity-preservation.md](references/identity-preservation.md).
-4. **Route the style.** Rank 29 direct styles using [references/style-router.md](references/style-router.md) and `scripts/rank_styles.py` when available.
-5. **Load only the chosen style contract.** Read the relevant file under `styles/`. Do not bulk-load all 30 contracts unless auditing the library.
-6. **Consider Controlled Hybrid only after routing.** It is a meta-style, not a normal filter. Use it only when two compatible direct styles are both strong fits and the secondary can control one subsystem.
-7. **Compose the prompt.** Follow [references/prompt-composer.md](references/prompt-composer.md) or run `scripts/compose_prompt.py`.
-8. **Generate one finished poster.** Default to 3:4 vertical unless the user requests another ratio. Use exactly one source image reference per generation job.
-9. **Apply restrained typography.** Follow [references/typography.md](references/typography.md). If text rendering is unreliable, prefer a second typography pass when tooling allows.
-10. **Quality-check the result.** Use [references/anti-slop.md](references/anti-slop.md) and [references/visual-benchmark.md](references/visual-benchmark.md).
-11. **For batches, repeat independently.** Follow [references/batch-consistency.md](references/batch-consistency.md). Do not force style diversity.
-12. **If no image tool exists, be transparent.** Return the scene map, selected style, and compiled prompt instead of claiming an image was generated.
 
-## Rules
-- **Source first.** The uploaded photograph is the factual and visual anchor.
-- **One source -> one poster.** Never create a collage, contact sheet, moodboard, scrapbook, album, or multi-panel output unless the user explicitly requests it.
-- **Identity outranks style.** If stylization damages a face, pose, architecture, object geometry, cultural detail, or material truth, reduce transformation.
-- **No invented facts.** Do not fabricate people, brands, dates, landmarks, signatures, seals, locations, historical claims, or unreadable text.
-- **No fake characters.** Never invent Chinese or other non-Latin characters. Use only verified source text or user-provided wording.
-- **Typography stays small.** Text normally occupies 5–10% or less of the visual area and never covers identity-critical regions.
-- **AutoStyle is analytical, not random.** Score scene features, apply reject conditions, then review the top candidates against the actual image.
-- **Do not force batch variety.** Repeated styles are allowed when they are actually the best match.
-- **Controlled Hybrid stays controlled.** One primary style at roughly 80%; one compatible secondary style at roughly 20%; the secondary controls one subsystem only.
-- **Anti-slop is mandatory.** Avoid generic AI gradients, glow, fog, particles, fake film borders, malformed structure, duplicated subjects, and one-click-filter appearance.
-- **Engineering validation is not visual validation.** Passing scripts/evals does not prove every image backend will produce a visually excellent result.
+1. **Analyze the source.** Build the scene profile described in
+   [references/scene-analysis.md](references/scene-analysis.md). Record `subject.identity_anchors`
+   - the smallest set of details that make this exact source recognizable. For a person, this is
+   mandatory and must include facial specifics.
+2. **Validate.** `posterloom.py validate <profile>` catches malformed profiles before routing.
+3. **Route the style.** Run `posterloom.py route`. Read [references/style-router.md](references/style-router.md)
+   to interpret the ranking, confidence, and any override.
+4. **Load the chosen contract.** Read `styles/<style-id>.md`. Never bulk-load all 33.
+5. **Compile the prompt.** Run `posterloom.py prompt <profile>`. Facial-identity constraints are
+   injected automatically whenever the source contains a recognizable face.
+6. **Generate** with the host's image-generation or image-editing tool.
+7. **Verify.** Apply `evals/rubric.md`. For a person, the likeness check is mandatory - see
+   [references/identity-preservation.md](references/identity-preservation.md).
 
-## Examples
-- "Turn this night tea-house photo into a poster." -> analyze -> route -> likely night/tea editorial direction -> compile -> generate one 3:4 poster.
-- "Make these eight travel photos into posters." -> eight isolated jobs -> route each independently -> eight outputs, even if some styles repeat.
-- "Keep it very realistic with tiny type." -> bias toward photographic/editorial styles and lower transformation strength.
-- "Use watercolor if it truly fits." -> route normally; use Transparent Watercolor only when source cues support it.
-- "Mix cinematic and ink." -> verify compatibility; if both fit, use Controlled Hybrid with one declared secondary subsystem.
+## Non-negotiable rules
 
-## Edge Cases
-- **Low routing confidence:** choose the least destructive photographic/editorial option.
-- **No text-safe zone:** omit text or create natural breathing room by crop/extension; never cover the subject.
-- **Unreadable sign/calligraphy:** preserve it visually when possible but do not rewrite it as invented text.
-- **Generator cannot render type well:** generate artwork first and add typography in a second pass when possible.
-- **Multiple uploaded images cause reference contamination:** process one file reference at a time.
-- **A requested style conflicts with identity:** preserve identity and weaken the style.
-- **No image-generation tool:** return the compiled prompt and route decision; do not claim completion.
+**One source, one poster.** Never produce a collage, contact sheet, moodboard, scrapbook, album,
+or multi-panel composite from unrelated sources.
+
+**Source truth beats style.** Never invent a person, place name, date, brand, landmark, signature,
+or historical claim from appearance alone. If factual text is not supplied or legible, omit it.
+
+**Facial likeness is enforced, not requested.** Any source containing a recognizable human face
+gets an identity lock injected into its prompt, independent of the routed style:
+
+- A face-designed style (`editorial-portrait`, `photojournalistic`, `fine-art-portrait`) is
+  preferred over general-purpose styles.
+- Face-repainting media (watercolor, gouache, ink wash, screenprint, riso, lithograph,
+  paper-cut, relief print, pastel, neo-ink) are refused unless the user explicitly requests
+  heavy transformation.
+- The lock binds face shape, eye shape and spacing, eyebrow shape, nose and mouth shape, jawline,
+  hairline, skin tone, apparent age, expression, and gaze as fixed geometry.
+
+**Prompting is necessary but not sufficient.** Text constraints reduce drift; they cannot
+eliminate it. Before delivering a portrait, compare the generated face against the source on the
+seven identity-critical points (face shape, eye shape/spacing, eyebrow shape, nose shape, mouth
+shape, hairline, skin tone). If any differ, regenerate. When the backend supports reference-image
+conditioning (IP-Adapter, FaceID, InstantID), prefer it - it is the only reliable mechanism.
+
+**Typography stays subordinate.** Text normally occupies 5-10% or less of the visual area, and
+never covers a face, key hand gesture, important sign, architectural crown, or defining contour.
+
+## Style library
+
+32 direct styles plus `controlled-hybrid` (a meta-style that never enters direct ranking).
+
+| Family | Count |
+|---|---|
+| photographic-editorial | 5 |
+| painterly-atmosphere | 5 |
+| graphic-print | 5 |
+| eastern-heritage | 5 |
+| modern-design | 5 |
+| conceptual-hybrid | 4 |
+| portrait (photographic / painterly / documentary) | 3 |
+
+Routing is deterministic and never randomizes. Confidence is measured relative to the best score
+achievable for that specific profile, and a conservative override fires only when a genuinely weak
+signal is matched closely by an editorial style.
+
+## Project layout
+
+```
+posterloom/
+  SKILL.md                     this manifest
+  scripts/posterloom.py        CLI entrypoint (route/prompt/batch/styles/show/validate/selftest)
+  scripts/rank_styles.py       scoring + routing + portrait guardrail
+  scripts/face_identity.py     facial likeness lock
+  scripts/compose_prompt.py    prompt assembly
+  scripts/batch_plan.py        batch planning with repetition damping
+  scripts/gen_style_contracts.py  regenerate contracts from styles.json
+  scripts/add_portrait_styles.py  one-off portrait style installer
+  data/styles.json             style library (single source of truth)
+  data/routing-rules.json      weights, thresholds, safety lists
+  data/compatibility.json      permitted hybrid pairs
+  styles/<style-id>.md         one contract per style
+  references/                  method notes
+  schemas/                     JSON Schema for profiles and routes
+  examples/                    runnable profiles
+  evals/                       routing regression + visual rubric
+```
+
+## Batch behaviour
+
+Route every source independently. A soft penalty damps a style once it exceeds 3 uses in one
+batch, so near-identical scenes spread out - but it never overrides a clear fit. Report
+`style_repetition` and `unique_styles` from `batch` output.
 
 ## References
-- [Scene analysis](references/scene-analysis.md)
-- [Style router](references/style-router.md)
-- [Prompt composer](references/prompt-composer.md)
-- [Composition](references/composition.md)
-- [Identity preservation](references/identity-preservation.md)
-- [Typography](references/typography.md)
-- [Anti-slop](references/anti-slop.md)
-- [Batch consistency](references/batch-consistency.md)
-- [Visual benchmark](references/visual-benchmark.md)
-- [Host integration](references/host-integration.md)
-- [Originality and scope](references/originality.md)
-- Style contracts live under `styles/`; machine-readable routing data lives under `data/`.
+
+- [Scene analysis](references/scene-analysis.md) - required profile fields and identity anchors
+- [Style router](references/style-router.md) - ranking, confidence, portrait guard, hybrid rules
+- [Identity preservation](references/identity-preservation.md) - likeness enforcement and QA
+- [Prompt composer](references/prompt-composer.md) - how prompts are assembled
+- [Composition](references/composition.md) and [typography](references/typography.md)
+- [Anti-slop](references/anti-slop.md) - failure modes to actively avoid
+- [Visual benchmark rubric](evals/rubric.md) - 0-2 scoring across 10 axes, 17/20 to pass

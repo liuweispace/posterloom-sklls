@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from rank_styles import rank
+import face_identity
 
 GLOBAL = """SOURCE BINDING
 Use exactly one source photograph as the factual and visual anchor.
@@ -84,12 +85,39 @@ Secondary guidance: {secondary['prompt_block']}
     negatives = [style["negative_prompt"]]
     if route.get("hybrid") and not forced_style:
         negatives.append(style_by_id(route["hybrid"]["secondary"])["negative_prompt"])
+
+    # Facial identity lock. Injected for every profile containing a recognizable
+    # human face, regardless of the routed style, and placed after the style block
+    # so it is not diluted by aesthetic instructions.
+    lock = face_identity.build(profile, style_id=primary, style_name=style.get("name"))
+    if lock:
+        blocks.append(lock["block"])
+        negatives.insert(0, lock["negative"])
+
     blocks.append("NEGATIVE CONSTRAINTS\n" + "\n".join(f"- {x}" for x in negatives))
+
+    if lock:
+        blocks.append(
+            "FRAMING\n" + lock["headroom"]
+            + "\n\nDELIVERY GATE\nThis poster is not acceptable until the generated face has been "
+            "compared against the source on face shape, eye shape and spacing, eyebrow shape, nose "
+            "shape, mouth shape, hairline, and skin tone. If it does not match, regenerate."
+        )
+
     blocks.append(
         "FINAL CHECK\nBefore generation, verify one source image -> one independent poster, "
         "identity anchors are protected, typography is restrained, and no unsupported factual content is invented."
     )
-    return "\n\n".join(blocks), route
+    prompt = "\n\n".join(blocks)
+
+    if lock:
+        route = dict(route)
+        route["facial_identity_lock"] = {
+            "active": True,
+            "identity_risk": lock["identity_risk"],
+            "heavy_transformation_requested": lock["heavy_transformation_requested"],
+        }
+    return prompt, route
 
 def main():
     ap = argparse.ArgumentParser(description="Compile a PosterLoom generation prompt.")

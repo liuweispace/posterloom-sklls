@@ -1,0 +1,34 @@
+{
+  "subject": {
+    "type": "portrait",
+    "summary": "Single person facing camera, calm expression, soft window light from the left",
+    "identity_anchors": [
+      "face shape and jawline",
+      "eye shape and spacing",
+      "eyebrow shape",
+      "nose and mouth shape",
+      "hairline and hairstyle",
+      "skin tone and texture",
+      "apparent age",
+      "expression and gaze direction",
+      "clothing silhouette",
+      "hand count and gesture"
+    ]
+  },
+  "environment": "plain interior background with soft tonal falloff",
+  "lighting": ["natural", "window-light", "soft"],
+  "mood": ["quiet", "intimate", "calm", "dignified"],
+  "geometry": ["shallow-depth-of-field", "close-crop", "portrait-orientation"],
+  "palette": ["source-derived", "muted", "warm"],
+  "materials": ["skin", "hair", "fabric"],
+  "text_safe_zones": ["upper-right dark region"],
+  "realism_value": "high",
+  "transformation_tolerance": "low",
+  "user_preferences": {
+    "output_ratio": "3:4",
+    "typography": "small",
+    "title": "",
+    "subtitle": "",
+    "hybrid_allowed": false
+  }
+}

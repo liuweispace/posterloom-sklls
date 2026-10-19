@@ -1,7 +1,7 @@
 
 # AutoStyle Router
 
-The router ranks **29 direct visual styles**. `Controlled Hybrid` is a meta-style and is never ranked as a normal style.
+The router ranks **32 direct visual styles** (29 general + 3 portrait-dedicated). `Controlled Hybrid` is a meta-style and is never ranked as a normal style.
 
 ## Routing sequence
 1. Build the scene profile.
@@ -17,6 +17,34 @@ The router ranks **29 direct visual styles**. `Controlled Hybrid` is a meta-styl
    - one style can clearly remain primary;
    - the secondary can be restricted to one subsystem.
 
+## Portrait routing (identity guard)
+
+When the subject is a person and `transformation_tolerance` is not `high`/`medium-high`,
+the router treats likeness as at risk and refuses to route into a face-repainting medium
+(watercolor, gouache, ink wash, screenprint, riso, lithograph, paper-cut, relief print).
+Such a request is redirected to an identity-safe style:
+
+- `editorial-portrait` — magazine/interview likeness, natural skin;
+- `photojournalistic` — maximum fidelity, captured moment;
+- `fine-art-portrait` — painted surface with the likeness held constant.
+
+If the user explicitly asks for heavy transformation, stylized styles remain available.
+The decision is reported in `diagnostics.identity_guard`.
+
+## Confidence
+
+Confidence is measured **relative to the best score achievable in that profile**, not
+against the absolute weight sum. A sparse profile cannot score highly in absolute terms
+even when it matches perfectly, so absolute bands made nearly every route look `low`
+and collapsed output onto one conservative style.
+
+- `high` — winner leads the field by a clear margin (ratio >= 0.80, margin >= 5)
+- `medium` — winner is credible but the field is close
+- `low` — weak signal; a conservative style is substituted only when it matches within 3 points
+
+The conservative override is a fallback, not a default. Inspect
+`diagnostics.override` and `diagnostics.winner` to see when it fired.
+
 ## Production behavior
 - Route every source image independently.
 - Do not randomize.
@@ -28,6 +56,7 @@ The router ranks **29 direct visual styles**. `Controlled Hybrid` is a meta-styl
 
 ```bash
 python scripts/rank_styles.py examples/scene-night-teahouse.json
+python scripts/rank_styles.py examples/scene-portrait.json
 ```
 
 The helper provides a repeatable ranking signal. The agent still performs the final visual review against the source image.
