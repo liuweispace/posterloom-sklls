@@ -1,57 +1,110 @@
 {
- "version": "1.1.0",
- "weights": {
-  "subject": 30,
-  "lighting": 14,
-  "mood": 14,
-  "geometry": 12,
-  "materials": 10,
-  "palette": 8,
-  "realism": 7,
-  "transform": 5
- },
- "low_confidence_threshold": 36,
- "hybrid": {
-  "allowed": true,
-  "min_primary_score": 48,
-  "max_score_gap": 4.5,
-  "primary_share": 0.8,
-  "secondary_share": 0.2
- },
- "principles": [
-  "Source truth beats style novelty.",
-  "Do not force diversity across a batch.",
-  "Controlled Hybrid never participates in direct ranking.",
-  "Confidence is relative to the best score achievable for this profile.",
-  "A person whose likeness must survive is never routed into a face-repainting medium unless heavy transformation was explicitly requested."
- ],
- "face_destructive_styles": [
-  "transparent-watercolor",
-  "soft-gouache",
-  "expressive-painting",
-  "ink-wash-minimal",
-  "pastel-atmosphere",
-  "pop-screenprint",
-  "riso-poster",
-  "relief-print",
-  "retro-lithograph",
-  "paper-cut-graphic",
-  "neo-ink-poster"
- ],
- "identity_safe_styles": [
-  "editorial-portrait",
-  "photojournalistic",
-  "fine-art-portrait",
-  "cinematic-editorial",
-  "documentary-poster"
- ],
- "conservative_styles": [
-  "elegant-serif-poster",
-  "cinematic-editorial",
-  "documentary-poster"
- ],
- "medium_score_floor": 28,
- "portrait_family": "portrait",
- "portrait_preference_boost": 18,
- "repetition_soft_cap": 3
+  "version": "1.2.0",
+  "weights": {
+    "subject": 30,
+    "lighting": 14,
+    "mood": 14,
+    "geometry": 12,
+    "materials": 10,
+    "palette": 8,
+    "realism": 7,
+    "transform": 5
+  },
+  "low_confidence_threshold": 36,
+  "hybrid": {
+    "allowed": true,
+    "min_primary_score": 48,
+    "max_score_gap": 4.5,
+    "primary_share": 0.8,
+    "secondary_share": 0.2
+  },
+  "principles": [
+    "Source truth beats style novelty.",
+    "Do not force diversity across a batch.",
+    "Controlled Hybrid never participates in direct ranking.",
+    "Confidence is relative to the best score achievable for this profile.",
+    "A person whose likeness must survive is never routed into a face-repainting medium unless heavy transformation was explicitly requested."
+  ],
+  "face_destructive_styles": [
+    "transparent-watercolor",
+    "soft-gouache",
+    "expressive-painting",
+    "ink-wash-minimal",
+    "pastel-atmosphere",
+    "pop-screenprint",
+    "riso-poster",
+    "relief-print",
+    "retro-lithograph",
+    "paper-cut-graphic",
+    "neo-ink-poster"
+  ],
+  "identity_safe_styles": [
+    "editorial-portrait",
+    "photojournalistic",
+    "fine-art-portrait",
+    "cinematic-editorial",
+    "documentary-poster"
+  ],
+  "conservative_styles": [
+    "elegant-serif-poster",
+    "cinematic-editorial",
+    "documentary-poster"
+  ],
+  "medium_score_floor": 28,
+  "portrait_family": "portrait",
+  "portrait_preference_boost": 18,
+  "repetition_soft_cap": 3,
+  "artistic_prior": {
+    "_note": "Tie-break nudge only. On an exact score tie the alphabetical sort decides, which is arbitrary rather than editorial. This lifts genuinely art-directed styles over plain photographic ones without ever overriding a real score difference. Does NOT mean 'more extreme = more artistic'.",
+    "art_direction": {
+      "expressive-painting": 6,
+      "abstract-editorial": 6,
+      "collage-lite-narrative": 6,
+      "editorial-surrealism": 6,
+      "neo-futurist-layout": 5,
+      "geometric-color-block": 5,
+      "paper-cut-graphic": 5,
+      "brutalist-poster": 5,
+      "swiss-grid-poster": 5,
+      "minimal-symbolic-poster": 4,
+      "seal-calligraphy-poster": 4,
+      "tea-house-minimal": 4,
+      "classical-parchment": 4,
+      "folk-narrative-color": 4,
+      "duotone-identity-stack": 4,
+      "riso-poster": 3,
+      "pop-screenprint": 3,
+      "ink-wash-minimal": 3,
+      "retro-lithograph": 3,
+      "soft-gouache": 3,
+      "pastel-atmosphere": 3,
+      "relief-print": 3,
+      "neo-ink-poster": 3,
+      "elegant-serif-poster": 2,
+      "luxury-still-life-editorial": 2,
+      "controlled-hybrid": 2
+    },
+    "plain_photographic": {
+      "editorial-portrait": -4,
+      "photojournalistic": -3,
+      "documentary-poster": -3,
+      "fine-art-portrait": -2,
+      "travel-cover-poster": -2,
+      "cinematic-editorial": -1
+    },
+    "art_direction_heavy": {
+      "transparent-watercolor": 6,
+      "soft-gouache": 6,
+      "expressive-painting": 6,
+      "pop-screenprint": 5,
+      "riso-poster": 5,
+      "retro-lithograph": 5,
+      "relief-print": 5,
+      "ink-wash-minimal": 5,
+      "neo-ink-poster": 5,
+      "pastel-atmosphere": 4,
+      "paper-cut-graphic": 4
+    }
+  },
+  "artistic_request_boost": 12
 }

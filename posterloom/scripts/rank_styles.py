@@ -119,7 +119,19 @@ def rank(profile, top=5, used_styles=None, repetition_soft_cap=None):
                 item["score"] = round(item["score"] - 3.0 * (n - cap + 1), 2)
                 item["reasons"].append(f"batch repetition penalty (used {n}x)")
 
-    results.sort(key=lambda x: (-x["score"], x["style"]))
+    # Artistic prior. Applied only as a tie-break nudge: on an exact score tie
+    # the sort would otherwise fall back to alphabetical order, which is an
+    # accident rather than an editorial decision. A real score difference always
+    # wins, so this never overrides actual routing evidence.
+    prior = rules.get("artistic_prior", {})
+    art_bonus = prior.get("art_direction", {})
+    plain_penalty = prior.get("plain_photographic", {})
+    for item in results:
+        delta = art_bonus.get(item["style"], 0) + plain_penalty.get(item["style"], 0)
+        if delta:
+            item["artistic_prior"] = delta
+
+    results.sort(key=lambda x: (-x["score"], -x.get("artistic_prior", 0), x["style"]))
     top_results = results[:max(top, 2)]
     primary = top_results[0]["style"]
     fallback = top_results[1]["style"] if len(top_results) > 1 else None
@@ -151,6 +163,46 @@ def rank(profile, top=5, used_styles=None, repetition_soft_cap=None):
     # permitted, it is preferred. A generic style can be photographic and still be
     # the wrong tool for a face; blocking only the destructive ones lets a
     # general-purpose layout win and hand the model a face it was never tuned for.
+    # "Make it artistic" is an explicit request for transformation, and it applies
+    # to every subject, not just faces - a landscape can be art-directed too.
+    #
+    # For a person the guardrail still matters: only styles the artistic prior
+    # already calls art-directed are unlocked, and the face-repainting set is
+    # subtracted regardless. Likeness is fully protected; only the block on
+    # stylization is lifted.
+    art_intent = bool(tags & {"artistic", "art-directed", "stylize", "posterize",
+                              "painterly", "experimental", "expressive"}) or bool(
+        norm(profile.get("mood", [])) & {"expressive", "experimental", "raw"}
+    )
+    artistic_styles = set(rules.get("artistic_prior", {}).get("art_direction", {}))
+    if is_person:
+        # Never unlock a medium that repaints facial structure on a face.
+        artistic_styles -= destructive
+    elif wants_heavy:
+        # Non-face subjects with heavy tolerance may use the full art-directed set,
+        # including the print/painterly families.
+        artistic_styles = set(
+            rules.get("artistic_prior", {}).get("art_direction", {})
+        ) | set(rules.get("artistic_prior", {}).get("art_direction_heavy", {}))
+    if art_intent:
+        boost = float(rules.get("artistic_request_boost", 12))
+        for item in results:
+            if item["style"] in artistic_styles:
+                item["score"] = round(item["score"] + boost, 2)
+                item["reasons"].append("artistic intent: art-directed style enabled")
+        results.sort(key=lambda x: (-x["score"], -x.get("artistic_prior", 0), x["style"]))
+        top_results = results[:max(top, 2)]
+        score0 = top_results[0]["score"]
+        primary = top_results[0]["style"]
+        fallback = top_results[1]["style"] if len(top_results) > 1 else None
+        if is_person:
+            safety_note = (safety_note or "") + (
+                " | artistic intent applied: art-directed styles enabled while "
+                "identity lock stays active")
+        else:
+            safety_note = (safety_note or "") + (
+                " | artistic intent applied: art-directed style enabled")
+
     if identity_risk:
         boost = float(rules.get("portrait_preference_boost", 18))
         for style in data["styles"]:
@@ -162,7 +214,7 @@ def rank(profile, top=5, used_styles=None, repetition_soft_cap=None):
                     if item["style"] == style["id"]:
                         item["score"] = round(item["score"] + boost, 2)
                         item["reasons"].append("face-designed style preferred for likeness")
-        results.sort(key=lambda x: (-x["score"], x["style"]))
+        results.sort(key=lambda x: (-x["score"], -x.get("artistic_prior", 0), x["style"]))
         top_results = results[:max(top, 2)]
         score0 = top_results[0]["score"]
         primary = top_results[0]["style"]

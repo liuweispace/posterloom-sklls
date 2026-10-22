@@ -64,6 +64,37 @@ Route it only when the brief asks for experimental/print treatment or a face-ser
 straight editorial or documentary portrait brief should still land on the photographic
 portrait styles.
 
+## Artistic dial — "make it artistic"
+
+The default for a face is likeness-first: plain photographic portrait styles win
+because the user's identity must survive. That is correct, but it means an
+unannotated photo comes back looking like a clean photo with small type, not a
+poster.
+
+Two mechanisms fix that without weakening likeness protection:
+
+1. **`artistic_prior` (tie-break only).** On an exact score tie the sort used to
+   fall back to alphabetical order, so `editorial-portrait` beat
+   `fine-art-portrait` purely by spelling. The prior nudges genuinely art-directed
+   styles ahead of plain photographic ones and damps the plain ones. A real score
+   difference always wins — this never overrides routing evidence.
+
+2. **Artistic intent (explicit unlock).** When the profile carries an artistic tag
+   (`artistic`, `art-directed`, `painterly`, `experimental`, `stylize`,
+   `posterize`, `expressive`) or an expressive mood, art-directed styles get a
+   score boost (`artistic_request_boost`).
+
+The guardrail is deliberately asymmetric:
+
+- **Faces** unlock only the `art_direction` set, and the face-repainting family
+  (watercolor, gouache, ink wash, screenprint, lithograph...) is subtracted first.
+  Likeness stays fully protected; only stylization is unlocked.
+- **Non-face subjects** with `transformation_tolerance: high` additionally unlock
+  `art_direction_heavy`, which includes the print and painterly families.
+
+A plain photo with no artistic tags still routes conservatively. The dial responds
+to intent, it does not impose art.
+
 ## Production behavior
 - Route every source image independently.
 - Do not randomize.

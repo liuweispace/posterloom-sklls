@@ -1522,5 +1522,66 @@
         "self-portrait"
       ]
     }
+  },
+  {
+    "id": "route-artistic-intent-portrait",
+    "expected_primary": "duotone-identity-stack",
+    "profile": {
+      "subject": {
+        "type": "person",
+        "summary": "Person by a cafe window; user asked for an artistic poster",
+        "identity_anchors": [
+          "face shape",
+          "eye shape and spacing",
+          "hairline",
+          "skin tone"
+        ]
+      },
+      "environment": "indoor cafe",
+      "lighting": [
+        "natural"
+      ],
+      "mood": [
+        "expressive",
+        "raw",
+        "experimental"
+      ],
+      "geometry": [],
+      "palette": [],
+      "materials": [],
+      "realism_value": "low",
+      "transformation_tolerance": "high",
+      "user_preferences": {},
+      "subject_tags": [
+        "portrait",
+        "artistic",
+        "painterly",
+        "experimental"
+      ]
+    }
+  },
+  {
+    "id": "route-artistic-intent-landscape",
+    "expected_primary": "soft-gouache",
+    "profile": {
+      "subject": {
+        "type": "landscape",
+        "summary": "Mountain valley at dusk; user wants an artistic poster"
+      },
+      "environment": "outdoors",
+      "lighting": [
+        "twilight"
+      ],
+      "mood": [],
+      "geometry": [],
+      "palette": [],
+      "materials": [],
+      "realism_value": "high",
+      "transformation_tolerance": "high",
+      "user_preferences": {},
+      "subject_tags": [
+        "artistic"
+      ]
+    }
   }
 ]
