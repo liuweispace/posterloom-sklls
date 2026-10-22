@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "direct_style_count": 32,
+  "version": "1.2.0",
+  "direct_style_count": 33,
   "meta_style_count": 1,
   "styles": [
     {
@@ -2420,6 +2420,98 @@
         "caption none/tiny"
       ],
       "prompt_block": "Transform the single source photograph using the **Editorial Portrait** visual system. The photograph is the factual anchor and the face is FIXED GEOMETRY, not content to reinterpret.\n\nMechanism: Reproduce this exact person's face. Preserve face shape, bone structure, eye shape and spacing, eyebrow shape, nose and mouth shape, jawline, hairline, skin tone and texture, apparent age, expression, and gaze direction. Do not beautify, de-age, age-shift, or gender-shift.\n\nComposition: Editorial portrait framing with clean headroom and generous negative space. Keep the face unobstructed and free of graphic overlays.\n\nLighting: Preserve the source light direction. Refine into soft directional key with gentle falloff. No unmotivated rim lights or catchlights.\n\nColor: Source-derived skin rendering, believable subsurface tone, soft highlights on skin, natural lip and hair color.\n\nMaterial: Skin texture with restrained visible pores and fine lines. Hair keeps strand direction and density. Fabric keeps weave and weight. No plastic smoothing or beauty filter.\n\nTypography: Small editorial serif or grotesk in a text-safe zone that never crosses the face or hands."
+    },
+    {
+      "id": "duotone-identity-stack",
+      "name": "Duotone Identity Stack",
+      "family": "graphic-portrait",
+      "role": "direct",
+      "status": "gold",
+      "best_for": [
+        "portrait and self-portrait series",
+        "identity and self-examination themes",
+        "experimental editorial covers",
+        "fashion and culture features",
+        "poster exercises built around one face"
+      ],
+      "reject_if": [
+        "no human subject is present",
+        "the brief requires documentary facial credibility",
+        "identity anchors cannot be established from the source",
+        "the subject count must stay exactly as photographed with no graphic re-composition"
+      ],
+      "mechanism": "Repeat ONE verified identity as a stack of the same person, then print the stack in a two-ink duotone with hard posterized edges. Exactly one copy is the canonical identity anchor and must match the source face precisely; every other copy is a graphic repetition of that same verified face, not a new person and not a merged average.",
+      "composition": "Build a vertical stack of 2-4 copies of the same face along the centerline, each copy cropped by the next so several eyes, noses and mouths coexist in one frame. Vary scale and angle slightly between copies (largest upper-left and tilted, smaller cascading toward center). Clip cheeks, temples and jaw into angular mask-like points rather than natural silhouettes. Anchor the stack with one strong foreground element (a hand entering from the lower edge, or a large circular disc overlapping the lower face). Leave one clean open quadrant for the title.",
+      "lighting": "Do not restage the photograph. Keep the source lighting on the canonical copy, then push the whole stack toward high-contrast print: blown highlights, crushed blacks, minimal midtone. Tone must read as ink on paper, not as studio lighting.",
+      "color_logic": "Strict two-ink duotone plus one accent. Map the photograph into a single hue ramp (e.g. crimson/raspberry into chalky white, or peach/coral into vermilion) with near-black reserved for the deepest shadow. Skin color is removed entirely. One saturated accent color carries the title and the registration marks.",
+      "material_language": "Risograph or screen-print surface: visible ink grain, speckling, uneven ink coverage, slight misregistration, softened edges where ink does not take. Keep hair strands, pores and stubble legible inside the ink texture rather than smoothing them away.",
+      "typography": "Two type systems in tension. A large high-contrast display serif (Didone or Bodoni italic) for the title, set tight into one corner on the open quadrant. A heavy neo-grotesk (Helvetica Black class) alternative for an all-caps variant. Pair with small Song/Ming Chinese serif characters set far apart as corner markers, plus tiny uppercase microtype as edition marks (NNN / 100, date, series credit).",
+      "realism": "medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "portrait",
+          "person",
+          "face",
+          "headshot",
+          "self-portrait",
+          "performance"
+        ],
+        "lighting": [
+          "studio",
+          "natural",
+          "hard",
+          "directional"
+        ],
+        "mood": [
+          "intimate",
+          "reflective",
+          "experimental",
+          "raw",
+          "psychological",
+          "stark"
+        ],
+        "geometry": [
+          "centered",
+          "close-crop",
+          "portrait-orientation",
+          "repeating-grid",
+          "vertical-stack"
+        ],
+        "materials": [
+          "skin",
+          "hair",
+          "eye",
+          "fabric",
+          "ink",
+          "paper-grain"
+        ],
+        "palette": [
+          "duotone",
+          "monochrome-accent",
+          "high-contrast",
+          "single-hue-ramp"
+        ],
+        "realism": [
+          "medium",
+          "medium-low"
+        ],
+        "transform": [
+          "high",
+          "medium-high",
+          "medium-high"
+        ]
+      },
+      "negative_prompt": "No new or different person, no face averaged between copies, no identity drift between repetitions, no extra faces belonging to other people, no smooth airbrushed skin, no glossy 3D render look, no full-colour natural skin tones, no soft pastel gradient background, no multiple unrelated source images, no contact sheet or moodboard grid, no illegible warped typography, no watermark, no stock-photo smile, no smooth vector illustration.",
+      "variation_knobs": [
+        "copy-count 2/3/4",
+        "hue-ramp crimson/white, peach/vermilion, cyan/black, ochre/black",
+        "stack-angle aligned/offset/diagonal",
+        "anchor-element hand/disc/none",
+        "type high-contrast-serif/neogrotesk-caps",
+        "edition-mark none/counter/date"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Duotone Identity Stack** visual system.\n\nIdentity: There is exactly ONE real person in this poster, and it is the person in the source photograph. Duplicate that verified face several times, but every copy must be the SAME person with the SAME face shape, eye shape and spacing, eyebrow shape, nose and mouth shape, jawline, hairline, skin tone, apparent age, and gaze direction. Repetition is a graphic operation on a known identity, never the invention of a second person and never an averaged or merged face. Treat the largest, sharpest copy as the canonical anchor and match every other copy to it.\n\nComposition: Stack 2-4 copies of that same face along the vertical centerline so several eyes, noses and mouths coexist in one frame. Crop each copy with the next. Vary scale and angle slightly: the largest copy sits upper-left and tilted, smaller copies cascade toward the center. Clip cheeks, temples and jaw into angular mask-like points. Anchor the lower half with one strong foreground element, either a hand entering from the bottom edge or a large circular disc overlapping the lower face. Keep one clean open quadrant for the title.\n\nColor: Strict two-ink duotone plus one accent. Map the photograph into a single hue ramp with near-black reserved for deepest shadow. Remove natural skin color entirely. One saturated accent color carries the title and the small registration marks.\n\nMaterial: Risograph or screen-print surface. Visible ink grain, speckling, uneven coverage, slight misregistration, softened edges where ink does not take. Keep hair strands, pores and stubble legible inside the ink texture.\n\nTypography: A large high-contrast display serif (Didone or Bodoni italic) for the title set tight into one corner on the open quadrant, or a heavy neo-grotesk all-caps variant. Add small Song/Ming Chinese serif characters set far apart as corner markers, and tiny uppercase microtype as edition marks such as NNN / 100 plus date and series credit."
     },
     {
       "id": "fine-art-portrait",

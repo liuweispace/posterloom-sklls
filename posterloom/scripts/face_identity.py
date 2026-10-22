@@ -82,6 +82,28 @@ def wants_heavy_transformation(profile) -> bool:
     return tolerance_of(profile) in ("high", "medium-high")
 
 
+# Styles whose whole visual system is one verified face repeated on the canvas.
+# For these, duplication is the intent — but it must be the SAME face, so the
+# identity lock stays fully on and only the "never duplicate" clause is relaxed.
+REPEAT_IDENTITY_STYLES = {"duotone-identity-stack"}
+
+
+def repetition_clause(style_id):
+    """Swap the flat no-duplication rule for a same-face repetition rule."""
+    if style_id in REPEAT_IDENTITY_STYLES:
+        return (
+            "7. REPEAT ONE IDENTITY. This style deliberately repeats the same face. "
+            "Every copy must be the SAME verified person with identical face shape, "
+            "eye shape and spacing, eyebrow shape, nose and mouth shape, jawline, "
+            "hairline, skin tone, and age cues. Repetition must never drift into a "
+            "different person, an averaged face, or a hybrid of several people."
+        )
+    return (
+        "7. SINGLE IDENTITY. If other people appear, every face must correspond to its own "
+        "person in the source. Never duplicate, merge, or average faces."
+    )
+
+
 def likeness_block(profile, style_id=None, style_name=None) -> str:
     """Return the facial-identity constraint block for a portrait prompt."""
     anchors = identity_anchors_of(profile)
@@ -98,6 +120,7 @@ def likeness_block(profile, style_id=None, style_name=None) -> str:
         )
 
     style_ctx = f" This applies on top of the {style_name or style_id} style." if (style_id or style_name) else ""
+    repeat_clause = repetition_clause(style_id)
 
     return f"""FACIAL IDENTITY LOCK — HIGHEST PRIORITY{style_ctx}
 This instruction outranks the style, the aesthetic, and any beautification tendency.
@@ -116,16 +139,20 @@ This instruction outranks the style, the aesthetic, and any beautification tende
    idealized face. Do not shift age, gender presentation, ethnicity, or body type.
 6. NO ENHANCEMENT. No beauty retouching, no skin smoothing, no reshaping, no
    enlargement of eyes or lips, no makeup addition, no teeth straightening.
-7. SINGLE IDENTITY. If other people appear, every face must correspond to its own
-   person in the source. Never duplicate, merge, or average faces.
+{repeat_clause}
 8. VERIFY BEFORE DELIVERING. Compare the generated face against the source on the
    seven identity-critical points — face shape, eye shape/spacing, eyebrow shape,
    nose shape, mouth shape, hairline, skin tone. If any differ, regenerate before
    showing the result."""
 
 
-def likeness_negative(profile) -> str:
+def likeness_negative(profile, style_id=None) -> str:
     """Negative constraints naming the specific facial-drift failure modes."""
+    duplication = (
+        "no drifted or mismatched copies within a repeated face, "
+        if style_id in REPEAT_IDENTITY_STYLES
+        else "no face duplication, no composite or merged faces, "
+    )
     return (
         "No different person, no newly invented face, no generic or idealized face, "
         "no face averaged toward a model-default look, no changed face shape or width, "
@@ -135,7 +162,7 @@ def likeness_negative(profile) -> str:
         "hairline or hairstyle, no skin tone or undertone shift, no age shift or "
         "de-aging, no gender presentation shift, no ethnicity shift, no beautification, "
         "no plastic or airbrushed skin, no excessive skin smoothing, no makeup addition, "
-        "no teeth or smile alteration, no face duplication, no composite or merged faces, "
+        "no teeth or smile alteration, " + duplication +
         "no extra or missing fingers, no text over the face."
     )
 
@@ -155,7 +182,7 @@ def build(profile, style_id=None, style_name=None):
         return None
     return {
         "block": likeness_block(profile, style_id, style_name),
-        "negative": likeness_negative(profile),
+        "negative": likeness_negative(profile, style_id),
         "headroom": headroom_note(profile),
         "identity_risk": True,
         "heavy_transformation_requested": wants_heavy_transformation(profile),

@@ -1461,5 +1461,66 @@
         "typography": "small"
       }
     }
+  },
+  {
+    "id": "route-duotone-identity-stack",
+    "expected_primary": "duotone-identity-stack",
+    "profile": {
+      "subject": {
+        "type": "portrait",
+        "summary": "Single young man, dark tousled hair, stubble, hard studio light; experimental self-portrait poster brief",
+        "identity_anchors": [
+          "face shape and jawline",
+          "eye shape and spacing",
+          "eyebrow shape",
+          "nose and mouth shape",
+          "hairline",
+          "skin tone"
+        ]
+      },
+      "environment": "flat studio backdrop",
+      "lighting": [
+        "studio",
+        "hard",
+        "directional"
+      ],
+      "mood": [
+        "experimental",
+        "raw",
+        "psychological",
+        "stark",
+        "intimate"
+      ],
+      "geometry": [
+        "centered",
+        "close-crop",
+        "portrait-orientation",
+        "vertical-stack",
+        "repeating-grid"
+      ],
+      "palette": [
+        "duotone",
+        "high-contrast",
+        "monochrome-accent"
+      ],
+      "materials": [
+        "skin",
+        "hair",
+        "eye",
+        "ink",
+        "paper-grain"
+      ],
+      "text_safe_zones": [
+        "lower-left corner"
+      ],
+      "realism_value": "medium",
+      "transformation_tolerance": "high",
+      "user_preferences": {},
+      "subject_tags": [
+        "portrait",
+        "experimental",
+        "self-portrait"
+      ]
+    }
   }
 ]

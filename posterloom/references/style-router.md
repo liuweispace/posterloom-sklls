@@ -1,7 +1,7 @@
 
 # AutoStyle Router
 
-The router ranks **32 direct visual styles** (29 general + 3 portrait-dedicated). `Controlled Hybrid` is a meta-style and is never ranked as a normal style.
+The router ranks **33 direct visual styles** (29 general + 3 portrait-dedicated + 1 duotone identity stack). `Controlled Hybrid` is a meta-style and is never ranked as a normal style.
 
 ## Routing sequence
 1. Build the scene profile.
@@ -44,6 +44,25 @@ and collapsed output onto one conservative style.
 
 The conservative override is a fallback, not a default. Inspect
 `diagnostics.override` and `diagnostics.winner` to see when it fired.
+
+## Duotone Identity Stack
+
+`duotone-identity-stack` is the one style whose visual system is a **single face repeated
+on the canvas**. It therefore inverts the normal identity rule: duplication is the intent,
+not a failure.
+
+The identity lock stays fully on for it. Only clause 7 changes:
+
+- every other portrait style keeps `SINGLE IDENTITY — never duplicate, merge, or average faces`
+- this style gets `REPEAT ONE IDENTITY — every copy must be the same verified person`
+
+The negative prompt follows suit: `no face duplication` is swapped for
+`no drifted or mismatched copies within a repeated face`. Repetition must never become a
+different person, an averaged face, or a hybrid of several people.
+
+Route it only when the brief asks for experimental/print treatment or a face-series; a
+straight editorial or documentary portrait brief should still land on the photographic
+portrait styles.
 
 ## Production behavior
 - Route every source image independently.

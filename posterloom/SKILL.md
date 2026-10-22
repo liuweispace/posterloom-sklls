@@ -1,9 +1,9 @@
 ---
 name: posterloom
-description: Turn a real photograph into an art-directed poster - analyze the scene, preserve identity anchors, route to 1 of 32 poster styles, and compile a locked generation prompt. Use when the user wants a photo converted into an editorial, travel, cultural, painterly, print, portrait, or modern-design poster, or wants a batch of independent posters from many photos. Enforces facial likeness locking on any source containing a person.
+description: Turn a real photograph into an art-directed poster - analyze the scene, preserve identity anchors, route to 1 of 33 poster styles, and compile a locked generation prompt. Use when the user wants a photo converted into an editorial, travel, cultural, painterly, print, portrait, or modern-design poster, or wants a batch of independent posters from many photos. Enforces facial likeness locking on any source containing a person.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   tagline: "Adaptive Photo-to-Poster Skill"
 ---
 
