@@ -1,6 +1,6 @@
 {
-  "version": "1.5.0",
-  "direct_style_count": 33,
+  "version": "1.6.0",
+  "direct_style_count": 35,
   "meta_style_count": 1,
   "styles": [
     {
@@ -3392,6 +3392,328 @@
           1,
           3
         ]
+      }
+    },
+    {
+      "id": "gathered-scenes-zine",
+      "name": "Gathered Scenes Zine",
+      "family": "paper-collage",
+      "role": "direct",
+      "status": "gold",
+      "default_ratio": "3:5",
+      "best_for": [
+        "travel and place photographs",
+        "landscape and architecture with strong geometry",
+        "botanical and organic detail",
+        "quiet editorial poster pages",
+        "tactile paper-collage posters"
+      ],
+      "reject_if": [
+        "the user wants the photo shown unchanged with no interpretation",
+        "the source is already an illustration or graphic artwork",
+        "the poster must reproduce a face with strict documentary fidelity",
+        "no quiet space can be found in the composition"
+      ],
+      "mechanism": "Keep the photograph truthful as the factual anchor, then let a larger abstract illustration field reinterpret selected source elements. The two materials meet at a visible hand-torn fibrous edge. The photograph provides the facts; the illustration decides how they remain.",
+      "composition": "Vertical 3:5 canvas of warm aged paper. Allocate the photographic portion and the illustration field so the illustration affects a substantial part of the poster, not a timid peripheral doodle. Enlarge the illustration by scale and field extent, never by adding detail. Keep substantial quiet paper both inside and around the enlarged illustration. Build photography, illustration and the added hue on one shared source-derived contour, axis, rhythm or field.",
+      "lighting": "Do not restage the photograph. Flat, even, scan-like light across the whole sheet. No cinematic lighting, no depth of field, no cast shadows from the paper. The only depth cue is the torn boundary itself.",
+      "color_logic": "Preserve the photograph's natural color atmosphere and recognizable geometry. Add exactly one high-chroma hue that is source-derived and shares shapes with the illustration rather than floating as decoration. The hue must be chromatic structure, not an accent sticker: it must change balance, movement, figure-ground or meaning.",
+      "material_language": "Warm cream aged paper with matte fibers, restrained speckles, weathering and flat print texture. The torn edge shows irregular contour, narrow exposed fibers, warm paper tone and natural variation - never a uniform frame, never clean digital clipping, never a sticker outline or curled-paper depth. Speckles and ghost marks stay subordinate to the torn boundary.",
+      "typography": "One restrained source-aware micro-text element, English by default, or Chinese or bilingual when the user supplied or requested it. A deliberate standalone word, keyword sequence of two to four scene-related words with one separator system, or a short phrase. If bilingual, one line clearly subordinate. Legible, paper-integrated, quiet, placed in genuine breathing room - never a caption or headline.",
+      "realism": "medium",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "landscape",
+          "travel",
+          "architecture",
+          "place",
+          "object",
+          "still-life",
+          "teahouse"
+        ],
+        "lighting": [
+          "natural",
+          "overcast",
+          "daylight",
+          "soft-light",
+          "mist",
+          "dusk"
+        ],
+        "mood": [
+          "quiet",
+          "calm",
+          "contemplative",
+          "meditative",
+          "warm",
+          "refined"
+        ],
+        "geometry": [
+          "open-space",
+          "negative-space",
+          "margin-rich",
+          "silhouette",
+          "asymmetry",
+          "broad-fields"
+        ],
+        "materials": [
+          "paper",
+          "paper-grain",
+          "foliage",
+          "stone",
+          "wood",
+          "texture"
+        ],
+        "palette": [
+          "source-derived",
+          "muted",
+          "desaturated",
+          "earth-tone",
+          "warm-neutral",
+          "warm-paper"
+        ],
+        "realism": [
+          "medium",
+          "medium-low"
+        ],
+        "transform": [
+          "high",
+          "medium-high"
+        ]
+      },
+      "negative_prompt": "No photographic pixels replaced by illustration, no traced or rotoscoped full scene, no vintage texture laid over an intact photo, no generic mood labels without visible structure, no decorative metaphors, no sticker-like cutout outlines, no fuzzy selection halos, no clean digital clipping, no uniform torn border, no heavy cast shadows, no curled paper, no 3D depth, no scattered confetti, no arbitrary dots or grids, no tape, no multiple competing bright hues, no commercial advertising hierarchy, no logo, no CTA, no glossy mockup, no watermark, no photorealistic regions.",
+      "variation_knobs": [
+        "illustration-grammar silhouette/contour/field/rhythm/cut-paper",
+        "abstraction low/medium/high",
+        "accent-hue source-resonance/temperature-counterpoint/focused-complement/quiet-harmony",
+        "edge torn-fiber/layered-grayscale/stippled/natural-isolated",
+        "text none/word/keyword-sequence/bilingual",
+        "paper warm-cream/cool-gray/white"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Gathered Scenes Zine** visual system. Preserve the signature: truthful photograph as anchor, illustration as field, color as structure, torn paper as boundary, paper that breathes.\n\nCanvas: vertical 3:5 on warm cream aged paper with matte fibers, restrained speckles and weathering. Flat scan lighting, no mockup framing, no cast shadow.\n\nScene reading: identify the 1-2 core subjects, 2-3 supporting elements, the spatial invariants that must stay recognizable (horizon, relative positions, scale, overlap, facing direction), the dominant gesture, the visual-weight map, the native color atmosphere, one or two source shapes that can continue across photo and illustration, the natural quiet areas, and the semantic minimum - the smallest set of forms that still identifies this particular place.\n\nAbstraction: compress dense foliage, branches, leaves, crowds, texture and other micro-detail into a few large quiet forms. Remove roughly 60-80% of small descriptive detail. Merge repeated elements into one rhythm or silhouette. Keep at least one unmistakable source-specific feature. Choose ONE primary illustration grammar - silhouette-led for figures and trees, contour-led for architecture and paths, field-led for water, fog and sky, rhythm-led for posts, windows, waves and steps, cut-paper-led when the source has a strong shape hierarchy - plus at most one supporting grammar. Never combine every print process in one illustration.\n\nAllocation: the illustration must occupy a substantial part of the poster, enlarged by scale and field extent rather than by adding detail. Keep substantial internal and surrounding negative space so blank paper clarifies the forms instead of feeling accidentally empty. Let photography, illustration and color share one source-derived contour, axis, rhythm or field.\n\nTorn-paper handoff: at the main photo-to-paper boundary, a visibly hand-torn fibrous edge - irregular contour, narrow exposed fibers, warm paper tone, natural variation, no uniform frame. Let zero to two selected forms cross the boundary when continuation helps. Speckles and ghost marks stay subordinate, confined to meaningful pressure points and faint at thumbnail size.\n\nColor: preserve the photograph's natural color atmosphere. Add exactly ONE high-chroma hue that shares source-derived shapes with the illustration - it must be chromatic structure, not decoration. If the source carries a meaningful repeatable motif (flowers, leaves, small lights, windows, stones), you may disperse several instances of it in that single hue with unequal scale and interval, leaving some intervals open.\n\nTypography: one restrained micro-text element. English by default; Chinese or bilingual only when supplied or requested. A deliberate standalone word, a two-to-four-word keyword sequence with one consistent separator, or a short phrase. Legible, paper-integrated, quiet, subordinate to the image, placed in genuine breathing room - never a caption or a headline. Never invent Chinese characters.",
+      "source_role": "visual-anchor",
+      "visual_signature": {
+        "contrast_range": [
+          0.05,
+          0.46
+        ],
+        "saturation_range": [
+          0.05,
+          0.72
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "earth-tone",
+          "warm-neutral",
+          "natural",
+          "desaturated",
+          "matte",
+          "warm-paper",
+          "soft",
+          "limited",
+          "powdery",
+          "pastel",
+          "single-accent",
+          "vivid-source-derived",
+          "teal",
+          "sepia"
+        ],
+        "hue_clusters": [
+          2,
+          9
+        ]
+      },
+      "color_system": {
+        "substrate": "aged cream / warm gray",
+        "inks": [
+          "graphite",
+          "faded-black"
+        ],
+        "accent": "one source-derived high-chroma hue (cobalt, tomato-red, pear-green or lemon-yellow — choose by relationship to the source)",
+        "coverage": "illustration field 45-70% of the poster, of which 55-75% stays unprinted quiet paper; accent hue 2-6% opaque, 6-15% translucent underprint, 10-20% large structural field",
+        "ramps": {
+          "graphite": {
+            "shadow": "#2B2724",
+            "mid": "#4A4A48",
+            "light": "#8C8579",
+            "paper": "#F2EBDC"
+          },
+          "cobalt": {
+            "shadow": "#16337A",
+            "mid": "#2148B8",
+            "light": "#9EB8D3",
+            "paper": "#F2EBDC"
+          },
+          "tomato": {
+            "shadow": "#8F3434",
+            "mid": "#D6402F",
+            "light": "#F3A099",
+            "paper": "#F2EBDC"
+          }
+        }
+      }
+    },
+    {
+      "id": "scene-distillation-zine",
+      "name": "Scene Distillation Zine",
+      "family": "paper-collage",
+      "role": "direct",
+      "status": "gold",
+      "default_ratio": "3:5",
+      "best_for": [
+        "authored abstract reinterpretations",
+        "emotional or conceptual poster series",
+        "editorial pages that should not read as photographs",
+        "abstract art posters from a personal photo",
+        "work where the source is stimulus, not content"
+      ],
+      "reject_if": [
+        "the user wants the photograph preserved or visible in the output",
+        "the user needs the source person recognizable",
+        "the request is a straightforward photo-to-poster conversion",
+        "the poster must carry commercial product imagery"
+      ],
+      "mechanism": "Treat the photo as semantic evidence and creative stimulus, never as a visual layer. The output contains original illustration, paper and typography only - no photographic pixels, no tracing, no photorealistic regions. The photo is a reference for meaning, not a layer to keep.",
+      "composition": "Preserve the source orientation as part of its spatial logic: vertical 3:5 for a portrait source, horizontal 5:3 for a landscape source, vertical 3:5 when square or ambiguous. Recompose freely inside that canvas rather than retaining the photographic framing. Start from 68-85% quiet paper and one active illustration cluster of roughly 12-32% of the canvas, then correct by actual visual weight. Choose ONE composition family: asymmetric island, torn window, directional drift, rhythmic circulation, staggered fragments, vertical tension, or auxiliary constellation. Never center by habit or split the canvas evenly.",
+      "lighting": "No lighting at all in the photographic sense. Flat printed colour on paper. The image is made of ink, paper and type, so there is no light source, no depth of field and no cast shadow. Depth comes from overlapping paper forms and edge treatment only.",
+      "color_logic": "Paper and most illustration inks stay subdued; ONE unmistakable high-chroma hue carries the work. Give it a single role - focal pin, counterweight, bridge, directional cue, or rhythmic beat - and keep the total high-chroma area around 0.8-3% of the poster, or 10-30% of the active cluster. State the eye path through it. Do not add a bright shape without compositional reason.",
+      "material_language": "Torn fiber, dry ink, grain, cut paper and broken contour carry meaning, not surface decoration. Paper is warm cream with visible fiber, scan grain and flat print texture. Forms are flat masses with broken edges, never realistic shading, never polished vector, never cute cartoon.",
+      "typography": "Fully free authorial material. Wording, language, amount, placement, type voices, scale, direction and legibility all follow expression rather than preset. Text may be caption, countervoice, title, interruption, rhythm, surface texture, or the primary subject. It may be tiny, oversized, cropped, scattered, stacked, rotated, obscured or materially mixed with the illustration. The only rule: it must deepen the proposition, tension, metaphor or interpretive opening rather than caption what is visible.",
+      "realism": "low",
+      "transformation": "high",
+      "routing": {
+        "subject": [
+          "landscape",
+          "object",
+          "still-life",
+          "architecture",
+          "place",
+          "portrait",
+          "person"
+        ],
+        "lighting": [
+          "natural",
+          "overcast",
+          "dusk",
+          "ambient",
+          "any",
+          "soft-light"
+        ],
+        "mood": [
+          "reflective",
+          "experimental",
+          "raw",
+          "psychological",
+          "stark",
+          "melancholy"
+        ],
+        "geometry": [
+          "negative-space",
+          "open-space",
+          "asymmetry",
+          "silhouette",
+          "rhythm",
+          "strong-contour"
+        ],
+        "materials": [
+          "paper",
+          "paper-grain",
+          "ink",
+          "print",
+          "texture",
+          "flat-color"
+        ],
+        "palette": [
+          "source-derived",
+          "limited",
+          "muted",
+          "single-accent",
+          "spot-color",
+          "ink-neutral"
+        ],
+        "realism": [
+          "low",
+          "medium-low"
+        ],
+        "transform": [
+          "high"
+        ]
+      },
+      "negative_prompt": "No original photo fragments, no photorealistic regions, no photo windows, no tracing, no rotoscoping, no literal full-scene illustration, no exact composition copying, no generic mood labels without visible embodiment, no decorative metaphors, no universal-symbol cliches, no random ambiguity, no overly faithful anatomy, no realistic shading, no cute cartoon, no kawaii, no anime, no children's-book styling, no polished vector characters, no generic abstract motifs, no arbitrary dots or grids, no unsupported decorative scattering, no evenly repeated color motifs, no sticker-like cutout outlines, no fuzzy selection halos, no decorative stamps, no tape, no multiple competing bright hues, no dense scrapbooking, no commercial advertising hierarchy, no logo, no CTA, no glossy mockup, no curled paper, no hard shadows, no 3D, no cinematic lighting, no depth of field, no neon, no watermark.",
+      "variation_knobs": [
+        "illustration-grammar cut-paper/dry-print/broken-contour/rhythm-field/fragment-stack/orbit",
+        "edge torn-fiber/layered-grayscale/stippled/mark/natural-isolated",
+        "accent-role focal-pin/counterweight/bridge/directional-cue/rhythmic-beat",
+        "accent concentrated/distributed-supporting",
+        "text none/word/fragment/multi-voice/full-field",
+        "tension intimacy-distance/shelter-confinement/movement-stillness/smallness-vastness/warmth-coldness/memory-disappearance/order-growth/visibility-concealment/permanence-fragility"
+      ],
+      "prompt_block": "Transform the single source photograph using the **Scene Distillation Zine** visual system. The photo is semantic evidence and creative stimulus only.\n\n\nNO PHOTOGRAPHY. Do not reproduce, embed, crop, collage, trace, or retain photographic pixels or photorealistic regions from the reference. The final image must contain original illustration, paper and typography only.\n\nReading: identify the semantic nucleus (the smallest subject, relationship or event that gives the source meaning), one core subject or at most two inseparable ones, one to three supporting elements, the dominant gesture, one spatial cue worth preserving, the visual-weight map, the native palette, the material and weather, the emotional residue (the feeling that remains after factual description is removed), the discard list, and the forms that can be enlarged, merged, fragmented or turned into negative space. Preserve only two to four source anchors. Do not preserve the original composition.\n\nExpression: build the artwork through source fact → emotional residue → expressive proposition → central tension → visual metaphor → formal embodiment → interpretive opening. Write one specific relational proposition the artwork asks the viewer to feel, notice or reconsider - not a generic mood label. Choose ONE central tension that already exists or can credibly emerge: intimacy/distance, shelter/confinement, movement/stillness, smallness/vastness, warmth/coldness, memory/disappearance, order/growth, visibility/concealment, or permanence/fragility. Turn ONE source-derived object or relationship into the central metaphor, letting it shift function. Leave one relationship deliberately unresolved so the viewer can enter the work without a single fixed reading. Remove any element whose only function is to make the image look artistic.\n\nCanvas and composition: preserve the source orientation as spatial logic - vertical 3:5 for a portrait source, horizontal 5:3 for a landscape source, vertical 3:5 when square or ambiguous. Recompose freely inside that canvas. Begin from 68-85% quiet paper and one active illustration cluster of about 12-32%, then correct by actual visual weight rather than by area. Choose one composition family - asymmetric island, torn window, directional drift, rhythmic circulation, staggered fragments, vertical tension, or auxiliary constellation - and use scale, interval, enclosure, direction and quiet space to embody the proposition. Use auxiliary constellation only when a source-derived supporting motif can carry rhythm and meaning. Maintain figure-ground clarity, asymmetric balance, dominant-subordinate hierarchy, optical rather than mechanical centering, and an eye path with a clear entry, focal encounter, movement and quiet exit.\n\nAbstraction and grammar: editorial abstraction. Remove roughly 65-90% of descriptive detail. Replace realistic rendering with simplified masses, broken contours, paper fragments, sparse marks or print fields. Choose ONE primary illustration grammar - cut-paper mass, dry-print silhouette, broken contour, rhythm field, fragment stack, or orbit/drift - and at most one supporting grammar.\n\nEdge: choose ONE primary edge treatment by its semantic function - torn-fiber, layered grayscale, stippled dissolution, irregular mark, or a quiet natural isolated contour with no visible transition device. Align the transition with a source-derived horizon, gesture, path, pressure or directional break. Use positive and negative shapes with internal paper gaps, let zero to two forms cross the boundary when continuation helps, and keep the depth shallow and tactile.\n\nColor: keep the paper and most illustration inks subdued, then use exactly one unmistakable high-chroma hue as chromatic structure rather than decoration. Give the accent one role - focal pin, counterweight, bridge between fragments, directional cue, or rhythmic beat - and keep the total high-chroma area around 0.8-3% of the poster, or 10-30% of the active cluster. Use one main accent plus one or two smaller echoes kept together below 25% of the total accent area. If the source contains a meaningful repeatable motif, you may disperse several instances of it in that single hue with unequal scale and interval, leaving some intervals open.\n\nTypography: fully free authorial material. Wording, language, amount, type voices, scale, direction, hierarchy, placement and legibility all follow expression rather than a preset. The text may be caption, countervoice, title, interruption, rhythm, surface texture, or the image's primary subject, and it may be tiny, oversized, cropped, scattered, stacked, rotated, obscured or materially mixed with the illustration. The only rule: it must deepen the proposition, tension, metaphor or interpretive opening rather than caption what is visible.",
+      "source_role": "semantic-reference",
+      "visual_signature": {
+        "contrast_range": [
+          0.02,
+          0.4
+        ],
+        "saturation_range": [
+          0.02,
+          0.55
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "desaturated",
+          "limited",
+          "single-accent",
+          "spot-color",
+          "ink-neutral",
+          "ink-black",
+          "warm-paper",
+          "single-hue-ramp",
+          "monochrome",
+          "expressive",
+          "soft",
+          "natural",
+          "earth-tone",
+          "warm-neutral"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      },
+      "color_system": {
+        "substrate": "aged cream / natural white",
+        "inks": [
+          "graphite",
+          "warm-gray"
+        ],
+        "accent": "exactly ONE high-chroma hue (cobalt, ultramarine, pear-green, tomato-red, lemon-yellow, magenta-pink or orange) carrying 0.8-3% of the poster area, or 10-30% of the active cluster",
+        "coverage": "paper and most inks subdued; one accent only. Accent area 0.8-3% of the full poster, 10-30% of the active cluster. One main accent plus at most two echoes kept together below 25% of total accent area.",
+        "ramps": {
+          "graphite": {
+            "shadow": "#2B2724",
+            "mid": "#4A4A48",
+            "light": "#8C8579",
+            "paper": "#F2EBDC"
+          },
+          "cobalt": {
+            "shadow": "#16337A",
+            "mid": "#2148B8",
+            "light": "#9EB8D3",
+            "paper": "#F2EBDC"
+          },
+          "lemon": {
+            "shadow": "#C89A3C",
+            "mid": "#E8C63F",
+            "light": "#F3D98C",
+            "paper": "#F2EBDC"
+          }
+        }
       }
     },
     {

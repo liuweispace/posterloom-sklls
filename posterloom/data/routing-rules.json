@@ -23,7 +23,11 @@
     "Do not force diversity across a batch.",
     "Controlled Hybrid never participates in direct ranking.",
     "Confidence is relative to the best score achievable for this profile.",
-    "A person whose likeness must survive is never routed into a face-repainting medium unless heavy transformation was explicitly requested."
+    "A person whose likeness must survive is never routed into a face-repainting medium unless heavy transformation was explicitly requested.",
+    "A person whose likeness must survive is never routed into an abstract-identity style unless heavy transformation was explicitly requested."
+  ],
+  "abstract_identity_styles": [
+    "scene-distillation-zine"
   ],
   "face_destructive_styles": [
     "transparent-watercolor",
@@ -72,6 +76,8 @@
       "classical-parchment": 4,
       "folk-narrative-color": 4,
       "duotone-identity-stack": 4,
+      "gathered-scenes-zine": 4,
+      "scene-distillation-zine": 4,
       "riso-poster": 3,
       "pop-screenprint": 3,
       "ink-wash-minimal": 3,

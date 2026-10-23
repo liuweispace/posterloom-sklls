@@ -75,7 +75,9 @@ def build_profile(args) -> tuple[dict, list]:
     if "realism_value" in needs:
         needs.remove("realism_value")
     if args.ratio:
-        profile.setdefault("user_preferences", {})["output_ratio"] = args.ratio
+        # An explicit request outranks the style's designed ratio and the
+        # photo's measured aspect, so it is stored separately.
+        profile.setdefault("user_preferences", {})["requested_ratio"] = args.ratio
 
     # A human who typed a type and anchors has told us the subject. Infer the
     # person flag from that instead of demanding it again.

@@ -1583,5 +1583,111 @@
         "artistic"
       ]
     }
+  },
+  {
+    "id": "route-gathered-scenes-zine",
+    "expected_primary": "gathered-scenes-zine",
+    "profile": {
+      "subject": {
+        "type": "landscape",
+        "summary": "A misty mountain lake at dawn with a low ridge",
+        "identity_anchors": [
+          "horizon line",
+          "ridge silhouette"
+        ]
+      },
+      "environment": "outdoor natural setting",
+      "lighting": [
+        "natural",
+        "overcast"
+      ],
+      "mood": [
+        "quiet",
+        "contemplative",
+        "calm"
+      ],
+      "geometry": [
+        "negative-space",
+        "margin-rich",
+        "open-space",
+        "silhouette"
+      ],
+      "palette": [
+        "source-derived",
+        "muted",
+        "desaturated",
+        "earth-tone"
+      ],
+      "materials": [
+        "foliage",
+        "stone",
+        "water",
+        "paper-grain"
+      ],
+      "text_safe_zones": [
+        "upper-right quiet region"
+      ],
+      "realism_value": "medium",
+      "transformation_tolerance": "medium",
+      "user_preferences": {},
+      "subject_tags": [
+        "landscape",
+        "travel"
+      ]
+    }
+  },
+  {
+    "id": "route-scene-distillation-zine",
+    "expected_primary": "scene-distillation-zine",
+    "profile": {
+      "subject": {
+        "type": "landscape",
+        "summary": "An empty road at night receding into darkness",
+        "identity_anchors": [
+          "road vanishing point",
+          "headlight cones"
+        ]
+      },
+      "environment": "night road",
+      "lighting": [
+        "night",
+        "dusk",
+        "ambient"
+      ],
+      "mood": [
+        "experimental",
+        "raw",
+        "melancholy",
+        "stark"
+      ],
+      "geometry": [
+        "negative-space",
+        "asymmetry",
+        "silhouette",
+        "strong-contour"
+      ],
+      "palette": [
+        "source-derived",
+        "muted",
+        "limited",
+        "single-accent"
+      ],
+      "materials": [
+        "paper",
+        "ink",
+        "print",
+        "texture"
+      ],
+      "text_safe_zones": [
+        "lower-left quiet region"
+      ],
+      "realism_value": "low",
+      "transformation_tolerance": "high",
+      "user_preferences": {},
+      "subject_tags": [
+        "landscape",
+        "experimental"
+      ]
+    }
   }
 ]

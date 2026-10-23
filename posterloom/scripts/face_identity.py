@@ -87,6 +87,23 @@ def wants_heavy_transformation(profile) -> bool:
 # identity lock stays fully on and only the "never duplicate" clause is relaxed.
 REPEAT_IDENTITY_STYLES = {"duotone-identity-stack"}
 
+# Styles whose concept is a NON-PHOTOGRAPHIC illustration that deliberately
+# generalizes the face. For these, "reproduce the exact face" would contradict
+# the style itself, so the lock does not weaken — it changes shape. It becomes
+# a DERIVATION lock: the figure must still trace back to the source (head
+# shape, tilt, hairline, age cues, gesture, gaze), but rendered as illustration
+# and never as a photorealistic likeness claim.
+ABSTRACT_IDENTITY_STYLES = {"scene-distillation-zine"}
+
+
+def identity_mode(style_id):
+    """Which face-disposition rule applies to this style."""
+    if style_id in REPEAT_IDENTITY_STYLES:
+        return "repeat"
+    if style_id in ABSTRACT_IDENTITY_STYLES:
+        return "abstract"
+    return "single"
+
 
 def repetition_clause(style_id):
     """Swap the flat no-duplication rule for a same-face repetition rule."""
@@ -102,6 +119,46 @@ def repetition_clause(style_id):
         "7. SINGLE IDENTITY. If other people appear, every face must correspond to its own "
         "person in the source. Never duplicate, merge, or average faces."
     )
+
+
+ABSTRACT_IDENTITY_BLOCK = """FACIAL IDENTITY LOCK — HIGHEST PRIORITY (ABSTRACT MODE){style_ctx}
+This style renders a non-photographic illustration, so the source person is the
+SEMANTIC subject, not a photographic likeness claim. The lock is not disabled —
+it is restated in the only form this style can honour.
+
+1. DERIVE, DO NOT INVENT. If a head or face appears, it must still be derived
+   from the source: the same head shape and skull proportion, the same head
+   angle and tilt, the same hairline and hair mass, the same apparent age, the
+   same gender presentation, the same gesture, posture and gaze direction.
+   Generalize the RENDERING, never the IDENTITY.
+2. ABSTRACT, DO NOT PHOTOGRAPH. Render the figure as flat printed illustration
+   in this style's grammar. Do not render a photorealistic face, do not simulate
+   a photograph of the person, and do not present the result as a documentary
+   likeness.
+3. NO NEW IDENTIFIABLE PERSON. Do not drift toward a model-default face, a
+   specific celebrity or public figure, a symmetric ideal, or a generic
+   stock-photo head. The abstracted figure must be traceable to THIS source.
+4. NO HYBRID PEOPLE. Never merge the source figure with another face, and never
+   average it toward a composite.
+5. NO ENHANCEMENT. No beautification, no de-aging, no skin smoothing, no
+   enlarging of eyes or lips.
+6. {anchor_line}
+7. SINGLE SOURCE FIGURE. If other people appear, each must correspond to its own
+   person in the source. Never duplicate, merge, or average faces.
+8. VERIFY BEFORE DELIVERING. Check that the abstracted figure still reads as the
+   source person through head shape, head angle, hairline, age cues and gesture.
+   If it has drifted into a different or a generic person, regenerate."""
+
+
+ABSTRACT_IDENTITY_NEGATIVE = (
+    "no photorealistic face, no photographic likeness of the source person, "
+    "no new identifiable individual, no celebrity lookalike, no model-default "
+    "or idealized face, no face averaged toward a composite, no merged faces, "
+    "no face duplication, no changed head shape or head angle, no changed "
+    "hairline, no age shift, no gender presentation shift, no beautification, "
+    "no plastic or airbrushed skin, no teeth or smile alteration, "
+    "no extra or missing fingers, no text over the face."
+)
 
 
 def likeness_block(profile, style_id=None, style_name=None) -> str:
@@ -121,6 +178,9 @@ def likeness_block(profile, style_id=None, style_name=None) -> str:
 
     style_ctx = f" This applies on top of the {style_name or style_id} style." if (style_id or style_name) else ""
     repeat_clause = repetition_clause(style_id)
+
+    if identity_mode(style_id) == "abstract":
+        return ABSTRACT_IDENTITY_BLOCK.format(style_ctx=style_ctx, anchor_line=anchor_line)
 
     return f"""FACIAL IDENTITY LOCK — HIGHEST PRIORITY{style_ctx}
 This instruction outranks the style, the aesthetic, and any beautification tendency.
@@ -148,6 +208,8 @@ This instruction outranks the style, the aesthetic, and any beautification tende
 
 def likeness_negative(profile, style_id=None) -> str:
     """Negative constraints naming the specific facial-drift failure modes."""
+    if identity_mode(style_id) == "abstract":
+        return ABSTRACT_IDENTITY_NEGATIVE
     duplication = (
         "no drifted or mismatched copies within a repeated face, "
         if style_id in REPEAT_IDENTITY_STYLES
