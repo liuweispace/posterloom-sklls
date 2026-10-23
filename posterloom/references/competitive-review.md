@@ -4,7 +4,7 @@ Reviewed 2026-10-23 against the public agent-skill ecosystem for photo→poster 
 
 ## What PosterLoom already does better than most
 
-- **Routing is a real engine**, not a prompt library. 33 direct styles + 1 meta style,
+- **Routing is a real engine**, not a prompt library. 35 direct styles + 1 meta style,
   scored from scene tags, with an identity guardrail that protects faces.
 - **Facial identity locking** is the strongest differentiator. No competitor in the
   surveyed set has anything equivalent.
@@ -13,7 +13,34 @@ Reviewed 2026-10-23 against the public agent-skill ecosystem for photo→poster 
   "never duplicate faces" rule.
 - **Deterministic CLI** with machine-readable output, so another agent can integrate it
   without interpreting prose.
-- **Self-verifying**: 34 style contracts, 33 routing regression cases, a repo validator.
+- **Self-verifying**: 36 style contracts, 35 routing regression cases, a repo validator.
+
+## What the zine skills taught us (v1.6.0)
+
+`gathered-scenes-zine-skill` (Zeejay0) is the strongest skill found in the survey, and
+its two sibling skills were folded into the library as two direct styles rather than
+paraphrased into advice. Four things were worth taking:
+
+1. **The photo can be semantic evidence, not a visual layer.** The distillation skill
+   treats the source as a reference for meaning and outputs illustration only. PosterLoom
+   previously assumed every style transforms visible photo pixels. That assumption was
+   baked into the global prompt block. It is now a per-style `source_role`, so the global
+   block can tell the model "keep the photo" or "do not reproduce the photo" correctly.
+2. **The abstraction engine, not the aesthetic.** The valuable part is the method:
+   retain 1-2 forms, merge repetitions, omit clutter, transform, expose blank paper —
+   and separate *field extent* from *printed density*. A large quiet field is not a timid
+   illustration. That discipline is now a contract requirement, not a mood word.
+3. **Named color with structural job.** The chroma engine's tests ("does removing this
+   hue weaken the composition?") are a better rule than "add a pop of color". This
+   reinforced the existing hex-value approach and added the structural-removal test to
+   the new styles' contracts.
+4. **Edge treatment as a semantic object.** The torn-fiber handoff is described as a
+   physical paper object with a band width and an affected perimeter, not as a filter.
+   That is the difference between "torn paper edge" as an instruction and as a spec.
+
+What was deliberately **not** taken: the output-format block that appends the author's
+website and a sharing-credit line. Those are the original author's promotion rules, not
+part of the method.
 
 ## Competitors surveyed
 
@@ -30,34 +57,49 @@ Reviewed 2026-10-23 against the public agent-skill ecosystem for photo→poster 
 
 ## Key findings
 
-### 1. PosterLoom has no photo-reading step (biggest gap)
+> Status note: findings 1–3 were gaps when this review was first written. All three are
+> now closed (v1.4–v1.6). Findings 4 and 5 are still open.
 
-`references/scene-analysis.md` specifies *what fields a scene profile must contain*, and
-the profile is filled in by the agent manually. There is no tool that looks at an image
-and produces that profile. Every downstream decision — routing, identity anchors, text
-safe zones — therefore depends on the agent's own reading of the photo, which is exactly
-where it varies run to run.
+### 1. Photo-reading step — CLOSED in v1.4
 
-`scenes-gathered-zine` solves this by making the reading step explicit and structured.
-Its "Scene Card" fields are a better schema than PosterLoom's current flat profile.
+Was: `references/scene-analysis.md` specified *what fields a scene profile must contain*,
+and the profile was filled in by the agent manually. Every downstream decision depended
+on the agent's own reading of the photo, which varied run to run.
 
-### 2. Colors are described, not specified
+Now: `scripts/scene_analyze.py` measures the image from pixels — dimensions, aspect,
+palette families, luminance, contrast, saturation, edge density, salient and quiet
+regions, text-safe candidates, and a structural fingerprint. `posterloom.py analyze`
+emits a profile; `posterloom.py make` runs it automatically.
 
-PosterLoom style contracts say things like "source-derived duotone, one saturated
-accent". `mono-color-skill` ships named inks with hex values, named substrates
-(Neutral White `#FAFAF7`, Cool Gray `#E9E9E5`, Pale Beige `#F5F1E8`), and ink-coverage
-ratios (dominant plate 70–85%, accent plate 15–30%).
+The important constraint: the analyzer reports only what pixels can support. Subject
+type, identity anchors, mood and transformation tolerance are semantic and go to
+`_needs_vision` rather than being guessed, because a wrong guess poisons routing.
 
-Word-level color language is what the model has to interpret. Hex values are what it
-can execute.
+The "Scene Card" idea from `scenes-gathered-zine` is now part of the style contract
+for the two zine styles, not a schema change to the whole profile — the flat profile
+shape stayed, because it is what the router consumes.
 
-### 3. No reference-poster transfer mode
+### 2. Colors described, not specified — CLOSED in v1.4
 
-`poster-style-transfer` treats a poster as a reusable *grammar*, not content. PosterLoom
-can route to its own 33 styles but cannot extract a system from an image the user
-points at.
+Was: contracts said "source-derived duotone, one saturated accent".
 
-### 4. Typography intent is under-specified
+Now: `data/substrates.json` ships named substrates and inks with hex values
+(Neutral White `#FAFAF7`, Cool Gray `#E9E9E5`, Pale Beige `#F5F1E8`, Aged Cream
+`#F2EBDC`, plus 26 named inks) and ink-coverage ratios. Styles that declare a
+`color_system` get a literal `COLOR SYSTEM` block in the compiled prompt, hex included.
+
+### 3. No reference-poster transfer mode — CLOSED in v1.5
+
+Was: PosterLoom could route to its own styles but could not extract a system from an
+image the user points at.
+
+Now: `scripts/match_reference.py` matches a reference poster to the closest built-in
+style by measurable properties — contrast, saturation, palette family, detail density,
+and hue-cluster count. The last one is the decisive signal: a flat two-colour print has
+one to three hue families, a photograph has many. Narrow-family and specificity
+weighting stop generic styles from tying with the exact match.
+
+### 4. Typography intent is under-specified — STILL OPEN
 
 The arena result is unambiguous: text legibility separated the top skills from the rest.
 PosterLoom's global typography rule ("5–10% of visual area, restrained, short title only")
@@ -66,11 +108,10 @@ design.
 
 ### 5. Size is a liability
 
-904K / 79 files. `ai-image-generation` ranked #6 at ~7K context tokens. PosterLoom's
-value is in the CLI, not the prose — the SKILL.md is only 145 lines, which is healthy.
-The weight is in `styles/` (34 contracts) and `data/styles.json` (132KB), both of which
-are loaded on demand, so this is mostly fine. Keep it that way: never inline the style
-library into SKILL.md.
+`ai-image-generation` ranked #6 at ~7K context tokens. PosterLoom's value is in the CLI,
+not the prose — SKILL.md stays under 200 lines, which is healthy. The weight is in
+`styles/` (36 contracts) and `data/styles.json`, both of which are loaded on demand, so
+this is mostly fine. Keep it that way: never inline the style library into SKILL.md.
 
 ## What NOT to copy
 

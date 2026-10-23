@@ -1,9 +1,9 @@
 ---
 name: posterloom
-description: Turn a real photograph into an art-directed poster - measure the scene, route to 1 of 33 poster styles, and compile a locked generation prompt. Use when the user wants a photo converted into an editorial, travel, cultural, painterly, print, portrait, or modern-design poster, wants a reference poster matched to a style, or wants a batch of independent posters from many photos. Enforces facial likeness locking on any source containing a person.
+description: Turn a real photograph into an art-directed poster - measure the scene, route to 1 of 35 poster styles, and compile a locked generation prompt. Use when the user wants a photo converted into an editorial, travel, cultural, painterly, print, portrait, paper-collage, or modern-design poster, wants a reference poster matched to a style, or wants a batch of independent posters from many photos. Enforces facial likeness locking on any source containing a person.
 license: MIT
 metadata:
-  version: "1.5.0"
+  version: "1.6.0"
   tagline: "Adaptive Photo-to-Poster Skill"
 ---
 
@@ -105,6 +105,12 @@ an identity lock injected into its prompt, independent of the routed style:
 - `duotone-identity-stack` is the one exception: it repeats the face on purpose, so its
   clause reads "repeat one identity" instead of "never duplicate faces". Every copy must
   still be the same verified person.
+- `scene-distillation-zine` is the other exception: it renders a non-photographic
+  illustration, so its clause becomes "derive, do not invent" - the figure must still
+  trace back to the source (head shape, head angle, hairline, age cues, gesture, gaze)
+  but must be rendered as illustration, never as a photographic likeness. A portrait
+  whose likeness has to survive is not routed there unless heavy transformation was
+  explicitly requested.
 
 **Prompting is necessary but not sufficient.** Text constraints reduce drift; they cannot
 eliminate it. Before delivering a portrait, compare the generated face against the source on
@@ -118,7 +124,7 @@ contour.
 
 ## Style library
 
-33 direct styles plus `controlled-hybrid` (a meta-style that never enters direct ranking).
+35 direct styles plus `controlled-hybrid` (a meta-style that never enters direct ranking).
 
 | Family | Count |
 |---|---|
@@ -129,6 +135,7 @@ contour.
 | modern-design | 5 |
 | conceptual-hybrid | 4 |
 | portrait (photographic / painterly / documentary) | 3 |
+| paper-collage (gathered scenes / scene distillation) | 2 |
 | graphic-portrait (duotone identity stack) | 1 |
 
 Routing is deterministic and never randomizes. Confidence is measured relative to the best
@@ -181,4 +188,5 @@ posterloom/
 - [Composition](references/composition.md) and [typography](references/typography.md)
 - [Anti-slop](references/anti-slop.md) — failure modes to actively avoid
 - [Competitive review](references/competitive-review.md) — how this compares to other poster skills
+- [Zine styles](references/zine-styles.md) — the two paper-collage styles, and the three identity-lock modes
 - [Visual benchmark rubric](evals/rubric.md) — 0-2 scoring across 10 axes, 17/20 to pass

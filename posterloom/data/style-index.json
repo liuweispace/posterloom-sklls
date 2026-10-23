@@ -1,5 +1,5 @@
 {
-  "version": "1.5.0",
+  "version": "1.6.0",
   "styles": [
     {
       "family": "photographic-editorial",
@@ -210,6 +210,27 @@
       "status": "gold",
       "role": "direct",
       "name": "Editorial Portrait"
+    },
+    {
+      "family": "graphic-portrait",
+      "id": "duotone-identity-stack",
+      "status": "gold",
+      "role": "direct",
+      "name": "Duotone Identity Stack"
+    },
+    {
+      "family": "paper-collage",
+      "id": "gathered-scenes-zine",
+      "status": "gold",
+      "role": "direct",
+      "name": "Gathered Scenes Zine"
+    },
+    {
+      "family": "paper-collage",
+      "id": "scene-distillation-zine",
+      "status": "gold",
+      "role": "direct",
+      "name": "Scene Distillation Zine"
     },
     {
       "family": "painterly-portrait",

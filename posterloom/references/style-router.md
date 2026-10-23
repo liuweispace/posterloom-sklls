@@ -31,6 +31,17 @@ Such a request is redirected to an identity-safe style:
 If the user explicitly asks for heavy transformation, stylized styles remain available.
 The decision is reported in `diagnostics.identity_guard`.
 
+### Abstract-identity styles
+
+`scene-distillation-zine` is guarded the same way, for a different reason. It does not
+repaint the face — it deliberately *generalizes* it, because the output is a
+non-photographic illustration. For a person whose likeness must survive, that is as
+destructive as watercolor, so the style lives in `abstract_identity_styles` in
+`data/routing-rules.json` and is refused under the same conditions.
+
+The difference shows up in the lock, not in the guard. See
+[zine-styles.md](zine-styles.md) for the three identity-lock modes.
+
 ## Confidence
 
 Confidence is measured **relative to the best score achievable in that profile**, not

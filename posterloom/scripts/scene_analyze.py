@@ -404,7 +404,11 @@ def analyze(path: Path) -> dict:
         "text_safe_zones": safe,
         "realism_value": "high",
         "transformation_tolerance": "medium",
+        # The source aspect is a MEASURED property, not a user request. Keep it
+        # apart from an explicit ratio so a style's own designed ratio (3:5 for
+        # the zine styles) is not silently overridden by the photo's shape.
         "user_preferences": {"output_ratio": ratio},
+        "_measured_source_aspect": ratio,
         "subject_tags": [],
         "_measured": {
             "file": path.name,

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "_note": "Named substrates and inks with concrete hex values. Word-level color language ('warm', 'muted') is interpreted loosely by an image model; hex values are executable. Coverage ratios keep a duotone from collapsing into mud.",
   "substrates": {
     "neutral-white": {
@@ -17,6 +17,10 @@
     "ink-black": {
       "hex": "#101010",
       "use": "dramatic, high-contrast, night"
+    },
+    "aged-cream": {
+      "hex": "#F2EBDC",
+      "use": "warm aged paper for the paper-collage zine styles"
     }
   },
   "inks": {
@@ -38,7 +42,14 @@
     "charcoal": "#30343A",
     "carbon": "#242321",
     "slate-blue": "#4773A5",
-    "near-black": "#101010"
+    "near-black": "#101010",
+    "graphite": "#4A4A48",
+    "warm-gray": "#8C8579",
+    "faded-black": "#2B2724",
+    "tomato-red": "#D6402F",
+    "lemon-yellow": "#E8C63F",
+    "pear-green": "#5FA845",
+    "magenta-pink": "#C63A7E"
   },
   "two_ink_recipes": {
     "powder-blue + signal-red": [

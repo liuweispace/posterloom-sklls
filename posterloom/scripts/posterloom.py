@@ -238,6 +238,30 @@ def cmd_selftest(args):
                     if _t not in _vocab[_k]:
                         die(f"analyzer emitted unknown {_k} term: {_t}")
 
+    # 4. the abstract-identity style must not swallow a portrait whose likeness
+    #    has to survive, and when forced it must switch the lock to abstract mode
+    _distill = {"subject": {"type": "portrait", "summary": "a person",
+                            "identity_anchors": ["face shape", "eye shape"]},
+                "subject_tags": ["portrait", "person"],
+                "lighting": ["natural"], "mood": ["quiet"],
+                "geometry": ["negative-space"], "palette": ["source-derived"],
+                "materials": ["skin"], "realism_value": "high",
+                "transformation_tolerance": "low", "user_preferences": {}}
+    _rules = json.loads((ROOT / "data/routing-rules.json").read_text(encoding="utf-8"))
+    _abstract = set(_rules.get("abstract_identity_styles", []))
+    if _abstract and "scene-distillation-zine" in _abstract:
+        _r4 = rank(_distill, top=15)
+        if _r4["primary"] in _abstract:
+            die(f"portrait routed to abstract-identity style {_r4['primary']}")
+    from compose_prompt import compile_prompt as _cp
+    _p4, _m4 = _cp(_distill, forced_style="scene-distillation-zine")
+    if "ABSTRACT MODE" not in _p4:
+        die("forced abstract style did not switch the identity lock to abstract mode")
+    if "photographic pixels" not in _p4:
+        die("abstract style prompt is missing the no-photographic-pixels rule")
+    if "REPRODUCE, DO NOT INVENT" in _p4:
+        die("abstract style prompt still demands photographic face reproduction")
+
     # reference matcher must pick a valid style, and the one-command workflow
     # must produce a prompt end to end
     import glob as _glob
@@ -272,6 +296,7 @@ def cmd_selftest(args):
     print(f"OK: {len(direct)} styles have contracts")
     print("OK: identity lock fires on faces, silent on non-faces")
     print("OK: scene analyzer emits only router-recognised terms")
+    print("OK: abstract-identity style is guarded and switches the lock to abstract mode")
     print("OK: reference matcher and make workflow run end to end")
     print(f"OK: portrait routes to {r['primary']}")
     return 0

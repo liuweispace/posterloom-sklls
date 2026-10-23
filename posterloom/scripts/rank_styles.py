@@ -157,6 +157,11 @@ def rank(profile, top=5, used_styles=None, repetition_soft_cap=None):
     )
     portrait_family = set(rules.get("portrait_family", "portrait").split("|"))
     destructive = set(rules.get("face_destructive_styles", []))
+    # Abstract-identity styles deliberately generalize the face. They are a
+    # legitimate choice for a person ONLY when the user explicitly asked for
+    # heavy transformation; otherwise they are as destructive as a repainting
+    # medium, just in a different way.
+    abstract_identity = set(rules.get("abstract_identity_styles", []))
     safety_note = None
 
     # For a person whose likeness must survive, a face-designed style is not just
@@ -178,6 +183,9 @@ def rank(profile, top=5, used_styles=None, repetition_soft_cap=None):
     if is_person:
         # Never unlock a medium that repaints facial structure on a face.
         artistic_styles -= destructive
+        # Nor a style whose whole point is that the face is no longer a
+        # likeness. Both destroy identity; they just do it by different means.
+        artistic_styles -= abstract_identity
     elif wants_heavy:
         # Non-face subjects with heavy tolerance may use the full art-directed set,
         # including the print/painterly families.
@@ -220,14 +228,20 @@ def rank(profile, top=5, used_styles=None, repetition_soft_cap=None):
         primary = top_results[0]["style"]
         fallback = top_results[1]["style"] if len(top_results) > 1 else None
 
-    if identity_risk and primary not in identity_safe and primary in destructive:
+    protected_from = destructive | abstract_identity
+    if identity_risk and primary not in identity_safe and primary in protected_from:
         swap = next(
-            (r for r in results if r["style"] in identity_safe and r["style"] not in destructive),
+            (r for r in results
+             if r["style"] in identity_safe and r["style"] not in protected_from),
             None,
         )
         if swap is not None:
+            if primary in abstract_identity:
+                why = "generalizes the face by design"
+            else:
+                why = "repaints facial structure"
             safety_note = (
-                f"{primary} repaints facial structure; "
+                f"{primary} {why}; "
                 f"routed to {swap['style']} to protect likeness"
             )
             primary = swap["style"]

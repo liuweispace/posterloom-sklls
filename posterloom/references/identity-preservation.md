@@ -44,3 +44,23 @@ Protect:
 
 ## Identity risk
 When identity risk is high, reduce transformation strength or select a more photographic style.
+
+## Identity-lock modes
+
+The facial lock (`scripts/face_identity.py`) has three modes. The mode is chosen by the
+routed style, never by the model, and it is reported as `identity_mode` in the route.
+
+| Mode | Applies to | What the lock demands |
+|---|---|---|
+| `single` | every other style | reproduce the face: shape, eyes, brow, nose, mouth, jawline, hairline, skin tone, age, expression, gaze |
+| `repeat` | `duotone-identity-stack` | every copy is the same verified person; no drift into another face |
+| `abstract` | `scene-distillation-zine` | derive, do not invent: head shape, head angle, hairline, age cues, gesture and gaze must trace to the source, but rendered as illustration, never as a photographic likeness |
+
+`abstract` is not a weakened lock. It is the same guarantee restated in the only form
+the style can honour, and it adds negative constraints of its own
+(`no photorealistic face`, `no celebrity lookalike`, `no model-default face`,
+`no face averaged toward a composite`). The delivery gate changes accordingly: it checks
+derivation rather than pixel-level facial match, and explicitly does not demand
+photographic fidelity.
+
+Generalize the rendering, never the identity.

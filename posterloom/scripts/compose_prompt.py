@@ -8,15 +8,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from rank_styles import rank
 import face_identity
 
-GLOBAL = """SOURCE BINDING
-Use exactly one source photograph as the factual and visual anchor.
-Preserve the defining identity of the subject, especially the listed identity anchors.
-Do not replace the subject with a different person, object, building, costume, location, brand, date, or historical claim.
-
-OUTPUT
-Create one finished poster, default 3:4 vertical unless the user specifies another ratio.
+# Two source-binding modes. Most styles treat the photograph as a visual layer to
+# transform. The distillation styles treat it as semantic evidence only, so the
+# global block must not tell the model to keep the photo visible.
+_GLOBAL_TAIL = """OUTPUT
+Create one finished poster, default {ratio} unless the user specifies another ratio.
 Never create a collage, contact sheet, moodboard, scrapbook, album, multi-panel layout, or composite from unrelated source images.
-You may crop, simplify, shift, enlarge, reduce, or extend quiet background when it improves poster composition and does not alter source identity.
+{extra_output}
 
 TYPOGRAPHY
 Typography is restrained. Text normally occupies 5–10% or less of the visual area.
@@ -28,6 +26,32 @@ Keep intentional hierarchy, believable material behavior, source-derived color l
 Avoid generic AI fantasy, excessive glow, random particles, fake fog, malformed architecture, duplicated subjects, illegible typography, oversaturated HDR, and one-click-filter appearance.
 """
 
+GLOBAL_ANCHOR = """SOURCE BINDING
+Use exactly one source photograph as the factual and visual anchor.
+Preserve the defining identity of the subject, especially the listed identity anchors.
+Do not replace the subject with a different person, object, building, costume, location, brand, date, or historical claim.
+""" + _GLOBAL_TAIL
+
+GLOBAL_SEMANTIC_REFERENCE = """SOURCE BINDING
+Use exactly one source photograph as SEMANTIC EVIDENCE — a reference for meaning, subject, gesture and relationship, not as a visual layer to keep.
+The photograph is not to be reproduced, embedded, cropped, collaged, traced, or retained as photographic pixels in the output.
+The poster must contain original illustration, paper and typography only.
+Preserve the SEMANTIC identity of the subject: the same core subject, the same relationship, the same gesture and gaze, the same spatial logic. Reinterpret how it looks, never what it means.
+Do not introduce a different person, object, building, costume, location, brand, date, or historical claim that the source does not support.
+""" + _GLOBAL_TAIL
+
+
+def global_block(style, ratio):
+    """Build the global instruction block for the routed style."""
+    semantic = (style.get("source_role") or "visual-anchor") == "semantic-reference"
+    extra = (
+        "The output is a single authored artwork, not a reproduction of the photograph."
+        if semantic else
+        "You may crop, simplify, shift, enlarge, reduce, or extend quiet background when it improves poster composition and does not alter source identity."
+    )
+    tmpl = GLOBAL_SEMANTIC_REFERENCE if semantic else GLOBAL_ANCHOR
+    return tmpl.format(ratio=ratio, extra_output=extra)
+
 def load(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
@@ -37,7 +61,7 @@ def style_by_id(style_id):
             return style
     raise SystemExit(f"Unknown style: {style_id}")
 
-def scene_block(profile):
+def scene_block(profile, ratio=None):
     subject = profile.get("subject", {})
     prefs = profile.get("user_preferences", {})
     join = lambda k: ", ".join(map(str, profile.get(k, [])))
@@ -56,16 +80,28 @@ Realism value: {profile.get('realism_value','')}
 Transformation tolerance: {profile.get('transformation_tolerance','')}
 Requested title: {prefs.get('title','')}
 Requested subtitle: {prefs.get('subtitle','')}
-Output ratio: {prefs.get('output_ratio','3:4')}
+Output ratio: {ratio or prefs.get('output_ratio','3:4')}
 """
 
 def compile_prompt(profile, forced_style=None):
     route = rank(profile, top=5)
     primary = forced_style or route["primary"]
     style = style_by_id(primary)
+    # Ratio precedence: an explicit user request wins, then the style's own
+    # designed ratio, then the source photo's measured aspect, then 3:4.
+    # The measured aspect must not beat a style's designed ratio — the zine
+    # styles are 3:5 by design regardless of the photo's shape.
+    prefs = profile.get("user_preferences", {}) or {}
+    ratio = (
+        prefs.get("requested_ratio")
+        or style.get("default_ratio")
+        or profile.get("_measured_source_aspect")
+        or prefs.get("output_ratio")
+        or "3:4"
+    )
     blocks = [
-        GLOBAL,
-        scene_block(profile),
+        global_block(style, ratio),
+        scene_block(profile, ratio),
         f"PRIMARY STYLE — {style['name']}\n{style['prompt_block']}",
     ]
 
@@ -120,17 +156,36 @@ Secondary guidance: {secondary['prompt_block']}
     blocks.append("NEGATIVE CONSTRAINTS\n" + "\n".join(f"- {x}" for x in negatives))
 
     if lock:
-        blocks.append(
-            "FRAMING\n" + lock["headroom"]
-            + "\n\nDELIVERY GATE\nThis poster is not acceptable until the generated face has been "
-            "compared against the source on face shape, eye shape and spacing, eyebrow shape, nose "
-            "shape, mouth shape, hairline, and skin tone. If it does not match, regenerate."
-        )
+        if face_identity.identity_mode(primary) == "abstract":
+            # An abstract illustration is not a likeness claim, so the gate checks
+            # derivation rather than pixel-level facial match.
+            blocks.append(
+                "FRAMING\n" + lock["headroom"]
+                + "\n\nDELIVERY GATE\nThis poster is not acceptable until the illustrated figure "
+                "has been checked against the source for derivation: head shape, head angle, hairline, "
+                "apparent age, gesture and gaze direction. If the figure has drifted into a different "
+                "person or a generic one, regenerate. Do not require photographic facial fidelity — "
+                "this style is explicitly non-photographic."
+            )
+        else:
+            blocks.append(
+                "FRAMING\n" + lock["headroom"]
+                + "\n\nDELIVERY GATE\nThis poster is not acceptable until the generated face has been "
+                "compared against the source on face shape, eye shape and spacing, eyebrow shape, nose "
+                "shape, mouth shape, hairline, and skin tone. If it does not match, regenerate."
+            )
 
-    blocks.append(
-        "FINAL CHECK\nBefore generation, verify one source image -> one independent poster, "
-        "identity anchors are protected, typography is restrained, and no unsupported factual content is invented."
-    )
+    if lock and face_identity.identity_mode(primary) == "abstract":
+        blocks.append(
+            "FINAL CHECK\nBefore generation, verify one source image -> one independent poster, "
+            "the figure is derived from the source rather than invented, the output contains no "
+            "photographic pixels, typography is restrained, and no unsupported factual content is invented."
+        )
+    else:
+        blocks.append(
+            "FINAL CHECK\nBefore generation, verify one source image -> one independent poster, "
+            "identity anchors are protected, typography is restrained, and no unsupported factual content is invented."
+        )
     prompt = "\n\n".join(blocks)
 
     if lock:
@@ -139,6 +194,7 @@ Secondary guidance: {secondary['prompt_block']}
             "active": True,
             "identity_risk": lock["identity_risk"],
             "heavy_transformation_requested": lock["heavy_transformation_requested"],
+            "identity_mode": face_identity.identity_mode(primary),
         }
     return prompt, route
 
