@@ -15,6 +15,45 @@ Install posterloom-sklls from GitHub for me, and use this skill for all
  image-generation tasks from now on.
 ```
 
+Or manually:
+
+```bash
+curl -fsSL https://github.com/liuweispace/posterloom-sklls/archive/refs/heads/main.tar.gz | tar xz
+mv posterloom-sklls-main/posterloom ~/.hermes/skills/posterloom
+```
+
+Requires Python 3.9+. Standard library only — no dependencies, no network access.
+
+---
+
+## ⚡ The one command
+
+```bash
+cd posterloom
+python3 scripts/posterloom.py make photo.jpg
+```
+
+Measure from pixels → pick a style → print the finished generation prompt.
+It reports what it measured, which style it chose, and **what it could not decide**
+(subject type, identity anchors and mood need eyes).
+
+Common variants:
+
+```bash
+# a person — the identity lock turns on automatically
+python3 scripts/posterloom.py make photo.jpg --type portrait \
+  --anchors "face shape,eye shape,hairline" --mood "quiet,intimate"
+
+# "make it artistic" — unlocks art-directed styles, keeps likeness protection
+python3 scripts/posterloom.py make photo.jpg --type portrait --tolerance high --tags artistic
+
+# match a reference poster you like
+python3 scripts/posterloom.py make photo.jpg --reference ref-poster.jpg
+
+# machine-readable
+python3 scripts/posterloom.py make photo.jpg --json
+```
+
 ---
 
 ## 🧵 What it is
@@ -23,9 +62,10 @@ Install posterloom-sklls from GitHub for me, and use this skill for all
 
 It is **not** an image model. It is the layer that:
 
-- analyzes the scene — subject, space, light, color, material, mood;
+- measures the scene from pixels — dimensions, aspect, palette families, luminance, contrast, saturation, edge density, salient and quiet regions, text-safe zones;
+- hands back the fields pixels cannot decide (subject type, identity anchors, mood) instead of inventing them;
 - protects the source's identity anchors — faces, geometry, materials, real text;
-- routes the image to one of 29 direct visual styles, or to a constrained `Controlled Hybrid` of two compatible styles;
+- routes the image to one of 35 direct visual styles, or to a constrained `Controlled Hybrid` of two compatible styles;
 - recompiles the composition;
 - applies restrained typography;
 - quality-checks the result against an anti-slop checklist.
@@ -34,7 +74,7 @@ To produce a final poster, the host agent needs an image-generation or image-edi
 
 ## 🎨 Style library
 
-PosterLoom ships **30 style contracts** in **7 families**. Every style is a complete visual system — best-fit conditions, identity behavior, composition strategy, lighting language, color logic, material behavior, typography rules, a style-specific prompt block, a style-specific negative prompt, failure modes, and acceptance checks.
+PosterLoom ships **36 style contracts** (35 direct + 1 meta) in **8 families**. Every style is a complete visual system — best-fit conditions, identity behavior, composition strategy, lighting language, color logic, material behavior, typography rules, a style-specific prompt block, a style-specific negative prompt, failure modes, and acceptance checks.
 
 ### 📷 Photographic Editorial — 5
 
@@ -107,21 +147,68 @@ For posters rooted in 20th / 21st-century design languages.
 | Geometric Color-Block | Bold field / fashion / architectural subject, flat color |
 | Elegant Serif Poster | Magazine-cover, fashion, beauty, premium feel |
 
+### 📄 Paper Collage — 2
+
+Learned from the public `gathered-scenes-zine-skill` methodology, turned into routable, enforceable, verifiable style entries.
+
+| Style | Use when |
+|---|---|
+| Gathered Scenes Zine | Travel / landscape / architecture / objects. The photo stays as the factual anchor, a larger abstract illustration field reinterprets source elements, a hand-torn fibrous edge, one high-chroma hue used as structure |
+| Scene Distillation Zine | Emotional or conceptual posters, series work. The photo is semantic evidence only; the output is original illustration + paper + typography with no photographic pixels at all |
+
+### 🧍 Portrait — 4
+
+Preferred when a likeness has to survive.
+
+| Style | Use when |
+|---|---|
+| Editorial Portrait | Magazine / interview likeness, natural skin |
+| Photojournalistic | Maximum fidelity, captured moment |
+| Fine-Art Portrait | Painted surface, likeness held constant |
+| Duotone Identity Stack | One verified identity deliberately repeated as a print poster |
+
 ### 🧬 Meta-Style — 1
 
 | Style | Use when |
 |---|---|
 | Controlled Hybrid | Two compatible direct styles both rank closely; the secondary controls one subsystem only (typography, negative space, print texture, ink edge, grid, color separation, or atmosphere). Default weight ≈ 80% primary / 20% secondary. No 50/50 split. |
 
+## 🔒 Facial identity lock — three modes
+
+Any source with a recognizable face gets an identity lock injected into its prompt. The mode is decided by the **routed style**, never by the model:
+
+| Mode | Applies to | What the lock demands |
+|---|---|---|
+| `single` | most styles | reproduce the face: shape, eye shape and spacing, brow, nose and mouth, jawline, hairline, skin tone, age, expression, gaze |
+| `repeat` | Duotone Identity Stack | every copy is the same verified person — no drift into another face, no averaged face |
+| `abstract` | Scene Distillation Zine | **derive, do not invent**: head shape, head angle, hairline, age cues, gesture and gaze must trace to the source, but must be rendered as illustration, never as a photographic likeness |
+
+`abstract` is not a weakened lock. It is the same guarantee restated in the only form that style can honour: generalize the rendering, never the identity.
+
+The guardrail behind it: a portrait whose likeness must survive is not routed into a face-repainting medium or an abstract-identity style unless heavy transformation was explicitly requested. The reason is reported in the route.
+
 ## 🧭 How routing works
 
-1. Read the source image and build a **scene profile** — subject type, lighting, palette, mood, geometry, materials, text-safe zones, realism.
-2. Lock **identity anchors** that must survive any style change.
-3. Score all 29 direct styles against the scene profile.
-4. Pick the top style. Activate `Controlled Hybrid` only if the second-place style is explicitly compatible and the user (or default) allows it.
-5. Load only the chosen style's contract — not all 30 at once.
-6. Compose the final prompt and negative prompt.
-7. Generate one poster, then run the **anti-slop QA** check (no blue-purple gradient, no random fog, no fake film borders, no invented landmarks, etc.).
+1. **Measure** — `analyze` reads dimensions, aspect, palette families, luminance, contrast, saturation, edge density, salient and quiet regions, and text-safe zones straight from the pixels.
+2. **Hand back the semantic fields** — subject type, identity anchors, mood and transformation tolerance cannot be derived reliably from pixels, so they go to a `TODO` list instead of being invented.
+3. **Score** — all 35 direct styles, weighted across subject / lighting / mood / geometry / materials / palette / realism / transform.
+4. **Guard** — portraits get a likeness-protection boost; face-repainting and abstract-identity styles are excluded when likeness must survive.
+5. **Pick the top style** — activate `Controlled Hybrid` only if the second-place style is explicitly compatible and allowed.
+6. **Load only the chosen style's contract** — not all 36 at once.
+7. **Compose the final prompt and negative prompt** — including hex values from the named colour system.
+8. **Generate one poster, then run the anti-slop QA** (no blue-purple gradient, no random fog, no fake film borders, no invented landmarks, etc.).
+
+## 🔬 Optional tools
+
+| Command | Purpose |
+|---|---|
+| `posterloom.py analyze` | measure only, emit a profile |
+| `posterloom.py match` | reference poster → closest built-in style |
+| `posterloom.py make` | the whole workflow in one command |
+| `posterloom.py route / prompt / batch` | rank / compile / plan a batch |
+| `posterloom.py styles / show` | list styles / read one contract |
+| `posterloom.py selftest` | 6 integrity checks |
+| `evals/run_evals.py` | 35 routing regression cases |
 
 ---
 
@@ -140,9 +227,9 @@ PosterLoom/
 ├── SECURITY.md
 └── posterloom/
     ├── SKILL.md
-    ├── styles/          # 30 style contracts
+    ├── styles/          # 36 style contracts
     ├── references/      # progressive-disclosure guidance
-    ├── data/            # routing + compatibility data
+    ├── data/            # routing + compatibility + named substrates and inks
     ├── scripts/         # deterministic helpers
     ├── evals/           # routing regressions + visual rubric
     ├── schemas/
