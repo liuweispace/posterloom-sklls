@@ -293,16 +293,77 @@ def cmd_selftest(args):
         print(vr.stdout.strip() or vr.stderr.strip(), file=sys.stderr)
         die("validate_repo.py failed")
 
+    # the budget-aware prompt builder must hold across every style and scene:
+    # inside the backend's cap, with the identity lock, the NO PHOTOGRAPHY
+    # rule, and the layout and colour sections all present
+    import subprocess as _sp
+    _br = _sp.run([sys.executable, str(ROOT / "scripts/check_prompt_budget.py")],
+                  capture_output=True, text=True)
+    if _br.returncode != 0:
+        print(_br.stdout.strip() or _br.stderr.strip(), file=sys.stderr)
+        die("check_prompt_budget.py failed")
+
+    # the backends must declare their own limits, and the ratio mapping must
+    # report every substitution it makes
+    from generate import load_backends as _lb, resolve_ratio as _rr
+    _bdata = _lb()
+    for _bid, _b in _bdata.get("backends", {}).items():
+        if _b.get("max_prompt_chars", 0) < 500:
+            die(f"backend {_bid} declares an implausible prompt cap")
+        if not _b.get("supported_ratios"):
+            die(f"backend {_bid} declares no supported ratios")
+    if _bdata.get("default") not in _bdata.get("backends", {}):
+        die("default backend is not defined in backends.json")
+    _b0 = _bdata["backends"][_bdata["default"]]
+    _sent, _note = _rr(_b0, "3:5")
+    if _sent not in _b0["supported_ratios"]:
+        die(f"ratio mapping returned unsupported ratio {_sent}")
+    if not _note:
+        die("ratio mapping did not report the substitution")
+    _sent2, _note2 = _rr(_b0, "3:4")
+    if _note2:
+        die("ratio mapping reported a substitution for a supported ratio")
+
     print(f"OK: {len(direct)} styles have contracts")
     print("OK: identity lock fires on faces, silent on non-faces")
     print("OK: scene analyzer emits only router-recognised terms")
     print("OK: abstract-identity style is guarded and switches the lock to abstract mode")
     print("OK: reference matcher and make workflow run end to end")
+    print("OK: the compact prompt fits the budget and keeps every required section")
+    print("OK: backends declare their limits and ratio substitutions are reported")
     print(f"OK: portrait routes to {r['primary']}")
     return 0
 
 
 # --------------------------------------------------------------------------- #
+def cmd_render(args):
+    """Generate finished poster images from a photo."""
+    import render as _render
+    argv = ["render", args.image]
+    for flag, value in (
+        ("--style", args.style), ("--reference", args.reference),
+        ("--type", args.type), ("--summary", args.summary),
+        ("--anchors", args.anchors), ("--mood", args.mood),
+        ("--tags", args.tags), ("--tolerance", args.tolerance),
+        ("--realism", args.realism), ("--ratio", args.ratio),
+        ("--backend", args.backend), ("--out", args.out),
+        ("--prefix", args.prefix),
+    ):
+        if value:
+            argv += [flag, str(value)]
+    if args.count is not None:
+        argv += ["--count", str(args.count)]
+    if args.no_reference:
+        argv += ["--no-reference"]
+    if getattr(args, "send_reference", False):
+        argv += ["--send-reference"]
+    if getattr(args, "no_describe", False):
+        argv += ["--no-describe"]
+    if args.json:
+        argv += ["--json"]
+    return _render.main(argv)
+
+
 def cmd_make(args):
     """One command: photo in, finished poster prompt out."""
     import make_poster as make_mod
@@ -443,6 +504,32 @@ def build_parser():
     p.add_argument("--out", help="write the prompt here")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_make)
+
+    p = sub.add_parser("render", help="photo in, finished poster IMAGES out")
+    p.add_argument("image")
+    p.add_argument("--style", help="force a style id")
+    p.add_argument("--reference", help="reference poster to match the style from")
+    p.add_argument("--type", help="subject type: portrait, landscape, architecture, ...")
+    p.add_argument("--summary", help="one factual sentence about the subject")
+    p.add_argument("--anchors", help="comma separated identity anchors")
+    p.add_argument("--mood", help="comma separated moods")
+    p.add_argument("--tags", help="comma separated subject tags")
+    p.add_argument("--tolerance", help="transformation tolerance: low|medium|medium-high|high")
+    p.add_argument("--realism", help="realism value: low|medium|high|very-high")
+    p.add_argument("--ratio", help="output ratio override, e.g. 3:4")
+    p.add_argument("--count", type=int, default=3, help="how many images to generate")
+    p.add_argument("--backend", help="backend id (default from data/backends.json)")
+    p.add_argument("--out", default="posterloom-out", help="output directory")
+    p.add_argument("--prefix", default=None, help="output filename prefix")
+    p.add_argument("--no-reference", action="store_true",
+                   help="do not send the source photo to the backend (default)")
+    p.add_argument("--send-reference", action="store_true",
+                   help="attach the source photo to the image request "
+                        "(keeps likeness, but often returns a photograph)")
+    p.add_argument("--no-describe", action="store_true",
+                   help="skip the vision description and use the profile's subject fields")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_render)
 
     p = sub.add_parser("match", help="match a reference poster to a style")
     p.add_argument("reference")
