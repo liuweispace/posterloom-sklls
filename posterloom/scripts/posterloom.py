@@ -218,6 +218,26 @@ def cmd_selftest(args):
     if r["primary"] not in safe:
         die(f"portrait routed to {r['primary']}, expected one of {safe}")
 
+    # scene analyzer must emit only router-recognised terms
+    import glob
+    frames = sorted(glob.glob(str(ROOT / "references/reference-frames/*.jpg")))
+    if frames:
+        from scene_analyze import analyze
+        from rank_styles import load_json as _lj
+        _data = _lj(ROOT / "data/styles.json")
+        _vocab = {"palette": set(), "lighting": set(), "geometry": set(),
+                  "materials": set()}
+        for _s in _data["styles"]:
+            _r = _s.get("routing", {})
+            for _k in _vocab:
+                _vocab[_k].update(_r.get(_k, []))
+        for _f in frames:
+            _p = analyze(Path(_f))
+            for _k in _vocab:
+                for _t in _p.get(_k, []):
+                    if _t not in _vocab[_k]:
+                        die(f"analyzer emitted unknown {_k} term: {_t}")
+
     # repo-level structural validation (contract headings, ids, hybrid pairs)
     import subprocess
     vr = subprocess.run([sys.executable, str(ROOT / "scripts/validate_repo.py"), str(ROOT)],
@@ -228,11 +248,36 @@ def cmd_selftest(args):
 
     print(f"OK: {len(direct)} styles have contracts")
     print("OK: identity lock fires on faces, silent on non-faces")
+    print("OK: scene analyzer emits only router-recognised terms")
     print(f"OK: portrait routes to {r['primary']}")
     return 0
 
 
 # --------------------------------------------------------------------------- #
+def cmd_analyze(args):
+    """Derive a scene profile from an image file."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from scene_analyze import analyze
+
+    profile = analyze(Path(args.image))
+    if args.out:
+        Path(args.out).write_text(
+            json.dumps(profile, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        print(f"WROTE {args.out}")
+    else:
+        print(json.dumps(profile, ensure_ascii=False, indent=2))
+    needs = profile.get("_needs_vision", [])
+    if needs:
+        print(
+            "\nNOTE: measured from pixels - "
+            + ", ".join(needs)
+            + " still need a vision model or a human.",
+            file=sys.stderr,
+        )
+    return 0
+
+
 def cmd_package(args):
     """Zip a directory of finished poster outputs."""
     import zipfile
@@ -290,6 +335,11 @@ def build_parser():
     p = sub.add_parser("validate", help="validate profiles against the schema")
     p.add_argument("profile", nargs="?")
     p.set_defaults(func=cmd_validate)
+
+    p = sub.add_parser("analyze", help="derive a scene profile from an image")
+    p.add_argument("image")
+    p.add_argument("--out", help="write the profile JSON here")
+    p.set_defaults(func=cmd_analyze)
 
     p = sub.add_parser("package", help="zip finished poster outputs")
     p.add_argument("input_dir")

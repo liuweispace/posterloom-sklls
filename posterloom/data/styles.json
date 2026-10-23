@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "direct_style_count": 33,
   "meta_style_count": 1,
   "styles": [
@@ -2511,7 +2511,42 @@
         "type high-contrast-serif/neogrotesk-caps",
         "edition-mark none/counter/date"
       ],
-      "prompt_block": "Transform the single source photograph using the **Duotone Identity Stack** visual system.\n\nIdentity: There is exactly ONE real person in this poster, and it is the person in the source photograph. Duplicate that verified face several times, but every copy must be the SAME person with the SAME face shape, eye shape and spacing, eyebrow shape, nose and mouth shape, jawline, hairline, skin tone, apparent age, and gaze direction. Repetition is a graphic operation on a known identity, never the invention of a second person and never an averaged or merged face. Treat the largest, sharpest copy as the canonical anchor and match every other copy to it.\n\nComposition: Stack 2-4 copies of that same face along the vertical centerline so several eyes, noses and mouths coexist in one frame. Crop each copy with the next. Vary scale and angle slightly: the largest copy sits upper-left and tilted, smaller copies cascade toward the center. Clip cheeks, temples and jaw into angular mask-like points. Anchor the lower half with one strong foreground element, either a hand entering from the bottom edge or a large circular disc overlapping the lower face. Keep one clean open quadrant for the title.\n\nColor: Strict two-ink duotone plus one accent. Map the photograph into a single hue ramp with near-black reserved for deepest shadow. Remove natural skin color entirely. One saturated accent color carries the title and the small registration marks.\n\nMaterial: Risograph or screen-print surface. Visible ink grain, speckling, uneven coverage, slight misregistration, softened edges where ink does not take. Keep hair strands, pores and stubble legible inside the ink texture.\n\nTypography: A large high-contrast display serif (Didone or Bodoni italic) for the title set tight into one corner on the open quadrant, or a heavy neo-grotesk all-caps variant. Add small Song/Ming Chinese serif characters set far apart as corner markers, and tiny uppercase microtype as edition marks such as NNN / 100 plus date and series credit."
+      "prompt_block": "Transform the single source photograph using the **Duotone Identity Stack** visual system.\n\nIdentity: There is exactly ONE real person in this poster, and it is the person in the source photograph. Duplicate that verified face several times, but every copy must be the SAME person with the SAME face shape, eye shape and spacing, eyebrow shape, nose and mouth shape, jawline, hairline, skin tone, apparent age, and gaze direction. Repetition is a graphic operation on a known identity, never the invention of a second person and never an averaged or merged face. Treat the largest, sharpest copy as the canonical anchor and match every other copy to it.\n\nComposition: Stack 2-4 copies of that same face along the vertical centerline so several eyes, noses and mouths coexist in one frame. Crop each copy with the next. Vary scale and angle slightly: the largest copy sits upper-left and tilted, smaller copies cascade toward the center. Clip cheeks, temples and jaw into angular mask-like points. Anchor the lower half with one strong foreground element, either a hand entering from the bottom edge or a large circular disc overlapping the lower face. Keep one clean open quadrant for the title.\n\nColor: Strict two-ink duotone plus one accent. Map the photograph into a single hue ramp with near-black reserved for deepest shadow. Remove natural skin color entirely. One saturated accent color carries the title and the small registration marks.\n\nMaterial: Risograph or screen-print surface. Visible ink grain, speckling, uneven coverage, slight misregistration, softened edges where ink does not take. Keep hair strands, pores and stubble legible inside the ink texture.\n\nTypography: A large high-contrast display serif (Didone or Bodoni italic) for the title set tight into one corner on the open quadrant, or a heavy neo-grotesk all-caps variant. Add small Song/Ming Chinese serif characters set far apart as corner markers, and tiny uppercase microtype as edition marks such as NNN / 100 plus date and series credit.",
+      "color_system": {
+        "substrate": "pale beige / chalky white",
+        "inks": [
+          "crimson",
+          "chalk white"
+        ],
+        "accent": "vermilion",
+        "coverage": "dominant plate 75-85%, accent 15-25%",
+        "ramps": {
+          "crimson": {
+            "shadow": "#8E1B23",
+            "mid": "#C83232",
+            "light": "#F3A099",
+            "paper": "#FFF8F1"
+          },
+          "peach": {
+            "shadow": "#E97A73",
+            "mid": "#F3A099",
+            "light": "#FFE4D8",
+            "paper": "#F8CCBD"
+          },
+          "cobalt": {
+            "shadow": "#16337A",
+            "mid": "#2148B8",
+            "light": "#9EB8D3",
+            "paper": "#F5F1E8"
+          },
+          "ink": {
+            "shadow": "#101010",
+            "mid": "#30343A",
+            "light": "#8A8F98",
+            "paper": "#FAFAF7"
+          }
+        }
+      }
     },
     {
       "id": "fine-art-portrait",

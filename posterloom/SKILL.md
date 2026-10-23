@@ -3,7 +3,7 @@ name: posterloom
 description: Turn a real photograph into an art-directed poster - analyze the scene, preserve identity anchors, route to 1 of 33 poster styles, and compile a locked generation prompt. Use when the user wants a photo converted into an editorial, travel, cultural, painterly, print, portrait, or modern-design poster, or wants a batch of independent posters from many photos. Enforces facial likeness locking on any source containing a person.
 license: MIT
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
   tagline: "Adaptive Photo-to-Poster Skill"
 ---
 
@@ -32,6 +32,7 @@ routing, source-aware prompt composition, restrained typography, and explicit vi
 Everything runs through one dependency-free CLI (Python 3.9+ standard library only):
 
 ```bash
+python3 scripts/posterloom.py analyze photo.jpg --out profile.json   # 从图片测量场景
 python3 scripts/posterloom.py route   examples/scene-portrait.json      # rank styles
 python3 scripts/posterloom.py prompt  examples/scene-portrait.json      # compile prompt
 python3 scripts/posterloom.py batch   examples/batch-profiles.json      # plan a batch

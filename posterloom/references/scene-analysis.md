@@ -3,6 +3,24 @@
 
 PosterLoom always builds a scene map before style selection.
 
+## Derive it from the image when you can
+
+```bash
+python3 scripts/posterloom.py analyze photo.jpg --out profile.json
+```
+
+The analyzer measures from pixels: dimensions, aspect ratio, mean luminance, contrast,
+saturation, palette families, per-region detail density, focus region, quiet regions,
+and text-safe candidates. It emits **only terms the router recognises** — verified by
+`selftest` and by `scripts/check_analyzer_vocab.py`.
+
+It deliberately does **not** guess `subject.type`, `identity_anchors`, `mood`,
+`realism_value`, or `transformation_tolerance`. Those need a vision model or a human.
+It returns them in `_needs_vision` so the gap stays explicit. Routing on invented
+subject data would be worse than routing on nothing.
+
+PNG works with the standard library alone; JPEG needs Pillow.
+
 ## Required fields
 - `subject.type`: portrait, architecture, landscape, still-life, tea, street, performance, object, etc.
 - `subject.summary`: one factual sentence.

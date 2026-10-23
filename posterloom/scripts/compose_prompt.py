@@ -69,6 +69,29 @@ def compile_prompt(profile, forced_style=None):
         f"PRIMARY STYLE — {style['name']}\n{style['prompt_block']}",
     ]
 
+    # Named color system. Competitors that specify concrete hex values rather than
+    # adjectives ("warm", "muted") get measurably better color results, because the
+    # model has to interpret adjectives but can execute a value.
+    cs = style.get("color_system")
+    if cs:
+        lines = [f"COLOR SYSTEM — {style['name']}"]
+        if cs.get("substrate"):
+            lines.append(f"Substrate / paper: {cs['substrate']}")
+        if cs.get("inks"):
+            lines.append(f"Inks (exactly these two): {', '.join(cs['inks'])}")
+        if cs.get("accent"):
+            lines.append(f"Accent: {cs['accent']}")
+        if cs.get("coverage"):
+            lines.append(f"Coverage: {cs['coverage']}")
+        for name, ramp in (cs.get("ramps") or {}).items():
+            stops = " -> ".join(f"{k} {v}" for k, v in ramp.items())
+            lines.append(f"Ramp '{name}' (shadow to paper): {stops}")
+        lines.append(
+            "Use these values literally. Do not substitute adjectives such as warm, "
+            "muted, or vintage for the named inks."
+        )
+        blocks.append("\n".join(lines))
+
     if route.get("hybrid") and not forced_style:
         h = route["hybrid"]
         secondary = style_by_id(h["secondary"])
