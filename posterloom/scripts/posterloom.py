@@ -238,6 +238,29 @@ def cmd_selftest(args):
                     if _t not in _vocab[_k]:
                         die(f"analyzer emitted unknown {_k} term: {_t}")
 
+    # reference matcher must pick a valid style, and the one-command workflow
+    # must produce a prompt end to end
+    import glob as _glob
+    _frames = sorted(_glob.glob(str(ROOT / "references/reference-frames/*.jpg")))
+    if _frames:
+        from match_reference import match as _match
+        from make_poster import main as _make_main
+        _m = _match(Path(_frames[0]))
+        if not _m.get("best"):
+            die("reference matcher returned no best style")
+        if _m["best"]["style"] not in {s["id"] for s in _data["styles"]}:
+            die(f"reference matcher chose unknown style: {_m['best']['style']}")
+        # Run the workflow with output captured so selftest stays readable.
+        import contextlib
+        import io as _io
+        _buf = _io.StringIO()
+        with contextlib.redirect_stdout(_buf):
+            _rc = _make_main(["make", _frames[0], "--json"])
+        if _rc != 0:
+            die(f"make workflow failed with rc={_rc}")
+        if "prompt" not in _buf.getvalue():
+            die("make workflow produced no prompt")
+
     # repo-level structural validation (contract headings, ids, hybrid pairs)
     import subprocess
     vr = subprocess.run([sys.executable, str(ROOT / "scripts/validate_repo.py"), str(ROOT)],
@@ -249,11 +272,55 @@ def cmd_selftest(args):
     print(f"OK: {len(direct)} styles have contracts")
     print("OK: identity lock fires on faces, silent on non-faces")
     print("OK: scene analyzer emits only router-recognised terms")
+    print("OK: reference matcher and make workflow run end to end")
     print(f"OK: portrait routes to {r['primary']}")
     return 0
 
 
 # --------------------------------------------------------------------------- #
+def cmd_make(args):
+    """One command: photo in, finished poster prompt out."""
+    import make_poster as make_mod
+
+    argv = ["make", args.image]
+    for flag, value in (
+        ("--style", args.style), ("--reference", args.reference),
+        ("--type", args.type), ("--summary", args.summary),
+        ("--anchors", args.anchors), ("--mood", args.mood),
+        ("--tags", args.tags), ("--tolerance", args.tolerance),
+        ("--realism", args.realism), ("--ratio", args.ratio),
+        ("--out", args.out),
+    ):
+        if value:
+            argv += [flag, value]
+    if args.json:
+        argv.append("--json")
+    return make_mod.main(argv)
+
+
+def cmd_match(args):
+    """Match a reference poster to the closest built-in style."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from match_reference import match
+
+    out = match(Path(args.reference), top=args.top)
+    if args.json:
+        print(json.dumps(out, ensure_ascii=False, indent=2))
+    else:
+        m = out["measured"]
+        print(f"REFERENCE {args.reference}")
+        print(f"  contrast {m['contrast']} · saturation {m['saturation']} "
+              f"· density {m['density']}")
+        print(f"  palette: {', '.join(m['palette_families'])}")
+        print()
+        for r in out["matches"]:
+            print(f"  {r['style']:<28} {r['score']:.3f}  {r['name']}")
+        if out.get("best"):
+            print()
+            print(f"USE: posterloom.py make <photo> --style {out['best']['style']}")
+    return 0
+
+
 def cmd_analyze(args):
     """Derive a scene profile from an image file."""
     sys.path.insert(0, str(ROOT / "scripts"))
@@ -335,6 +402,28 @@ def build_parser():
     p = sub.add_parser("validate", help="validate profiles against the schema")
     p.add_argument("profile", nargs="?")
     p.set_defaults(func=cmd_validate)
+
+    p = sub.add_parser("make", help="photo in, finished poster prompt out")
+    p.add_argument("image")
+    p.add_argument("--style", help="force a style id")
+    p.add_argument("--reference", help="reference poster to match the style from")
+    p.add_argument("--type", help="subject type: portrait, landscape, architecture, ...")
+    p.add_argument("--summary", help="one factual sentence about the subject")
+    p.add_argument("--anchors", help="comma separated identity anchors")
+    p.add_argument("--mood", help="comma separated moods")
+    p.add_argument("--tags", help="comma separated subject tags")
+    p.add_argument("--tolerance", help="transformation tolerance: low|medium|medium-high|high")
+    p.add_argument("--realism", help="realism value: low|medium|high|very-high")
+    p.add_argument("--ratio", help="output ratio, e.g. 3:4")
+    p.add_argument("--out", help="write the prompt here")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_make)
+
+    p = sub.add_parser("match", help="match a reference poster to a style")
+    p.add_argument("reference")
+    p.add_argument("--top", type=int, default=5)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_match)
 
     p = sub.add_parser("analyze", help="derive a scene profile from an image")
     p.add_argument("image")

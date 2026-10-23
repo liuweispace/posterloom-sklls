@@ -169,6 +169,21 @@ def _load_pixels_stdlib(path: Path):
     return width, height, px
 
 
+def _density_of(contrast: float, sat: float) -> str:
+    """Classify detail density from tone statistics.
+
+    A flat two-colour print has hard tone and strong saturation; a soft
+    painterly or photographic image does not.
+    """
+    if contrast > 0.30 and sat > 0.30:
+        return "flat"
+    if contrast < 0.16 and sat < 0.22:
+        return "soft"
+    if contrast < 0.16:
+        return "low"
+    return "medium"
+
+
 def analyze(path: Path) -> dict:
     """Derive a partial scene profile from an image file."""
     path = Path(path)
@@ -201,11 +216,11 @@ def analyze(path: Path) -> dict:
         if s < 0.14:
             continue
         hh, ss, vv = _hsv(r, g, b)
-        if hh < 12 or hh >= 345:
+        if hh < 25 or hh >= 335:
             key = "vivid-source-derived"
-        elif hh < 42:
+        elif hh < 50:
             key = "amber-charcoal"
-        elif hh < 72:
+        elif hh < 80:
             key = "earth-tone"
         elif hh < 165:
             key = "muted-green"
@@ -235,6 +250,23 @@ def analyze(path: Path) -> dict:
                                             "high-contrast", "expressive")]) == 1:
         palette.append("single-accent")
     palette.append("source-derived")
+
+    # --- hue cluster count -------------------------------------------------
+    # The strongest discriminator between a flat 2-color print and a photograph.
+    # A duotone poster has one or two hue families plus paper; a photo has many.
+    hue_hist: dict[int, int] = {}
+    for hue_val, sat_val in zip(hues, sats):
+        if sat_val < 0.18:
+            continue
+        k = int(hue_val // 20) * 20
+        hue_hist[k] = hue_hist.get(k, 0) + 1
+    total_h = sum(hue_hist.values()) or 1
+    # Count clusters that carry a meaningful share of the colored area.
+    clusters = 0
+    for k, cnt in sorted(hue_hist.items(), key=lambda kv: -kv[1]):
+        if cnt / total_h >= 0.14:
+            clusters += 1
+    hue_cluster_count = clusters
 
     # --- detail density per region (3x3 grid) ------------------------------
     gx = gy = 3
@@ -381,6 +413,8 @@ def analyze(path: Path) -> dict:
             "contrast": round(contrast, 3),
             "mean_saturation": round(mean_s, 3),
             "focus_region": focus_cell,
+            "hue_clusters": hue_cluster_count,
+            "density": _density_of(contrast, mean_s),
             "quiet_regions": [names[(cx, cy)] for _, cx, cy in quiet],
             "busy_regions": [names[(cx, cy)] for _, cx, cy in busy],
         },

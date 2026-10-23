@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.0",
   "direct_style_count": 33,
   "meta_style_count": 1,
   "styles": [
@@ -83,7 +83,39 @@
         "contrast soft/medium",
         "type serif/grotesk/condensed"
       ],
-      "prompt_block": "Transform the single source photograph using the **Cinematic Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve photographic credibility. Lock face/posture, architecture silhouette, object proportions, real signage placement, and source-specific anchors. Art direction changes hierarchy, not factual identity.\n\nComposition: Use cinematic crop, controlled negative space, one clear focal path, believable depth, and selective background simplification. Prefer crop/scale/spacing before content invention.\n\nLighting: Preserve light direction and motivation. Refine practical lights, dusk, side light, window glow, and shadow separation; unsupported key lights are forbidden.\n\nColor: Source-derived filmic grading: gentle highlight rolloff, deep readable blacks, restrained saturation, subtle warm/cool separation.\n\nMaterial and texture: Keep stone, wood, skin, ceramic, glass, foliage, water, plaster, metal, and fabric physically believable; grain may unify but not erase surface identity.\n\nTypography: Small contemporary serif, grotesk, or condensed sans. Usually 2–6% of poster height, placed only in a genuine text-safe zone.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Cinematic Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Cinematic Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve photographic credibility. Lock face/posture, architecture silhouette, object proportions, real signage placement, and source-specific anchors. Art direction changes hierarchy, not factual identity.\n\nComposition: Use cinematic crop, controlled negative space, one clear focal path, believable depth, and selective background simplification. Prefer crop/scale/spacing before content invention.\n\nLighting: Preserve light direction and motivation. Refine practical lights, dusk, side light, window glow, and shadow separation; unsupported key lights are forbidden.\n\nColor: Source-derived filmic grading: gentle highlight rolloff, deep readable blacks, restrained saturation, subtle warm/cool separation.\n\nMaterial and texture: Keep stone, wood, skin, ceramic, glass, foliage, water, plaster, metal, and fabric physically believable; grain may unify but not erase surface identity.\n\nTypography: Small contemporary serif, grotesk, or condensed sans. Usually 2–6% of poster height, placed only in a genuine text-safe zone.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Cinematic Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.1,
+          0.42
+        ],
+        "saturation_range": [
+          0.08,
+          0.65
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "natural",
+          "neutral",
+          "soft",
+          "limited",
+          "earth-tone",
+          "amber-charcoal",
+          "earth",
+          "desaturated",
+          "vivid-source-derived",
+          "matte",
+          "teal",
+          "sepia"
+        ],
+        "hue_clusters": [
+          4,
+          12
+        ]
+      }
     },
     {
       "id": "moody-night-editorial",
@@ -166,7 +198,39 @@
         "title lower-left/upper-right",
         "reflection emphasis low/medium"
       ],
-      "prompt_block": "Transform the single source photograph using the **Moody Night Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Treat darkness as designed space. Preserve real lamps, windows, lanterns, signs, reflections, building geometry, and human silhouettes exactly enough to keep the place recognizable.\n\nComposition: Organize around the brightest existing practical light. Allow large dark fields to breathe and reduce secondary highlights that compete.\n\nLighting: Use layered near-black values instead of crushed black. Add restrained optical halation only around genuine emitters; reflected light follows surface logic.\n\nColor: Source-derived amber, tungsten, lantern red, charcoal, midnight blue, muted green, or cool ambient shadow; keep the palette disciplined.\n\nMaterial and texture: Wet pavement, glass, wood, tile, paper lanterns, plaster, metal, and foliage must react differently to light.\n\nTypography: Tiny elegant serif or neutral sans, usually 2–5% of poster height and away from the brightest source.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Moody Night Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Moody Night Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Treat darkness as designed space. Preserve real lamps, windows, lanterns, signs, reflections, building geometry, and human silhouettes exactly enough to keep the place recognizable.\n\nComposition: Organize around the brightest existing practical light. Allow large dark fields to breathe and reduce secondary highlights that compete.\n\nLighting: Use layered near-black values instead of crushed black. Add restrained optical halation only around genuine emitters; reflected light follows surface logic.\n\nColor: Source-derived amber, tungsten, lantern red, charcoal, midnight blue, muted green, or cool ambient shadow; keep the palette disciplined.\n\nMaterial and texture: Wet pavement, glass, wood, tile, paper lanterns, plaster, metal, and foliage must react differently to light.\n\nTypography: Tiny elegant serif or neutral sans, usually 2–5% of poster height and away from the brightest source.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Moody Night Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.1,
+          0.42
+        ],
+        "saturation_range": [
+          0.08,
+          0.65
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "natural",
+          "neutral",
+          "soft",
+          "limited",
+          "earth-tone",
+          "amber-charcoal",
+          "earth",
+          "desaturated",
+          "vivid-source-derived",
+          "matte",
+          "teal",
+          "sepia"
+        ],
+        "hue_clusters": [
+          4,
+          12
+        ]
+      }
     },
     {
       "id": "travel-cover-poster",
@@ -252,7 +316,39 @@
         "clarity natural/polished",
         "title mood-based/verified-place"
       ],
-      "prompt_block": "Transform the single source photograph using the **Travel Cover Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Treat the place itself as the icon. Preserve destination-defining roofs, waterways, paths, skyline, mountain profile, street rhythm, and real cultural details. Never fabricate a place name.\n\nComposition: Use real spatial cues—paths, bridges, water edges, roof lines, vegetation, sky, streets, mountain contours—to lead toward one destination anchor.\n\nLighting: Maintain plausible time of day, weather, sun direction, haze, and atmospheric perspective.\n\nColor: Refine the source into roughly 3–5 dominant travel-editorial tones without replacing local color.\n\nMaterial and texture: Retain weathered walls, tile, timber, water, stone, vegetation, and air quality.\n\nTypography: Small editorial title. Use a verified place name only if supplied by the source/user; otherwise use a mood-based title.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Travel Cover Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Travel Cover Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Treat the place itself as the icon. Preserve destination-defining roofs, waterways, paths, skyline, mountain profile, street rhythm, and real cultural details. Never fabricate a place name.\n\nComposition: Use real spatial cues—paths, bridges, water edges, roof lines, vegetation, sky, streets, mountain contours—to lead toward one destination anchor.\n\nLighting: Maintain plausible time of day, weather, sun direction, haze, and atmospheric perspective.\n\nColor: Refine the source into roughly 3–5 dominant travel-editorial tones without replacing local color.\n\nMaterial and texture: Retain weathered walls, tile, timber, water, stone, vegetation, and air quality.\n\nTypography: Small editorial title. Use a verified place name only if supplied by the source/user; otherwise use a mood-based title.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Travel Cover Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.1,
+          0.42
+        ],
+        "saturation_range": [
+          0.08,
+          0.65
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "natural",
+          "neutral",
+          "soft",
+          "limited",
+          "earth-tone",
+          "amber-charcoal",
+          "earth",
+          "desaturated",
+          "vivid-source-derived",
+          "matte",
+          "teal",
+          "sepia"
+        ],
+        "hue_clusters": [
+          4,
+          12
+        ]
+      }
     },
     {
       "id": "luxury-still-life-editorial",
@@ -337,7 +433,39 @@
         "type serif/sans",
         "grain very fine/fine"
       ],
-      "prompt_block": "Transform the single source photograph using the **Luxury Still-Life Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve exact object count, proportions, arrangement, labels, vessel silhouettes, and handcrafted imperfections. Luxury comes from tactile fidelity, not decoration.\n\nComposition: Establish one hero object, a supporting plane, and deliberate negative space while preserving believable gravity and tabletop relationships.\n\nLighting: Use soft directional illumination, controlled specular highlights, deep elegant shadows, and gentle falloff.\n\nColor: Use source colors and restrained earth/neutral families when present. Never add metallic gold just to signal luxury.\n\nMaterial and texture: Ceramic glaze, tea leaves, paper, wood, metal, glass, textile, food, and patina must remain materially distinct.\n\nTypography: Very small serif or clean sans with generous spacing, like a luxury magazine feature.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Luxury Still-Life Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Luxury Still-Life Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve exact object count, proportions, arrangement, labels, vessel silhouettes, and handcrafted imperfections. Luxury comes from tactile fidelity, not decoration.\n\nComposition: Establish one hero object, a supporting plane, and deliberate negative space while preserving believable gravity and tabletop relationships.\n\nLighting: Use soft directional illumination, controlled specular highlights, deep elegant shadows, and gentle falloff.\n\nColor: Use source colors and restrained earth/neutral families when present. Never add metallic gold just to signal luxury.\n\nMaterial and texture: Ceramic glaze, tea leaves, paper, wood, metal, glass, textile, food, and patina must remain materially distinct.\n\nTypography: Very small serif or clean sans with generous spacing, like a luxury magazine feature.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Luxury Still-Life Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.1,
+          0.42
+        ],
+        "saturation_range": [
+          0.08,
+          0.65
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "natural",
+          "neutral",
+          "soft",
+          "limited",
+          "earth-tone",
+          "amber-charcoal",
+          "earth",
+          "desaturated",
+          "vivid-source-derived",
+          "matte",
+          "teal",
+          "sepia"
+        ],
+        "hue_clusters": [
+          4,
+          12
+        ]
+      }
     },
     {
       "id": "documentary-poster",
@@ -421,7 +549,39 @@
         "crop conservative/moderate",
         "caption none/tiny"
       ],
-      "prompt_block": "Transform the single source photograph using the **Documentary Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Protect the truthfulness of the moment: people, clothing, posture, working context, architecture, signs, weathering, cultural objects, and authentic imperfection remain evidence.\n\nComposition: Crop for narrative clarity while keeping spatial relationships and context needed to understand the moment.\n\nLighting: Use natural or practical light with subtle documentary dodge-and-burn. Do not glamorize or stage.\n\nColor: Keep believable source color with restrained saturation. Nuanced black-and-white is allowed only when the source supports it.\n\nMaterial and texture: Weathering, skin, cloth, dust, paint, worn surfaces, signage, and tools remain truthful.\n\nTypography: Small archival/editorial title or caption, never dominating documentary evidence.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Documentary Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Documentary Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Protect the truthfulness of the moment: people, clothing, posture, working context, architecture, signs, weathering, cultural objects, and authentic imperfection remain evidence.\n\nComposition: Crop for narrative clarity while keeping spatial relationships and context needed to understand the moment.\n\nLighting: Use natural or practical light with subtle documentary dodge-and-burn. Do not glamorize or stage.\n\nColor: Keep believable source color with restrained saturation. Nuanced black-and-white is allowed only when the source supports it.\n\nMaterial and texture: Weathering, skin, cloth, dust, paint, worn surfaces, signage, and tools remain truthful.\n\nTypography: Small archival/editorial title or caption, never dominating documentary evidence.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Documentary Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.1,
+          0.42
+        ],
+        "saturation_range": [
+          0.08,
+          0.65
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "natural",
+          "neutral",
+          "soft",
+          "limited",
+          "earth-tone",
+          "amber-charcoal",
+          "earth",
+          "desaturated",
+          "vivid-source-derived",
+          "matte",
+          "teal",
+          "sepia"
+        ],
+        "hue_clusters": [
+          4,
+          12
+        ]
+      }
     },
     {
       "id": "transparent-watercolor",
@@ -502,7 +662,33 @@
         "detail focal-only/selective",
         "wash wet/soft"
       ],
-      "prompt_block": "Transform the single source photograph using the **Transparent Watercolor** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep key silhouette, geometry, posture, face anchors, roof line, bridge, boat, tree, or object shape precise only where recognition needs it. Secondary detail can dissolve.\n\nComposition: Simplify the environment into atmospheric wash masses and preserve intentional unpainted paper. Use selective lost edges.\n\nLighting: Express illumination through paper luminosity and transparent value, never generic glow.\n\nColor: Use two or three dominant source-derived pigments plus restrained dark accents.\n\nMaterial and texture: Cold-press paper, granulation, edge bloom, backruns, pigment sediment, transparent layering, and real paper breathing room.\n\nTypography: Tiny clean editorial type in a dry paper region; never fake hand lettering unless supplied.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Transparent Watercolor mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Transparent Watercolor** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep key silhouette, geometry, posture, face anchors, roof line, bridge, boat, tree, or object shape precise only where recognition needs it. Secondary detail can dissolve.\n\nComposition: Simplify the environment into atmospheric wash masses and preserve intentional unpainted paper. Use selective lost edges.\n\nLighting: Express illumination through paper luminosity and transparent value, never generic glow.\n\nColor: Use two or three dominant source-derived pigments plus restrained dark accents.\n\nMaterial and texture: Cold-press paper, granulation, edge bloom, backruns, pigment sediment, transparent layering, and real paper breathing room.\n\nTypography: Tiny clean editorial type in a dry paper region; never fake hand lettering unless supplied.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Transparent Watercolor mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.04,
+          0.38
+        ],
+        "saturation_range": [
+          0.15,
+          0.72
+        ],
+        "density": "soft",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "soft",
+          "powdery",
+          "pastel",
+          "warm-neutral",
+          "earth-tone",
+          "single-hue-ramp"
+        ],
+        "hue_clusters": [
+          2,
+          8
+        ]
+      }
     },
     {
       "id": "soft-gouache",
@@ -581,7 +767,33 @@
         "edge softness mixed",
         "negative space medium/high"
       ],
-      "prompt_block": "Transform the single source photograph using the **Soft Gouache** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, perspective, and key face/body/architectural anchors while simplifying microtexture into designed matte forms.\n\nComposition: Break the scene into broad opaque value/color planes, then restore selected small details around the focal subject.\n\nLighting: Translate illumination into painted value blocks rather than lens glow.\n\nColor: Simplify the source into roughly 5–8 harmonious colors with muted midtones, controlled highlights, and deep accents.\n\nMaterial and texture: Matte gouache, dry-brush transitions, slight paper tooth, softened hand-painted edges, and restrained visible strokes.\n\nTypography: Small modern editorial type integrated into a quiet painted field.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Soft Gouache mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Soft Gouache** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, perspective, and key face/body/architectural anchors while simplifying microtexture into designed matte forms.\n\nComposition: Break the scene into broad opaque value/color planes, then restore selected small details around the focal subject.\n\nLighting: Translate illumination into painted value blocks rather than lens glow.\n\nColor: Simplify the source into roughly 5–8 harmonious colors with muted midtones, controlled highlights, and deep accents.\n\nMaterial and texture: Matte gouache, dry-brush transitions, slight paper tooth, softened hand-painted edges, and restrained visible strokes.\n\nTypography: Small modern editorial type integrated into a quiet painted field.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Soft Gouache mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.04,
+          0.38
+        ],
+        "saturation_range": [
+          0.15,
+          0.72
+        ],
+        "density": "soft",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "soft",
+          "powdery",
+          "pastel",
+          "warm-neutral",
+          "earth-tone",
+          "single-hue-ramp"
+        ],
+        "hue_clusters": [
+          2,
+          8
+        ]
+      }
     },
     {
       "id": "expressive-painting",
@@ -661,7 +873,33 @@
         "impasto accents low",
         "crop dynamic/moderate"
       ],
-      "prompt_block": "Transform the single source photograph using the **Expressive Painting** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Protect faces, hands, body count, pose, instrument/object geometry, vehicle geometry, or principal architecture. Let looseness occur away from identity anchors.\n\nComposition: Identify one movement/emotional vector and organize brush direction around it. Keep focal anchors controlled while secondary space becomes kinetic.\n\nLighting: Preserve source light direction even when temperature and saturation shift emotionally.\n\nColor: Start from the source palette and allow measured expressive shifts rather than random neon.\n\nMaterial and texture: Layered strokes, dragged pigment, dry brush, broken color, selective impasto-like highlights, and varied edge control.\n\nTypography: Tiny calm typography in a low-energy zone so it does not compete with brushwork.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Expressive Painting mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Expressive Painting** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Protect faces, hands, body count, pose, instrument/object geometry, vehicle geometry, or principal architecture. Let looseness occur away from identity anchors.\n\nComposition: Identify one movement/emotional vector and organize brush direction around it. Keep focal anchors controlled while secondary space becomes kinetic.\n\nLighting: Preserve source light direction even when temperature and saturation shift emotionally.\n\nColor: Start from the source palette and allow measured expressive shifts rather than random neon.\n\nMaterial and texture: Layered strokes, dragged pigment, dry brush, broken color, selective impasto-like highlights, and varied edge control.\n\nTypography: Tiny calm typography in a low-energy zone so it does not compete with brushwork.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Expressive Painting mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.04,
+          0.38
+        ],
+        "saturation_range": [
+          0.15,
+          0.72
+        ],
+        "density": "soft",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "soft",
+          "powdery",
+          "pastel",
+          "warm-neutral",
+          "earth-tone",
+          "single-hue-ramp"
+        ],
+        "hue_clusters": [
+          2,
+          8
+        ]
+      }
     },
     {
       "id": "ink-wash-minimal",
@@ -740,7 +978,33 @@
         "dry brush low/medium",
         "edge loss high"
       ],
-      "prompt_block": "Transform the single source photograph using the **Ink Wash Minimal** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, posture, roof profile, vessel shape, branching pattern, bridge line, or another essential cue with economical marks.\n\nComposition: Use concentrated dark ink for the anchor, medium wash for structure, pale wash for atmosphere, and untouched paper for silence.\n\nLighting: Translate source light into ink density and value rather than literal light effects.\n\nColor: Mostly black, gray, warm paper, with at most one or two muted source accents.\n\nMaterial and texture: Ink diffusion, dry brush, feathered edges, pooling, absorbent paper, and restrained calligraphic energy.\n\nTypography: Tiny modern type. Never fabricate calligraphy or red seals.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Ink Wash Minimal mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Ink Wash Minimal** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, posture, roof profile, vessel shape, branching pattern, bridge line, or another essential cue with economical marks.\n\nComposition: Use concentrated dark ink for the anchor, medium wash for structure, pale wash for atmosphere, and untouched paper for silence.\n\nLighting: Translate source light into ink density and value rather than literal light effects.\n\nColor: Mostly black, gray, warm paper, with at most one or two muted source accents.\n\nMaterial and texture: Ink diffusion, dry brush, feathered edges, pooling, absorbent paper, and restrained calligraphic energy.\n\nTypography: Tiny modern type. Never fabricate calligraphy or red seals.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Ink Wash Minimal mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.04,
+          0.38
+        ],
+        "saturation_range": [
+          0.15,
+          0.72
+        ],
+        "density": "soft",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "soft",
+          "powdery",
+          "pastel",
+          "warm-neutral",
+          "earth-tone",
+          "single-hue-ramp"
+        ],
+        "hue_clusters": [
+          2,
+          8
+        ]
+      }
     },
     {
       "id": "pastel-atmosphere",
@@ -819,7 +1083,33 @@
         "paper tooth fine",
         "title minimal"
       ],
-      "prompt_block": "Transform the single source photograph using the **Pastel Atmosphere** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, face structure, architecture outline, or object shape while reducing microdetail into broad tonal transitions.\n\nComposition: Use broad tonal fields and soft transitions around a stable focal anchor; retain enough structure to avoid mushiness.\n\nLighting: Create luminous transitions through value and temperature, not digital bloom.\n\nColor: Source-derived powdery/chalky hues with disciplined values; never a candy rainbow.\n\nMaterial and texture: Layered dry pastel, smudged transitions, visible paper tooth, and occasional sharper stick marks near the focal area.\n\nTypography: Minimal modern small type in a calm tonal field.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Pastel Atmosphere mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Pastel Atmosphere** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve silhouette, face structure, architecture outline, or object shape while reducing microdetail into broad tonal transitions.\n\nComposition: Use broad tonal fields and soft transitions around a stable focal anchor; retain enough structure to avoid mushiness.\n\nLighting: Create luminous transitions through value and temperature, not digital bloom.\n\nColor: Source-derived powdery/chalky hues with disciplined values; never a candy rainbow.\n\nMaterial and texture: Layered dry pastel, smudged transitions, visible paper tooth, and occasional sharper stick marks near the focal area.\n\nTypography: Minimal modern small type in a calm tonal field.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Pastel Atmosphere mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.04,
+          0.38
+        ],
+        "saturation_range": [
+          0.15,
+          0.72
+        ],
+        "density": "soft",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "warm-cool",
+          "soft",
+          "powdery",
+          "pastel",
+          "warm-neutral",
+          "earth-tone",
+          "single-hue-ramp"
+        ],
+        "hue_clusters": [
+          2,
+          8
+        ]
+      }
     },
     {
       "id": "pop-screenprint",
@@ -897,7 +1187,34 @@
         "black keyline low/medium",
         "crop bold"
       ],
-      "prompt_block": "Transform the single source photograph using the **Pop Screenprint** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the unmistakable silhouette, proportions, mechanical/architectural lines, and pose. Reduce detail deliberately rather than tracing every edge.\n\nComposition: Reduce the image to one dominant graphic shape, 4–7 tonal/color regions, and deliberate negative space.\n\nLighting: Translate source light into limited tonal separations instead of photographic gradients.\n\nColor: Use 4–7 source-derived inks; one accent may be intensified but not invented.\n\nMaterial and texture: Controlled halftone, screenprint grain, subtle registration shift, uneven ink edges, and selective black keyline.\n\nTypography: Small confident condensed grotesk, industrial sans, or geometric sans aligned to a real graphic edge.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Pop Screenprint mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Pop Screenprint** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the unmistakable silhouette, proportions, mechanical/architectural lines, and pose. Reduce detail deliberately rather than tracing every edge.\n\nComposition: Reduce the image to one dominant graphic shape, 4–7 tonal/color regions, and deliberate negative space.\n\nLighting: Translate source light into limited tonal separations instead of photographic gradients.\n\nColor: Use 4–7 source-derived inks; one accent may be intensified but not invented.\n\nMaterial and texture: Controlled halftone, screenprint grain, subtle registration shift, uneven ink edges, and selective black keyline.\n\nTypography: Small confident condensed grotesk, industrial sans, or geometric sans aligned to a real graphic edge.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Pop Screenprint mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.2,
+          0.63
+        ],
+        "saturation_range": [
+          0.2,
+          0.95
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "duotone",
+          "expressive",
+          "high-contrast",
+          "limited-accent",
+          "monochrome-accent",
+          "single-accent",
+          "single-hue-ramp",
+          "source-derived",
+          "spot-color",
+          "vivid-source-derived"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "riso-poster",
@@ -976,7 +1293,34 @@
         "paper grain medium",
         "line detail focal-only"
       ],
-      "prompt_block": "Transform the single source photograph using the **Riso Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve subject contour and essential internal detail, then reinterpret the image as intentional print separations.\n\nComposition: Use large graphic masses with selective fine-line detail around the focal subject.\n\nLighting: Translate illumination into spot-color density and overprint relationships.\n\nColor: Use 2–4 source-derived riso-like spot inks with meaningful overprint.\n\nMaterial and texture: Coarse attractive grain, visible paper fibers, slight registration drift, uneven ink density, and softly printed edges.\n\nTypography: Small independent-publishing sans or serif with generous spacing.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Riso Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Riso Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve subject contour and essential internal detail, then reinterpret the image as intentional print separations.\n\nComposition: Use large graphic masses with selective fine-line detail around the focal subject.\n\nLighting: Translate illumination into spot-color density and overprint relationships.\n\nColor: Use 2–4 source-derived riso-like spot inks with meaningful overprint.\n\nMaterial and texture: Coarse attractive grain, visible paper fibers, slight registration drift, uneven ink density, and softly printed edges.\n\nTypography: Small independent-publishing sans or serif with generous spacing.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Riso Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.2,
+          0.63
+        ],
+        "saturation_range": [
+          0.2,
+          0.95
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "duotone",
+          "expressive",
+          "high-contrast",
+          "limited-accent",
+          "monochrome-accent",
+          "single-accent",
+          "single-hue-ramp",
+          "source-derived",
+          "spot-color",
+          "vivid-source-derived"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "relief-print",
@@ -1055,7 +1399,34 @@
         "ink mass medium/high",
         "paper show-through medium"
       ],
-      "prompt_block": "Transform the single source photograph using the **Relief Print** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Lock silhouette, anatomy, pose, object count, structural geometry, and crucial contours. Think in carved positive/negative mass.\n\nComposition: Map positive ink masses and negative cut-away paper before adding texture. Use carving density to describe form.\n\nLighting: Convert light into a carved value hierarchy rather than smooth shading.\n\nColor: Mostly black, charcoal, warm paper, with at most one restrained source-derived accent.\n\nMaterial and texture: Directional gouge marks, uneven carved edges, ink-load variation, paper tooth, and purposeful cut rhythm.\n\nTypography: Small geometric contemporary type, never pseudo-historical woodcut lettering.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Relief Print mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Relief Print** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Lock silhouette, anatomy, pose, object count, structural geometry, and crucial contours. Think in carved positive/negative mass.\n\nComposition: Map positive ink masses and negative cut-away paper before adding texture. Use carving density to describe form.\n\nLighting: Convert light into a carved value hierarchy rather than smooth shading.\n\nColor: Mostly black, charcoal, warm paper, with at most one restrained source-derived accent.\n\nMaterial and texture: Directional gouge marks, uneven carved edges, ink-load variation, paper tooth, and purposeful cut rhythm.\n\nTypography: Small geometric contemporary type, never pseudo-historical woodcut lettering.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Relief Print mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.2,
+          0.63
+        ],
+        "saturation_range": [
+          0.2,
+          0.95
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "duotone",
+          "expressive",
+          "high-contrast",
+          "limited-accent",
+          "monochrome-accent",
+          "single-accent",
+          "single-hue-ramp",
+          "source-derived",
+          "spot-color",
+          "vivid-source-derived"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "retro-lithograph",
@@ -1135,7 +1506,34 @@
         "registration tiny",
         "type classic-modern"
       ],
-      "prompt_block": "Transform the single source photograph using the **Retro Lithograph** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve geometry, perspective, silhouette, and place-defining details. Historical-print character must not rewrite the place.\n\nComposition: Use one dominant subject with simplified secondary scenery and classic-but-current poster balance.\n\nLighting: Translate source light into layered drawn tone, stipple, and printed shading.\n\nColor: Use a limited source-derived palette, slightly desaturated when useful. Cream paper is allowed without yellowing everything.\n\nMaterial and texture: Lithographic shading, stipple, pencil-like tone, printed color fields, and gentle registration imperfection.\n\nTypography: Small refined type with classic proportions and contemporary spacing. Never fabricate a date or destination.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Retro Lithograph mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Retro Lithograph** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve geometry, perspective, silhouette, and place-defining details. Historical-print character must not rewrite the place.\n\nComposition: Use one dominant subject with simplified secondary scenery and classic-but-current poster balance.\n\nLighting: Translate source light into layered drawn tone, stipple, and printed shading.\n\nColor: Use a limited source-derived palette, slightly desaturated when useful. Cream paper is allowed without yellowing everything.\n\nMaterial and texture: Lithographic shading, stipple, pencil-like tone, printed color fields, and gentle registration imperfection.\n\nTypography: Small refined type with classic proportions and contemporary spacing. Never fabricate a date or destination.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Retro Lithograph mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.2,
+          0.63
+        ],
+        "saturation_range": [
+          0.2,
+          0.95
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "duotone",
+          "expressive",
+          "high-contrast",
+          "limited-accent",
+          "monochrome-accent",
+          "single-accent",
+          "single-hue-ramp",
+          "source-derived",
+          "spot-color",
+          "vivid-source-derived"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "paper-cut-graphic",
@@ -1212,7 +1610,34 @@
         "palette matte",
         "internal cutouts selective"
       ],
-      "prompt_block": "Transform the single source photograph using the **Paper-Cut Graphic** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the subject silhouette, proportions, and only the internal cutouts required for recognition.\n\nComposition: Break the scene into a controlled stack of foreground, hero, midground, background, sky/water, and shadow paper planes derived from the source.\n\nLighting: Use shallow physical cast shadows between layers instead of glossy 3D lighting.\n\nColor: Use roughly 5–9 source-derived matte paper colors.\n\nMaterial and texture: Fibrous matte paper, crisp hand-cut edges, subtle thickness, and shallow cast shadows.\n\nTypography: Small clean typography printed on a flat paper field; avoid novelty craft fonts.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Paper-Cut Graphic mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Paper-Cut Graphic** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the subject silhouette, proportions, and only the internal cutouts required for recognition.\n\nComposition: Break the scene into a controlled stack of foreground, hero, midground, background, sky/water, and shadow paper planes derived from the source.\n\nLighting: Use shallow physical cast shadows between layers instead of glossy 3D lighting.\n\nColor: Use roughly 5–9 source-derived matte paper colors.\n\nMaterial and texture: Fibrous matte paper, crisp hand-cut edges, subtle thickness, and shallow cast shadows.\n\nTypography: Small clean typography printed on a flat paper field; avoid novelty craft fonts.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Paper-Cut Graphic mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.2,
+          0.63
+        ],
+        "saturation_range": [
+          0.2,
+          0.95
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "duotone",
+          "expressive",
+          "high-contrast",
+          "limited-accent",
+          "monochrome-accent",
+          "single-accent",
+          "single-hue-ramp",
+          "source-derived",
+          "spot-color",
+          "vivid-source-derived"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "neo-ink-poster",
@@ -1293,7 +1718,34 @@
         "paper void high",
         "edge feathering selective"
       ],
-      "prompt_block": "Transform the single source photograph using the **Neo Ink Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve authentic architecture, object shape, costume, face, roof line, water edge, and vegetation pattern. Cultural cues must come from the source.\n\nComposition: Use contemporary asymmetry and breathing room with selective ink compression at structural anchors.\n\nLighting: Translate source light into controlled value and soft ink atmosphere while keeping direction plausible.\n\nColor: Use ink neutrals plus 1–3 muted source colors. Mineral-red appears only when genuinely supported.\n\nMaterial and texture: Ink feathering, dry edges, paper absorption, and optional restrained photographic fragments.\n\nTypography: Modern small type. Any Chinese text must be verified from the source or supplied by the user.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Neo Ink Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Neo Ink Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve authentic architecture, object shape, costume, face, roof line, water edge, and vegetation pattern. Cultural cues must come from the source.\n\nComposition: Use contemporary asymmetry and breathing room with selective ink compression at structural anchors.\n\nLighting: Translate source light into controlled value and soft ink atmosphere while keeping direction plausible.\n\nColor: Use ink neutrals plus 1–3 muted source colors. Mineral-red appears only when genuinely supported.\n\nMaterial and texture: Ink feathering, dry edges, paper absorption, and optional restrained photographic fragments.\n\nTypography: Modern small type. Any Chinese text must be verified from the source or supplied by the user.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Neo Ink Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.12,
+          0.5
+        ],
+        "saturation_range": [
+          0.1,
+          0.7
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "amber-charcoal",
+          "tea-brown",
+          "warm-paper",
+          "warm-neutral",
+          "earth-tone",
+          "ink",
+          "ink-black",
+          "ink-neutral",
+          "muted-accent",
+          "mineral-accent"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "tea-house-minimal",
@@ -1379,7 +1831,34 @@
         "hero tea/object/architecture",
         "grain very fine"
       ],
-      "prompt_block": "Transform the single source photograph using the **Tea-House Minimal** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Lock tea vessels, table arrangement, wood joinery, window grids, roof tiles, lantern positions, and genuine signage. Preserve ritual and material specificity.\n\nComposition: Use quiet asymmetry, one focal ritual/object/architectural anchor, and generous shadow, wall, or tabletop breathing room.\n\nLighting: Keep warm practical/window light plausible with deep readable shadows. Do not invent candlelight or steam.\n\nColor: Use tea browns, timber, charcoal, porcelain, muted green, and amber only when present.\n\nMaterial and texture: Wood grain, ceramic, tea leaves, paper, cloth, glass, and steam only if actually visible.\n\nTypography: Tiny serif or restrained sans. Bilingual text only when supplied or verified.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Tea-House Minimal mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Tea-House Minimal** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Lock tea vessels, table arrangement, wood joinery, window grids, roof tiles, lantern positions, and genuine signage. Preserve ritual and material specificity.\n\nComposition: Use quiet asymmetry, one focal ritual/object/architectural anchor, and generous shadow, wall, or tabletop breathing room.\n\nLighting: Keep warm practical/window light plausible with deep readable shadows. Do not invent candlelight or steam.\n\nColor: Use tea browns, timber, charcoal, porcelain, muted green, and amber only when present.\n\nMaterial and texture: Wood grain, ceramic, tea leaves, paper, cloth, glass, and steam only if actually visible.\n\nTypography: Tiny serif or restrained sans. Bilingual text only when supplied or verified.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Tea-House Minimal mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.12,
+          0.5
+        ],
+        "saturation_range": [
+          0.1,
+          0.7
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "amber-charcoal",
+          "tea-brown",
+          "warm-paper",
+          "warm-neutral",
+          "earth-tone",
+          "ink",
+          "ink-black",
+          "ink-neutral",
+          "muted-accent",
+          "mineral-accent"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "classical-parchment",
@@ -1457,7 +1936,34 @@
         "margin wide/very-wide",
         "caption tiny"
       ],
-      "prompt_block": "Transform the single source photograph using the **Classical Parchment** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve artifact shape, architectural detail, inscriptions if legible, craft marks, and verified source text. Never fabricate provenance.\n\nComposition: Use museum-plate logic with ample margin and a centered or carefully asymmetrical subject.\n\nLighting: Keep light soft and scholarly; avoid invented theatrical illumination.\n\nColor: Warm neutral paper plus restrained source color and dark ink. Avoid fake aging.\n\nMaterial and texture: Fine paper fiber, subtle plate tone, pencil/ink line, and gentle print texture.\n\nTypography: Small scholarly serif or neutral sans. No pseudo-antique display font.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Classical Parchment mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Classical Parchment** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve artifact shape, architectural detail, inscriptions if legible, craft marks, and verified source text. Never fabricate provenance.\n\nComposition: Use museum-plate logic with ample margin and a centered or carefully asymmetrical subject.\n\nLighting: Keep light soft and scholarly; avoid invented theatrical illumination.\n\nColor: Warm neutral paper plus restrained source color and dark ink. Avoid fake aging.\n\nMaterial and texture: Fine paper fiber, subtle plate tone, pencil/ink line, and gentle print texture.\n\nTypography: Small scholarly serif or neutral sans. No pseudo-antique display font.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Classical Parchment mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.12,
+          0.5
+        ],
+        "saturation_range": [
+          0.1,
+          0.7
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "amber-charcoal",
+          "tea-brown",
+          "warm-paper",
+          "warm-neutral",
+          "earth-tone",
+          "ink",
+          "ink-black",
+          "ink-neutral",
+          "muted-accent",
+          "mineral-accent"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "seal-calligraphy-poster",
@@ -1536,7 +2042,34 @@
         "paper void high",
         "brush energy restrained"
       ],
-      "prompt_block": "Transform the single source photograph using the **Seal & Calligraphy Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve genuine characters, signs, architecture, objects, and source identity. Unreadable text must never be rewritten as invented language.\n\nComposition: Use vertical rhythm, asymmetric balance, generous voids, and restrained directional brush-energy accents.\n\nLighting: Respect source lighting and simplify only into ink/value blocks when useful.\n\nColor: Use ink black, warm paper, and muted source accents. Mineral red may be abstract or tied to a verified seal only.\n\nMaterial and texture: Ink, paper, brush edge, and optional restrained photographic fragments.\n\nTypography: Small Latin or verified Chinese text only. An abstract seal-like block may not contain fabricated characters.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Seal & Calligraphy Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Seal & Calligraphy Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve genuine characters, signs, architecture, objects, and source identity. Unreadable text must never be rewritten as invented language.\n\nComposition: Use vertical rhythm, asymmetric balance, generous voids, and restrained directional brush-energy accents.\n\nLighting: Respect source lighting and simplify only into ink/value blocks when useful.\n\nColor: Use ink black, warm paper, and muted source accents. Mineral red may be abstract or tied to a verified seal only.\n\nMaterial and texture: Ink, paper, brush edge, and optional restrained photographic fragments.\n\nTypography: Small Latin or verified Chinese text only. An abstract seal-like block may not contain fabricated characters.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Seal & Calligraphy Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.12,
+          0.5
+        ],
+        "saturation_range": [
+          0.1,
+          0.7
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "amber-charcoal",
+          "tea-brown",
+          "warm-paper",
+          "warm-neutral",
+          "earth-tone",
+          "ink",
+          "ink-black",
+          "ink-neutral",
+          "muted-accent",
+          "mineral-accent"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "folk-narrative-color",
@@ -1616,7 +2149,34 @@
         "hand-painted edge moderate",
         "type very small"
       ],
-      "prompt_block": "Transform the single source photograph using the **Folk Narrative Color** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the exact costume, mask, craft, architecture, props, and culturally specific anchors. Decorative richness must come from the visible source.\n\nComposition: Use one strong narrative focal point and flatten secondary space into rhythm or pattern only when it is source-derived.\n\nLighting: Simplify lighting plausibly; let color carry energy without erasing form.\n\nColor: Amplify reds, blues, greens, golds, blacks, or whites only when they genuinely exist in the source.\n\nMaterial and texture: Hand-painted edges, folk-print texture, fabric pattern, painted wood, and source-specific craft surfaces.\n\nTypography: Small contemporary type so the layout does not parody folk lettering.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Folk Narrative Color mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Folk Narrative Color** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the exact costume, mask, craft, architecture, props, and culturally specific anchors. Decorative richness must come from the visible source.\n\nComposition: Use one strong narrative focal point and flatten secondary space into rhythm or pattern only when it is source-derived.\n\nLighting: Simplify lighting plausibly; let color carry energy without erasing form.\n\nColor: Amplify reds, blues, greens, golds, blacks, or whites only when they genuinely exist in the source.\n\nMaterial and texture: Hand-painted edges, folk-print texture, fabric pattern, painted wood, and source-specific craft surfaces.\n\nTypography: Small contemporary type so the layout does not parody folk lettering.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Folk Narrative Color mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.12,
+          0.5
+        ],
+        "saturation_range": [
+          0.1,
+          0.7
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "amber-charcoal",
+          "tea-brown",
+          "warm-paper",
+          "warm-neutral",
+          "earth-tone",
+          "ink",
+          "ink-black",
+          "ink-neutral",
+          "muted-accent",
+          "mineral-accent"
+        ],
+        "hue_clusters": [
+          1,
+          4
+        ]
+      }
     },
     {
       "id": "editorial-surrealism",
@@ -1697,7 +2257,31 @@
         "negative space medium/high",
         "title cryptic/minimal"
       ],
-      "prompt_block": "Transform the single source photograph using the **Editorial Surrealism** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the main subject and all identity anchors. Exactly one source-grounded relationship may be transformed; everything else stays disciplined.\n\nComposition: Build the composition around one relationship already present—reflection, scale, shadow, repetition, doorway, water, isolation, or spatial tension—and remove secondary competition.\n\nLighting: After the transformation, keep lighting internally consistent and physically understandable.\n\nColor: Use a disciplined source-derived palette so the conceptual change stays readable.\n\nMaterial and texture: Keep transformed boundaries materially believable; the source surface remains the basis for texture and reflection.\n\nTypography: Minimal, intellectually quiet typography that hints at the idea without explaining it.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Editorial Surrealism mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Editorial Surrealism** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the main subject and all identity anchors. Exactly one source-grounded relationship may be transformed; everything else stays disciplined.\n\nComposition: Build the composition around one relationship already present—reflection, scale, shadow, repetition, doorway, water, isolation, or spatial tension—and remove secondary competition.\n\nLighting: After the transformation, keep lighting internally consistent and physically understandable.\n\nColor: Use a disciplined source-derived palette so the conceptual change stays readable.\n\nMaterial and texture: Keep transformed boundaries materially believable; the source surface remains the basis for texture and reflection.\n\nTypography: Minimal, intellectually quiet typography that hints at the idea without explaining it.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Editorial Surrealism mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.14,
+          0.53
+        ],
+        "saturation_range": [
+          0.15,
+          0.8
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "expressive",
+          "high-contrast",
+          "single-accent",
+          "mixed-temperature",
+          "cool-warm",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          2,
+          7
+        ]
+      }
     },
     {
       "id": "abstract-editorial",
@@ -1775,7 +2359,31 @@
         "palette 3–6",
         "negative space high"
       ],
-      "prompt_block": "Transform the single source photograph using the **Abstract Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one or two recognizable identity anchors while allowing secondary information to dissolve into source-derived abstraction.\n\nComposition: Reconstruct from real geometric/organic masses, directional lines, repetitions, voids, shadows, and color fields from the source.\n\nLighting: Translate illumination into value fields and transparent overlays rather than photographic effects.\n\nColor: Use a simplified source palette; transparent overlays are allowed only when they derive from real source relationships.\n\nMaterial and texture: Flat color, translucent layers, subtle paper/print texture, and optional restrained photographic fragments.\n\nTypography: Clean minimal typography used as a compositional element, not a headline.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Abstract Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Abstract Editorial** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one or two recognizable identity anchors while allowing secondary information to dissolve into source-derived abstraction.\n\nComposition: Reconstruct from real geometric/organic masses, directional lines, repetitions, voids, shadows, and color fields from the source.\n\nLighting: Translate illumination into value fields and transparent overlays rather than photographic effects.\n\nColor: Use a simplified source palette; transparent overlays are allowed only when they derive from real source relationships.\n\nMaterial and texture: Flat color, translucent layers, subtle paper/print texture, and optional restrained photographic fragments.\n\nTypography: Clean minimal typography used as a compositional element, not a headline.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Abstract Editorial mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.14,
+          0.53
+        ],
+        "saturation_range": [
+          0.15,
+          0.8
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "expressive",
+          "high-contrast",
+          "single-accent",
+          "mixed-temperature",
+          "cool-warm",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          2,
+          7
+        ]
+      }
     },
     {
       "id": "minimal-symbolic-poster",
@@ -1854,7 +2462,31 @@
         "texture subtle",
         "title 0–2 words"
       ],
-      "prompt_block": "Transform the single source photograph using the **Minimal Symbolic Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Identify and preserve the single most defining source-grounded symbol or silhouette; remove or simplify everything that competes.\n\nComposition: Use one dominant form, a very large void, deliberate placement, and a simple value hierarchy.\n\nLighting: Translate source lighting into a clear value structure; literal photographic complexity is optional.\n\nColor: Use only 2–5 major colors derived from the source.\n\nMaterial and texture: Use subtle consistent texture only; material language must not compete with the symbol.\n\nTypography: Tiny one- or two-word title, positioned far from the focal form.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Minimal Symbolic Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Minimal Symbolic Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Identify and preserve the single most defining source-grounded symbol or silhouette; remove or simplify everything that competes.\n\nComposition: Use one dominant form, a very large void, deliberate placement, and a simple value hierarchy.\n\nLighting: Translate source lighting into a clear value structure; literal photographic complexity is optional.\n\nColor: Use only 2–5 major colors derived from the source.\n\nMaterial and texture: Use subtle consistent texture only; material language must not compete with the symbol.\n\nTypography: Tiny one- or two-word title, positioned far from the focal form.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Minimal Symbolic Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.14,
+          0.53
+        ],
+        "saturation_range": [
+          0.15,
+          0.8
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "expressive",
+          "high-contrast",
+          "single-accent",
+          "mixed-temperature",
+          "cool-warm",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          2,
+          7
+        ]
+      }
     },
     {
       "id": "collage-lite-narrative",
@@ -1929,7 +2561,31 @@
         "overlap low/medium",
         "metadata line optional"
       ],
-      "prompt_block": "Transform the single source photograph using the **Collage-Lite Narrative** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one principal representation of the subject. Supporting pieces may only be derived from the same source image; never turn one source into a fake multi-photo story.\n\nComposition: Use one hero image plus only 1–3 source-derived fragments or textures. Never build a contact sheet, moodboard, or multi-photo grid.\n\nLighting: Keep the hero's lighting intact and harmonize fragments tonally.\n\nColor: Use one source-derived color system across all fragments and paper fields.\n\nMaterial and texture: Use torn paper, translucent overlays, archival paper, print grain, or framing sparingly and only to support the source narrative.\n\nTypography: Independent-culture-magazine style: small title and optional tiny metadata-like line.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Collage-Lite Narrative mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Collage-Lite Narrative** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one principal representation of the subject. Supporting pieces may only be derived from the same source image; never turn one source into a fake multi-photo story.\n\nComposition: Use one hero image plus only 1–3 source-derived fragments or textures. Never build a contact sheet, moodboard, or multi-photo grid.\n\nLighting: Keep the hero's lighting intact and harmonize fragments tonally.\n\nColor: Use one source-derived color system across all fragments and paper fields.\n\nMaterial and texture: Use torn paper, translucent overlays, archival paper, print grain, or framing sparingly and only to support the source narrative.\n\nTypography: Independent-culture-magazine style: small title and optional tiny metadata-like line.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Collage-Lite Narrative mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.14,
+          0.53
+        ],
+        "saturation_range": [
+          0.15,
+          0.8
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "expressive",
+          "high-contrast",
+          "single-accent",
+          "mixed-temperature",
+          "cool-warm",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          2,
+          7
+        ]
+      }
     },
     {
       "id": "swiss-grid-poster",
@@ -2006,7 +2662,35 @@
         "image module 45–75%",
         "margin medium/wide"
       ],
-      "prompt_block": "Transform the single source photograph using the **Swiss Grid Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the subject and authentic spatial information while allowing bold modular crops. The grid must reveal source structure rather than impose a cliché.\n\nComposition: Derive columns, baselines, margins, and alignments from actual vertical, horizontal, diagonal, or modular relationships in the source.\n\nLighting: Mostly preserve source lighting; design logic comes from geometry rather than dramatic relighting.\n\nColor: Use restrained source-derived neutrals and at most one or two accents.\n\nMaterial and texture: Clean print finish with subtle paper grain only.\n\nTypography: Exceptionally precise small sans-serif, baseline-aligned, with generous tracking and no decorative treatment.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Swiss Grid Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Swiss Grid Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve the subject and authentic spatial information while allowing bold modular crops. The grid must reveal source structure rather than impose a cliché.\n\nComposition: Derive columns, baselines, margins, and alignments from actual vertical, horizontal, diagonal, or modular relationships in the source.\n\nLighting: Mostly preserve source lighting; design logic comes from geometry rather than dramatic relighting.\n\nColor: Use restrained source-derived neutrals and at most one or two accents.\n\nMaterial and texture: Clean print finish with subtle paper grain only.\n\nTypography: Exceptionally precise small sans-serif, baseline-aligned, with generous tracking and no decorative treatment.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Swiss Grid Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.16,
+          0.56
+        ],
+        "saturation_range": [
+          0.15,
+          0.85
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "single-accent",
+          "limited",
+          "neutral-accent",
+          "disciplined",
+          "simplified",
+          "cohesive",
+          "spot-color",
+          "cool-warm",
+          "high-contrast",
+          "mixed-temperature",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          1,
+          5
+        ]
+      }
     },
     {
       "id": "brutalist-poster",
@@ -2084,7 +2768,35 @@
         "grain low/medium",
         "spacing raw/controlled"
       ],
-      "prompt_block": "Transform the single source photograph using the **Brutalist Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve structural identity, hard contours, and meaningful signage. Rawness is a layout quality, not permission to break the subject.\n\nComposition: Use bold crop, hard edges, raw but deliberate spacing, stark framing, and purposeful visual tension.\n\nLighting: Hard contrast or partial desaturation is allowed only when consistent with the source.\n\nColor: Use a selective source palette; one accent may be intensified while the rest remains subdued.\n\nMaterial and texture: Photocopy grain, coarse paper, stark rectangular framing, and raw print texture used sparingly.\n\nTypography: Small utilitarian grotesk, monospace, or condensed type. PosterLoom intentionally avoids giant brutalist typography.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Brutalist Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Brutalist Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve structural identity, hard contours, and meaningful signage. Rawness is a layout quality, not permission to break the subject.\n\nComposition: Use bold crop, hard edges, raw but deliberate spacing, stark framing, and purposeful visual tension.\n\nLighting: Hard contrast or partial desaturation is allowed only when consistent with the source.\n\nColor: Use a selective source palette; one accent may be intensified while the rest remains subdued.\n\nMaterial and texture: Photocopy grain, coarse paper, stark rectangular framing, and raw print texture used sparingly.\n\nTypography: Small utilitarian grotesk, monospace, or condensed type. PosterLoom intentionally avoids giant brutalist typography.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Brutalist Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.16,
+          0.56
+        ],
+        "saturation_range": [
+          0.15,
+          0.85
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "single-accent",
+          "limited",
+          "neutral-accent",
+          "disciplined",
+          "simplified",
+          "cohesive",
+          "spot-color",
+          "cool-warm",
+          "high-contrast",
+          "mixed-temperature",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          1,
+          5
+        ]
+      }
     },
     {
       "id": "neo-futurist-layout",
@@ -2165,7 +2877,35 @@
         "frame lines low",
         "photo dominance 70–90%"
       ],
-      "prompt_block": "Transform the single source photograph using the **Neo-Futurist Layout** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve real architecture, vehicle, infrastructure, or object geometry. Future-facing design comes from precision and motion, not invented technology.\n\nComposition: Use dynamic diagonal/orthogonal tension, precise modular spacing, selective framing, and controlled negative space.\n\nLighting: Preserve source illumination. Clarify cool/warm separation but do not invent cyberpunk light.\n\nColor: Use a source-derived neutral field with one or two clean accents; blue-purple is never a default.\n\nMaterial and texture: Clean digital-print finish with subtle grain; no holographic gimmicks.\n\nTypography: Small technical sans with precise tracking and sparse metadata-like secondary type. Never invent technical data.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Neo-Futurist Layout mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Neo-Futurist Layout** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve real architecture, vehicle, infrastructure, or object geometry. Future-facing design comes from precision and motion, not invented technology.\n\nComposition: Use dynamic diagonal/orthogonal tension, precise modular spacing, selective framing, and controlled negative space.\n\nLighting: Preserve source illumination. Clarify cool/warm separation but do not invent cyberpunk light.\n\nColor: Use a source-derived neutral field with one or two clean accents; blue-purple is never a default.\n\nMaterial and texture: Clean digital-print finish with subtle grain; no holographic gimmicks.\n\nTypography: Small technical sans with precise tracking and sparse metadata-like secondary type. Never invent technical data.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Neo-Futurist Layout mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.16,
+          0.56
+        ],
+        "saturation_range": [
+          0.15,
+          0.85
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "single-accent",
+          "limited",
+          "neutral-accent",
+          "disciplined",
+          "simplified",
+          "cohesive",
+          "spot-color",
+          "cool-warm",
+          "high-contrast",
+          "mixed-temperature",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          1,
+          5
+        ]
+      }
     },
     {
       "id": "geometric-color-block",
@@ -2244,7 +2984,35 @@
         "anchor realism 20–50%",
         "type aligned"
       ],
-      "prompt_block": "Transform the single source photograph using the **Geometric Color-Block** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one main recognizable silhouette or structural anchor. Every graphic plane must map back to a real wall, step, roof, shadow, window band, water band, or object facet.\n\nComposition: Rebuild the composition from 3–7 source-derived planes with clear figure/ground logic.\n\nLighting: Convert source light and shadow into hard or gently softened value blocks following real geometry.\n\nColor: Use 3–7 source-derived colors, optionally amplified but harmonized.\n\nMaterial and texture: Mostly flat print color with subtle texture.\n\nTypography: Small geometric sans aligned to a real block edge.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Geometric Color-Block mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Geometric Color-Block** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Keep one main recognizable silhouette or structural anchor. Every graphic plane must map back to a real wall, step, roof, shadow, window band, water band, or object facet.\n\nComposition: Rebuild the composition from 3–7 source-derived planes with clear figure/ground logic.\n\nLighting: Convert source light and shadow into hard or gently softened value blocks following real geometry.\n\nColor: Use 3–7 source-derived colors, optionally amplified but harmonized.\n\nMaterial and texture: Mostly flat print color with subtle texture.\n\nTypography: Small geometric sans aligned to a real block edge.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Geometric Color-Block mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.16,
+          0.56
+        ],
+        "saturation_range": [
+          0.15,
+          0.85
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "single-accent",
+          "limited",
+          "neutral-accent",
+          "disciplined",
+          "simplified",
+          "cohesive",
+          "spot-color",
+          "cool-warm",
+          "high-contrast",
+          "mixed-temperature",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          1,
+          5
+        ]
+      }
     },
     {
       "id": "elegant-serif-poster",
@@ -2323,7 +3091,35 @@
         "margin medium/wide",
         "photo correction minimal"
       ],
-      "prompt_block": "Transform the single source photograph using the **Elegant Serif Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve nearly all meaningful photographic identity and material truth. The primary transformation is spacing and typographic art direction.\n\nComposition: Use subtle crop, margin logic, a single reading order, and high-quality negative space. Do less when the photograph is already strong.\n\nLighting: Apply minimal correction only and preserve the source's natural character.\n\nColor: Keep the source palette with gentle tonal polish.\n\nMaterial and texture: Photographic material with subtle fine grain or a clean paper finish.\n\nTypography: Refined serif at small scale with careful optical spacing; optional tiny sans metadata. Text never becomes the image.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Elegant Serif Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged."
+      "prompt_block": "Transform the single source photograph using the **Elegant Serif Poster** visual system. Treat the photograph as the factual anchor and preserve all identity anchors before stylization.\n\nMechanism: Preserve nearly all meaningful photographic identity and material truth. The primary transformation is spacing and typographic art direction.\n\nComposition: Use subtle crop, margin logic, a single reading order, and high-quality negative space. Do less when the photograph is already strong.\n\nLighting: Apply minimal correction only and preserve the source's natural character.\n\nColor: Keep the source palette with gentle tonal polish.\n\nMaterial and texture: Photographic material with subtle fine grain or a clean paper finish.\n\nTypography: Refined serif at small scale with careful optical spacing; optional tiny sans metadata. Text never becomes the image.\n\nThe result must be materially different from a one-click filter. Every stylized decision should be traceable either to the source image or to the defined Elegant Serif Poster mechanism. Preserve subject count, perspective, culturally meaningful details, and source-specific geometry. Do not invent facts, people, landmarks, brands, dates, signatures, or unreadable text. Stop the transformation before source identity is damaged.",
+      "visual_signature": {
+        "contrast_range": [
+          0.16,
+          0.56
+        ],
+        "saturation_range": [
+          0.15,
+          0.85
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "single-accent",
+          "limited",
+          "neutral-accent",
+          "disciplined",
+          "simplified",
+          "cohesive",
+          "spot-color",
+          "cool-warm",
+          "high-contrast",
+          "mixed-temperature",
+          "warm-cool"
+        ],
+        "hue_clusters": [
+          1,
+          5
+        ]
+      }
     },
     {
       "id": "editorial-portrait",
@@ -2419,7 +3215,32 @@
         "type serif/grotesk/minimal",
         "caption none/tiny"
       ],
-      "prompt_block": "Transform the single source photograph using the **Editorial Portrait** visual system. The photograph is the factual anchor and the face is FIXED GEOMETRY, not content to reinterpret.\n\nMechanism: Reproduce this exact person's face. Preserve face shape, bone structure, eye shape and spacing, eyebrow shape, nose and mouth shape, jawline, hairline, skin tone and texture, apparent age, expression, and gaze direction. Do not beautify, de-age, age-shift, or gender-shift.\n\nComposition: Editorial portrait framing with clean headroom and generous negative space. Keep the face unobstructed and free of graphic overlays.\n\nLighting: Preserve the source light direction. Refine into soft directional key with gentle falloff. No unmotivated rim lights or catchlights.\n\nColor: Source-derived skin rendering, believable subsurface tone, soft highlights on skin, natural lip and hair color.\n\nMaterial: Skin texture with restrained visible pores and fine lines. Hair keeps strand direction and density. Fabric keeps weave and weight. No plastic smoothing or beauty filter.\n\nTypography: Small editorial serif or grotesk in a text-safe zone that never crosses the face or hands."
+      "prompt_block": "Transform the single source photograph using the **Editorial Portrait** visual system. The photograph is the factual anchor and the face is FIXED GEOMETRY, not content to reinterpret.\n\nMechanism: Reproduce this exact person's face. Preserve face shape, bone structure, eye shape and spacing, eyebrow shape, nose and mouth shape, jawline, hairline, skin tone and texture, apparent age, expression, and gaze direction. Do not beautify, de-age, age-shift, or gender-shift.\n\nComposition: Editorial portrait framing with clean headroom and generous negative space. Keep the face unobstructed and free of graphic overlays.\n\nLighting: Preserve the source light direction. Refine into soft directional key with gentle falloff. No unmotivated rim lights or catchlights.\n\nColor: Source-derived skin rendering, believable subsurface tone, soft highlights on skin, natural lip and hair color.\n\nMaterial: Skin texture with restrained visible pores and fine lines. Hair keeps strand direction and density. Fabric keeps weave and weight. No plastic smoothing or beauty filter.\n\nTypography: Small editorial serif or grotesk in a text-safe zone that never crosses the face or hands.",
+      "visual_signature": {
+        "contrast_range": [
+          0.06,
+          0.38
+        ],
+        "saturation_range": [
+          0.02,
+          0.55
+        ],
+        "density": "low",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "natural",
+          "neutral",
+          "soft",
+          "warm-neutral",
+          "earth-tone",
+          "desaturated"
+        ],
+        "hue_clusters": [
+          3,
+          10
+        ]
+      }
     },
     {
       "id": "duotone-identity-stack",
@@ -2546,6 +3367,31 @@
             "paper": "#FAFAF7"
           }
         }
+      },
+      "visual_signature": {
+        "contrast_range": [
+          0.14,
+          0.54
+        ],
+        "saturation_range": [
+          0.25,
+          1.0
+        ],
+        "density": "flat",
+        "palette_candidates": [
+          "duotone",
+          "expressive",
+          "high-contrast",
+          "monochrome-accent",
+          "single-accent",
+          "single-hue-ramp",
+          "source-derived",
+          "vivid-source-derived"
+        ],
+        "hue_clusters": [
+          1,
+          3
+        ]
       }
     },
     {
@@ -2646,7 +3492,32 @@
         "type serif/classic/minimal",
         "caption none/tiny"
       ],
-      "prompt_block": "Transform the single source photograph using the **Fine Art Portrait** visual system. Apply a painted surface while holding the likeness constant.\n\nMechanism: The brushwork describes this exact face and must never redefine it. Preserve facial proportions, feature placement, expression, gaze, and apparent age. Confine painterly energy to surface, edge, and light.\n\nComposition: Classic portrait composition with clear value structure and calm background. Keep the source head angle and eyeline. Avoid cropping the top of the head.\n\nLighting: Painterly light consistent with source direction, soft blended transitions, preserved shadow shape.\n\nColor: Limited harmonious palette derived from the source. Modulate skin with adjacent warm and cool tones rather than uniform flesh color.\n\nMaterial: Visible controlled brush direction in background and clothing. Face stays comparatively smooth and resolved, with detail concentrated in eyes and mouth. No heavy impasto on facial features.\n\nTypography: Small classic serif in negative space, never overlapping the face."
+      "prompt_block": "Transform the single source photograph using the **Fine Art Portrait** visual system. Apply a painted surface while holding the likeness constant.\n\nMechanism: The brushwork describes this exact face and must never redefine it. Preserve facial proportions, feature placement, expression, gaze, and apparent age. Confine painterly energy to surface, edge, and light.\n\nComposition: Classic portrait composition with clear value structure and calm background. Keep the source head angle and eyeline. Avoid cropping the top of the head.\n\nLighting: Painterly light consistent with source direction, soft blended transitions, preserved shadow shape.\n\nColor: Limited harmonious palette derived from the source. Modulate skin with adjacent warm and cool tones rather than uniform flesh color.\n\nMaterial: Visible controlled brush direction in background and clothing. Face stays comparatively smooth and resolved, with detail concentrated in eyes and mouth. No heavy impasto on facial features.\n\nTypography: Small classic serif in negative space, never overlapping the face.",
+      "visual_signature": {
+        "contrast_range": [
+          0.08,
+          0.42
+        ],
+        "saturation_range": [
+          0.12,
+          0.7
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "warm-neutral",
+          "earth-tone",
+          "muted",
+          "soft",
+          "powdery",
+          "pastel",
+          "limited"
+        ],
+        "hue_clusters": [
+          2,
+          7
+        ]
+      }
     },
     {
       "id": "photojournalistic",
@@ -2750,7 +3621,31 @@
         "type sans/serif/none",
         "caption none/tiny"
       ],
-      "prompt_block": "Transform the single source photograph using the **Photojournalistic** visual system. Maximum fidelity to the source moment.\n\nMechanism: Preserve the face exactly as captured, including natural asymmetry, expression, skin texture, clothing, and surrounding context. This is the lowest-transformation option for people.\n\nComposition: Preserve source framing and spatial context. Reframe only enough to improve poster proportion. Keep the subject's relationship to their environment legible.\n\nLighting: Available or practical light as captured. Allow realistic imperfection such as mixed color temperature. Do not relight into studio conditions.\n\nColor: Honest source color with restrained editorial grading. Preserve environmental color cast.\n\nMaterial: Real-world texture - skin pores, hair irregularity, fabric wear, authentic imperfection. Documentary credibility outranks polish.\n\nTypography: Minimal. Small sans or serif caption, or none. Never over the face."
+      "prompt_block": "Transform the single source photograph using the **Photojournalistic** visual system. Maximum fidelity to the source moment.\n\nMechanism: Preserve the face exactly as captured, including natural asymmetry, expression, skin texture, clothing, and surrounding context. This is the lowest-transformation option for people.\n\nComposition: Preserve source framing and spatial context. Reframe only enough to improve poster proportion. Keep the subject's relationship to their environment legible.\n\nLighting: Available or practical light as captured. Allow realistic imperfection such as mixed color temperature. Do not relight into studio conditions.\n\nColor: Honest source color with restrained editorial grading. Preserve environmental color cast.\n\nMaterial: Real-world texture - skin pores, hair irregularity, fabric wear, authentic imperfection. Documentary credibility outranks polish.\n\nTypography: Minimal. Small sans or serif caption, or none. Never over the face.",
+      "visual_signature": {
+        "contrast_range": [
+          0.08,
+          0.4
+        ],
+        "saturation_range": [
+          0.0,
+          0.5
+        ],
+        "density": "medium",
+        "palette_candidates": [
+          "source-derived",
+          "muted",
+          "desaturated",
+          "neutral",
+          "natural",
+          "limited",
+          "ink-neutral"
+        ],
+        "hue_clusters": [
+          3,
+          10
+        ]
+      }
     },
     {
       "id": "controlled-hybrid",
@@ -2784,7 +3679,23 @@
         "secondary controls exactly one subsystem",
         "pair must exist in compatibility.json"
       ],
-      "prompt_block": "Create a controlled hybrid poster using exactly two compatible PosterLoom styles. The PRIMARY style controls approximately 80% of the image and owns subject treatment, composition, lighting, palette, realism, and spatial logic. The SECONDARY style contributes approximately 20% and is restricted to one declared subsystem such as typography, negative-space behavior, print texture, ink edge treatment, grid alignment, color separation, or atmosphere. Do not blend the two styles uniformly across the whole image. Preserve all identity anchors and keep the source photograph as the factual basis. The result must read immediately as the primary style with one purposeful secondary influence. Never introduce a third style."
+      "prompt_block": "Create a controlled hybrid poster using exactly two compatible PosterLoom styles. The PRIMARY style controls approximately 80% of the image and owns subject treatment, composition, lighting, palette, realism, and spatial logic. The SECONDARY style contributes approximately 20% and is restricted to one declared subsystem such as typography, negative-space behavior, print texture, ink edge treatment, grid alignment, color separation, or atmosphere. Do not blend the two styles uniformly across the whole image. Preserve all identity anchors and keep the source photograph as the factual basis. The result must read immediately as the primary style with one purposeful secondary influence. Never introduce a third style.",
+      "visual_signature": {
+        "contrast_range": [
+          0.0,
+          1.0
+        ],
+        "saturation_range": [
+          0.0,
+          1.0
+        ],
+        "density": "any",
+        "palette_candidates": [],
+        "hue_clusters": [
+          1,
+          12
+        ]
+      }
     }
   ]
 }
