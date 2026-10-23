@@ -30,10 +30,12 @@ Requires Python 3.9+. Standard library only — no dependencies, no network acce
 
 ```bash
 cd posterloom
-python3 scripts/posterloom.py make photo.jpg
+python3 scripts/posterloom.py render photo.jpg --count 3
 ```
 
-Measure from pixels → pick a style → print the finished generation prompt.
+Measure from pixels → pick a style → read the subject with a vision model →
+compile a prompt that fits the image backend → **save three finished posters**.
+
 It reports what it measured, which style it chose, and **what it could not decide**
 (subject type, identity anchors and mood need eyes).
 
@@ -41,18 +43,46 @@ Common variants:
 
 ```bash
 # a person — the identity lock turns on automatically
-python3 scripts/posterloom.py make photo.jpg --type portrait \
-  --anchors "face shape,eye shape,hairline" --mood "quiet,intimate"
+python3 scripts/posterloom.py render photo.jpg --type portrait \
+  --anchors "face shape,eye shape,hairline" --mood "quiet,intimate" --count 3
 
 # "make it artistic" — unlocks art-directed styles, keeps likeness protection
-python3 scripts/posterloom.py make photo.jpg --type portrait --tolerance high --tags artistic
+python3 scripts/posterloom.py render photo.jpg --type portrait --tolerance high --tags artistic
 
 # match a reference poster you like
-python3 scripts/posterloom.py make photo.jpg --reference ref-poster.jpg
+python3 scripts/posterloom.py render photo.jpg --reference ref-poster.jpg
 
-# machine-readable
-python3 scripts/posterloom.py make photo.jpg --json
+# machine-readable (stdout is pure JSON)
+python3 scripts/posterloom.py render photo.jpg --count 3 --json
 ```
+
+Want the prompt instead of the images?
+
+```bash
+python3 scripts/posterloom.py make photo.jpg
+```
+
+`make` is the same pipeline up to the prompt; `render` continues it into the
+image backend.
+
+### Two measured decisions
+
+**The photo is described, not attached.** Attaching the source photo to the
+image request makes the model reproduce its continuous tone — the identical
+prompt returns a flat print without the attachment and a *photograph* with it,
+even when it says "render as a print, not a photograph". So a vision model
+reads the photo first and the image is generated from words. `--send-reference`
+restores the attachment if you want maximum likeness and can accept a
+photographic result.
+
+**The prompt is rebuilt, not truncated.** A full PosterLoom prompt is 4000-8000
+characters; image APIs reject anything over 1500. The compact prompt is rebuilt
+from the same structured data, so the identity lock, the named inks, the layout
+and the colour all survive. It never cuts mid-sentence — a cut clause is how
+"repeat as a stack" turns into a single portrait.
+
+See [the generation pipeline](posterloom/references/generation-pipeline.md) for
+the measurements behind both.
 
 ---
 
@@ -60,17 +90,21 @@ python3 scripts/posterloom.py make photo.jpg --json
 
 **PosterLoom** is an Agent Skill that turns a real photograph into an art-directed poster.
 
-It is **not** an image model. It is the layer that:
+It decides *what* to make; a pluggable image backend makes it. It is the layer that:
 
 - measures the scene from pixels — dimensions, aspect, palette families, luminance, contrast, saturation, edge density, salient and quiet regions, text-safe zones;
 - hands back the fields pixels cannot decide (subject type, identity anchors, mood) instead of inventing them;
 - protects the source's identity anchors — faces, geometry, materials, real text;
 - routes the image to one of 35 direct visual styles, or to a constrained `Controlled Hybrid` of two compatible styles;
-- recompiles the composition;
-- applies restrained typography;
+- reads the subject with a vision model and compiles a prompt that fits the backend's limits;
+- generates the posters and checks the result reads as a print, not a photograph;
 - quality-checks the result against an anti-slop checklist.
 
-To produce a final poster, the host agent needs an image-generation or image-editing backend. Without one, PosterLoom still returns the route decision and the full generation prompt.
+The default backend is MiniMax `image-01`, configured in `data/backends.json`.
+Each backend declares its own limits — prompt cap, supported ratios, whether a
+reference image can be attached — because those limits change the workflow.
+Without any backend, `make` still returns the route decision and the full
+generation prompt.
 
 ## 🎨 Style library
 

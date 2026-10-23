@@ -29,28 +29,52 @@ mv posterloom-sklls-main/posterloom ~/.hermes/skills/posterloom
 
 ```bash
 cd posterloom
-python3 scripts/posterloom.py make photo.jpg
+python3 scripts/posterloom.py render photo.jpg --count 3
 ```
 
-从像素测量图片 → 选风格 → 打印成品生成 prompt。
+从像素测量图片 → 选风格 → 用视觉模型读出主体 → 编译一条符合生图后端限制的
+prompt → **保存三张成品海报**。
+
 它会告诉你测到了什么、选了哪个风格、**哪些它决定不了**（主体类型、身份锚点、情绪需要你看）。
 
 常用变体：
 
 ```bash
 # 人像 —— 身份锁自动开启
-python3 scripts/posterloom.py make photo.jpg --type portrait \
-  --anchors "face shape,eye shape,hairline" --mood "quiet,intimate"
+python3 scripts/posterloom.py render photo.jpg --type portrait \
+  --anchors "face shape,eye shape,hairline" --mood "quiet,intimate" --count 3
 
 # "再艺术点" —— 解锁艺术向风格，但保住长相
-python3 scripts/posterloom.py make photo.jpg --type portrait --tolerance high --tags artistic
+python3 scripts/posterloom.py render photo.jpg --type portrait --tolerance high --tags artistic
 
 # 给一张参考海报，匹配最接近的内置风格
-python3 scripts/posterloom.py make photo.jpg --reference ref-poster.jpg
+python3 scripts/posterloom.py render photo.jpg --reference ref-poster.jpg
 
-# 机器可读
-python3 scripts/posterloom.py make photo.jpg --json
+# 机器可读（stdout 是纯 JSON）
+python3 scripts/posterloom.py render photo.jpg --count 3 --json
 ```
+
+只要 prompt 不要图？
+
+```bash
+python3 scripts/posterloom.py make photo.jpg
+```
+
+`make` 是同一条流水线到 prompt 为止，`render` 接着往下生成。
+
+### 两个实测结论
+
+**照片是被"读"出来的，不是被"贴"进去的。** 把原图作为参考图附到生图请求里，
+模型会照抄它的连续调子——同样的 prompt，不附图出平面印刷，附了图出**照片**，
+哪怕 prompt 里明写 "render as a print, not a photograph" 也一样。所以先用视觉模型
+读图，再从文字生成。`--send-reference` 可以强制附图，代价是可能得到照片质感的结果。
+
+**prompt 是重建的，不是截断的。** 完整 PosterLoom prompt 有 4000-8000 字符，
+生图 API 超过 1500 直接拒收。紧凑版从同一份结构化数据重建，所以身份锁、具名油墨、
+构图和配色都保住。而且它绝不从句中截断——句子被切一半，正是"叠印成堆"变成
+单人像的原因。
+
+两个结论的完整实测数据见 [生成流水线](posterloom/references/generation-pipeline.md)。
 
 ---
 
@@ -58,17 +82,19 @@ python3 scripts/posterloom.py make photo.jpg --json
 
 **PosterLoom** 是一个把真实照片转成艺术海报的 Agent Skill。
 
-它 **不是** 图像生成模型。它负责的是：
+它负责决定**做什么**，生图后端负责**做出来**。它负责的是：
 
 - 从像素测量画面（尺寸、宽高比、主色族、明度、对比度、饱和度、边缘密度、显著 / 安静区域、文字安全区）；
 - 用不测量就没法判断的字段（主体类型、身份锚点、情绪）明确交回给你，而不是瞎猜；
 - 保护原图的识别特征（人物脸部、建筑几何、材质、真实文字）；
 - 在 35 个直接视觉风格中自动选一种，或在两个明确兼容的风格之间启用受控混合（`Controlled Hybrid`）；
-- 重新组织构图；
-- 应用克制的小字号排版；
+- 用视觉模型读出主体，编译一条符合生图后端限制的 prompt；
+- 生成海报，并检查结果读起来是印刷品还是照片；
 - 按反 AI 套路化清单对结果做 QA。
 
-要生成最终海报，宿主 Agent 需要具备图像生成或图像编辑能力。如果没有，PosterLoom 也会返回完整的路由决策和生成 Prompt。
+默认后端是 MiniMax `image-01`，配置在 `data/backends.json`。每个后端自己声明限制——
+prompt 上限、支持的比例、能不能附参考图——因为这些限制会改变整个工作流。
+没有任何后端时，`make` 依然返回完整的路由决策和生成 Prompt。
 
 ## 🎨 风格库
 

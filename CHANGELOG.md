@@ -1,5 +1,46 @@
 # Changelog｜更新记录
 
+## 1.7.0 — 2026-10-23
+
+从"只出 prompt"升级为**直接出图**。一条命令:照片进,成品海报出。
+
+### 新增
+
+- 新增 `posterloom.py render` —— 照片 → 3 张成品海报,一条命令
+- 新增 `scripts/render.py` —— 组装 测量 → 路由 → 视觉读图 → 编译 → 生图 流水线
+- 新增 `scripts/describe.py` —— 视觉模型读主体身份卡(17 字段 JSON)+ 印刷/照片分类器
+- 新增 `scripts/compact_prompt.py` —— 预算感知的 prompt 重建(不是截断)
+- 新增 `scripts/generate.py` —— 可插拔生图后端,自带限制声明
+- 新增 `data/backends.json` —— 后端能力声明(默认 MiniMax `image-01`)
+- 新增 `references/generation-pipeline.md` —— 完整实测记录
+- 新增 `scripts/check_prompt_budget.py` —— 210 组合预算与分节保全检查
+
+### 三个实测结论(决定了整个架构)
+
+1. **词表比长度更重要。** 同样结构下,`"features simplified into hard flat
+   shapes"` 出印刷品,`"thick tousled black hair and a coral shirt"` 出照片。
+   摄影性词汇会把模型拉回连续调。
+2. **附参考图会强制照片渲染。** 完全相同的 prompt,不附图出平面印刷,
+   附了图出照片,prompt 里明写"不是照片"也无效。
+   => 默认改为"视觉模型读图 → 从文字生成"。
+3. **像素统计无法区分印刷/照片。** 13 个样本上 flat_ratio、ink_ratio、
+   hue_spread 区间几乎完全重叠。改用视觉模型分类(12/13)。
+
+### 修复
+
+- 句中截断会毁掉操作性子句 —— 改为按句取(`_first_sentences`)
+- 预算收紧时 LAYOUT / COLOUR / NO PHOTOGRAPHY 被误丢 —— 改为受保护分节
+- subject 被砍成 92 字符导致身份锁悬空 —— subject 设 230 字符下限
+- 无脸场景因空锁跳过了整个裁剪循环 —— 修复
+
+### 验证
+
+- 210 组合(35 风格 × 3 场景 × 2 主体长度)全部在 1400 字符预算内,
+  身份锁 / NO PHOTOGRAPHY / COLOUR / LAYOUT 全部保留
+- 路由回归 35/35;selftest 增至 8 项检查
+- 实测生成:crimson + chalk white 双色印刷,同一人的 4 张纵向叠印,
+  硬边、细线刻与点刻颗粒,无照片像素
+
 ## 1.6.0 — 2026-10-23
 
 新增两个纸感拼贴风格,并把人脸身份锁从一种模式扩展为三种。
