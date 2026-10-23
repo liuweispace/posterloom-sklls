@@ -14,6 +14,44 @@
 现在帮我从 github 安装这个 posterloom-sklls，并且之后生成图片都使用这个 sklls。
 ```
 
+或者手动：
+
+```bash
+curl -fsSL https://github.com/liuweispace/posterloom-sklls/archive/refs/heads/main.tar.gz | tar xz
+mv posterloom-sklls-main/posterloom ~/.hermes/skills/posterloom
+```
+
+需要 Python 3.9+。仅用标准库 —— 无第三方依赖，无网络访问。
+
+---
+
+## ⚡ 一条命令
+
+```bash
+cd posterloom
+python3 scripts/posterloom.py make photo.jpg
+```
+
+从像素测量图片 → 选风格 → 打印成品生成 prompt。
+它会告诉你测到了什么、选了哪个风格、**哪些它决定不了**（主体类型、身份锚点、情绪需要你看）。
+
+常用变体：
+
+```bash
+# 人像 —— 身份锁自动开启
+python3 scripts/posterloom.py make photo.jpg --type portrait \
+  --anchors "face shape,eye shape,hairline" --mood "quiet,intimate"
+
+# "再艺术点" —— 解锁艺术向风格，但保住长相
+python3 scripts/posterloom.py make photo.jpg --type portrait --tolerance high --tags artistic
+
+# 给一张参考海报，匹配最接近的内置风格
+python3 scripts/posterloom.py make photo.jpg --reference ref-poster.jpg
+
+# 机器可读
+python3 scripts/posterloom.py make photo.jpg --json
+```
+
 ---
 
 ## 🧵 这是什么
@@ -22,9 +60,10 @@
 
 它 **不是** 图像生成模型。它负责的是：
 
-- 分析画面场景（主体、空间、光线、色彩、材质、情绪）；
+- 从像素测量画面（尺寸、宽高比、主色族、明度、对比度、饱和度、边缘密度、显著 / 安静区域、文字安全区）；
+- 用不测量就没法判断的字段（主体类型、身份锚点、情绪）明确交回给你，而不是瞎猜；
 - 保护原图的识别特征（人物脸部、建筑几何、材质、真实文字）；
-- 在 29 个直接视觉风格中自动选一种，或在两个明确兼容的风格之间启用受控混合（`Controlled Hybrid`）；
+- 在 35 个直接视觉风格中自动选一种，或在两个明确兼容的风格之间启用受控混合（`Controlled Hybrid`）；
 - 重新组织构图；
 - 应用克制的小字号排版；
 - 按反 AI 套路化清单对结果做 QA。
@@ -33,7 +72,7 @@
 
 ## 🎨 风格库
 
-PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风格都是一套完整的视觉系统：适用条件、主体保留策略、构图方法、光线语言、色彩逻辑、材质表达、排版规则、专属 Prompt 块、专属 Negative Prompt、常见失败模式、验收标准。
+PosterLoom 自带 **36 个风格契约**（35 个直接风格 + 1 个元风格），归属 **8 个家族**。每一种风格都是一套完整的视觉系统：适用条件、主体保留策略、构图方法、光线语言、色彩逻辑、材质表达、排版规则、专属 Prompt 块、专属 Negative Prompt、常见失败模式、验收标准。
 
 ### 📷 摄影编辑 — 5 种
 
@@ -106,21 +145,68 @@ PosterLoom 自带 **30 个风格契约**，归属 **7 个家族**。每一种风
 | Geometric Color-Block（几何色块） | 强色彩 / 时尚 / 建筑主体、平面色 |
 | Elegant Serif Poster（优雅衬线） | 杂志封面、时尚、美学、高端 |
 
+### 📄 纸感拼贴 — 2 种
+
+从公开 skill `gathered-scenes-zine-skill` 的方法论学习而来，做成可路由、可强制、可验证的风格条目。
+
+| 风格 | 适用 |
+|---|---|
+| Gathered Scenes Zine（实景拼贴） | 旅行 / 风景 / 建筑 / 器物。照片保留为事实锚点，更大的抽象插画场重新解释源元素，手撕纤维边，一个高彩度色相作为结构 |
+| Scene Distillation Zine（影像蒸馏） | 情绪表达 / 概念海报 / 系列。照片仅作语义证据，输出纯插画 + 纸 + 文字，不含任何照片像素 |
+
+### 🧍 人像 — 4 种
+
+需要保住长相时优先选用。
+
+| 风格 | 适用 |
+|---|---|
+| Editorial Portrait（编辑人像） | 杂志 / 采访人像，自然肤色 |
+| Photojournalistic（新闻纪实） | 最高保真度，抓拍瞬间 |
+| Fine-Art Portrait（艺术人像） | 绘画表面，长相保持不变 |
+| Duotone Identity Stack（双调身份堆叠） | 同一个已验证身份刻意重复的平面海报 |
+
 ### 🧬 元风格 — 1 种
 
 | 风格 | 适用 |
 |---|---|
 | Controlled Hybrid（受控混合） | 两个直接风格排名接近且明确兼容；二级风格只允许控制一个子系统（排版 / 负空间 / 印刷质感 / 墨边 / 网格 / 分色 / 氛围）。默认 ≈ 80% 主风格 + 20% 次风格。不允许 50/50 平均。 |
 
+## 🔒 人脸身份锁 — 三种模式
+
+任何含可识别人脸的源图都会在 prompt 中注入身份锁。锁的模式由**路由到的风格**决定，不由模型决定：
+
+| 模式 | 适用 | 锁的内容 |
+|---|---|---|
+| `single` | 绝大多数风格 | 复现源脸：脸型、眼型间距、眉形、鼻嘴、颌线、发际线、肤色、年龄、表情、视线 |
+| `repeat` | Duotone Identity Stack | 同一个已验证身份重复 N 次，不得漂移成别人或平均脸 |
+| `abstract` | Scene Distillation Zine | **派生锁**：必须能追溯到源（头型、头角度、发际线、年龄线索、姿态、视线），但必须渲染成插画而非照片 |
+
+抽象模式**不是关掉锁**，是把它重述成这个风格唯一能兑现的形式：泛化渲染，不泛化身份。
+
+配套护栏：需要保住长相的人像**不会**被路由进重绘媒介或抽象身份风格，除非你显式要求重度变换。提示语会说明原因。
+
 ## 🧭 路由流程
 
-1. 读取原图，建立 **Scene Map**——主体、光线、色板、情绪、几何、材质、安全排版区、写实程度。
-2. 锁定 **Identity Anchors**——这些特征必须在任何风格下保留。
-3. 对 29 个直接风格打分。
-4. 取最高分风格。如果允许、且第二名与之明确兼容，才激活 `Controlled Hybrid`。
-5. 只加载当前风格的契约——一次性不读全部 30 份。
-6. 编译最终 Prompt 与 Negative Prompt。
-7. 生成一张海报，跑 **Anti-Slop QA**（禁止蓝紫渐变、随机雾、假胶片边框、虚构地标等）。
+1. **测量** —— `analyze` 从像素读出尺寸、宽高比、主色族、明度、对比度、饱和度、边缘密度、显著 / 安静区域、文字安全区。
+2. **交回语义字段** —— 主体类型、身份锚点、情绪、变换容忍度无法从像素可靠得出，列进 `TODO` 交给你，而不是编造。
+3. **打分** —— 对 35 个直接风格按 subject / lighting / mood / geometry / materials / palette / realism / transform 加权打分。
+4. **护栏** —— 人像按身份风险加保护分；重绘媒介与抽象身份风格在需要保脸时被排除。
+5. **取最高分** —— 如果允许、且第二名与之明确兼容，激活 `Controlled Hybrid`。
+6. **只加载当前风格的契约** —— 一次性不读全部 36 份。
+7. **编译最终 Prompt 与 Negative Prompt** —— 含具名色板的 hex 值。
+8. **生成一张海报，跑 Anti-Slop QA** —— 禁止蓝紫渐变、随机雾、假胶片边框、虚构地标等。
+
+## 🔬 可选工具
+
+| 命令 | 作用 |
+|---|---|
+| `posterloom.py analyze` | 只测量，产出 profile |
+| `posterloom.py match` | 参考海报 → 最接近的内置风格 |
+| `posterloom.py make` | 一条命令走完全流程 |
+| `posterloom.py route / prompt / batch` | 排序 / 编译 / 批量规划 |
+| `posterloom.py styles / show` | 列出风格 / 查看单个合约 |
+| `posterloom.py selftest` | 6 项完整性检查 |
+| `evals/run_evals.py` | 35 例路由回归 |
 
 ---
 
@@ -139,9 +225,9 @@ PosterLoom/
 ├── SECURITY.md
 └── posterloom/
     ├── SKILL.md
-    ├── styles/          # 30 个 Style Contract
+    ├── styles/          # 36 个 Style Contract
     ├── references/      # 渐进式加载的规范
-    ├── data/            # 路由 + 兼容性数据
+    ├── data/            # 路由 + 兼容性数据 + 具名纸基油墨
     ├── scripts/         # 确定性辅助脚本
     ├── evals/           # 路由回归 + 视觉打分模板
     ├── schemas/
