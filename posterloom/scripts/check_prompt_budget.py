@@ -29,9 +29,9 @@ LONG_SUBJECT = (
 
 def main() -> int:
     scenes = {
-        "portrait": load("examples/scene-portrait.json"),
-        "tree": load("examples/scene-solitary-tree.json"),
-        "teahouse": load("examples/scene-night-teahouse.json"),
+        "portrait": load(str(ROOT / "examples/scene-portrait.json")),
+        "tree": load(str(ROOT / "examples/scene-solitary-tree.json")),
+        "teahouse": load(str(ROOT / "examples/scene-night-teahouse.json")),
     }
     data = json.loads((ROOT / "data/styles.json").read_text(encoding="utf-8"))
     styles = [s["id"] for s in data["styles"] if s["role"] == "direct"]
