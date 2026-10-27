@@ -1,5 +1,5 @@
 ---
-name: reference-image-to-full-canvas-editable-pptx
+name: reference-image-to-pptx
 description: Use when a user provides a reference image (infographic, scientific diagram, slide screenshot, PDF page) and wants it rebuilt as an editable PowerPoint. Rebuilds every element as a native PPT object on the reference's exact pixel canvas — no screenshot-as-slide, no letterboxing, no auto-layout. 中文名：参考图片全画布高精度复现为可编辑 PowerPoint 工程。
 version: 1.0.0
 license: MIT
