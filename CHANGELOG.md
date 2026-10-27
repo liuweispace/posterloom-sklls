@@ -29,6 +29,11 @@
 - 页面比例用整数 EMU 构造,宽高比误差**严格为 0**
 - 渲染后与参考图做全画布像素比对:占用率 ≤ 0.5%、内容中心 ≤ 0.3%、四个主框体每边 ≤ 3–5 像素
 - 端到端自测 **40/40 PASS**(真实渲染 + 全部阈值校验)
+- Skill 更名为 `reference-image-to-full-canvas-editable-pptx`
+  (Skill 名称 `Reference-Image-to-Full-Canvas-Editable-PPTX`)
+- 新增 `references/SPEC-original.md` —— 原始 24 节完整规格书存档,一字未删
+- SKILL.md 补回被压缩的四处内容:「输入与输出」(含 11 项必须输出)、
+  「推荐导入」代码块、「验收阈值」独立章节、「执行清单(26 步)」
 
 ---
 

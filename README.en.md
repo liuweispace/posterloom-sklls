@@ -236,7 +236,9 @@ Standalone office skills live in the top-level [`office/`](office/) directory.
 
 | Skill | What it does |
 |---|---|
-| **[Reference Image to Full-Canvas Editable PPTX](office/reference-image-to-editable-pptx/)** | **Rebuilds** a reference image as an editable PPTX: every frame, text run and arrow is a native PowerPoint object, and icons are redrawn as SVG. No full-page screenshots, no scale-to-fit padding. |
+| **[Reference Image to Full-Canvas Editable PPTX](office/reference-image-to-full-canvas-editable-pptx/)** | **Rebuilds** a reference image as an editable PPTX: every frame, text run and arrow is a native PowerPoint object, and icons are redrawn as SVG. No full-page screenshots, no scale-to-fit padding. |
+
+Skill name: `Reference-Image-to-Full-Canvas-Editable-PPTX`
 
 The governing rule: **the reference image's pixel canvas is the only coordinate
 system.** Every object is measured in reference pixels and mapped straight onto
@@ -247,14 +249,16 @@ reference pixel-by-pixel: aspect-ratio error 0, occupancy error ≤ 0.5%, conten
 centre error ≤ 0.3%, and every edge of the four main frames within 3–5 pixels.
 
 ```bash
-cd office/reference-image-to-editable-pptx
+cd office/reference-image-to-full-canvas-editable-pptx
 python3 scripts/selftest.py     # end-to-end: real render + every threshold
 ```
 
 Install:
 
+Full original 24-section spec: [`office/reference-image-to-full-canvas-editable-pptx/references/SPEC-original.md`](office/reference-image-to-full-canvas-editable-pptx/references/SPEC-original.md)
+
 ```bash
-cp -r office/reference-image-to-editable-pptx ~/.hermes/skills/
+cp -r office/reference-image-to-full-canvas-editable-pptx ~/.hermes/skills/
 ```
 
 ---

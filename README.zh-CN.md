@@ -233,7 +233,9 @@ PosterLoom 自带 **36 个风格契约**（35 个直接风格 + 1 个元风格�
 
 | Skill | 说明 |
 |---|---|
-| **[参考图片全画布高精度复现为可编辑 PowerPoint](office/reference-image-to-editable-pptx/)** | 把一张参考图**重建**为可编辑 PPTX：框体、文字、箭头全部是 PPT 原生对象，图标重绘为 SVG。禁止整页截图贴图、禁止缩放留白。 |
+| **[参考图片全画布高精度复现为可编辑 PowerPoint](office/reference-image-to-full-canvas-editable-pptx/)** | 把一张参考图**重建**为可编辑 PPTX：框体、文字、箭头全部是 PPT 原生对象，图标重绘为 SVG。禁止整页截图贴图、禁止缩放留白。 |
+
+Skill 名称：`Reference-Image-to-Full-Canvas-Editable-PPTX`
 
 核心约束：**参考图的像素画布就是唯一坐标系**。所有对象在参考图像素坐标中测量，
 直接映射到页面 —— 没有 `uniform_scale`，没有 `offset_x/offset_y`，没有 contain / fit / letterbox。
@@ -242,14 +244,16 @@ PosterLoom 自带 **36 个风格契约**（35 个直接风格 + 1 个元风格�
 宽高比误差 0、占用率误差 ≤ 0.5%、内容中心误差 ≤ 0.3%、四个主框体每条边误差 ≤ 3–5 像素。
 
 ```bash
-cd office/reference-image-to-editable-pptx
+cd office/reference-image-to-full-canvas-editable-pptx
 python3 scripts/selftest.py     # 端到端自测，真实渲染 + 全部阈值校验
 ```
 
 安装：
 
+原始 24 节完整规格书：[`office/reference-image-to-full-canvas-editable-pptx/references/SPEC-original.md`](office/reference-image-to-full-canvas-editable-pptx/references/SPEC-original.md)
+
 ```bash
-cp -r office/reference-image-to-editable-pptx ~/.hermes/skills/
+cp -r office/reference-image-to-full-canvas-editable-pptx ~/.hermes/skills/
 ```
 
 ---
@@ -269,7 +273,7 @@ PosterLoom/
 ├── SECURITY.md
 ├── office/                 # 办公类 Skill
 │   ├── README.md
-│   └── reference-image-to-editable-pptx/
+│   └── reference-image-to-full-canvas-editable-pptx/
 │       ├── SKILL.md
 │       ├── scripts/
 │       ├── references/
