@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "_note": "Image-generation backends for PosterLoom. Each backend declares its own limits because they change the workflow: a prompt-length cap forces a rebuilt (not truncated) prompt, and an unsupported aspect ratio forces an explicit substitution.",
+  "default": "minimax",
+  "backends": {
+    "minimax": {
+      "id": "minimax",
+      "name": "MiniMax image-01",
+      "provider": "MiniMax",
+      "model": "image-01",
+      "endpoint": "https://api.minimaxi.com/v1/image_generation",
+      "api_key_env": "MINIMAX_API_KEY",
+      "max_prompt_chars": 1500,
+      "supported_ratios": [
+        "1:1",
+        "16:9",
+        "4:3",
+        "3:2",
+        "2:3",
+        "3:4",
+        "9:16",
+        "21:9"
+      ],
+      "max_images_per_call": 9,
+      "supports_image_reference": true,
+      "reference_type": "character",
+      "notes": [
+        "Only one reference image per request.",
+        "Rejects prompts at or above 1500 characters — PosterLoom's full prompt is 4000-8000, so use compact_prompt.build_compact().",
+        "Does NOT support 3:5. The two zine styles are designed for 3:5; the ratio is mapped to the nearest supported value and the substitution is reported.",
+        "Text-to-image applies the style faithfully. Image-to-image often keeps the photographic rendering and can introduce a different person, so the reference is best used for identity anchoring on portrait work."
+      ]
+    }
+  }
+}
