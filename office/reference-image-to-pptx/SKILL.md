@@ -16,6 +16,45 @@ license: MIT
 把一张参考图片**重建**成真正可编辑的 PPTX。不是重新设计，不是生成相似风格页面，
 更不是把参考图缩小后塞进 PPT。
 
+## 我在哪
+
+| | |
+|---|---|
+| **GitHub** | `https://github.com/liuweispace/posterloom-sklls` |
+| **仓库内路径** | `office/reference-image-to-pptx/` |
+| **装到本机** | `~/.hermes/skills/reference-image-to-pptx/` |
+| **正式 Skill 名** | `Reference-Image-to-Full-Canvas-Editable-PPTX` |
+| **目录名（调用用这个）** | `reference-image-to-pptx` |
+
+本 Skill 自带**可执行脚本**，不要只凭这份文档手写流程：
+
+```bash
+# 1. 校验对象表
+python3 scripts/validate_spec.py scene_spec.json --ref source/reference_image.png
+
+# 2. 生成 PPT + 渲染 + 三种对比图 + report.json
+python3 scripts/build_editable_ppt.py \
+    --reference source/reference_image.png --spec scene_spec.json \
+    --out ppt --render preview --icons icons
+
+# 3. 重绘图标 SVG（9 种）
+python3 scripts/redraw_icon.py --kind trophy --out icons/svg/trophy_blue.svg --color "#1B7FBF"
+
+# 4. 生成 manifest.txt
+python3 scripts/make_manifest.py --project . --reference source/reference_image.png
+
+# 5. 打包（工程 ZIP + 图标 ZIP + PPTX）
+python3 scripts/package_outputs.py --project . --out .
+
+# 自测（真实渲染 + 全部阈值）
+python3 scripts/selftest.py
+```
+
+**先跑脚本，不要从零手写 PPT 生成代码** —— 坐标映射、Alpha 定位、原生箭头、
+占用率测量这些都已经实现并验证过（自测 40 项）。
+
+---
+
 ## 角色
 
 你是一名 PowerPoint 工程重建专家、视觉测量工程师、矢量图标绘制师和
