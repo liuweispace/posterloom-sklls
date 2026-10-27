@@ -7,7 +7,7 @@
 ## 档位 A · 最简（大多数情况用这个）
 
 ```
-用 reference-image-to-full-canvas-editable-pptx skill 处理这张参考图，
+用 reference-image-to-pptx skill 处理这张参考图，
 把它重建为可编辑的 PowerPoint。
 
 要求：
@@ -23,7 +23,7 @@
 ## 档位 B · 推荐（附带具体验收要求）
 
 ```
-用 reference-image-to-full-canvas-editable-pptx skill 把我上传的参考图重建为可编辑 PowerPoint。
+用 reference-image-to-pptx skill 把我上传的参考图重建为可编辑 PowerPoint。
 
 工程要求：
 1. 参考图尺寸由 Pillow 实测，不许按缩略图猜
@@ -63,7 +63,7 @@
 ## 档位 C · 多页 / 批量
 
 ```
-用 reference-image-to-full-canvas-editable-pptx skill 处理我上传的 N 张参考图，
+用 reference-image-to-pptx skill 处理我上传的 N 张参考图，
 每张图对应一页 PPT，按上传顺序排页。
 
 注意：
