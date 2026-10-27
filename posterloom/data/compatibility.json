@@ -1,0 +1,383 @@
+{
+  "version": "1.0.0",
+  "policy": {
+    "default_primary_share": "80%",
+    "primary_range": "75-85%",
+    "secondary_range": "15-25%",
+    "max_styles": 2,
+    "secondary_scope": "exactly one subsystem",
+    "forbidden": "50/50 mix, third visual language, conflicting lighting or palette systems"
+  },
+  "pairs": [
+    {
+      "style_a": "abstract-editorial",
+      "style_b": "collage-lite-narrative",
+      "secondary_role": "source-derived-fragment"
+    },
+    {
+      "style_a": "abstract-editorial",
+      "style_b": "editorial-surrealism",
+      "secondary_role": "conceptual-accent"
+    },
+    {
+      "style_a": "abstract-editorial",
+      "style_b": "geometric-color-block",
+      "secondary_role": "color-separation"
+    },
+    {
+      "style_a": "abstract-editorial",
+      "style_b": "minimal-symbolic-poster",
+      "secondary_role": "negative-space"
+    },
+    {
+      "style_a": "abstract-editorial",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    },
+    {
+      "style_a": "brutalist-poster",
+      "style_b": "collage-lite-narrative",
+      "secondary_role": "source-derived-fragment"
+    },
+    {
+      "style_a": "brutalist-poster",
+      "style_b": "geometric-color-block",
+      "secondary_role": "color-separation"
+    },
+    {
+      "style_a": "brutalist-poster",
+      "style_b": "neo-futurist-layout",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "brutalist-poster",
+      "style_b": "pop-screenprint",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "brutalist-poster",
+      "style_b": "relief-print",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "brutalist-poster",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    },
+    {
+      "style_a": "cinematic-editorial",
+      "style_b": "documentary-poster",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "cinematic-editorial",
+      "style_b": "editorial-surrealism",
+      "secondary_role": "conceptual-accent"
+    },
+    {
+      "style_a": "cinematic-editorial",
+      "style_b": "elegant-serif-poster",
+      "secondary_role": "typography"
+    },
+    {
+      "style_a": "cinematic-editorial",
+      "style_b": "moody-night-editorial",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "cinematic-editorial",
+      "style_b": "neo-ink-poster",
+      "secondary_role": "edge-and-atmosphere"
+    },
+    {
+      "style_a": "cinematic-editorial",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    },
+    {
+      "style_a": "cinematic-editorial",
+      "style_b": "tea-house-minimal",
+      "secondary_role": "cultural-restraint"
+    },
+    {
+      "style_a": "cinematic-editorial",
+      "style_b": "travel-cover-poster",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "classical-parchment",
+      "style_b": "elegant-serif-poster",
+      "secondary_role": "typography"
+    },
+    {
+      "style_a": "classical-parchment",
+      "style_b": "luxury-still-life-editorial",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "classical-parchment",
+      "style_b": "retro-lithograph",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "classical-parchment",
+      "style_b": "seal-calligraphy-poster",
+      "secondary_role": "cultural-restraint"
+    },
+    {
+      "style_a": "classical-parchment",
+      "style_b": "tea-house-minimal",
+      "secondary_role": "cultural-restraint"
+    },
+    {
+      "style_a": "collage-lite-narrative",
+      "style_b": "documentary-poster",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "collage-lite-narrative",
+      "style_b": "editorial-surrealism",
+      "secondary_role": "conceptual-accent"
+    },
+    {
+      "style_a": "collage-lite-narrative",
+      "style_b": "folk-narrative-color",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "collage-lite-narrative",
+      "style_b": "riso-poster",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "collage-lite-narrative",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    },
+    {
+      "style_a": "documentary-poster",
+      "style_b": "elegant-serif-poster",
+      "secondary_role": "typography"
+    },
+    {
+      "style_a": "documentary-poster",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    },
+    {
+      "style_a": "editorial-surrealism",
+      "style_b": "expressive-painting",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "editorial-surrealism",
+      "style_b": "minimal-symbolic-poster",
+      "secondary_role": "negative-space"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "geometric-color-block",
+      "secondary_role": "color-separation"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "ink-wash-minimal",
+      "secondary_role": "edge-and-atmosphere"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "luxury-still-life-editorial",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "minimal-symbolic-poster",
+      "secondary_role": "negative-space"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "moody-night-editorial",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "neo-ink-poster",
+      "secondary_role": "edge-and-atmosphere"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "pastel-atmosphere",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "retro-lithograph",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "seal-calligraphy-poster",
+      "secondary_role": "cultural-restraint"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "soft-gouache",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "tea-house-minimal",
+      "secondary_role": "cultural-restraint"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "transparent-watercolor",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "elegant-serif-poster",
+      "style_b": "travel-cover-poster",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "expressive-painting",
+      "style_b": "minimal-symbolic-poster",
+      "secondary_role": "negative-space"
+    },
+    {
+      "style_a": "expressive-painting",
+      "style_b": "relief-print",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "folk-narrative-color",
+      "style_b": "geometric-color-block",
+      "secondary_role": "color-separation"
+    },
+    {
+      "style_a": "folk-narrative-color",
+      "style_b": "paper-cut-graphic",
+      "secondary_role": "layered-edge"
+    },
+    {
+      "style_a": "folk-narrative-color",
+      "style_b": "pop-screenprint",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "folk-narrative-color",
+      "style_b": "riso-poster",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "geometric-color-block",
+      "style_b": "luxury-still-life-editorial",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "geometric-color-block",
+      "style_b": "neo-futurist-layout",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "geometric-color-block",
+      "style_b": "paper-cut-graphic",
+      "secondary_role": "layered-edge"
+    },
+    {
+      "style_a": "geometric-color-block",
+      "style_b": "pop-screenprint",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "geometric-color-block",
+      "style_b": "riso-poster",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "geometric-color-block",
+      "style_b": "soft-gouache",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "geometric-color-block",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    },
+    {
+      "style_a": "ink-wash-minimal",
+      "style_b": "minimal-symbolic-poster",
+      "secondary_role": "negative-space"
+    },
+    {
+      "style_a": "ink-wash-minimal",
+      "style_b": "neo-ink-poster",
+      "secondary_role": "edge-and-atmosphere"
+    },
+    {
+      "style_a": "ink-wash-minimal",
+      "style_b": "seal-calligraphy-poster",
+      "secondary_role": "cultural-restraint"
+    },
+    {
+      "style_a": "ink-wash-minimal",
+      "style_b": "transparent-watercolor",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "luxury-still-life-editorial",
+      "style_b": "riso-poster",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "luxury-still-life-editorial",
+      "style_b": "tea-house-minimal",
+      "secondary_role": "cultural-restraint"
+    },
+    {
+      "style_a": "minimal-symbolic-poster",
+      "style_b": "paper-cut-graphic",
+      "secondary_role": "layered-edge"
+    },
+    {
+      "style_a": "minimal-symbolic-poster",
+      "style_b": "pastel-atmosphere",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "minimal-symbolic-poster",
+      "style_b": "relief-print",
+      "secondary_role": "print-texture"
+    },
+    {
+      "style_a": "minimal-symbolic-poster",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    },
+    {
+      "style_a": "minimal-symbolic-poster",
+      "style_b": "transparent-watercolor",
+      "secondary_role": "texture-or-layout-accent"
+    },
+    {
+      "style_a": "moody-night-editorial",
+      "style_b": "neo-ink-poster",
+      "secondary_role": "edge-and-atmosphere"
+    },
+    {
+      "style_a": "moody-night-editorial",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    },
+    {
+      "style_a": "moody-night-editorial",
+      "style_b": "tea-house-minimal",
+      "secondary_role": "cultural-restraint"
+    },
+    {
+      "style_a": "neo-futurist-layout",
+      "style_b": "swiss-grid-poster",
+      "secondary_role": "grid-and-alignment"
+    }
+  ]
+}

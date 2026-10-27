@@ -1,0 +1,115 @@
+{
+  "version": "1.1.0",
+  "_note": "Named substrates and inks with concrete hex values. Word-level color language ('warm', 'muted') is interpreted loosely by an image model; hex values are executable. Coverage ratios keep a duotone from collapsing into mud.",
+  "substrates": {
+    "neutral-white": {
+      "hex": "#FAFAF7",
+      "use": "crisp cultural, social, event, image-led work"
+    },
+    "cool-gray": {
+      "hex": "#E9E9E5",
+      "use": "architecture, technology, charcoal-led systems"
+    },
+    "pale-beige": {
+      "hex": "#F5F1E8",
+      "use": "tactile, travel, food, intimate, archival"
+    },
+    "ink-black": {
+      "hex": "#101010",
+      "use": "dramatic, high-contrast, night"
+    },
+    "aged-cream": {
+      "hex": "#F2EBDC",
+      "use": "warm aged paper for the paper-collage zine styles"
+    }
+  },
+  "inks": {
+    "crimson": "#C83232",
+    "vermilion": "#E0492B",
+    "signal-red": "#D0342C",
+    "cobalt": "#2148B8",
+    "ultramarine": "#263E99",
+    "powder-blue": "#9EB8D3",
+    "cyan": "#159DDA",
+    "mint": "#5EB783",
+    "botanical": "#008A4B",
+    "terracotta": "#C65F38",
+    "safety-orange": "#E55D2B",
+    "tangerine": "#E46C2D",
+    "ochre": "#C89A3C",
+    "oxblood": "#8F3434",
+    "aubergine": "#63365F",
+    "charcoal": "#30343A",
+    "carbon": "#242321",
+    "slate-blue": "#4773A5",
+    "near-black": "#101010",
+    "graphite": "#4A4A48",
+    "warm-gray": "#8C8579",
+    "faded-black": "#2B2724",
+    "tomato-red": "#D6402F",
+    "lemon-yellow": "#E8C63F",
+    "pear-green": "#5FA845",
+    "magenta-pink": "#C63A7E"
+  },
+  "two_ink_recipes": {
+    "powder-blue + signal-red": [
+      "#9EB8D3",
+      "#C83232"
+    ],
+    "cobalt + terracotta": [
+      "#2148B8",
+      "#C65F38"
+    ],
+    "botanical + oxblood": [
+      "#008A4B",
+      "#8F3434"
+    ],
+    "charcoal + signal-red": [
+      "#30343A",
+      "#C83232"
+    ],
+    "mint + charcoal": [
+      "#5EB783",
+      "#30343A"
+    ],
+    "ultramarine + safety-orange": [
+      "#263E99",
+      "#E55D2B"
+    ],
+    "cyan + vermilion": [
+      "#159DDA",
+      "#E0492B"
+    ],
+    "tangerine + slate-blue": [
+      "#E46C2D",
+      "#4773A5"
+    ],
+    "ochre + ink-black": [
+      "#C89A3C",
+      "#101010"
+    ],
+    "aubergine + powder-blue": [
+      "#63365F",
+      "#9EB8D3"
+    ]
+  },
+  "coverage": {
+    "dominant_plate": "70-85% of the printed area",
+    "accent_plate": "15-30% of the printed area",
+    "rule": "The accent plate must have a job: dates, annotations, one selected object, or overprint intersections. The substrate is not a third ink, and the darker color where two plates overlap is not a third ink either.",
+    "duotone_ramp_order": [
+      "shadow",
+      "mid",
+      "light",
+      "paper"
+    ]
+  },
+  "ramp_construction": {
+    "_note": "Map the photograph onto a 4-stop ramp rather than tinting it. Highlight to paper, deepest shadow to the ink's shadow value, midtones split between mid and light.",
+    "avoid": [
+      "full natural skin color",
+      "smooth gradient washes",
+      "more than two inks plus accent"
+    ]
+  }
+}

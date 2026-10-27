@@ -1,0 +1,257 @@
+{
+  "version": "1.8.0",
+  "styles": [
+    {
+      "family": "photographic-editorial",
+      "id": "cinematic-editorial",
+      "status": "gold",
+      "role": "direct",
+      "name": "Cinematic Editorial"
+    },
+    {
+      "family": "photographic-editorial",
+      "id": "moody-night-editorial",
+      "status": "gold",
+      "role": "direct",
+      "name": "Moody Night Editorial"
+    },
+    {
+      "family": "photographic-editorial",
+      "id": "travel-cover-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Travel Cover Poster"
+    },
+    {
+      "family": "photographic-editorial",
+      "id": "luxury-still-life-editorial",
+      "status": "gold",
+      "role": "direct",
+      "name": "Luxury Still-Life Editorial"
+    },
+    {
+      "family": "photographic-editorial",
+      "id": "documentary-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Documentary Poster"
+    },
+    {
+      "family": "painterly-atmosphere",
+      "id": "transparent-watercolor",
+      "status": "gold",
+      "role": "direct",
+      "name": "Transparent Watercolor"
+    },
+    {
+      "family": "painterly-atmosphere",
+      "id": "soft-gouache",
+      "status": "gold",
+      "role": "direct",
+      "name": "Soft Gouache"
+    },
+    {
+      "family": "painterly-atmosphere",
+      "id": "expressive-painting",
+      "status": "gold",
+      "role": "direct",
+      "name": "Expressive Painting"
+    },
+    {
+      "family": "painterly-atmosphere",
+      "id": "ink-wash-minimal",
+      "status": "gold",
+      "role": "direct",
+      "name": "Ink Wash Minimal"
+    },
+    {
+      "family": "painterly-atmosphere",
+      "id": "pastel-atmosphere",
+      "status": "gold",
+      "role": "direct",
+      "name": "Pastel Atmosphere"
+    },
+    {
+      "family": "graphic-print",
+      "id": "pop-screenprint",
+      "status": "gold",
+      "role": "direct",
+      "name": "Pop Screenprint"
+    },
+    {
+      "family": "graphic-print",
+      "id": "riso-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Riso Poster"
+    },
+    {
+      "family": "graphic-print",
+      "id": "relief-print",
+      "status": "gold",
+      "role": "direct",
+      "name": "Relief Print"
+    },
+    {
+      "family": "graphic-print",
+      "id": "retro-lithograph",
+      "status": "gold",
+      "role": "direct",
+      "name": "Retro Lithograph"
+    },
+    {
+      "family": "graphic-print",
+      "id": "paper-cut-graphic",
+      "status": "gold",
+      "role": "direct",
+      "name": "Paper-Cut Graphic"
+    },
+    {
+      "family": "eastern-heritage",
+      "id": "neo-ink-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Neo Ink Poster"
+    },
+    {
+      "family": "eastern-heritage",
+      "id": "tea-house-minimal",
+      "status": "gold",
+      "role": "direct",
+      "name": "Tea-House Minimal"
+    },
+    {
+      "family": "eastern-heritage",
+      "id": "classical-parchment",
+      "status": "gold",
+      "role": "direct",
+      "name": "Classical Parchment"
+    },
+    {
+      "family": "eastern-heritage",
+      "id": "seal-calligraphy-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Seal & Calligraphy Poster"
+    },
+    {
+      "family": "eastern-heritage",
+      "id": "folk-narrative-color",
+      "status": "gold",
+      "role": "direct",
+      "name": "Folk Narrative Color"
+    },
+    {
+      "family": "conceptual-hybrid",
+      "id": "editorial-surrealism",
+      "status": "gold",
+      "role": "direct",
+      "name": "Editorial Surrealism"
+    },
+    {
+      "family": "conceptual-hybrid",
+      "id": "abstract-editorial",
+      "status": "gold",
+      "role": "direct",
+      "name": "Abstract Editorial"
+    },
+    {
+      "family": "conceptual-hybrid",
+      "id": "minimal-symbolic-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Minimal Symbolic Poster"
+    },
+    {
+      "family": "conceptual-hybrid",
+      "id": "collage-lite-narrative",
+      "status": "gold",
+      "role": "direct",
+      "name": "Collage-Lite Narrative"
+    },
+    {
+      "family": "modern-design",
+      "id": "swiss-grid-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Swiss Grid Poster"
+    },
+    {
+      "family": "modern-design",
+      "id": "brutalist-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Brutalist Poster"
+    },
+    {
+      "family": "modern-design",
+      "id": "neo-futurist-layout",
+      "status": "gold",
+      "role": "direct",
+      "name": "Neo-Futurist Layout"
+    },
+    {
+      "family": "modern-design",
+      "id": "geometric-color-block",
+      "status": "gold",
+      "role": "direct",
+      "name": "Geometric Color-Block"
+    },
+    {
+      "family": "modern-design",
+      "id": "elegant-serif-poster",
+      "status": "gold",
+      "role": "direct",
+      "name": "Elegant Serif Poster"
+    },
+    {
+      "family": "photographic-portrait",
+      "id": "editorial-portrait",
+      "status": "gold",
+      "role": "direct",
+      "name": "Editorial Portrait"
+    },
+    {
+      "family": "graphic-portrait",
+      "id": "duotone-identity-stack",
+      "status": "gold",
+      "role": "direct",
+      "name": "Duotone Identity Stack"
+    },
+    {
+      "family": "paper-collage",
+      "id": "gathered-scenes-zine",
+      "status": "gold",
+      "role": "direct",
+      "name": "Gathered Scenes Zine"
+    },
+    {
+      "family": "paper-collage",
+      "id": "scene-distillation-zine",
+      "status": "gold",
+      "role": "direct",
+      "name": "Scene Distillation Zine"
+    },
+    {
+      "family": "painterly-portrait",
+      "id": "fine-art-portrait",
+      "status": "gold",
+      "role": "direct",
+      "name": "Fine Art Portrait"
+    },
+    {
+      "family": "documentary-portrait",
+      "id": "photojournalistic",
+      "status": "gold",
+      "role": "direct",
+      "name": "Photojournalistic"
+    },
+    {
+      "family": "meta-style",
+      "id": "controlled-hybrid",
+      "status": "gold",
+      "role": "meta",
+      "name": "Controlled Hybrid"
+    }
+  ]
+}
