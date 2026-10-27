@@ -57,6 +57,30 @@ python3 scripts/posterloom.py render photo.jpg --count 3
 |---|---|---|
 | **参考图片全画布高精度复现为可编辑 PowerPoint 工程**<br>`Reference-Image-to-Full-Canvas-Editable-PPTX` | [`office/reference-image-to-pptx/`](office/reference-image-to-pptx/) | 把一张参考图**重建**为可编辑 PPTX：框体、文字、箭头全部是 PPT 原生对象，图标重绘为 SVG |
 
+### 在哪 & 怎么装
+
+| | |
+|---|---|
+| **GitHub** | `https://github.com/liuweispace/posterloom-sklls` |
+| **仓库内路径** | `office/reference-image-to-pptx/` |
+| **装到本机** | `~/.hermes/skills/reference-image-to-pptx/` |
+| **正式 Skill 名** | `Reference-Image-to-Full-Canvas-Editable-PPTX` |
+
+```bash
+curl -fsSL https://github.com/liuweispace/posterloom-sklls/archive/refs/heads/main.tar.gz | tar xz
+mv posterloom-sklls-main/office/reference-image-to-pptx ~/.hermes/skills/reference-image-to-pptx
+```
+
+装完**必须**跑一次自测确认：
+
+```bash
+cd ~/.hermes/skills/reference-image-to-pptx && python3 scripts/selftest.py
+# 要看到: 40/40 PASS  SELFTEST OK
+```
+
+缺依赖（LibreOffice / pdftoppm / python-pptx / Pillow / NumPy）时对照
+[`office/reference-image-to-pptx/templates/user-prompt.md`](office/reference-image-to-pptx/templates/user-prompt.md) 的排错表。
+
 ### 怎么用
 
 上传参考图后直接说：
@@ -73,6 +97,12 @@ python3 scripts/posterloom.py render photo.jpg --count 3
 
 更严格的版本（含 8 条工程要求 + 9 条验收要求）在
 [`office/reference-image-to-pptx/templates/user-prompt.md`](office/reference-image-to-pptx/templates/user-prompt.md)。
+
+**如果助手说找不到这个 skill**，直接说：
+
+```text
+先读一下 ~/.hermes/skills/reference-image-to-pptx/SKILL.md，按里面的流程做。
+```
 
 ### 它保证什么
 

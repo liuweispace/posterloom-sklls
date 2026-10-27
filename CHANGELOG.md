@@ -34,6 +34,14 @@
 - 新增 `references/SPEC-original.md` —— 原始 24 节完整规格书存档,一字未删
 - Skill 目录名缩短为 `office/reference-image-to-pptx`
   (Skill 名 `Reference-Image-to-Full-Canvas-Editable-PPTX` 保留在 SKILL.md frontmatter)
+- 用户上手路径补全:
+  - `templates/user-prompt.md` 改为三段式 —— 第 1 步「找到并装上」(GitHub 地址 /
+    仓库内路径 / 装到本机的位置 / 装法 / 自测确认 / 缺依赖排错表)、
+    第 2 步「让它干活」(三档提示词)、
+    第 3 步「怎么验收」(交付物清单 + 三种自检命令 + 肉眼比对顺序)
+  - SKILL.md 新增「我在哪」章节,写明自身路径与"先跑脚本、不要手写"的指引
+  - 根 README 办公栏目补「在哪 & 怎么装」表 + 自测确认步骤 +
+    "助手说找不到 skill 时的退路"提示词
 - 仓库根 README 重构为 **Skills 集合首页**:
   开头先列「这里有什么」(两个 Skill + 分类表),每个 Skill 紧跟「怎么用」,
   再往下才是各 Skill 细节 —— 原来办公栏目埋在第 230 行,用户找不到

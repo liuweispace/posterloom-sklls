@@ -98,6 +98,31 @@ Standalone office skills live in the top-level [`office/`](office/) directory.
 |---|---|---|
 | **Reference Image to Full-Canvas Editable PowerPoint**<br>`Reference-Image-to-Full-Canvas-Editable-PPTX` | [`office/reference-image-to-pptx/`](office/reference-image-to-pptx/) | **Rebuilds** a reference image as an editable PPTX: every frame, text run and arrow is a native PowerPoint object, and icons are redrawn as SVG |
 
+### Where it is & how to install it
+
+| | |
+|---|---|
+| **GitHub** | `https://github.com/liuweispace/posterloom-sklls` |
+| **Path in repo** | `office/reference-image-to-pptx/` |
+| **Installed to** | `~/.hermes/skills/reference-image-to-pptx/` |
+| **Formal skill name** | `Reference-Image-to-Full-Canvas-Editable-PPTX` |
+
+```bash
+curl -fsSL https://github.com/liuweispace/posterloom-sklls/archive/refs/heads/main.tar.gz | tar xz
+mv posterloom-sklls-main/office/reference-image-to-pptx ~/.hermes/skills/reference-image-to-pptx
+```
+
+**Always** confirm the install with its self-test:
+
+```bash
+cd ~/.hermes/skills/reference-image-to-pptx && python3 scripts/selftest.py
+# expect: 40/40 PASS  SELFTEST OK
+```
+
+Missing dependencies (LibreOffice / pdftoppm / python-pptx / Pillow / NumPy) are
+tabulated in
+[`office/reference-image-to-pptx/templates/user-prompt.md`](office/reference-image-to-pptx/templates/user-prompt.md).
+
 ### How to use it
 
 Upload the reference image and say:
@@ -119,6 +144,13 @@ editable PowerPoint.
 The strict version (8 engineering requirements + 9 acceptance requirements)
 lives in
 [`office/reference-image-to-pptx/templates/user-prompt.md`](office/reference-image-to-pptx/templates/user-prompt.md).
+
+**If the assistant says it cannot find the skill**, say:
+
+```text
+Read ~/.hermes/skills/reference-image-to-pptx/SKILL.md first and follow the
+workflow in it.
+```
 
 ### What it guarantees
 
