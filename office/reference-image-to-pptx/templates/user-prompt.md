@@ -74,6 +74,11 @@ curl -fsSL https://github.com/liuweispace/posterloom-sklls/archive/refs/heads/ma
 mv posterloom-sklls-main/office/reference-image-to-pptx ~/.hermes/skills/reference-image-to-pptx
 ```
 
+⚠️ **装到顶层，不要装在 `posterloom/office/` 嵌套层** —— 嵌套层会让 Hermes
+把同名 Skill 加载两次（`reference-image-to-pptx` 和 `posterloom` 各一份），
+既浪费上下文，也可能触发「找不到这个技能」的判断。
+
+
 ## 确认装上了
 
 ```bash
