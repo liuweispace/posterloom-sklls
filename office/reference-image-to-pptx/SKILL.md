@@ -22,7 +22,7 @@ license: MIT
 |---|---|
 | **GitHub** | `https://github.com/liuweispace/posterloom-sklls` |
 | **仓库内路径** | `office/reference-image-to-pptx/` |
-| **装到本机** | `~/.hermes/skills/reference-image-to-pptx/` |
+| **装到本机** | `~/.hermes/skills/reference-image-to-pptx/`（顶层，**不要**装在 `posterloom/office/` 嵌套层 —— 嵌套会让 Hermes 重复加载同名 Skill） |
 | **正式 Skill 名** | `Reference-Image-to-Full-Canvas-Editable-PPTX` |
 | **目录名（调用用这个）** | `reference-image-to-pptx` |
 

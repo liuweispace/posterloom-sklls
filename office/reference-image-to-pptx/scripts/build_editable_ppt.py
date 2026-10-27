@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Reference image -> editable PowerPoint, full-canvas high-fidelity rebuild.
 
-This is the engine behind the `reference-image-to-editable-pptx` skill.
+This is the engine behind the `reference-image-to-pptx` skill
+(formal name: `Reference-Image-to-Full-Canvas-Editable-PPTX`).
 
 The governing idea: the reference image's pixel canvas IS the coordinate
 system. Every object is measured in reference pixels and mapped straight onto
