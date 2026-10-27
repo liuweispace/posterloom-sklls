@@ -38,6 +38,12 @@ office/reference-image-to-pptx skill（装到 ~/.hermes/skills/ 下），
 - 最后给我可编辑 PPTX + 工程 ZIP + 图标素材 ZIP，并报告验收指标
 ```
 
+**助手说找不到这个 skill 时**（例如它只搜了 `posterloom/` 目录）：
+
+```text
+先读一下 ~/.hermes/skills/reference-image-to-pptx/SKILL.md，按里面的流程做。
+```
+
 ---
 
 # 拆开版 · 需要更细控制时用
