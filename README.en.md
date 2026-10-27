@@ -125,11 +125,30 @@ tabulated in
 
 ### How to use it
 
-Upload the reference image and say:
+**One prompt does it all** (copy this, and attach the image):
 
 ```text
-Use the reference-image-to-pptx skill to rebuild this reference image as an
-editable PowerPoint.
+Install the office/reference-image-to-pptx skill from
+https://github.com/liuweispace/posterloom-sklls into ~/.hermes/skills/,
+run its self-test to confirm, then rebuild the reference image I attached
+as an editable PowerPoint.
+
+Requirements:
+- The reference image's full pixel canvas is the only coordinate basis — no
+  contain, no fit-inside, no letterbox
+- Rebuild every frame, text run and arrow as a native PPT object; no images
+- Redraw icons as SVG and render them to 128x128 transparent PNG
+- Render the PPT and diff it against the reference across the full canvas,
+  correcting at least twice
+- Finish with an editable PPTX + project ZIP + icon assets ZIP and report the
+  acceptance metrics
+```
+
+**If it is already installed**, just say the second half:
+
+```text
+Use the reference-image-to-pptx skill to rebuild the reference image I attached
+as an editable PowerPoint.
 
 - The reference image's full pixel canvas is the only coordinate basis — no
   contain, no fit-inside, no letterbox

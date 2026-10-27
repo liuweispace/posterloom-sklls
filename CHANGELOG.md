@@ -34,6 +34,9 @@
 - 新增 `references/SPEC-original.md` —— 原始 24 节完整规格书存档,一字未删
 - Skill 目录名缩短为 `office/reference-image-to-pptx`
   (Skill 名 `Reference-Image-to-Full-Canvas-Editable-PPTX` 保留在 SKILL.md frontmatter)
+- 用户提示词合并为**一条提示词**:同时完成"找 skill + 装 + 干活",
+  使用者不需要知道 GitHub 地址长什么样
+  (`templates/user-prompt.md` 顶部新增「第 1 段 · 一条提示词搞定」)
 - 用户上手路径补全:
   - `templates/user-prompt.md` 改为三段式 —— 第 1 步「找到并装上」(GitHub 地址 /
     仓库内路径 / 装到本机的位置 / 装法 / 自测确认 / 缺依赖排错表)、
