@@ -1,11 +1,17 @@
 ---
-name: reference-image-to-editable-pptx
-description: Use when a user provides a reference image (infographic, scientific diagram, slide screenshot, PDF page) and wants it rebuilt as an editable PowerPoint. Rebuilds every element as a native PPT object on the reference's exact pixel canvas — no screenshot-as-slide, no letterboxing, no auto-layout.
+name: reference-image-to-full-canvas-editable-pptx
+description: Use when a user provides a reference image (infographic, scientific diagram, slide screenshot, PDF page) and wants it rebuilt as an editable PowerPoint. Rebuilds every element as a native PPT object on the reference's exact pixel canvas — no screenshot-as-slide, no letterboxing, no auto-layout. 中文名：参考图片全画布高精度复现为可编辑 PowerPoint 工程。
 version: 1.0.0
 license: MIT
 ---
 
 # 参考图片全画布高精度复现为可编辑 PowerPoint 工程
+
+**Skill 名称**：Reference-Image-to-Full-Canvas-Editable-PPTX
+**中文名称**：参考图片全画布高精度复现为可编辑 PowerPoint 工程
+
+> 原始 24 节完整规格书见 [`references/SPEC-original.md`](references/SPEC-original.md)。
+> 本文件是它的 Agent Skill 化改写版；两者措辞冲突时以规格书为准。
 
 把一张参考图片**重建**成真正可编辑的 PPTX。不是重新设计，不是生成相似风格页面，
 更不是把参考图缩小后塞进 PPT。
@@ -26,6 +32,36 @@ shrink-to-fit。`X(0)` 就是 PPT 左上角，`X(REF_W)` 就是右下角。
 这一条是整个任务成败的分水岭。本仓库里所有"看起来对但交付就是不对"的失败，
 根因都是三个词之一：`uniform_scale`、`offset_x`、`offset_y`。
 
+## 输入与输出
+
+**输入可能包括**：一张参考图片；多张参考图片；PNG / JPEG / WEBP；PDF 页面或演示文稿截图；
+中文或英文信息图；包含框体、图标、箭头和流程结构的科研图表。
+
+**默认规则**
+
+1. 每张参考图片对应一页 PPT。
+2. 多张图片按用户上传顺序生成多页 PPT。
+3. 不要求用户手动标注对象。
+4. 不要求用户手动编号图标。
+5. 不要在开始前要求用户拆分图片。
+6. 图片可以正常读取时，直接开始执行。
+
+**必须输出**（11 项）
+
+1. 可编辑 PPTX
+2. 完整工程 ZIP
+3. 图标素材 ZIP
+4. 每个图标的 SVG
+5. 每个图标的 128×128 透明 PNG
+6. PPT 渲染图
+7. 参考图与 PPT 的并排对比图
+8. 参考图与 PPT 的透明叠加图
+9. 像素差异图
+10. 图标总览图
+11. manifest.txt
+
+---
+
 ## 工具链
 
 | 用途 | 工具 | 备注 |
@@ -35,6 +71,28 @@ shrink-to-fit。`X(0)` 就是 PPT 左上角，`X(REF_W)` 就是右下角。
 | SVG → PNG | CairoSVG（首选）/ rsvg-convert / qlmanage | 三选一自动降级 |
 | PPT 渲染 | LibreOffice (`soffice`) + pdftoppm | **必需**，缺失则无法验收 |
 | 打包 | zipfile | 必需 |
+
+推荐导入：
+
+```python
+from pathlib import Path
+import shutil
+import zipfile
+import subprocess
+import os
+import math
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont, ImageChops
+import cairosvg
+from pptx import Presentation
+from pptx.util import Inches, Pt
+from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
+from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
+from pptx.enum.dml import MSO_LINE_DASH_STYLE
+from pptx.dml.color import RGBColor
+from pptx.oxml.xmlchemy import OxmlElement
+from pptx.oxml.ns import qn
+```
 
 安装 LibreOffice：
 
@@ -217,7 +275,7 @@ PowerPoint 中后添加的在上层。按此顺序添加：
 | 第 2 轮 · 视觉精调版 | 按渲染对比调整文字位置、文本框尺寸、图标可见大小与中心、卡片尺寸、标题栏高度、箭头端点与弧度 |
 | 第 3 轮 · 全画布验收版 | 验证整体未被缩小、右侧无大块空白、底部无大块空白、内容居中正确、四边占用率正确、主框体匹配、无对象越界、无文字溢出 |
 
-**只有第 3 轮通过才允许交付。**
+**只有第 3 轮通过才允许交付。** 验收阈值见下方「验收阈值」章节。
 
 文字必须做**两阶段精调**：先按初表生成，渲染后建立校正表（以对象名为键），
 逐个修正 `shape.left/top/width/height` 与字号。
@@ -375,6 +433,62 @@ connector_top_left / connector_top_right / connector_center_bidirectional
 28. 没有检查整体占用率
 29. 没有检查四个主框体
 30. 一轮生成后直接交付
+
+## 验收阈值
+
+必须全部达到：
+
+| 指标 | 阈值 |
+|---|---|
+| 页面宽高比误差 | 0 |
+| 水平占用率误差 | ≤ 0.5% |
+| 垂直占用率误差 | ≤ 0.5% |
+| 内容中心 X 误差 | ≤ 0.3% |
+| 内容中心 Y 误差 | ≤ 0.3% |
+| 大型主框每条边误差 | 目标 ≤ 3–5 个参考像素 |
+| 对象越界数量 | 0 |
+| 明显文字溢出数量 | 0 |
+| Freeform 箭头数量 | 0 |
+| 参考图背景数量 | 0 |
+| 超大图标数量 | 0 |
+
+图标属于重新绘制对象，允许因原始截图分辨率产生细节推测。
+但图标必须**完整、清晰、无缺笔、无背景污染**。
+
+单页 PPTX 建议控制在 **0.1 MB – 2 MB**。图标较多时可以略高，但不得因为小图标达到几十 MB。
+
+---
+
+## 执行清单（26 步）
+
+1. 读取原始像素尺寸
+2. 创建相同比例的 PPT 页面
+3. 建立参考像素到 PPT 的直接映射
+4. 建立 scene_spec 对象表
+5. 测量四个主要框体
+6. 测量全部子框体
+7. 建立文字对象表
+8. 建立图标目标可见边界表
+9. 建立箭头对象表
+10. 重绘或复用已批准的 SVG 图标
+11. 将 SVG 渲染为 128×128 PNG
+12. 计算图标 Alpha 边界
+13. 按图层顺序生成 PPT 原生对象
+14. 保存第一版 PPTX
+15. 使用独立 LibreOffice 用户目录渲染
+16. 生成 comparison、overlay 和 difference map
+17. 建立文字及图标位置校正表
+18. 修改第二版
+19. 重新渲染
+20. 检查全画布占用率和内容中心
+21. 检查四个主要框体
+22. 检查越界和文字溢出
+23. 检查 PPTX 内部媒体
+24. 生成最终版 PPTX
+25. 打包工程文件
+26. 提供真实下载链接
+
+---
 
 ## 脚本用法
 
