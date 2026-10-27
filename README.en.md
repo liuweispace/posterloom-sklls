@@ -30,10 +30,22 @@ Requires Python 3.9+. Standard library only — no dependencies, no network acce
 
 ```bash
 cd posterloom
+python3 scripts/posterloom.py render photo.jpg --count 3
+```
+
+Measure from pixels → pick a style → **generate 3 finished images**.
+
+`--count 3` produces **three distinct designs**, not three samples of one
+prompt. Each image gets its own `ARRANGEMENT:` segment and its own API request;
+all three keep the same style, palette, medium and identity lock, and differ only
+in crop, subject placement, negative space and arrangement.
+
+Without an image backend, use `make` — it prints the prompt instead of rendering:
+
+```bash
 python3 scripts/posterloom.py make photo.jpg
 ```
 
-Measure from pixels → pick a style → print the finished generation prompt.
 It reports what it measured, which style it chose, and **what it could not decide**
 (subject type, identity anchors and mood need eyes).
 
@@ -50,8 +62,14 @@ python3 scripts/posterloom.py make photo.jpg --type portrait --tolerance high --
 # match a reference poster you like
 python3 scripts/posterloom.py make photo.jpg --reference ref-poster.jpg
 
-# machine-readable
+# prompt only, no rendering (when there is no image backend)
 python3 scripts/posterloom.py make photo.jpg --json
+
+# force a style, single image
+python3 scripts/posterloom.py render photo.jpg --style riso-poster --count 1
+
+# attach the source photo (strongly biases toward photographic rendering — use with care)
+python3 scripts/posterloom.py render photo.jpg --send-reference
 ```
 
 ---
@@ -209,6 +227,35 @@ The guardrail behind it: a portrait whose likeness must survive is not routed in
 | `posterloom.py styles / show` | list styles / read one contract |
 | `posterloom.py selftest` | 6 integrity checks |
 | `evals/run_evals.py` | 35 routing regression cases |
+
+---
+
+## 🗂️ Office
+
+Standalone office skills live in the top-level [`office/`](office/) directory.
+
+| Skill | What it does |
+|---|---|
+| **[Reference Image to Full-Canvas Editable PPTX](office/reference-image-to-editable-pptx/)** | **Rebuilds** a reference image as an editable PPTX: every frame, text run and arrow is a native PowerPoint object, and icons are redrawn as SVG. No full-page screenshots, no scale-to-fit padding. |
+
+The governing rule: **the reference image's pixel canvas is the only coordinate
+system.** Every object is measured in reference pixels and mapped straight onto
+the slide — no `uniform_scale`, no `offset_x/offset_y`, no contain / fit / letterbox.
+
+Acceptance is not "close enough". The PPTX is rendered and diffed against the
+reference pixel-by-pixel: aspect-ratio error 0, occupancy error ≤ 0.5%, content
+centre error ≤ 0.3%, and every edge of the four main frames within 3–5 pixels.
+
+```bash
+cd office/reference-image-to-editable-pptx
+python3 scripts/selftest.py     # end-to-end: real render + every threshold
+```
+
+Install:
+
+```bash
+cp -r office/reference-image-to-editable-pptx ~/.hermes/skills/
+```
 
 ---
 

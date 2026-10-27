@@ -29,10 +29,21 @@ mv posterloom-sklls-main/posterloom ~/.hermes/skills/posterloom
 
 ```bash
 cd posterloom
+python3 scripts/posterloom.py render photo.jpg --count 3
+```
+
+从像素测量图片 → 选风格 → **直接生成 3 张成品图**。
+
+`--count 3` 产出的是**三种不同设计**，不是同一张的三个随机样本：
+每张图独立构造 `ARRANGEMENT:` 段、独立发起一次请求，三张保持同一风格、
+同一色板、同一媒介、同一身份锁，只改变裁切、主体位置、留白与排列方式。
+
+没有生图后端时用 `make`——它只输出 prompt 不出图：
+
+```bash
 python3 scripts/posterloom.py make photo.jpg
 ```
 
-从像素测量图片 → 选风格 → 打印成品生成 prompt。
 它会告诉你测到了什么、选了哪个风格、**哪些它决定不了**（主体类型、身份锚点、情绪需要你看）。
 
 常用变体：
@@ -48,8 +59,14 @@ python3 scripts/posterloom.py make photo.jpg --type portrait --tolerance high --
 # 给一张参考海报，匹配最接近的内置风格
 python3 scripts/posterloom.py make photo.jpg --reference ref-poster.jpg
 
-# 机器可读
+# 只出 prompt 不出图（无生图后端时用）
 python3 scripts/posterloom.py make photo.jpg --json
+
+# 强制某个风格 + 单张
+python3 scripts/posterloom.py render photo.jpg --style riso-poster --count 1
+
+# 附原图（会强烈拉回摄影渲染，慎用）
+python3 scripts/posterloom.py render photo.jpg --send-reference
 ```
 
 ---
@@ -210,6 +227,33 @@ PosterLoom 自带 **36 个风格契约**（35 个直接风格 + 1 个元风格�
 
 ---
 
+## 🗂️ 办公 Office
+
+独立的办公类 Skill 集合，放在仓库顶层 [`office/`](office/)。
+
+| Skill | 说明 |
+|---|---|
+| **[参考图片全画布高精度复现为可编辑 PowerPoint](office/reference-image-to-editable-pptx/)** | 把一张参考图**重建**为可编辑 PPTX：框体、文字、箭头全部是 PPT 原生对象，图标重绘为 SVG。禁止整页截图贴图、禁止缩放留白。 |
+
+核心约束：**参考图的像素画布就是唯一坐标系**。所有对象在参考图像素坐标中测量，
+直接映射到页面 —— 没有 `uniform_scale`，没有 `offset_x/offset_y`，没有 contain / fit / letterbox。
+
+验收不是"看起来差不多"，而是渲染 PPT 后与参考图做全画布像素比对：
+宽高比误差 0、占用率误差 ≤ 0.5%、内容中心误差 ≤ 0.3%、四个主框体每条边误差 ≤ 3–5 像素。
+
+```bash
+cd office/reference-image-to-editable-pptx
+python3 scripts/selftest.py     # 端到端自测，真实渲染 + 全部阈值校验
+```
+
+安装：
+
+```bash
+cp -r office/reference-image-to-editable-pptx ~/.hermes/skills/
+```
+
+---
+
 ## 🗂️ 项目架构
 
 ```text
@@ -223,6 +267,13 @@ PosterLoom/
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── SECURITY.md
+├── office/                 # 办公类 Skill
+│   ├── README.md
+│   └── reference-image-to-editable-pptx/
+│       ├── SKILL.md
+│       ├── scripts/
+│       ├── references/
+│       └── templates/
 └── posterloom/
     ├── SKILL.md
     ├── styles/          # 36 个 Style Contract

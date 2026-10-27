@@ -1,5 +1,37 @@
 # Changelog｜更新记录
 
+## 1.8.0 — 2026-10-27
+
+### 三图 = 三种不同设计
+
+`render --count 3` 之前只调用一次 API 的 `n=3`,返回的是**同一个 prompt 的三个随机样本**——
+构图完全一样,只有细节抖动。现在每张图使用**独立 prompt + 独立请求**。
+
+- 新增 `scripts/variation.py` —— 按身份模式提供 4 套布局变体池
+  (`REPEAT_VARIANTS` / `ABSTRACT_VARIANTS` / `SINGLE_VARIANTS` / `SCENE_VARIANTS`)
+- `compact_prompt.py` 新增 `layout_override` 与独立 `ARRANGEMENT:` 段
+  - `ARRANGEMENT` 放 LAYOUT 前会被风格默认构图反向覆盖;与 LAYOUT 共用段会被预算裁剪吞掉
+- 有变体时 `STYLE` 印刷机制段升级为 required
+  —— 否则输出会从平面双色印刷退化为 duotone 照片
+- 三张保持同一风格、同一色板、同一媒介、同一身份锁,只改变裁切、主体位置、留白与排列
+- prompt 预算检查从 210 组扩到 **630 组**,新增 ARRANGEMENT / STYLE 存在性
+  与三 prompt 差异校验
+- `posterloom.py selftest` 增至 9 项
+
+### 办公栏目
+
+新增顶层 [`office/`](office/) 目录,收录第一个办公类 Skill:
+**参考图片全画布高精度复现为可编辑 PowerPoint**。
+
+- `office/reference-image-to-editable-pptx/` —— 把参考图**重建**为可编辑 PPTX
+- 框体、文字、箭头全部为 PPT 原生对象;图标重绘为 SVG,不裁切原图
+- 参考图像素画布即唯一坐标系:无 `uniform_scale`、无 `offset_x/offset_y`、无 contain / fit / letterbox
+- 页面比例用整数 EMU 构造,宽高比误差**严格为 0**
+- 渲染后与参考图做全画布像素比对:占用率 ≤ 0.5%、内容中心 ≤ 0.3%、四个主框体每边 ≤ 3–5 像素
+- 端到端自测 **40/40 PASS**(真实渲染 + 全部阈值校验)
+
+---
+
 ## 1.6.0 — 2026-10-23
 
 新增两个纸感拼贴风格,并把人脸身份锁从一种模式扩展为三种。
