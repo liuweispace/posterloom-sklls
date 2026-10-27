@@ -29,6 +29,16 @@
 - 页面比例用整数 EMU 构造,宽高比误差**严格为 0**
 - 渲染后与参考图做全画布像素比对:占用率 ≤ 0.5%、内容中心 ≤ 0.3%、四个主框体每边 ≤ 3–5 像素
 - 端到端自测 **40/40 PASS**(真实渲染 + 全部阈值校验)
+- Skill 更名为 `reference-image-to-full-canvas-editable-pptx`
+  (Skill 名称 `Reference-Image-to-Full-Canvas-Editable-PPTX`)
+- 新增 `references/SPEC-original.md` —— 原始 24 节完整规格书存档,一字未删
+- Skill 目录名缩短为 `office/reference-image-to-pptx`
+  (Skill 名 `Reference-Image-to-Full-Canvas-Editable-PPTX` 保留在 SKILL.md frontmatter)
+- 仓库根 README 重构为 **Skills 集合首页**:
+  开头先列「这里有什么」(两个 Skill + 分类表),每个 Skill 紧跟「怎么用」,
+  再往下才是各 Skill 细节 —— 原来办公栏目埋在第 230 行,用户找不到
+- SKILL.md 补回被压缩的四处内容:「输入与输出」(含 11 项必须输出)、
+  「推荐导入」代码块、「验收阈值」独立章节、「执行清单(26 步)」
 
 ---
 

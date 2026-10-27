@@ -1,28 +1,155 @@
-# PosterLoom
+# LiuWei Skills
 
-**Adaptive Photo-to-Poster Skill** · 自适应照片转海报 Skill
+**A collection of Agent Skills** — each one a directory with a `SKILL.md`, runnable
+scripts and regression tests.
 
-> Analyze the scene. Adapt the style. Weave the poster.
+> The repo is still named `posterloom-sklls` (kept as-is), but it now holds more
+> than one skill.
 
 ![PosterLoom](posterloom/assets/posterloom-mark.svg)
 
 ---
 
-## 📦 Install
+## 📚 What's in here
 
-```text
-Install posterloom-sklls from GitHub for me, and use this skill for all
- image-generation tasks from now on.
+| # | Skill | Directory | One line |
+|---|---|---|---|
+| 1 | **PosterLoom**<br>photo → poster | [`posterloom/`](posterloom/) | Reads the photo, picks a style, prints a flat-colour poster |
+| 2 | **Reference Image to Full-Canvas Editable PowerPoint**<br>`Reference-Image-to-Full-Canvas-Editable-PPTX` | [`office/reference-image-to-pptx/`](office/reference-image-to-pptx/) | **Rebuilds** a reference image as an editable PPTX: native frames / text / arrows, icons redrawn as SVG |
+
+**Sections**
+
+| Section | What it covers |
+|---|---|
+| [🎨 Poster](posterloom/) | photo → style routing → print-grade poster |
+| [🗂️ Office](office/) | reference image → editable PowerPoint |
+
+### ① PosterLoom — photo to poster
+
+```bash
+cd posterloom
+python3 scripts/posterloom.py render photo.jpg --count 3
 ```
 
-Or manually:
+`--count 3` produces **three distinct designs** (not three samples of one prompt):
+each gets its own `ARRANGEMENT:` segment and its own request; all three keep the
+same style / palette / medium / identity lock. See
+[⚡ The one command](#️-the-one-command) below.
+
+### ② Reference image → editable PowerPoint
+
+```text
+Use the reference-image-to-pptx skill to rebuild this reference image as an
+editable PowerPoint.
+
+- The reference image's full pixel canvas is the only coordinate basis — no
+  contain, no fit-inside, no letterbox
+- Rebuild every frame, text run and arrow as a native PPT object; no images
+- Redraw icons as SVG and render them to 128x128 transparent PNG
+- Render the PPT and diff it against the reference across the full canvas,
+  correcting at least twice
+- Finish with an editable PPTX + project ZIP + icon assets ZIP and report the
+  acceptance metrics
+```
+
+See [🗂️ Office](#️-office) below.
+
+---
+
+## 📦 Install
+
+### Install everything
 
 ```bash
 curl -fsSL https://github.com/liuweispace/posterloom-sklls/archive/refs/heads/main.tar.gz | tar xz
 mv posterloom-sklls-main/posterloom ~/.hermes/skills/posterloom
+mv posterloom-sklls-main/office/reference-image-to-pptx ~/.hermes/skills/reference-image-to-pptx
 ```
 
-Requires Python 3.9+. Standard library only — no dependencies, no network access.
+### Install just one
+
+```bash
+# poster
+mv posterloom-sklls-main/posterloom ~/.hermes/skills/posterloom
+
+# office
+mv posterloom-sklls-main/office/reference-image-to-pptx ~/.hermes/skills/reference-image-to-pptx
+```
+
+Or ask the agent:
+
+```text
+Install posterloom-sklls from GitHub for me. Install both posterloom and
+office/reference-image-to-pptx, then use posterloom for generating posters and
+reference-image-to-pptx for editable PowerPoint files.
+```
+
+PosterLoom needs Python 3.9+, **standard library only** — no dependencies, no
+network access. The office skill needs Python 3.10+, Pillow, NumPy, python-pptx
+and LibreOffice (required for the render-and-verify step).
+
+---
+
+## 🗂️ Office
+
+Standalone office skills live in the top-level [`office/`](office/) directory.
+
+| Skill | Directory | What it does |
+|---|---|---|
+| **Reference Image to Full-Canvas Editable PowerPoint**<br>`Reference-Image-to-Full-Canvas-Editable-PPTX` | [`office/reference-image-to-pptx/`](office/reference-image-to-pptx/) | **Rebuilds** a reference image as an editable PPTX: every frame, text run and arrow is a native PowerPoint object, and icons are redrawn as SVG |
+
+### How to use it
+
+Upload the reference image and say:
+
+```text
+Use the reference-image-to-pptx skill to rebuild this reference image as an
+editable PowerPoint.
+
+- The reference image's full pixel canvas is the only coordinate basis — no
+  contain, no fit-inside, no letterbox
+- Rebuild every frame, text run and arrow as a native PPT object; no images
+- Redraw icons as SVG and render them to 128x128 transparent PNG
+- Render the PPT and diff it against the reference across the full canvas,
+  correcting at least twice
+- Finish with an editable PPTX + project ZIP + icon assets ZIP and report the
+  acceptance metrics
+```
+
+The strict version (8 engineering requirements + 9 acceptance requirements)
+lives in
+[`office/reference-image-to-pptx/templates/user-prompt.md`](office/reference-image-to-pptx/templates/user-prompt.md).
+
+### What it guarantees
+
+The governing rule: **the reference image's pixel canvas is the only coordinate
+system.** Every object is measured in reference pixels and mapped straight onto
+the slide — no `uniform_scale`, no `offset_x/offset_y`, no contain / fit /
+letterbox.
+
+Acceptance is not "close enough". The PPTX is rendered and diffed against the
+reference pixel-by-pixel:
+
+| Metric | Threshold |
+|---|---|
+| Page aspect-ratio error | 0 |
+| Horizontal / vertical occupancy error | ≤ 0.5% |
+| Content centre X / Y error | ≤ 0.3% |
+| Each edge of the four main frames | ≤ 3–5 reference pixels |
+| Out-of-bounds / text overflow / Freeform arrows / embedded reference | 0 |
+
+### Install and self-test
+
+```bash
+cp -r office/reference-image-to-pptx ~/.hermes/skills/
+
+cd office/reference-image-to-pptx
+python3 scripts/selftest.py     # end-to-end: real render + every threshold
+```
+
+Requires Python 3.10+, Pillow, NumPy, python-pptx and LibreOffice.
+Full original 24-section spec:
+[`office/reference-image-to-pptx/references/SPEC-original.md`](office/reference-image-to-pptx/references/SPEC-original.md)
 
 ---
 
@@ -230,39 +357,10 @@ The guardrail behind it: a portrait whose likeness must survive is not routed in
 
 ---
 
-## 🗂️ Office
-
-Standalone office skills live in the top-level [`office/`](office/) directory.
-
-| Skill | What it does |
-|---|---|
-| **[Reference Image to Full-Canvas Editable PPTX](office/reference-image-to-editable-pptx/)** | **Rebuilds** a reference image as an editable PPTX: every frame, text run and arrow is a native PowerPoint object, and icons are redrawn as SVG. No full-page screenshots, no scale-to-fit padding. |
-
-The governing rule: **the reference image's pixel canvas is the only coordinate
-system.** Every object is measured in reference pixels and mapped straight onto
-the slide — no `uniform_scale`, no `offset_x/offset_y`, no contain / fit / letterbox.
-
-Acceptance is not "close enough". The PPTX is rendered and diffed against the
-reference pixel-by-pixel: aspect-ratio error 0, occupancy error ≤ 0.5%, content
-centre error ≤ 0.3%, and every edge of the four main frames within 3–5 pixels.
-
-```bash
-cd office/reference-image-to-editable-pptx
-python3 scripts/selftest.py     # end-to-end: real render + every threshold
-```
-
-Install:
-
-```bash
-cp -r office/reference-image-to-editable-pptx ~/.hermes/skills/
-```
-
----
-
 ## 🗂️ Project layout
 
 ```text
-PosterLoom/
+posterloom-sklls/               # LiuWei Skills collection
 ├── README.md
 ├── README.en.md
 ├── README.zh-CN.md
@@ -272,16 +370,26 @@ PosterLoom/
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── SECURITY.md
-└── posterloom/
-    ├── SKILL.md
-    ├── styles/          # 36 style contracts
-    ├── references/      # progressive-disclosure guidance
-    ├── data/            # routing + compatibility + named substrates and inks
-    ├── scripts/         # deterministic helpers
-    ├── evals/           # routing regressions + visual rubric
-    ├── schemas/
-    ├── examples/
-    └── assets/
+├── posterloom/                  # Skill 1 - photo to poster
+│   ├── SKILL.md
+│   ├── styles/                  # 36 style contracts
+│   ├── references/              # progressively loaded specs
+│   ├── data/                    # routing + compatibility + named inks
+│   ├── scripts/                 # deterministic helper scripts
+│   ├── evals/                   # routing regression + visual scoring
+│   ├── schemas/
+│   ├── examples/
+│   └── assets/
+└── office/                      # office section
+    ├── README.md
+    └── reference-image-to-pptx/ # Skill 2 - reference image to editable PPTX
+        ├── SKILL.md
+        ├── scripts/              # engine / validate / icons / manifest / package / selftest
+        ├── references/
+        │   ├── SPEC-original.md  # the original 24-section spec
+        │   └── field-notes.md    # measured pitfalls and root causes
+        └── templates/
+            └── user-prompt.md    # three tiers of user prompts
 ```
 
 ---

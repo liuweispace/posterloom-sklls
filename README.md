@@ -1,27 +1,138 @@
-# PosterLoom
+# LiuWei Skills
 
-**Adaptive Photo-to-Poster Skill** · 自适应照片转海报 Skill
+**Agent Skill 集合** —— 每个 Skill 一个目录，含 `SKILL.md` + 可执行脚本 + 回归测试。
 
-> 读懂照片，自适应风格，把真实场景编织成海报。
+> 仓库原名 `posterloom-sklls`（沿用不改），现已收纳多个 Skill。
 
 ![PosterLoom](posterloom/assets/posterloom-mark.svg)
 
 ---
 
-## 📦 安装
+## 📚 这里有什么
 
-```text
-现在帮我从 github 安装这个 posterloom-sklls，并且之后生成图片都使用这个 sklls。
+| # | Skill | 目录 | 一句话 |
+|---|---|---|---|
+| 1 | **PosterLoom**<br>照片转海报 | [`posterloom/`](posterloom/) | 读懂照片，自适应选风格，生成平面印刷风海报 |
+| 2 | **参考图片全画布高精度复现为可编辑 PowerPoint 工程**<br>`Reference-Image-to-Full-Canvas-Editable-PPTX` | [`office/reference-image-to-pptx/`](office/reference-image-to-pptx/) | 把一张参考图**重建**为可编辑 PPTX：原生框体 / 文字 / 箭头，图标重绘为 SVG |
+
+**分类**
+
+| 栏目 | 内容 |
+|---|---|
+| [🎨 海报生成 Poster](posterloom/) | 照片 → 风格路由 → 印刷级海报 |
+| [🗂️ 办公 Office](office/) | 参考图 → 可编辑 PowerPoint |
+
+### ① PosterLoom —— 照片转海报
+
+```bash
+cd posterloom
+python3 scripts/posterloom.py render photo.jpg --count 3
 ```
 
-或者手动：
+`--count 3` 产出**三种不同设计**（不是同一张的三个样本）：每张独立构造
+`ARRANGEMENT:` 段、独立请求一次，三张保持同一风格 / 色板 / 媒介 / 身份锁。
+详见下方 [⚡ 一条命令](#️-一条命令)。
+
+### ② 参考图片 → 可编辑 PowerPoint
+
+```text
+用 reference-image-to-pptx skill 把这张参考图重建为可编辑的 PowerPoint。
+
+- 参考图的完整像素画布作为唯一坐标基准，不要 contain、不要留白缩放
+- 所有框体、文字、箭头用 PPT 原生对象重建，不要贴图
+- 图标重绘为 SVG，渲染成 128×128 透明 PNG 后插入
+- 渲染 PPT 并与参考图做全画布对比，至少校正两轮
+- 最后给我可编辑 PPTX + 工程 ZIP + 图标素材 ZIP，并报告验收指标
+```
+
+详见下方 [🗂️ 办公 Office](#️-办公-office)。
+
+---
+
+## 🗂️ 办公 Office
+
+独立办公类 Skill，放在仓库顶层 [`office/`](office/)。
+
+| Skill | 目录 | 说明 |
+|---|---|---|
+| **参考图片全画布高精度复现为可编辑 PowerPoint 工程**<br>`Reference-Image-to-Full-Canvas-Editable-PPTX` | [`office/reference-image-to-pptx/`](office/reference-image-to-pptx/) | 把一张参考图**重建**为可编辑 PPTX：框体、文字、箭头全部是 PPT 原生对象，图标重绘为 SVG |
+
+### 怎么用
+
+上传参考图后直接说：
+
+```text
+用 reference-image-to-pptx skill 把这张参考图重建为可编辑的 PowerPoint。
+
+- 参考图的完整像素画布作为唯一坐标基准，不要 contain、不要留白缩放
+- 所有框体、文字、箭头用 PPT 原生对象重建，不要贴图
+- 图标重绘为 SVG，渲染成 128×128 透明 PNG 后插入
+- 渲染 PPT 并与参考图做全画布对比，至少校正两轮
+- 最后给我可编辑 PPTX + 工程 ZIP + 图标素材 ZIP，并报告验收指标
+```
+
+更严格的版本（含 8 条工程要求 + 9 条验收要求）在
+[`office/reference-image-to-pptx/templates/user-prompt.md`](office/reference-image-to-pptx/templates/user-prompt.md)。
+
+### 它保证什么
+
+核心约束：**参考图的像素画布就是唯一坐标系**。所有对象在参考图像素坐标中测量，
+直接映射到页面 —— 没有 `uniform_scale`，没有 `offset_x/offset_y`，没有 contain / fit / letterbox。
+
+验收不是"看起来差不多"，而是渲染 PPT 后与参考图做全画布像素比对：
+
+| 指标 | 阈值 |
+|---|---|
+| 页面宽高比误差 | 0 |
+| 水平 / 垂直占用率误差 | ≤ 0.5% |
+| 内容中心 X / Y 误差 | ≤ 0.3% |
+| 四个主框体每条边误差 | ≤ 3–5 个参考像素 |
+| 对象越界 / 文字溢出 / Freeform 箭头 / 嵌入参考图 | 0 |
+
+### 安装与自测
+
+```bash
+cp -r office/reference-image-to-pptx ~/.hermes/skills/
+
+cd office/reference-image-to-pptx
+python3 scripts/selftest.py     # 端到端：真实渲染 + 全部阈值校验
+```
+
+依赖：Python 3.10+、Pillow、NumPy、python-pptx、LibreOffice（渲染验收必需）。
+原始 24 节完整规格书：[`office/reference-image-to-pptx/references/SPEC-original.md`](office/reference-image-to-pptx/references/SPEC-original.md)
+
+---
+
+## 📦 安装
+
+### 全部装上
 
 ```bash
 curl -fsSL https://github.com/liuweispace/posterloom-sklls/archive/refs/heads/main.tar.gz | tar xz
 mv posterloom-sklls-main/posterloom ~/.hermes/skills/posterloom
+mv posterloom-sklls-main/office/reference-image-to-pptx ~/.hermes/skills/reference-image-to-pptx
 ```
 
-需要 Python 3.9+。仅用标准库 —— 无第三方依赖，无网络访问。
+### 只装一个
+
+```bash
+# 海报
+mv posterloom-sklls-main/posterloom ~/.hermes/skills/posterloom
+
+# 办公
+mv posterloom-sklls-main/office/reference-image-to-pptx ~/.hermes/skills/reference-image-to-pptx
+```
+
+给 Hermes 的自然语言指令：
+
+```text
+现在帮我从 github 安装这个 posterloom-sklls，
+把里面的 posterloom 和 office/reference-image-to-pptx 都装上，
+之后生成海报用 posterloom，做可编辑 PPT 用 reference-image-to-pptx。
+```
+
+PosterLoom 需要 Python 3.9+，**仅用标准库** —— 无第三方依赖，无网络访问。
+办公 Skill 需要 Python 3.10+、Pillow、NumPy、python-pptx、LibreOffice（渲染验收必需）。
 
 ---
 
@@ -227,37 +338,10 @@ PosterLoom 自带 **36 个风格契约**（35 个直接风格 + 1 个元风格�
 
 ---
 
-## 🗂️ 办公 Office
-
-独立的办公类 Skill 集合，放在仓库顶层 [`office/`](office/)。
-
-| Skill | 说明 |
-|---|---|
-| **[参考图片全画布高精度复现为可编辑 PowerPoint](office/reference-image-to-editable-pptx/)** | 把一张参考图**重建**为可编辑 PPTX：框体、文字、箭头全部是 PPT 原生对象，图标重绘为 SVG。禁止整页截图贴图、禁止缩放留白。 |
-
-核心约束：**参考图的像素画布就是唯一坐标系**。所有对象在参考图像素坐标中测量，
-直接映射到页面 —— 没有 `uniform_scale`，没有 `offset_x/offset_y`，没有 contain / fit / letterbox。
-
-验收不是"看起来差不多"，而是渲染 PPT 后与参考图做全画布像素比对：
-宽高比误差 0、占用率误差 ≤ 0.5%、内容中心误差 ≤ 0.3%、四个主框体每条边误差 ≤ 3–5 像素。
-
-```bash
-cd office/reference-image-to-editable-pptx
-python3 scripts/selftest.py     # 端到端自测，真实渲染 + 全部阈值校验
-```
-
-安装：
-
-```bash
-cp -r office/reference-image-to-editable-pptx ~/.hermes/skills/
-```
-
----
-
 ## 🗂️ 项目架构
 
 ```text
-PosterLoom/
+posterloom-sklls/               # LiuWei Skills 集合
 ├── README.md
 ├── README.en.md
 ├── README.zh-CN.md
@@ -267,23 +351,26 @@ PosterLoom/
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── SECURITY.md
-├── office/                 # 办公类 Skill
-│   ├── README.md
-│   └── reference-image-to-editable-pptx/
-│       ├── SKILL.md
-│       ├── scripts/
-│       ├── references/
-│       └── templates/
-└── posterloom/
-    ├── SKILL.md
-    ├── styles/          # 36 个 Style Contract
-    ├── references/      # 渐进式加载的规范
-    ├── data/            # 路由 + 兼容性数据 + 具名纸基油墨
-    ├── scripts/         # 确定性辅助脚本
-    ├── evals/           # 路由回归 + 视觉打分模板
-    ├── schemas/
-    ├── examples/
-    └── assets/
+├── posterloom/                  # Skill ① —— 照片转海报
+│   ├── SKILL.md
+│   ├── styles/                  # 36 个 Style Contract
+│   ├── references/              # 渐进式加载的规范
+│   ├── data/                    # 路由 + 兼容性数据 + 具名纸基油墨
+│   ├── scripts/                 # 确定性辅助脚本
+│   ├── evals/                   # 路由回归 + 视觉打分模板
+│   ├── schemas/
+│   ├── examples/
+│   └── assets/
+└── office/                      # 办公栏目
+    ├── README.md
+    └── reference-image-to-pptx/ # Skill ② —— 参考图 → 可编辑 PPTX
+        ├── SKILL.md
+        ├── scripts/              # 引擎 / 校验 / 图标 / manifest / 打包 / 自测
+        ├── references/
+        │   ├── SPEC-original.md  # 原始 24 节完整规格书
+        │   └── field-notes.md    # 实测踩坑与根因
+        └── templates/
+            └── user-prompt.md    # 三档用户提示词
 ```
 
 ---
