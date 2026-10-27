@@ -83,10 +83,25 @@ cd ~/.hermes/skills/reference-image-to-pptx && python3 scripts/selftest.py
 
 ### 怎么用
 
-上传参考图后直接说：
+**一条提示词搞定**（复制这个，连图一起发）：
 
 ```text
-用 reference-image-to-pptx skill 把这张参考图重建为可编辑的 PowerPoint。
+帮我从 github 安装 https://github.com/liuweispace/posterloom-sklls 里的
+office/reference-image-to-pptx skill（装到 ~/.hermes/skills/ 下），
+装完跑一次它的自测脚本确认，然后把我上传的这张参考图重建为可编辑的 PowerPoint。
+
+要求：
+- 参考图的完整像素画布作为唯一坐标基准，不要 contain、不要留白缩放
+- 所有框体、文字、箭头用 PPT 原生对象重建，不要贴图
+- 图标重绘为 SVG，渲染成 128×128 透明 PNG 后插入
+- 渲染 PPT 并与参考图做全画布对比，至少校正两轮
+- 最后给我可编辑 PPTX + 工程 ZIP + 图标素材 ZIP，并报告验收指标
+```
+
+**已经装好了**就只说后半段：
+
+```text
+用 reference-image-to-pptx skill 把我上传的这张参考图重建为可编辑的 PowerPoint。
 
 - 参考图的完整像素画布作为唯一坐标基准，不要 contain、不要留白缩放
 - 所有框体、文字、箭头用 PPT 原生对象重建，不要贴图
