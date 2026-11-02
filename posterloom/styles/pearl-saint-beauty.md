@@ -61,9 +61,9 @@ medium
 ## Style-specific prompt block
 Transform the source photograph using the **Pearl Saint Beauty** visual system. The photograph is the factual anchor and the face is FIXED GEOMETRY. The makeup is the requested content and MUST be applied to that exact face.
 
-Makeup protocol, in order: (1) thin semi-matte base, skin texture still visible, localised concealer only; (2) champagne-gold highlight on cheekbone, inner eye corner, brow bone and nose tip, every high point warm gold; (3) taupe shadow over the lid, dusty rose at the outer eye, thin deep-brown liner, lashes in separated clumps; (4) matte apricot blush swept from under-eye to mid-face, nude-pink tint on the lips with the lip texture showing through.
+Makeup protocol, in order: (1) thin semi-matte base, skin texture still visible, localised concealer only; (2) a soft warm champagne sheen across the cheekbone, inner eye, brow bone and nose tip; (3) taupe shadow over the lid, dusty rose at the outer eye, thin deep-brown liner, lashes in separated clumps; (4) matte apricot blush swept from under-eye to mid-face, nude-pink tint on the lips with the lip texture showing through.
 
-Pearls: ten solid opaque ivory beads worn on the skin like fine jewellery, each a smooth round matte-nacre sphere with one pinpoint reflection. Sparse scatter under-eye, outer eye and upper cheekbone; uneven sizes, loose clusters, never a row, never over the pupil or the lip. Cool ivory with a faint blue-grey nacre sheen — the only hard specular objects in a soft warm-toned face.
+Pearls: 8 to 12 solid opaque ivory beads set into the skin, each a smooth round matte-nacre sphere, across the under-eye, outer eye and upper cheekbone. Uneven sizes, loose clusters, never a row, never over the pupil or the lip. Cool ivory with a faint blue-grey nacre sheen — the only hard specular objects in a soft warm-toned face.
 
 Setting: vintage cold-white studio portrait. One large soft key slightly above and to the left, broad wrap across the cheekbone, soft falloff into the jaw, pale seamless backdrop one stop above the skin, shallow depth of field, vertical frame.
 
@@ -72,7 +72,7 @@ Colour: warm cocoa-and-pearl palette — warm beige and taupe base, champagne-go
 Typography: optional small editorial serif in the upper margin or lower corner, never across the face or the pearls.
 
 ## Style-specific negative prompt
-no silver or blue-white highlight, no rows of pearls, no pearls over the pupil or lip, no heavy contouring, no harsh black eyeliner, no thick false lashes, no over-thick lipstick, no orange skin, no heavy foundation mask, no patchy or cakey base, no plastic or airbrushed skin, no changed face shape or width, no changed jawline or chin, no altered eye shape, eye size, or eye spacing, no eyebrow shape or position change, no nose width or bridge change, no lip or mouth width change, no changed hairline, no skin tone or undertone shift, no age shift or de-aging, no face slimming, no nose lift, no eye enlargement, no face duplication, no composite or merged faces, no new or different person, no model-default or idealized face, no celebrity lookalike, no text over the face.
+no rows of pearls, no pearls over the pupil or lip, no silver or blue-white highlight, no heavy foundation mask, no plastic or airbrushed skin, no changed face shape or width, no changed jawline or chin, no altered eye shape, eye size, or eye spacing, no nose width or bridge change, no lip or mouth width change, no age shift or de-aging, no face slimming, no eye enlargement, no new or different person, no model-default or idealized face, no celebrity lookalike.
 
 ## Variation knobs
 - crop tight-bust/half-body

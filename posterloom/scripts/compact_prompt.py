@@ -42,6 +42,7 @@ what the mechanism already said.
 from __future__ import annotations
 
 import re
+from functools import lru_cache
 
 DEFAULT_BUDGET = 1400
 
@@ -501,7 +502,7 @@ def _color_core(style: dict, max_ramps: int = 1, limit: int = 0,
     return _clip(text, limit)
 
 
-def _clip_steps(text: str, limit: int, prefer_complete: bool = True) -> str:
+def _clip_steps_impl(text: str, limit: int, prefer_complete: bool = True) -> str:
     """Trim a step-wise protocol without cutting a step in half.
 
     A protocol is written as numbered steps separated by semicolons, e.g.
@@ -628,7 +629,32 @@ def _shrink_steps(parts: list, limit: int) -> str:
     return " ".join(x for x in shrunk if x.strip())
 
 
+_INTACT_CACHE: dict = {}
+_SCORE_CACHE: dict = {}
+
+
 def _protocol_intact(clipped: str, source: str) -> bool:
+    """Cached wrapper around the strict protocol check.
+
+    The candidate search evaluates hundreds of thousands of prompts, and
+    the check runs three regex passes each time. Caching on the clipped
+    protocol text makes the search cost a dictionary lookup instead of a
+    regex sweep — without the cache, build_compact pegged the CPU at
+    64% for minutes and never returned.
+    """
+    if not source:
+        return True
+    key = (clipped, source)
+    hit = _INTACT_CACHE.get(key)
+    if hit is None:
+        hit = _protocol_intact_uncached(clipped, source)
+        if len(_INTACT_CACHE) > 4096:
+            _INTACT_CACHE.clear()
+        _INTACT_CACHE[key] = hit
+    return hit
+
+
+def _protocol_intact_uncached(clipped: str, source: str) -> bool:
     """True when every numbered step and the trailing clause survived whole.
 
     The clipper may shorten a step by dropping its tail, so "the step is
@@ -657,10 +683,56 @@ def _protocol_intact(clipped: str, source: str) -> bool:
     return True
 
 
+def _score_sections(proto: str, look: str, avoid: str, layout: str,
+                    look_source: str, avoid_source: str,
+                    style: dict = None) -> tuple:
+    """Score a candidate from its section texts.
+
+    Split out from _completeness_score so the search loop can rank a
+    candidate without assembling and re-splitting the whole prompt
+    string. The search evaluates hundreds of thousands of candidates and
+    the string work dominated the runtime.
+
+    The score depends only on the four section texts and the sources, and
+    the search revisits the same section texts over and over — the
+    protocol alone has eleven possible lengths, so the distinct
+    combinations are a tiny fraction of the candidate count. Memoising
+    here removes the last hot spot in the search.
+    """
+    key = (proto, look, avoid, layout, look_source, avoid_source,
+           id(style) if style is not None else 0)
+    hit = _SCORE_CACHE.get(key)
+    if hit is None:
+        hit = _score_sections_impl(
+            proto, look, avoid, layout, look_source, avoid_source, style)
+        if len(_SCORE_CACHE) > 65536:
+            _SCORE_CACHE.clear()
+        _SCORE_CACHE[key] = hit
+    return hit
+
+
 def _completeness_score(candidate: str, look_source: str = "",
                         avoid_source: str = "",
                         style: dict = None) -> tuple:
     """Rank candidate prompts by how much of each section survived.
+
+    Thin wrapper: extract the sections from the assembled prompt, then
+    delegate to _score_sections.
+    """
+    def section(prefix):
+        for line in candidate.split("\n"):
+            if line.startswith(prefix):
+                return line
+        return ""
+    return _score_sections(
+        section("PROTOCOL:"), section("LOOK:"), section("AVOID:"),
+        section("LAYOUT:"), look_source, avoid_source, style)
+
+
+def _score_sections_impl(proto: str, look: str, avoid: str, layout: str,
+                         look_source: str, avoid_source: str,
+                         style: dict = None) -> tuple:
+    """Rank a candidate from its section texts.
 
     Length alone is the wrong metric — a candidate that fits by throwing
     away the negatives is not better than one that fits by shortening the
@@ -671,16 +743,10 @@ def _completeness_score(candidate: str, look_source: str = "",
     The tuple is compared lexicographically: protocol first, then the
     negatives, then the look, then everything else.
     """
-    def section(prefix):
-        for line in candidate.split("\n"):
-            if line.startswith(prefix):
-                return line
-        return ""
-
-    proto = section("PROTOCOL:")
-    avoid = section("AVOID:")
-    look = section("LOOK:")
-    layout = section("LAYOUT:")
+    proto = proto
+    avoid = avoid
+    look = look
+    layout = layout
     # A protocol is complete when it still carries every numbered step
     # and its trailing clause (for the pearl style, the bead rule).
     # A protocol is complete only when every step still carries real
@@ -760,7 +826,7 @@ def _completeness_score(candidate: str, look_source: str = "",
     )
 
 
-def _clip_clauses(text: str, limit: int) -> str:
+def _clip_clauses_impl(text: str, limit: int) -> str:
     """Clip a comma-separated list of short phrases on clause boundaries.
 
     The negatives are independent phrases ("no glitter specks", "no rows
@@ -802,7 +868,36 @@ def _clip_words(text: str, limit: int) -> str:
     return cut.rstrip(" ,;:")
 
 
-def _clip_sentences(text: str, limit: int) -> str:
+# --- memoisation for the candidate search -------------------------------
+#
+# build_compact evaluates the cross product of nine section limits
+# (protocol x look x avoid x arrangement x style x subject x source x
+# layout x colour), roughly five million candidates per lock variant.
+# Every one of them re-clipped every section from scratch, so the search
+# took 75 seconds and pegged the CPU — a render never finished.
+#
+# These three helpers are pure: the same (text, limit) always yields the
+# same output, and only a handful of limit values are ever tried per
+# section. Caching them turns the search from re-deriving every clip
+# into a dictionary lookup.
+
+@lru_cache(maxsize=8192)
+def _clip_sentences_cached(text: str, limit: int) -> str:
+    return _clip_sentences_impl(text, limit)
+
+
+@lru_cache(maxsize=8192)
+def _clip_clauses_cached(text: str, limit: int) -> str:
+    return _clip_clauses_impl(text, limit)
+
+
+@lru_cache(maxsize=8192)
+def _clip_steps_cached(text: str, limit: int) -> str:
+    return _clip_steps_impl(text, limit)
+
+
+
+def _clip_sentences_impl(text: str, limit: int) -> str:
     """Trim to whole sentences, so a fact is never cut in half.
 
     A character-level cut through the middle of a sentence produces a prompt
@@ -832,6 +927,13 @@ def _clip_sentences(text: str, limit: int) -> str:
         return _clip(joined, limit) if len(joined) > limit else joined
     return _clip(text, limit)
 
+
+
+
+# Public, memoised entry points. The search loop calls these.
+_clip_sentences = _clip_sentences_cached
+_clip_clauses = _clip_clauses_cached
+_clip_steps = _clip_steps_cached
 
 def _subject_core(profile: dict, style: dict, mode: str = "print") -> str:
     """Describe the subject concretely, in print language.
@@ -1133,6 +1235,58 @@ def build_compact(profile: dict, style: dict, budget: int = DEFAULT_BUDGET,
                 parts.append(text)
         return "\n".join(parts)
 
+
+    def assembled_length(req, labels):
+        """Length of the prompt that build(req, []) would produce.
+
+        The candidate search measures millions of prompts and most of
+        them are too long, so joining the strings only for the ones that
+        fit is much cheaper than joining every one of them.
+        """
+        total = 0
+        count = 0
+        for name, text, _floor in req:
+            if not text:
+                continue
+            lab = labels.get(name)
+            if lab and not text.startswith(lab):
+                total += len(lab) + 1 + len(text)
+            else:
+                total += len(text)
+            count += 1
+        if count:
+            total += count - 1
+        return total
+
+
+    # The candidate search is a cross product of nine section limits, so
+    # the same section content is assembled into millions of prompts.
+    # Scoring only reads the sections, not the assembled string, so the
+    # score is computed from the section texts directly — no string join
+    # per candidate. The join happens once, for the winner.
+    def score_parts(parts, look_src, avoid_src, style_obj):
+        """Rank a candidate from its section texts.
+
+        `look_src` and `avoid_src` are the FULL source texts; the parts
+        carry the clipped versions.
+        """
+        proto_text = ""
+        look_text = ""
+        avoid_text = ""
+        layout_text = ""
+        for name, text, _floor in parts:
+            if name == "protocol":
+                proto_text = text
+            elif name == "look":
+                look_text = text
+            elif name == "avoid":
+                avoid_text = text
+            elif name == "layout":
+                layout_text = text
+        return _score_sections(
+            proto_text, look_text, avoid_text, layout_text,
+            look_src, avoid_src, style_obj)
+
     # Try the full thing first.
     candidate = build(required, optional)
     if len(candidate) <= budget:
@@ -1245,13 +1399,18 @@ def build_compact(profile: dict, style: dict, budget: int = DEFAULT_BUDGET,
                                   if arrangement:
                                       req.append(("style", _clip_sentences(
                                           style_core, sty_lim), 120))
-                                  candidate = build(req, [])
-                                  if len(candidate) <= budget:
-                                      score = _completeness_score(
-                                          candidate, look, avoid, style)
+                                  # Measure without joining. The prompt
+                                  # is the parts joined by newlines, so its
+                                  # length is the sum of the part lengths
+                                  # plus one separator each. Building the
+                                  # string for every candidate was the
+                                  # single biggest cost in the search.
+                                  if assembled_length(req, labels) <= budget:
+                                      score = score_parts(
+                                          req, look, avoid, style)
                                       if best_score is None or score > best_score:
                                           best_score = score
-                                          best = candidate
+                                          best = build(req, [])
 
     if best is not None:
         return _enforce_budget(best, budget, style, needs_lock)
@@ -1432,3 +1591,4 @@ if __name__ == "__main__":
     text = build_compact(profile, style)
     print(f"[{len(text)} chars, budget {DEFAULT_BUDGET}]\n")
     print(text)
+
