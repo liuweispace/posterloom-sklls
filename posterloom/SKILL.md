@@ -266,10 +266,10 @@ posterloom/
 
 ## References
 
-- [Generation pipeline](references/generation-pipeline.md) — how images are made, and the measurements behind each choice
+- [Generation pipeline](references/generation-pipeline.md) — how images are made, and the measurements behind each choice. Includes the rule that a negative clause still seeds its noun: naming a thing you do not want, or a body region you want left bare, makes the model draw it
 - [Scene analysis](references/scene-analysis.md) — profile fields, identity anchors, the analyzer
 - [Style router](references/style-router.md) — ranking, artistic dial, portrait guard, hybrid rules
-- [Identity preservation](references/identity-preservation.md) — likeness enforcement and QA
+- [Identity preservation](references/identity-preservation.md) — likeness enforcement and QA, including why the lock needs a source photo it could actually fail against
 - [Prompt composer](references/prompt-composer.md) — how prompts are assembled
 - [Composition](references/composition.md) and [typography](references/typography.md)
 - [Anti-slop](references/anti-slop.md) — failure modes to actively avoid
