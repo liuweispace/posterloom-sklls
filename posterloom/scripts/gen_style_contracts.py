@@ -1,1 +1,194 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJHZW5lcmF0ZSBzdHlsZSBjb250cmFjdCAubWQgZmlsZXMgZnJvbSBkYXRhL3N0eWxlcy5qc29uLgoKVGhlIGxpYnJhcnkgcHJldmlvdXNseSByZWdpc3RlcmVkIHN0eWxlcyBpbiBKU09OIHdpdGhvdXQgYSBtYXRjaGluZyBjb250cmFjdApmaWxlLCBzbyB0aGUgYWdlbnQncyBzdGVwICJsb2FkIHRoZSBjaG9zZW4gc3R5bGUgY29udHJhY3QiIHNpbGVudGx5IGZhaWxlZCBmb3IKdGhvc2Ugc3R5bGVzLiBHZW5lcmF0aW5nIGNvbnRyYWN0cyBmcm9tIHRoZSBKU09OIG1ha2VzIGRyaWZ0IGltcG9zc2libGU6IHRoZQpKU09OIHN0YXlzIHRoZSBzaW5nbGUgc291cmNlIG9mIHRydXRoLgoKRXhpc3RpbmcgY29udHJhY3RzIGFyZSBsZWZ0IHVudG91Y2hlZCB1bmxlc3MgLS1mb3JjZSBpcyBwYXNzZWQuCiIiIgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgYXJncGFyc2UKaW1wb3J0IGpzb24KaW1wb3J0IHJlCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aAoKUk9PVCA9IFBhdGgoX19maWxlX18pLnJlc29sdmUoKS5wYXJlbnRzWzFdClNUWUxFU19KU09OID0gUk9PVCAvICJkYXRhL3N0eWxlcy5qc29uIgpTVFlMRVNfRElSID0gUk9PVCAvICJzdHlsZXMiCgpFWEVDX0NPTlRSQUNUID0gIiIiMS4gVHJlYXQgdGhlIHVwbG9hZGVkIHNvdXJjZSBwaG90b2dyYXBoIGFzIHRoZSBzaW5nbGUgZmFjdHVhbCBhbmQgdmlzdWFsIGFuY2hvci4KMi4gUHJvdGVjdCB0aGUgc2NlbmUtYW5hbHlzaXMgaWRlbnRpdHkgYW5jaG9ycyBiZWZvcmUgc3R5bGl6YXRpb24uCjMuIFByb2R1Y2Ugb25lIGZpbmlzaGVkIHBvc3Rlciwgbm90IGEgY29sbGFnZSwgY29udGFjdCBzaGVldCwgbW9vZGJvYXJkLCBzY3JhcGJvb2ssIGFsYnVtLCBvciBtdWx0aS1wYW5lbCBsYXlvdXQuCjQuIFByZXNlcnZlIHNvdXJjZSB0cnV0aDogZG8gbm90IGludmVudCBwZW9wbGUsIGJyYW5kcywgZGF0ZXMsIGxhbmRtYXJrcywgc2lnbmF0dXJlcywgc2VhbHMsIGNvc3R1bWVzLCBvciBmYWN0dWFsIGNsYWltcy4KNS4gQXBwbHkgdGhpcyBzdHlsZSB0aHJvdWdoIGl0cyBhY3R1YWwgdmlzdWFsIG1lY2hhbmlzbSwgbm90IGEgZ2VuZXJpYyBwcmVzZXQuCjYuIEtlZXAgdHlwb2dyYXBoeSBzdWJvcmRpbmF0ZSB0byB0aGUgaW1hZ2UsIG5vcm1hbGx5IG5vIG1vcmUgdGhhbiA14oCTMTAlIG9mIHRoZSB2aXN1YWwgYXJlYS4KNy4gVXNlIHRoZSBzb3VyY2UtZGVyaXZlZCBwYWxldHRlIHVubGVzcyB0aGUgc3R5bGUgY29udHJhY3QgZXhwbGljaXRseSBwZXJtaXRzIGEgY29udHJvbGxlZCByZWludGVycHJldGF0aW9uLgo4LiBTdG9wIHN0eWxpemF0aW9uIGJlZm9yZSBpdCBkYW1hZ2VzIGlkZW50aXR5LCBwZXJzcGVjdGl2ZSwgbWF0ZXJpYWwgcGxhdXNpYmlsaXR5LCBvciBjdWx0dXJhbCBhY2N1cmFjeS4iIiIKCkhZQlJJRCA9ICIiIkRpcmVjdCBzdHlsZXMgbWF5IGVudGVyIGBDb250cm9sbGVkIEh5YnJpZGAgb25seSBpZiB0aGVpciBwYWlyIGFwcGVhcnMgaW4gYGRhdGEvY29tcGF0aWJpbGl0eS5qc29uYC4gVGhlIHByaW1hcnkga2VlcHMgc3ViamVjdCBpZGVudGl0eSwgY29tcG9zaXRpb24sIGxpZ2h0aW5nLCBwYWxldHRlLCBhbmQgcmVhbGlzbS4gVGhlIHNlY29uZGFyeSBjb250cm9scyBvbmUgZGVjbGFyZWQgc3Vic3lzdGVtIG9ubHkuIiIiCgpQT1JUUkFJVF9GQUlMVVJFID0gIiIiLSBHZW5lcmF0aW5nIGEgbmV3IG9yIGdlbmVyaWMgZmFjZSB3aGVuIHRoZSBzb3VyY2UgcGVyc29uIG11c3Qgc3RheSByZWNvZ25pemFibGUuCi0gQXZlcmFnaW5nIHRoZSBmYWNlIHRvd2FyZCBhIG1vZGVsLWRlZmF1bHQgb3IgaWRlYWxpemVkIGxvb2suCi0gTGV0dGluZyB0aGUgc3R5bGUncyBtZWRpdW0gcmVpbnRlcnByZXQgZmFjaWFsIHN0cnVjdHVyZS4KLSBTbW9vdGhpbmcsIHJlc2hhcGluZywgb3IgYmVhdXRpZnlpbmcgdGhlIGZhY2UuCi0gTG9zaW5nIHNvdXJjZS1zcGVjaWZpYyBhbmNob3JzOiBleWUgc2hhcGUsIGJyb3cgc2hhcGUsIGhhaXJsaW5lLCBza2luIHRvbmUsIGFnZSBjdWVzLgotIFBsYWNpbmcgdHlwb2dyYXBoeSBvciBncmFwaGljIGVsZW1lbnRzIGFjcm9zcyB0aGUgZmFjZS4iIiIKClBPUlRSQUlUX1NFTEZDSEVDSyA9ICIiIi0gSXMgdGhpcyB0aGUgc2FtZSBwZXJzb24gYXMgaW4gdGhlIHNvdXJjZSwgbm90IGEgc2ltaWxhci1sb29raW5nIGludmVudGVkIHBlcnNvbj8KLSBEbyBmYWNlIHNoYXBlLCBleWUgc2hhcGUvc3BhY2luZywgZXllYnJvdyBzaGFwZSwgbm9zZSBzaGFwZSwgbW91dGggc2hhcGUsIGhhaXJsaW5lLCBhbmQgc2tpbiB0b25lIGFsbCBtYXRjaD8KLSBJcyB0aGUgZXhwcmVzc2lvbiBhbmQgZ2F6ZSBkaXJlY3Rpb24gcHJlc2VydmVkPwotIEFyZSB0aGVyZSBubyBhZGRlZCBiZWF1dGlmaWNhdGlvbnMsIGFnZSBzaGlmdHMsIG9yIG1ha2V1cD8KLSBJcyB0aGUgZmFjZSBmdWxseSBpbnNpZGUgdGhlIGZyYW1lIHdpdGggbWFyZ2luLCBhbmQgZnJlZSBvZiBncmFwaGljIG92ZXJsYXlzPyIiIgoKR0VORVJJQ19GQUlMVVJFID0gIiIiLSBBcHBseWluZyB0aGUgc2FtZSB0ZXh0dXJlIG9yIGVmZmVjdCB1bmlmb3JtbHkgdG8gZXZlcnkgcGl4ZWwuCi0gUmVwbGFjaW5nIHNvdXJjZS1zcGVjaWZpYyBzdHJ1Y3R1cmUgd2l0aCBnZW5lcmljIEFJIGltYWdlcnkuCi0gT3ZlcnNpemluZyB0eXBvZ3JhcGh5IHVudGlsIHRleHQgYmVjb21lcyB0aGUgc3ViamVjdC4KLSBJbnZlbnRpbmcgY29udGVudCB0byBtYWtlIGEgc3R5bGUgc3RlcmVvdHlwZSBtb3JlIG9idmlvdXMuCi0gSWdub3JpbmcgbWF0ZXJpYWwgZGlmZmVyZW5jZXMgYmV0d2VlbiBzdXJmYWNlcy4KLSBUdXJuaW5nIGJhdGNoIGNvbnNpc3RlbmN5IGludG8gZm9yY2VkIHZpc3VhbCBzYW1lbmVzcy4iIiIKCkdFTkVSSUNfU0VMRkNIRUNLID0gIiIiLSBJcyB0aGUgc291cmNlIHN0aWxsIGltbWVkaWF0ZWx5IHJlY29nbml6YWJsZT8KLSBDYW4gbWFqb3Igc3R5bGl6ZWQgZWxlbWVudHMgYmUgdHJhY2VkIHRvIHRoZSBzb3VyY2Ugb3IgdGhpcyBzdHlsZSdzIG1lY2hhbmlzbT8KLSBJcyB0aGUgY29tcG9zaXRpb24gbWF0ZXJpYWxseSBkaWZmZXJlbnQgZnJvbSBhIHNpbXBsZSBmaWx0ZXI/Ci0gSXMgdGV4dCBzbWFsbCwgbGVnaWJsZSwgYW5kIG91dHNpZGUgaWRlbnRpdHktY3JpdGljYWwgcmVnaW9ucz8KLSBBcmUgdGhlcmUgaW52ZW50ZWQgZmFjdHMsIGV4dHJhIHN1YmplY3RzLCBtYWxmb3JtZWQgc3RydWN0dXJlcywgb3IgZmFrZSBjaGFyYWN0ZXJzPwotIERvZXMgdGhlIG91dHB1dCByZWFkIGFzIHRoaXMgc3R5bGUgc3BlY2lmaWNhbGx5IHJhdGhlciB0aGFuIGdlbmVyaWMg4oCcQUkgYXJ04oCdPyIiIgoKQUNDRVBUQU5DRSA9ICIiIlVzZSBgcmVmZXJlbmNlcy92aXN1YWwtYmVuY2htYXJrLm1kYC4gQSBwcm9kdWN0aW9uIGltYWdlIHNob3VsZCBub3JtYWxseSBzY29yZSBhdCBsZWFzdCAxNy8yMCBhY3Jvc3MgaWRlbnRpdHksIGNvbXBvc2l0aW9uLCBsaWdodGluZywgcGFsZXR0ZSwgbWF0ZXJpYWwgYmVoYXZpb3IsIGVkZ2VzLCB0eXBvZ3JhcGh5LCBzb3VyY2Ugc3BlY2lmaWNpdHksIHN0eWxlIHNwZWNpZmljaXR5LCBhbmQgYW50aS1zbG9wIHF1YWxpdHkuIiIiCgoKZGVmIGJ1bGxldHModmFsdWVzLCBlbXB0eT0iLSIpOgogICAgaXRlbXMgPSBsaXN0KHZhbHVlcyBvciBbXSkKICAgIHJldHVybiAiXG4iLmpvaW4oZiItIHt2fSIgZm9yIHYgaW4gaXRlbXMpIGlmIGl0ZW1zIGVsc2UgZW1wdHkKCgpkZWYgaXNfcG9ydHJhaXQoc3R5bGU6IGRpY3QpIC0+IGJvb2w6CiAgICByZXR1cm4gInBvcnRyYWl0IiBpbiAoc3R5bGUuZ2V0KCJmYW1pbHkiKSBvciAiIikgb3Igc3R5bGUuZ2V0KCJpZCIsICIiKS5lbmRzd2l0aCgiLXBvcnRyYWl0Iikgb3Igc3R5bGUuZ2V0KCJpZCIpID09ICJwaG90b2pvdXJuYWxpc3RpYyIKCgpkZWYgcmVuZGVyKHN0eWxlOiBkaWN0KSAtPiBzdHI6CiAgICBwb3J0cmFpdCA9IGlzX3BvcnRyYWl0KHN0eWxlKQogICAgZmFpbHVyZXMgPSBQT1JUUkFJVF9GQUlMVVJFICsgIlxuIiArIEdFTkVSSUNfRkFJTFVSRSBpZiBwb3J0cmFpdCBlbHNlIEdFTkVSSUNfRkFJTFVSRQogICAgc2VsZmNoZWNrID0gUE9SVFJBSVRfU0VMRkNIRUNLICsgIlxuIiArIEdFTkVSSUNfU0VMRkNIRUNLIGlmIHBvcnRyYWl0IGVsc2UgR0VORVJJQ19TRUxGQ0hFQ0sKCiAgICBrbm9icyA9IGJ1bGxldHMoc3R5bGUuZ2V0KCJ2YXJpYXRpb25fa25vYnMiKSkKICAgIGlmIHBvcnRyYWl0OgogICAgICAgIGtub2JzICs9ICJcbi0gbGlrZW5lc3MgZmlkZWxpdHkgZXhhY3Qvc3RyaWN0IgoKICAgIHJldHVybiBmIiIiLS0tCmlkOiB7c3R5bGVbJ2lkJ119Cm5hbWU6IHtzdHlsZVsnbmFtZSddfQpmYW1pbHk6IHtzdHlsZVsnZmFtaWx5J119CnJvbGU6IHtzdHlsZVsncm9sZSddfQpzdGF0dXM6IHtzdHlsZVsnc3RhdHVzJ119Ci0tLQoKIyB7c3R5bGVbJ25hbWUnXX0KCiMjIFN0eWxlIGludGVudAp7c3R5bGVbJ21lY2hhbmlzbSddfQoKIyMgQmVzdCBmb3IKe2J1bGxldHMoc3R5bGVbJ2Jlc3RfZm9yJ10pfQoKIyMgUmVqZWN0IHdoZW4Ke2J1bGxldHMoc3R5bGVbJ3JlamVjdF9pZiddKX0KCiMjIFN0eWxlIEROQQoqKlN1YmplY3QgLyBpZGVudGl0eSBiZWhhdmlvcioqICAKe3N0eWxlWydtZWNoYW5pc20nXX0KCioqQ29tcG9zaXRpb24gc3RyYXRlZ3kqKiAgCntzdHlsZVsnY29tcG9zaXRpb24nXX0KCioqTGlnaHRpbmcgbGFuZ3VhZ2UqKiAgCntzdHlsZVsnbGlnaHRpbmcnXX0KCioqQ29sb3IgbG9naWMqKiAgCntzdHlsZVsnY29sb3JfbG9naWMnXX0KCioqTWF0ZXJpYWwgLyB0ZXh0dXJlIGxhbmd1YWdlKiogIAp7c3R5bGVbJ21hdGVyaWFsX2xhbmd1YWdlJ119CgoqKlR5cG9ncmFwaHkgc3lzdGVtKiogIAp7c3R5bGVbJ3R5cG9ncmFwaHknXX0KCioqUmVhbGlzbSBsZXZlbCoqICAKe3N0eWxlWydyZWFsaXNtJ119CgoqKlRyYW5zZm9ybWF0aW9uIHN0cmVuZ3RoKiogIAp7c3R5bGVbJ3RyYW5zZm9ybWF0aW9uJ119CgojIyBFeGVjdXRpb24gY29udHJhY3QKe0VYRUNfQ09OVFJBQ1R9CgojIyBTdHlsZS1zcGVjaWZpYyBwcm9tcHQgYmxvY2sKe3N0eWxlWydwcm9tcHRfYmxvY2snXX0KCiMjIFN0eWxlLXNwZWNpZmljIG5lZ2F0aXZlIHByb21wdAp7c3R5bGVbJ25lZ2F0aXZlX3Byb21wdCddfQoKIyMgVmFyaWF0aW9uIGtub2JzCntrbm9ic30KCiMjIEh5YnJpZCBiZWhhdmlvcgp7SFlCUklEfQoKIyMgQ29tbW9uIGZhaWx1cmUgbW9kZXMKe2ZhaWx1cmVzfQoKIyMgU2VsZi1jaGVjawp7c2VsZmNoZWNrfQoKIyMgQWNjZXB0YW5jZSBjcml0ZXJpYQp7QUNDRVBUQU5DRX0KIiIiCgoKZGVmIGV4aXN0aW5nX2lkcygpIC0+IHNldDoKICAgIGlkcyA9IHNldCgpCiAgICBmb3IgcGF0aCBpbiBTVFlMRVNfRElSLmdsb2IoIioubWQiKToKICAgICAgICBpZHMuYWRkKHJlLnN1YihyIl5cZCstIiwgIiIsIHBhdGguc3RlbSkpCiAgICByZXR1cm4gaWRzCgoKZGVmIG1haW4oKSAtPiBpbnQ6CiAgICBhcCA9IGFyZ3BhcnNlLkFyZ3VtZW50UGFyc2VyKGRlc2NyaXB0aW9uPSJHZW5lcmF0ZSBtaXNzaW5nIHN0eWxlIGNvbnRyYWN0IGZpbGVzLiIpCiAgICBhcC5hZGRfYXJndW1lbnQoIi0tZm9yY2UiLCBhY3Rpb249InN0b3JlX3RydWUiLCBoZWxwPSJvdmVyd3JpdGUgZXhpc3RpbmcgY29udHJhY3RzIikKICAgIGFwLmFkZF9hcmd1bWVudCgiLS1wcmVmaXgiLCBhY3Rpb249InN0b3JlX3RydWUiLCBoZWxwPSJrZWVwIHRoZSBOTi0gZmlsZW5hbWUgcHJlZml4IikKICAgIGFyZ3MgPSBhcC5wYXJzZV9hcmdzKCkKCiAgICBkYXRhID0ganNvbi5sb2FkcyhTVFlMRVNfSlNPTi5yZWFkX3RleHQoZW5jb2Rpbmc9InV0Zi04IikpCiAgICBzdHlsZXMgPSBbcyBmb3IgcyBpbiBkYXRhWyJzdHlsZXMiXSBpZiBzLmdldCgicm9sZSIpID09ICJkaXJlY3QiXQoKICAgIGhhdmUgPSBleGlzdGluZ19pZHMoKQogICAgd3JpdHRlbiwgc2tpcHBlZCA9IFtdLCBbXQoKICAgIGZvciBpLCBzdHlsZSBpbiBlbnVtZXJhdGUoc3R5bGVzLCAxKToKICAgICAgICBzaWQgPSBzdHlsZVsiaWQiXQogICAgICAgIHRhcmdldCA9IFNUWUxFU19ESVIgLyAoZiJ7aTowMmR9LXtzaWR9Lm1kIiBpZiBhcmdzLnByZWZpeCBlbHNlIGYie3NpZH0ubWQiKQogICAgICAgIGJvZHkgPSByZW5kZXIoc3R5bGUpCiAgICAgICAgIyBDb21wYXJlIHRoZSBDT05URU5ULCBub3QganVzdCB0aGUgZmlsZW5hbWUuIEV4aXN0ZW5jZS1vbmx5CiAgICAgICAgIyBjaGVja2luZyBtZWFudCB0aGF0IG9uY2UgYSBjb250cmFjdCBmaWxlIGV4aXN0ZWQsIGV2ZXJ5IGxhdGVyCiAgICAgICAgIyBlZGl0IHRvIHRoZSBzdHlsZSB3YXMgc2lsZW50bHkgbmV2ZXIgd3JpdHRlbiB0byBpdCDigJQgdGhlCiAgICAgICAgIyBjb250cmFjdCBkcmlmdGVkIG91dCBvZiBzeW5jIHdpdGggdGhlIGRhdGEgaXQgZG9jdW1lbnRzLgogICAgICAgIGlmIHNpZCBpbiBoYXZlIGFuZCBub3QgYXJncy5mb3JjZToKICAgICAgICAgICAgY3VycmVudCA9IHRhcmdldC5yZWFkX3RleHQoZW5jb2Rpbmc9InV0Zi04IikgaWYgdGFyZ2V0LmV4aXN0cygpIGVsc2UgIiIKICAgICAgICAgICAgaWYgY3VycmVudCA9PSBib2R5OgogICAgICAgICAgICAgICAgc2tpcHBlZC5hcHBlbmQoc2lkKQogICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICB0YXJnZXQud3JpdGVfdGV4dChib2R5LCBlbmNvZGluZz0idXRmLTgiKQogICAgICAgIHdyaXR0ZW4uYXBwZW5kKHRhcmdldC5uYW1lKQoKICAgIHByaW50KGYid3JpdHRlbjoge2xlbih3cml0dGVuKX0iKQogICAgZm9yIG4gaW4gd3JpdHRlbjoKICAgICAgICBwcmludChmIiAgKyB7bn0iKQogICAgcHJpbnQoZiJza2lwcGVkIChhbHJlYWR5IHByZXNlbnQpOiB7bGVuKHNraXBwZWQpfSIpCiAgICByZXR1cm4gMAoKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICByYWlzZSBTeXN0ZW1FeGl0KG1haW4oKSkK
+#!/usr/bin/env python3
+"""Generate style contract .md files from data/styles.json.
+
+The library previously registered styles in JSON without a matching contract
+file, so the agent's step "load the chosen style contract" silently failed for
+those styles. Generating contracts from the JSON makes drift impossible: the
+JSON stays the single source of truth.
+
+Existing contracts are left untouched unless --force is passed.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+STYLES_JSON = ROOT / "data/styles.json"
+STYLES_DIR = ROOT / "styles"
+
+EXEC_CONTRACT = """1. Treat the uploaded source photograph as the single factual and visual anchor.
+2. Protect the scene-analysis identity anchors before stylization.
+3. Produce one finished poster, not a collage, contact sheet, moodboard, scrapbook, album, or multi-panel layout.
+4. Preserve source truth: do not invent people, brands, dates, landmarks, signatures, seals, costumes, or factual claims.
+5. Apply this style through its actual visual mechanism, not a generic preset.
+6. Keep typography subordinate to the image, normally no more than 5–10% of the visual area.
+7. Use the source-derived palette unless the style contract explicitly permits a controlled reinterpretation.
+8. Stop stylization before it damages identity, perspective, material plausibility, or cultural accuracy."""
+
+HYBRID = """Direct styles may enter `Controlled Hybrid` only if their pair appears in `data/compatibility.json`. The primary keeps subject identity, composition, lighting, palette, and realism. The secondary controls one declared subsystem only."""
+
+PORTRAIT_FAILURE = """- Generating a new or generic face when the source person must stay recognizable.
+- Averaging the face toward a model-default or idealized look.
+- Letting the style's medium reinterpret facial structure.
+- Smoothing, reshaping, or beautifying the face.
+- Losing source-specific anchors: eye shape, brow shape, hairline, skin tone, age cues.
+- Placing typography or graphic elements across the face."""
+
+PORTRAIT_SELFCHECK = """- Is this the same person as in the source, not a similar-looking invented person?
+- Do face shape, eye shape/spacing, eyebrow shape, nose shape, mouth shape, hairline, and skin tone all match?
+- Is the expression and gaze direction preserved?
+- Are there no added beautifications, age shifts, or makeup?
+- Is the face fully inside the frame with margin, and free of graphic overlays?"""
+
+GENERIC_FAILURE = """- Applying the same texture or effect uniformly to every pixel.
+- Replacing source-specific structure with generic AI imagery.
+- Oversizing typography until text becomes the subject.
+- Inventing content to make a style stereotype more obvious.
+- Ignoring material differences between surfaces.
+- Turning batch consistency into forced visual sameness."""
+
+GENERIC_SELFCHECK = """- Is the source still immediately recognizable?
+- Can major stylized elements be traced to the source or this style's mechanism?
+- Is the composition materially different from a simple filter?
+- Is text small, legible, and outside identity-critical regions?
+- Are there invented facts, extra subjects, malformed structures, or fake characters?
+- Does the output read as this style specifically rather than generic “AI art”?"""
+
+ACCEPTANCE = """Use `references/visual-benchmark.md`. A production image should normally score at least 17/20 across identity, composition, lighting, palette, material behavior, edges, typography, source specificity, style specificity, and anti-slop quality."""
+
+
+def bullets(values, empty="-"):
+    items = list(values or [])
+    return "\n".join(f"- {v}" for v in items) if items else empty
+
+
+def is_portrait(style: dict) -> bool:
+    return "portrait" in (style.get("family") or "") or style.get("id", "").endswith("-portrait") or style.get("id") == "photojournalistic"
+
+
+def render(style: dict) -> str:
+    portrait = is_portrait(style)
+    failures = PORTRAIT_FAILURE + "\n" + GENERIC_FAILURE if portrait else GENERIC_FAILURE
+    selfcheck = PORTRAIT_SELFCHECK + "\n" + GENERIC_SELFCHECK if portrait else GENERIC_SELFCHECK
+
+    knobs = bullets(style.get("variation_knobs"))
+    if portrait:
+        knobs += "\n- likeness fidelity exact/strict"
+
+    return f"""---
+id: {style['id']}
+name: {style['name']}
+family: {style['family']}
+role: {style['role']}
+status: {style['status']}
+---
+
+# {style['name']}
+
+## Style intent
+{style['mechanism']}
+
+## Best for
+{bullets(style['best_for'])}
+
+## Reject when
+{bullets(style['reject_if'])}
+
+## Style DNA
+**Subject / identity behavior**  
+{style['mechanism']}
+
+**Composition strategy**  
+{style['composition']}
+
+**Lighting language**  
+{style['lighting']}
+
+**Color logic**  
+{style['color_logic']}
+
+**Material / texture language**  
+{style['material_language']}
+
+**Typography system**  
+{style['typography']}
+
+**Realism level**  
+{style['realism']}
+
+**Transformation strength**  
+{style['transformation']}
+
+## Execution contract
+{EXEC_CONTRACT}
+
+## Style-specific prompt block
+{style['prompt_block']}
+
+## Style-specific negative prompt
+{style['negative_prompt']}
+
+## Variation knobs
+{knobs}
+
+## Hybrid behavior
+{HYBRID}
+
+## Common failure modes
+{failures}
+
+## Self-check
+{selfcheck}
+
+## Acceptance criteria
+{ACCEPTANCE}
+"""
+
+
+def existing_ids() -> set:
+    ids = set()
+    for path in STYLES_DIR.glob("*.md"):
+        ids.add(re.sub(r"^\d+-", "", path.stem))
+    return ids
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description="Generate missing style contract files.")
+    ap.add_argument("--force", action="store_true", help="overwrite existing contracts")
+    ap.add_argument("--prefix", action="store_true", help="keep the NN- filename prefix")
+    args = ap.parse_args()
+
+    data = json.loads(STYLES_JSON.read_text(encoding="utf-8"))
+    styles = [s for s in data["styles"] if s.get("role") == "direct"]
+
+    have = existing_ids()
+    written, skipped = [], []
+
+    for i, style in enumerate(styles, 1):
+        sid = style["id"]
+        target = STYLES_DIR / (f"{i:02d}-{sid}.md" if args.prefix else f"{sid}.md")
+        body = render(style)
+        # Compare the CONTENT, not just the filename. Existence-only
+        # checking meant that once a contract file existed, every later
+        # edit to the style was silently never written to it — the
+        # contract drifted out of sync with the data it documents.
+        if sid in have and not args.force:
+            current = target.read_text(encoding="utf-8") if target.exists() else ""
+            if current == body:
+                skipped.append(sid)
+                continue
+        target.write_text(body, encoding="utf-8")
+        written.append(target.name)
+
+    print(f"written: {len(written)}")
+    for n in written:
+        print(f"  + {n}")
+    print(f"skipped (already present): {len(skipped)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
