@@ -219,8 +219,23 @@ def render(argv) -> int:
     for v in variants:
         v_prompt = prompt
         if v["text"]:
+            # The variant adds an ARRANGEMENT line, so the budget has to
+            # grow by roughly that line's length. Reserving a flat 60
+            # characters was not enough: the pearl rule got clipped
+            # mid-sentence ("across the under-eye" — the placement and
+            # the bead-count phrase were cut away) and the model then
+            # spread the pearls over a much larger area.
+            # The backend rejects prompts at 1500 characters. The base
+            # prompt is already close to the limit, so adding an
+            # ARRANGEMENT line has to displace something else. Give the
+            # variant the room it needs but never past the backend
+            # ceiling, and keep the base prompt as the floor so the
+            # protocol is not the thing that gets cut.
+            v_budget = min(
+                BACKEND_PROMPT_LIMIT - 20,
+                max(limit, len(prompt) + len(v["text"]) + 40))
             v_prompt = compact_prompt.build_compact(
-                profile, style, budget=limit - 60,
+                profile, style, budget=v_budget,
                 subject_override=subject_override,
                 layout_override=v["text"])
         try:
@@ -283,6 +298,10 @@ def render(argv) -> int:
             "needs_vision": needs,
         }, ensure_ascii=False, indent=2))
     return 0
+
+
+# The backend rejects a prompt at 1500 characters.
+BACKEND_PROMPT_LIMIT = 1500
 
 
 def main(argv):

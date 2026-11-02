@@ -36,6 +36,50 @@ from __future__ import annotations
 # half and leave a directive the model cannot act on.
 # ---------------------------------------------------------------------------
 
+# A photographic beauty style must not be given the print-sheet variants.
+#
+# SINGLE_VARIANTS talks about "a vast empty paper field", "the sheet" and
+# "the figure small enough to read as a shape rather than a face" — print
+# language for a poster sheet. Applied to a photographic beauty style it
+# does two things:
+#   1. it drags the render toward an illustration with an empty field
+#      instead of a studio backdrop, and
+#   2. because the face stops reading as a face, the model lays the
+#      pearls over a larger proportional area. Measured on
+#      pearl-saint-beauty: the close-centre variant gave 9-12 beads,
+#      the wide-low variant gave 45.
+#
+# These variants keep the print discipline (one sentence, arrangement
+# only) but use photography vocabulary, so the face stays a face.
+PHOTO_VARIANTS = [
+    (
+        "close-centre",
+        "Tight head-and-shoulders crop, the face filling most of the frame and "
+        "centred, the whole face inside the frame with margin around the "
+        "hairline and chin.",
+    ),
+    (
+        "three-quarter",
+        "Head-and-shoulders crop turned a little to one side, the face on "
+        "the left third with soft studio space on the right.",
+    ),
+    (
+        "tight-detail",
+        "A close crop on the upper cheek and eye, the pearls and the eye "
+        "taking the frame, the rest of the face falling out of focus.",
+    ),
+    (
+        "chest-up",
+        "A chest-up crop with the head near the upper third and clean "
+        "studio space above, the pearls reading clearly within the face.",
+    ),
+    (
+        "profile-angle",
+        "The face turned to a three-quarter angle, the pearls catching the "
+        "key light along the cheekbone, the far cheek in soft shadow.",
+    ),
+]
+
 REPEAT_VARIANTS = [
     (
         "column",
@@ -188,6 +232,24 @@ def _select(pool: list, count: int) -> list:
     return picked[:count]
 
 
+
+def _is_photographic(style: dict) -> bool:
+    """True for a style whose output is a photograph, not a printed sheet.
+
+    A photographic style needs photography vocabulary in its layout
+    directive. The print-sheet variants ("a vast empty paper field",
+    "read as a shape rather than a face") pull the render away from the
+    studio look the style asked for.
+    """
+    family = (style.get("family") or "").lower()
+    if family.startswith("photographic"):
+        return True
+    if "beauty" in family:
+        return True
+    return bool(style.get("photographic"))
+
+
+
 def layout_variants(style: dict, count: int, identity_mode: str = "single",
                     has_face: bool = False) -> list:
     """Return `count` variant dicts for one style.
@@ -202,6 +264,8 @@ def layout_variants(style: dict, count: int, identity_mode: str = "single",
         pool = REPEAT_VARIANTS
     elif identity_mode == "abstract":
         pool = ABSTRACT_VARIANTS
+    elif _is_photographic(style):
+        pool = PHOTO_VARIANTS
     elif has_face:
         pool = SINGLE_VARIANTS
     else:
