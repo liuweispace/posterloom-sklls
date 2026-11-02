@@ -63,7 +63,7 @@ Transform the source photograph using the **Pearl Saint Beauty** visual system. 
 
 Makeup protocol, in order: (1) thin semi-matte base, skin texture still visible, localised concealer only; (2) a soft warm champagne sheen across the cheekbone, inner eye, brow bone and nose tip; (3) taupe shadow over the lid, dusty rose at the outer eye, thin deep-brown liner, lashes in separated clumps; (4) matte apricot blush swept from under-eye to mid-face, nude-pink tint on the lips with the lip texture showing through.
 
-Pearls: 8 to 12 solid opaque ivory beads set into the skin, each a smooth round matte-nacre sphere, across the under-eye, outer eye and upper cheekbone. Uneven sizes, loose clusters, never a row, never over the pupil or the lip. Cool ivory with a faint blue-grey nacre sheen — the only hard specular objects in a soft warm-toned face.
+Pearls: 8 to 12 solid opaque ivory beads set into the skin, each a smooth round matte-nacre sphere, uneven sizes and uneven spacing, across the under-eye, outer eye and upper cheekbone. Uneven sizes, loose clusters, never over the pupil or the lip. Cool ivory with a faint blue-grey nacre sheen — the only hard specular objects in a soft warm-toned face.
 
 Setting: vintage cold-white studio portrait. One large soft key slightly above and to the left, broad wrap across the cheekbone, soft falloff into the jaw, pale seamless backdrop one stop above the skin, shallow depth of field, vertical frame.
 
