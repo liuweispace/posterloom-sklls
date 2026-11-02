@@ -61,7 +61,7 @@ medium
 ## Style-specific prompt block
 Transform the source photograph using the **Pearl Saint Beauty** visual system. The photograph is the factual anchor and the face is FIXED GEOMETRY. The makeup is the requested content and MUST be applied to that exact face.
 
-Makeup protocol, in order: (1) thin semi-matte base, skin texture still visible, localised concealer only; (2) a soft warm champagne sheen across the cheekbone, inner eye, brow bone and nose tip; (3) taupe shadow over the lid, dusty rose at the outer eye, thin deep-brown liner, lashes in separated clumps; (4) matte apricot blush swept from under-eye to mid-face, nude-pink tint on the lips with the lip texture showing through.
+Makeup protocol, in order: (1) thin semi-matte base, skin texture still visible, localised concealer only; (2) a soft warm champagne cast across the cheekbone, inner eye, brow bone and nose tip; (3) taupe shadow over the lid, dusty rose at the outer eye, thin deep-brown liner, lashes in separated clumps; (4) matte apricot blush swept from under-eye to mid-face, nude-pink tint on the lips with the lip texture showing through.
 
 Pearls: 8 to 12 solid opaque ivory beads set into the skin, each a smooth round matte-nacre sphere, uneven sizes and uneven spacing, across the under-eye, outer eye and upper cheekbone. Uneven sizes, loose clusters, never over the pupil or the lip. Cool ivory with a faint blue-grey nacre sheen — the only hard specular objects in a soft warm-toned face.
 

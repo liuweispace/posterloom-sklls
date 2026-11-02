@@ -65,8 +65,9 @@ PHOTO_VARIANTS = [
     ),
     (
         "tight-detail",
-        "A close crop on the upper cheek and eye, the eye and cheekbone "
-        "taking the frame, the rest of the face falling out of focus.",
+        "A crop from just above the brows down to the chin, the eyes, "
+        "cheekbones and mouth all in frame, the skin and makeup in sharp "
+        "focus.",
     ),
     (
         "chest-up",
