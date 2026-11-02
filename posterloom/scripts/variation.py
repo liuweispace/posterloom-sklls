@@ -65,18 +65,18 @@ PHOTO_VARIANTS = [
     ),
     (
         "tight-detail",
-        "A close crop on the upper cheek and eye, the pearls and the eye "
+        "A close crop on the upper cheek and eye, the eye and cheekbone "
         "taking the frame, the rest of the face falling out of focus.",
     ),
     (
         "chest-up",
         "A chest-up crop with the head near the upper third and clean "
-        "studio space above, the pearls reading clearly within the face.",
+        "studio space above, the whole face reading clearly.",
     ),
     (
         "profile-angle",
-        "The face turned to a three-quarter angle, the pearls catching the "
-        "key light along the cheekbone, the far cheek in soft shadow.",
+        "The face turned to a three-quarter angle, the key light raking "
+        "along the cheekbone, the far cheek in soft shadow.",
     ),
 ]
 
