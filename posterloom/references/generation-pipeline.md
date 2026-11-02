@@ -110,6 +110,50 @@ see the face.
 This matches what the MiniMax backend note in `data/backends.json` already
 said: the reference is best used for identity anchoring on portrait work.
 
+## Finding 2c — a negative clause still seeds its noun
+
+`image-01` does not read a negative clause as a prohibition. It reads the
+noun and draws it. "no glitter specks" produced a dense glitter dust
+field; "every high point warm gold" produced gold foil patches on the
+forehead and chin.
+
+**The trap is not the negative clause. The trap is the negative clause
+being the only sentence that names the concept.** If the positive
+protocol already describes the concept, a redundant negative reinforces
+it; if the negative is the *only* mention, it is the model's only
+instruction about that noun, and it acts as a request.
+
+Three separate measurements, all of which came out against the
+intuition that negatives should be deleted:
+
+| wording | measured | verdict |
+|---|---|---|
+| `no rows of pearls` in AVOID | 24 / 16 / 23 beads | **keep** — deleting it gave 68 / 19 / 17 |
+| `no silver or blue-white highlight` in AVOID | no effect on shimmer | keep; the shimmer came from "sheen" in the protocol |
+| adding "the chin, jaw and neck are bare of beads" | 2 beads on the chin, glitter on 1 of 2 | **do not add** |
+
+The third is the sharpest form of the rule, and it is about *body
+regions* rather than materials: **naming a region in a positive
+sentence pulls that region into the model's attention**, so it puts
+something there. Two runs of the unmodified prompt put every bead on the
+face; both attempted "fixes" put beads off the face. The drift was
+sampling variance, not a defect.
+
+Two consequences for prompt writing:
+
+- Do not add an exclusion sentence for a body area. Write the placement
+  positively and stop there.
+- Do not use a material word with a finish sense (`sheen`, `satin`,
+  `glitter`) where a flat colour is meant. `champagne cast` kept the
+  colour and lost the shimmer; `beige glow` also lost it but dropped the
+  bead count to 1-5; `champagne tone` overshot to 48.
+
+One measurement rule that follows from all of this: **a bead counter
+built on blob detection is not a bead counter.** It scored skin
+highlights, lashes and lip gloss as beads — reporting 15-32 where a
+vision pass counted 1-5. Vision is the judge; blob counting is a rough
+screen only.
+
 ## Finding 3 — pixel statistics cannot tell a print from a photograph
 
 The obvious cheap acceptance gate is a pixel metric. It does not work. On 13

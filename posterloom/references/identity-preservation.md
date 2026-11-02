@@ -14,6 +14,35 @@ PosterLoom is source-led. Style never has permission to replace the source.
 
 If a style conflicts with a higher-priority item, weaken the style.
 
+## The lock needs a test the source can actually fail
+
+A likeness check is only evidence if the source could have produced a
+different face. A flat vector pictogram, a low-detail avatar or a heavily
+stylised figure cannot: any photoreal result already "passes" against it,
+so the result is the absence of a counter-example, not a verification.
+
+Use a real photograph with features that are individually checkable — a
+distinctive haircut colour and cut, eye shape, nose width, brow thickness,
+an open smile. Then compare feature by feature. A style that reproduces
+the source against a real face but was only ever checked against an
+avatar has not been checked.
+
+**Words cannot carry identity.** A written description of a face
+describes *a* face, not *this* face, so a text-only pipeline invents a
+face that fits the description. Measured on a real photographic source,
+the same prompt with and without the source photo attached:
+
+| feature | photo attached | words only |
+|---|---|---|
+| hair | platinum pixie, preserved | long brown hair, invented |
+| eyes | almond, preserved | round and light |
+| nose | narrow and straight, preserved | broad and round |
+| expression | closed-lip smile | the open smile, lost |
+
+So for a photographic style the source photo must be attached to the
+image request. See [generation pipeline](generation-pipeline.md) for why
+print styles do the opposite.
+
 ## Human subjects
 Protect:
 - face structure and expression;
