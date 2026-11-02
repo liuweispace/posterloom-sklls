@@ -72,10 +72,43 @@ Adding "render the whole image as flat printed ink on paper, NOT as a
 photograph" to the prompt did not change the outcome. The attachment itself
 carries the photographic rendering.
 
-So the pipeline **does not attach the photo**. A vision model reads it first
-and the image is generated from words. The likeness is now a text description
-rather than a pixel copy — a real trade-off, and the reason
-`--send-reference` exists as an opt-in.
+So for a **print** style the pipeline **does not attach the photo**. A vision
+model reads it first and the image is generated from words. The likeness is
+then a text description rather than a pixel copy — a real trade-off, and the
+reason `--send-reference` exists as an opt-in.
+
+## Finding 2b — for a photographic style the rule inverts
+
+Finding 2 is about print styles. For a style whose output *is* a photograph,
+the attachment is not a trade-off — it is the whole point, because **words
+cannot carry identity**.
+
+Measured on a real photographic portrait (the earlier test source was a flat
+vector pictogram, so it could not show this at all), same prompt, only the
+attachment differing:
+
+| Feature | with `subject_reference` | without |
+|---|---|---|
+| hair | platinum/ash-blonde pixie, preserved | long brown hair, invented |
+| eye shape | almond, preserved | round and light |
+| nose | narrow and straight, preserved | broad and round |
+| expression | closed-lip smile | the open tooth-showing smile, lost |
+| brows | thin and arched | thick and sculpted |
+
+A written description of a face is a description of *a* face, not *this*
+face. So the identity lock is only enforceable when the model can actually
+see the face.
+
+`render.py` therefore decides by style family:
+
+- `photographic-*`, and any family containing `beauty` → the source photo **is**
+  attached, so likeness holds.
+- print, graphic and collage families → the photo is **not** attached, so the
+  flat print does not collapse back into a photograph (Finding 2).
+
+`--no-reference` and `--send-reference` still override the default either way.
+This matches what the MiniMax backend note in `data/backends.json` already
+said: the reference is best used for identity anchoring on portrait work.
 
 ## Finding 3 — pixel statistics cannot tell a print from a photograph
 

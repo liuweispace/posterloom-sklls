@@ -95,6 +95,21 @@ REPEAT_IDENTITY_STYLES = {"duotone-identity-stack"}
 # and never as a photorealistic likeness claim.
 ABSTRACT_IDENTITY_STYLES = {"scene-distillation-zine"}
 
+# Styles whose entire visual system IS the makeup — the styled face is the
+# subject, and the style's mechanism is the cosmetic application itself.
+#
+# The default lock says "no makeup addition", because adding makeup to a face
+# silently replaces the person with a prettier version of them. That rule is
+# correct for a portrait and WRONG for a beauty style: here the makeup is the
+# requested content, and suppressing it would make the style a no-op.
+#
+# So the lock changes shape instead of weakening. Bone structure, face shape,
+# eye shape and spacing, nose, mouth, hairline, skin undertone and age stay
+# FIXED — makeup sits ON that geometry and never replaces it. The style
+# declares WHICH cosmetic language it applies, and the lock holds everything
+# the makeup must not touch.
+BEAUTY_IDENTITY_STYLES = {"pearl-saint-beauty"}
+
 
 def identity_mode(style_id):
     """Which face-disposition rule applies to this style."""
@@ -102,6 +117,8 @@ def identity_mode(style_id):
         return "repeat"
     if style_id in ABSTRACT_IDENTITY_STYLES:
         return "abstract"
+    if style_id in BEAUTY_IDENTITY_STYLES:
+        return "beauty"
     return "single"
 
 
@@ -161,6 +178,52 @@ ABSTRACT_IDENTITY_NEGATIVE = (
 )
 
 
+# The beauty-mode lock. The style's own contract declares the cosmetic
+# language; this block holds everything the makeup must NOT touch, so the
+# style can restyle a face without replacing the person wearing it.
+BEAUTY_IDENTITY_BLOCK = """FACIAL IDENTITY LOCK — HIGHEST PRIORITY (BEAUTY MODE){style_ctx}
+This instruction outranks the style, the aesthetic, and any beautification tendency.
+The makeup below is the requested content and MUST be applied. The bone structure
+underneath it MUST NOT change.
+
+1. REPRODUCE, DO NOT INVENT. Render the exact face present in the source photograph.
+   Facial structure is fixed input geometry, not content to reinterpret or improve.
+2. FIXED, AND UNTOUCHABLE BY THE MAKEUP: face shape and width, jawline and chin,
+   cheekbone structure, bone proportion, eye shape, eye size, eye spacing and
+   eyelid shape, eyebrow shape and position, nose width and bridge, lip shape and
+   mouth width, ear position, hairline, facial hair pattern, skin tone and
+   undertone, freckles, moles, scars, wrinkles, and visible age cues.
+3. FIXED EXPRESSION AND GAZE: the same emotional read, mouth state, brow tension,
+   and gaze direction as the source.
+4. {anchor_line}
+5. NO SUBSTITUTION. Do not generate a different person. Do not average toward a generic
+   or idealized face. Do not shift age, gender presentation, ethnicity, or body type.
+6. NO ENHANCEMENT BEYOND THE STYLE'S OWN COSMETICS. The style's declared makeup is
+   allowed and required. Beyond it: no skin smoothing, no plastic or airbrushed skin,
+   no reshaping of the jaw or nose, no enlargement of eyes or lips, no teeth
+   straightening, no face-slimming, no nose-lift, no eye enlargement.
+7. SINGLE IDENTITY. If other people appear, every face must correspond to its own
+   person in the source. Never duplicate, merge, or average faces.
+8. VERIFY BEFORE DELIVERING. Compare the generated face against the source on the
+   seven identity-critical points — face shape, eye shape and spacing, eyebrow shape,
+   nose shape, mouth shape, hairline, skin tone. If any differ, regenerate. The
+   makeup must read as makeup ON this face, not as a different person wearing it."""
+
+BEAUTY_IDENTITY_NEGATIVE = (
+    "no changed face shape or width, no changed jawline or chin, no altered eye "
+    "shape, eye size, or eye spacing, no mismatched eye size between eyes, no "
+    "eyebrow shape or position change, no nose width or bridge change, no lip or "
+    "mouth width change, no changed hairline, no skin tone or undertone shift, "
+    "no age shift or de-aging, no gender presentation shift, no ethnicity shift, "
+    "no face slimming, no nose lift, no eye enlargement, no lip enlargement, "
+    "no plastic or airbrushed skin, no excessive skin smoothing, no teeth or "
+    "smile alteration, no face duplication, no composite or merged faces, no new "
+    "or different person, no model-default or idealized face, no celebrity "
+    "lookalike, no face averaged toward a composite, no extra or missing fingers, "
+    "no text over the face."
+)
+
+
 def likeness_block(profile, style_id=None, style_name=None) -> str:
     """Return the facial-identity constraint block for a portrait prompt."""
     anchors = identity_anchors_of(profile)
@@ -181,6 +244,9 @@ def likeness_block(profile, style_id=None, style_name=None) -> str:
 
     if identity_mode(style_id) == "abstract":
         return ABSTRACT_IDENTITY_BLOCK.format(style_ctx=style_ctx, anchor_line=anchor_line)
+
+    if identity_mode(style_id) == "beauty":
+        return BEAUTY_IDENTITY_BLOCK.format(style_ctx=style_ctx, anchor_line=anchor_line)
 
     return f"""FACIAL IDENTITY LOCK — HIGHEST PRIORITY{style_ctx}
 This instruction outranks the style, the aesthetic, and any beautification tendency.
@@ -210,6 +276,8 @@ def likeness_negative(profile, style_id=None) -> str:
     """Negative constraints naming the specific facial-drift failure modes."""
     if identity_mode(style_id) == "abstract":
         return ABSTRACT_IDENTITY_NEGATIVE
+    if identity_mode(style_id) == "beauty":
+        return BEAUTY_IDENTITY_NEGATIVE
     duplication = (
         "no drifted or mismatched copies within a repeated face, "
         if style_id in REPEAT_IDENTITY_STYLES

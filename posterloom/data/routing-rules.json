@@ -47,7 +47,8 @@
     "photojournalistic",
     "fine-art-portrait",
     "cinematic-editorial",
-    "documentary-poster"
+    "documentary-poster",
+    "pearl-saint-beauty"
   ],
   "conservative_styles": [
     "elegant-serif-poster",
@@ -88,7 +89,8 @@
       "neo-ink-poster": 3,
       "elegant-serif-poster": 2,
       "luxury-still-life-editorial": 2,
-      "controlled-hybrid": 2
+      "controlled-hybrid": 2,
+      "pearl-saint-beauty": 3
     },
     "plain_photographic": {
       "editorial-portrait": -4,

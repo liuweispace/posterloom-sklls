@@ -130,12 +130,39 @@ def render(argv) -> int:
 
     out_dir = Path(args.out)
     prefix = args.prefix or Path(args.image).stem
-    # The reference is NOT sent by default. Measured: attaching the source
-    # photo forces the model to reproduce its continuous tone, and the flat
-    # print collapses back into a photograph — the same prompt returns a print
-    # without the attachment and a photo with it. The photo's role is to be
-    # read by the vision model, not to be pasted into the image request.
-    reference = Path(args.image) if args.send_reference else None
+
+    # Whether to attach the source photo to the image request.
+    #
+    # The rule is NOT "never attach". It depends on what the style is:
+    #
+    #  - PRINT styles (graphic-print, paper-collage, modern-design ...):
+    #    do NOT attach. Measured: attaching the source photo forces the
+    #    model to reproduce its continuous tone, and the flat print collapses
+    #    back into a photograph — the same prompt returns a print without the
+    #    attachment and a photo with it.
+    #
+    #  - PHOTOGRAPHIC styles (photographic-*, and any style whose output is
+    #    a photo of a person): DO attach. Measured on pearl-saint-beauty
+    #    with a real photographic source: without the attachment the model
+    #    never sees the face, so it invents one — the platinum pixie cut
+    #    became long brown hair, almond eyes became round and light, a
+    #    narrow nose became broad and round, and a wide tooth-showing smile
+    #    became a closed-lip pose. With the attachment the hair, eye shape
+    #    and brow shape survived. Text description alone cannot carry
+    #    identity; the identity lock is only enforceable when the model
+    #    can actually see the face.
+    #
+    # The explicit --send-reference / --no-reference flags still win.
+    family = (style.get("family") or "").lower()
+    photographic = family.startswith("photographic") or "beauty" in family
+    if args.no_reference:
+        reference = None
+    elif args.send_reference:
+        reference = Path(args.image)
+    elif photographic:
+        reference = Path(args.image)
+    else:
+        reference = None
 
     # Describe the photo in words before generating.
     #

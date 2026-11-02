@@ -13,6 +13,7 @@ Verifies the things the image pipeline depends on:
   6. three variants of one style produce three DIFFERENT prompts
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -59,10 +60,24 @@ def main() -> int:
                 if style.get("source_role") == "semantic-reference" \
                         and "NO PHOTOGRAPHY" not in prompt:
                     failures.append(f"{tag}: NO PHOTOGRAPHY missing")
-                if style.get("color_system") and "COLOUR:" not in prompt:
-                    failures.append(f"{tag}: COLOUR section missing")
+                # A style may declare that its palette is named inline
+                # (in its protocol), in which case the COLOUR section is a
+                # duplicate. The check is that the palette is NAMED
+                # somewhere, not that a particular section carries it.
+                if style.get("color_system") and not style.get("palette_in_protocol"):
+                    if "COLOUR:" not in prompt:
+                        failures.append(f"{tag}: COLOUR section missing")
                 if style.get("composition") and "LAYOUT:" not in prompt:
                     failures.append(f"{tag}: LAYOUT section missing")
+                if style.get("protocol"):
+                    if "PROTOCOL:" not in prompt:
+                        failures.append(f"{tag}: PROTOCOL section missing")
+                    # Every numbered step must survive. A protocol that
+                    # loses step (3) is a different procedure, not a shorter
+                    # description of the same one.
+                    for step in re.findall(r"\((\d)\)", str(style["protocol"])):
+                        if f"({step})" not in prompt:
+                            failures.append(f"{tag}: protocol step ({step}) missing")
 
     # The arrangement section: a variant must survive the budget, and the
     # print mechanism must survive alongside it. Losing the mechanism is what
@@ -92,6 +107,12 @@ def main() -> int:
                     failures.append(f"{tag}: ARRANGEMENT section missing")
                 if style.get("composition") and "LAYOUT:" not in prompt:
                     failures.append(f"{tag}: LAYOUT section missing")
+                if style.get("protocol"):
+                    if "PROTOCOL:" not in prompt:
+                        failures.append(f"{tag}: PROTOCOL section missing")
+                    for step in re.findall(r"\((\d)\)", str(style["protocol"])):
+                        if f"({step})" not in prompt:
+                            failures.append(f"{tag}: protocol step ({step}) missing")
                 if "STYLE " not in prompt:
                     failures.append(f"{tag}: print mechanism (STYLE) missing")
                 if scene_name == "portrait" and "IDENTITY LOCK" not in prompt:
@@ -123,7 +144,7 @@ def main() -> int:
             print(f"  {f}")
         return 1
     print("PASS: budget, identity lock, NO PHOTOGRAPHY, COLOUR, LAYOUT, "
-          "ARRANGEMENT and the print mechanism all hold")
+          "PROTOCOL steps, ARRANGEMENT and the print mechanism all hold")
     return 0
 
 

@@ -9,7 +9,7 @@ status: gold
 # Pearl Saint Beauty
 
 ## Style intent
-Apply the four-stage cocoa-and-pearl protocol below to the source face. The bone structure underneath does not change — the makeup sits on fixed geometry and never replaces it. Photograph it as a vintage cold-white studio beauty portrait: one soft key, pale seamless backdrop, shallow depth of field, so the pearls read as the only hard specular objects in a soft warm-toned face.
+Apply the four-stage pearl-saint makeup protocol below to the source face. The bone structure underneath does not change — the makeup sits on fixed geometry and never replaces it. Photograph it as a vintage cold-white studio beauty portrait: one soft key, pale seamless backdrop, shallow depth of field, so the pearls read as the only hard specular objects in a soft warm-toned face.
 
 ## Best for
 - beauty and makeup portrait
@@ -25,7 +25,7 @@ Apply the four-stage cocoa-and-pearl protocol below to the source face. The bone
 
 ## Style DNA
 **Subject / identity behavior**  
-Apply the four-stage cocoa-and-pearl protocol below to the source face. The bone structure underneath does not change — the makeup sits on fixed geometry and never replaces it. Photograph it as a vintage cold-white studio beauty portrait: one soft key, pale seamless backdrop, shallow depth of field, so the pearls read as the only hard specular objects in a soft warm-toned face.
+Apply the four-stage pearl-saint makeup protocol below to the source face. The bone structure underneath does not change — the makeup sits on fixed geometry and never replaces it. Photograph it as a vintage cold-white studio beauty portrait: one soft key, pale seamless backdrop, shallow depth of field, so the pearls read as the only hard specular objects in a soft warm-toned face.
 
 **Composition strategy**  
 Vertical studio beauty portrait, head and shoulders. The face on the upper third with clean headroom; the pearls on the under-eye and cheekbone so they read within the face. Keep the whole face inside the frame with margin around the hairline and chin, and keep the pearls clear of the pupil and the lip.
@@ -34,7 +34,7 @@ Vertical studio beauty portrait, head and shoulders. The face on the upper third
 One soft key above left, broad wrap over the cheekbone. Cold white seamless backdrop one stop above the skin. The champagne highlight is the brightest point on the face.
 
 **Color logic**  
-Warm cocoa-and-pearl palette: warm beige and taupe skin, champagne-gold highlight, taupe and dusty rose eyes, matte apricot blush, nude-pink lip, cool ivory pearls. The pearls are the only cool element in an otherwise warm frame.
+Warm pearl-and-champagne palette: warm beige and taupe skin, champagne highlight, taupe and dusty rose eyes, matte apricot blush, nude-pink lip, cool ivory pearls. The pearls are the only cool element in an otherwise warm frame.
 
 **Material / texture language**  
 Skin rendered with visible fine texture and a thin semi-matte base — the base stays thin enough that the champagne highlight sits on it without patchiness. Highlight reads as a broad soft metallic sheen, not glitter specks. Pearls read as hard round nacreous beads with a small bright specular point and a soft reflected highlight, slightly irregular in size, loosely clustered rather than in rows. Lashes read as separated clumps. Lip reads as a thin sheer tint with the lip texture still visible. No plastic smoothing, no beauty-filter skin, no airbrushing.
@@ -67,7 +67,7 @@ Pearls: 8 to 12 solid opaque ivory beads set into the skin, each a smooth round 
 
 Setting: vintage cold-white studio portrait. One large soft key slightly above and to the left, broad wrap across the cheekbone, soft falloff into the jaw, pale seamless backdrop one stop above the skin, shallow depth of field, vertical frame.
 
-Colour: warm cocoa-and-pearl palette — warm beige and taupe base, champagne-gold highlight, taupe and dusty rose eyes, matte apricot blush, nude-pink lip, cool ivory pearls. Warm-neutral overall; the pearls are the only cool element.
+Colour: warm pearl-and-champagne palette — warm beige and taupe base, champagne-gold highlight, taupe and dusty rose eyes, matte apricot blush, nude-pink lip, cool ivory pearls. Warm-neutral overall; the pearls are the only cool element.
 
 Typography: optional small editorial serif in the upper margin or lower corner, never across the face or the pearls.
 

@@ -73,13 +73,21 @@ Three of those steps are not obvious, and all three were settled by measurement
 rather than by preference. See [generation pipeline](references/generation-pipeline.md)
 for the evidence.
 
-**The photo is described, not attached.** Attaching the source photo to the image
-request makes the model reproduce its continuous tone, and the flat-print style
-collapses back into a photograph — the identical prompt returns a print without
-the attachment and a photo with it, even when it says "render as a print, not a
-photograph". So a vision model reads the photo first, and the image is generated
-from words. `--send-reference` restores the attachment if you want maximum
-likeness and can accept a photographic result.
+**Attaching the photo depends on the style.** For a print style the photo is
+described, not attached: attaching it makes the model reproduce its continuous
+tone, and the flat print collapses back into a photograph — the identical prompt
+returns a print without the attachment and a photo with it, even when it says
+"render as a print, not a photograph". So a vision model reads the photo first
+and the print is generated from words.
+
+For a **photographic** style the rule inverts: the source photo IS attached, and
+it must be. Measured on a real photographic face, the same prompt with and
+without the attachment gave a platinum pixie cut, almond eyes and a narrow nose
+with the attachment, and long brown hair, round light eyes, a broad round nose
+and a lost open smile without it. Words cannot carry identity — a written
+description of a face is a description of *a* face, not *this* face — so the
+identity lock is only enforceable when the model can see the face.
+`--no-reference` and `--send-reference` override the default either way.
 
 **The prompt is rebuilt, not truncated.** A full PosterLoom prompt is 4000-8000
 characters; image APIs reject anything over 1500. The compact prompt is rebuilt

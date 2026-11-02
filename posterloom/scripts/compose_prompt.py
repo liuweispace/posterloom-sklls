@@ -61,16 +61,28 @@ def style_by_id(style_id):
             return style
     raise SystemExit(f"Unknown style: {style_id}")
 
-def scene_block(profile, ratio=None):
+def scene_block(profile, ratio=None, style=None):
     subject = profile.get("subject", {})
     prefs = profile.get("user_preferences", {})
+    style = style or {}
     join = lambda k: ", ".join(map(str, profile.get(k, [])))
+    # A style that declares its own lighting setup must not also state the
+    # photo's original light. The two contradict each other, and the model
+    # resolves the contradiction by dropping one — usually the style's.
+    include = style.get("look_include") or []
+    summary = style.get("subject_summary") or subject.get("summary", subject.get("type","unknown"))
+    lighting = join("lighting")
+    if "lighting" in include and style.get("lighting"):
+        lighting = str(style["lighting"])
+    environment = profile.get("environment", "")
+    if "lighting" in include and style.get("lighting"):
+        environment = "as specified in the style's lighting setup"
     return f"""SCENE MAP
-Subject: {subject.get('summary', subject.get('type','unknown'))}
+Subject: {summary}
 Subject type: {subject.get('type','unknown')}
 Identity anchors: {', '.join(subject.get('identity_anchors', []))}
-Environment: {profile.get('environment','')}
-Lighting: {join('lighting')}
+Environment: {environment}
+Lighting: {lighting}
 Mood: {join('mood')}
 Geometry: {join('geometry')}
 Palette: {join('palette')}
@@ -101,7 +113,7 @@ def compile_prompt(profile, forced_style=None):
     )
     blocks = [
         global_block(style, ratio),
-        scene_block(profile, ratio),
+        scene_block(profile, ratio, style),
         f"PRIMARY STYLE — {style['name']}\n{style['prompt_block']}",
     ]
 
@@ -114,7 +126,13 @@ def compile_prompt(profile, forced_style=None):
         if cs.get("substrate"):
             lines.append(f"Substrate / paper: {cs['substrate']}")
         if cs.get("inks"):
-            lines.append(f"Inks (exactly these two): {', '.join(cs['inks'])}")
+            inks = list(cs["inks"])
+            # The count is stated, not assumed. "exactly these two" beside a
+            # six-entry palette is a contradiction, and the model reads the
+            # contradiction as "pick any two".
+            n = len(inks)
+            label = ("Inks" if n > 2 else "Inks (exactly these two)")
+            lines.append(f"{label} ({n}): {', '.join(inks)}")
         if cs.get("accent"):
             lines.append(f"Accent: {cs['accent']}")
         if cs.get("coverage"):

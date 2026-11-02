@@ -103,7 +103,7 @@ Direct styles may enter `Controlled Hybrid` only if their pair appears in `data/
 - Is the composition materially different from a simple filter?
 - Is text small, legible, and outside identity-critical regions?
 - Are there invented facts, extra subjects, malformed structures, or fake characters?
-- Does the output read as `Cinematic Editorial` specifically rather than generic “AI art”?
+- Does the output read as this style specifically rather than generic “AI art”?
 
 ## Acceptance criteria
 Use `references/visual-benchmark.md`. A production image should normally score at least 17/20 across identity, composition, lighting, palette, material behavior, edges, typography, source specificity, style specificity, and anti-slop quality.
