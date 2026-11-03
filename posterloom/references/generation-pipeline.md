@@ -154,6 +154,40 @@ highlights, lashes and lip gloss as beads — reporting 15-32 where a
 vision pass counted 1-5. Vision is the judge; blob counting is a rough
 screen only.
 
+## Finding 2d — the reference rule, checked across the photographic families
+
+The identity fix in `render.py` attaches the source photo when the style
+family starts with "photographic" or contains "beauty". That rule reaches
+seven styles, not one, so it was measured on the ones where "photographic"
+is weakest: `travel-cover-poster`, `luxury-still-life-editorial`,
+`moody-night-editorial`, `documentary-poster`.
+
+On a real landscape photograph with a matching landscape profile, attaching
+the photo kept the source scene in every case and produced the more
+graphic, more poster-like rendering (distressed frame, duotone, footer
+type) against a plain photographic print without it. No subject
+substitution and no invented person.
+
+Two traps found while doing this:
+
+- **A mismatched profile silently changes the subject.** The first run
+  paired a landscape photo with a *portrait* profile, and the model
+  rendered an elderly woman's portrait for a travel-cover style. The
+  reference was not at fault; the prompt was. A reference does not
+  override what the prompt describes. Test the pair, not the reference in
+  isolation.
+- **`subject_reference` has exactly one legal `type`.** The API rejects
+  everything except `character` (status 2013 for `subject`, `scene`,
+  `object`), so the hardcoded `character` is not an oversight and cannot
+  be made to describe a place instead of a person. MiniMax accepts a
+  landscape as a `character` reference without complaint.
+
+A consequence worth stating plainly: the backend note says image-to-image
+"can introduce a different person". That is a real risk, and it is why
+the attachment is scoped to photographic styles and left off for print
+styles, where the same attachment collapses the print back into a
+photograph (Finding 2).
+
 ## Finding 3 — pixel statistics cannot tell a print from a photograph
 
 The obvious cheap acceptance gate is a pixel metric. It does not work. On 13
